@@ -1,0 +1,13 @@
+<div class="container">
+  <img src="../../assets/Game.jpg" class="responsive">
+  <div class="info">
+   <p>Player 1: {{p1Square}}</p>
+    <p>Player 2: {{p2Square}}</p>
+    {{lastRoll}}
+    <p>Current player: {{currentPlayer}}</p>
+    <button class="btn-primary" (click)="roll()">Roll</button>
+    <button class="btn-primary" (click)="startAgain()">Play again</button>
+    <p>{{winningMessage}}</p>
+  </div>
+</div>
+
