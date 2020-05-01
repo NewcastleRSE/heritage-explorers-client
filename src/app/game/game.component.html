@@ -1,5 +1,10 @@
 <div class="container">
-  <img src="../../assets/Game.jpg" class="responsive">
+  <div class="board">
+  <img src="../../assets/Game.jpg" class="boardImg">
+  <img class="p1" src="../../assets/p1.png" [style.top]="p1Top" [style.left]="p1Left">
+  <img src="../../assets/p2.png" class="p2">
+  </div>
+
   <div class="info">
    <p>Player 1: {{p1Square}}</p>
     <p>Player 2: {{p2Square}}</p>
@@ -7,7 +12,10 @@
     <p>Current player: {{currentPlayer}}</p>
     <button class="btn-primary" (click)="roll()">Roll</button>
     <button class="btn-primary" (click)="startAgain()">Play again</button>
+    <button class="btn-primary" (click)="step1On()">Step 1 on</button>
+
     <p>{{winningMessage}}</p>
   </div>
+
 </div>
 

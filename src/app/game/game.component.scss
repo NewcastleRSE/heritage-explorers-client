@@ -1,4 +1,23 @@
-.responsive {
+//.responsive {
+//  width: 100%;
+//  height: auto;
+//}
+
+.board {
   width: 100%;
   height: auto;
+  position: relative;
+}
+
+.boardImg {
+  max-width: 100%;
+}
+
+.p1 {
+  max-width: 5%;
+  position: absolute;
+}
+.p2 {
+  max-width: 5%;
+  position: absolute;
 }
