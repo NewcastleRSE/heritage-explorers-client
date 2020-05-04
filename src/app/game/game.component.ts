@@ -60,6 +60,7 @@ p2Left;
       this.moveP1Icon(moveTo);
     } else {
       this.p2Square = moveTo;
+      this.moveP2Icon(moveTo);
     }
 
     // if 18 stop game
