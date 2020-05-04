@@ -1,0 +1,55 @@
+<div class="container">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <img src="../../assets/boat100.png" class="img-fluid" >
+      </div>
+      <div class="col-3">
+        <img src="../../assets/crown100.png" class="img-fluid" >
+      </div>
+      <div class="col-3">
+        <img src="../../assets/horse100.png" class="img-fluid">
+      </div>
+      <div class="col-3">
+        <img src="../../assets/lion100.png" class="img-fluid">
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-3">
+      <img src="../../assets/monument100.png" class="img-fluid">
+    </div>
+    <div class="col-3">
+      <img src="../../assets/punch100.png" class="img-fluid">
+    </div>
+    <div class="col-3">
+      <img src="../../assets/sarco100.png" class="img-fluid">
+    </div>
+    <div class="col-3">
+      <img src="../../assets/woman100.png" class="img-fluid">
+    </div>
+  </div>
+  </div>
+
+  <div *ngIf="player1Choosing">
+  <p>Player 1 select counter and click 'Finished'</p>
+  <button class="btn-primary" (click)="player1Finished()">Finished</button>
+</div>
+
+  <div *ngIf="player2Choosing">
+    <p>Player 2 select counter and click Finished</p>
+    <button class="btn" (click)="player2Finished()">Finished</button>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <p>Player 1 counter</p>
+      <img src="../../assets/monument100.png">
+    </div>
+    <div class="col">
+      <p>Player 2 counter</p>
+      <img src="../../assets/punch100.png">
+    </div>
+  </div>
+
+</div>
