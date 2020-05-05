@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {GlobalsService} from '../globals.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
+
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -14,6 +15,7 @@ p2Square;
 currentPlayer;
 winningMessage;
 lastRoll;
+
 
 // counter positioning
 p1Top;
@@ -39,9 +41,12 @@ p2Counter;
     this.moveP2Icon(1);
 
     // get counter images from globals
+    // todo sort out counter size
     this.p1Counter = this.globalsService.player1Counter;
     this.p2Counter = this.globalsService.player2Counter;
+
   }
+
 
   step1On() {
     this.move(1);
@@ -77,6 +82,7 @@ p2Counter;
 
     // if 18 stop game
     if (moveTo === 18) {
+      // todo winner modal
       this.winningMessage = 'Player ' + this.currentPlayer + ' wins!';
     }
     else {
@@ -95,8 +101,7 @@ p2Counter;
   }
 
   openTeetotum(teetotum) {
-    this.modalService.open(teetotum, {ariaLabelledBy: 'teetotum-modal'}).result.then((result) => {
-    });
+    this.modalService.open(teetotum, {ariaLabelledBy: 'teetotum-modal'});
   }
 
   changePlayer() {
