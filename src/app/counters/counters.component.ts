@@ -10,6 +10,10 @@ import {Router} from '@angular/router';
 export class CountersComponent implements OnInit {
 player1Choosing: boolean;
 player2Choosing: boolean;
+
+player1EnteredName: boolean;
+player2EnteredName: boolean;
+
 player1Counter;
 player2Counter;
 
@@ -23,6 +27,8 @@ six = 'punch';
 seven = 'sarco';
 eight = 'woman';
 
+player1Name;
+player2Name;
 
   constructor(
     private globalsService: GlobalsService,
@@ -32,6 +38,8 @@ eight = 'woman';
   ngOnInit(): void {
     this.player1Choosing = true;
     this.player2Choosing = false;
+    this.player1EnteredName = false;
+    this.player2EnteredName = false;
   }
 
   setCounter(counterChoice) {
@@ -92,7 +100,19 @@ eight = 'woman';
     }
   }
 
+ player1NameEntered() {
+this.player1EnteredName = true;
+ }
+
+ player2NameEntered() {
+    // todo prevent player 2 using same name as player 1
+
+    this.player2EnteredName = true;
+ }
+
  player1Finished() {
+    // todo prevent moving on if no counter has been chosen
+
     // switch to player 2
   this.player1Choosing = false;
   this.player2Choosing = true;
@@ -100,10 +120,13 @@ eight = 'woman';
 
 
  player2Finished() {
+// todo prevent moving on if no counter has been chosen
 
     // save both counter choices to globals
 this.globalsService.player1Counter = this.player1Counter;
 this.globalsService.player2Counter = this.player2Counter;
+this.globalsService.player1Name = this.player1Name;
+this.globalsService.player2Name = this.player2Name;
 
     // nav to game
    this.router.navigate(['game']);

@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 export class GlobalsService {
   player1Counter;
   player2Counter;
+  player1Name;
+  player2Name;
 
   constructor() {
   }

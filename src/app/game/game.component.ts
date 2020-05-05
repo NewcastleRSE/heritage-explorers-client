@@ -27,7 +27,10 @@ p2Left;
 p1Counter;
 p2Counter;
 
+p1Name;
+p2Name;
 
+pool;
 
   constructor(
     private globalsService: GlobalsService,
@@ -41,10 +44,14 @@ p2Counter;
     this.moveP1Icon(1);
     this.moveP2Icon(1);
 
-    // get counter images from globals
+    this.pool = 0;
+
+    // get counter images and names from globals
     // todo sort out counter size
     this.p1Counter = this.globalsService.player1Counter;
     this.p2Counter = this.globalsService.player2Counter;
+    this.p1Name = this.globalsService.player1Name;
+    this.p2Name = this.globalsService.player2Name;
 
   }
 

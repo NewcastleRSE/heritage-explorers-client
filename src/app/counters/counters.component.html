@@ -49,28 +49,54 @@
   </div>
 
   <div *ngIf="player1Choosing">
-  <p>Player 1 select counter and click 'Finished'</p>
-  <button class="btn-primary" (click)="player1Finished()">Finished</button>
+Player 1 enter your name:
+    <form (ngSubmit)="player1NameEntered() "#p1Form="ngForm">
+      <div class="form-group row">
+        <label for="player1Name" class="col-sm-2 col-form-label col-form-label"></label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="player1Name"
+                 required
+                 [(ngModel)]="player1Name" name="player1Name" placeholder="Player 1 name">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success btn-lg " [disabled]="!p1Form.form.valid">Submit</button>
+    </form>
+
+    <div *ngIf="player1EnteredName === true">
+  <p>{{player1Name}} select your counter</p>
+    <div *ngIf="player1Counter != undefined">
+      <img src='../../assets/{{player1Counter}}100.png'>
+    </div>
+        <button class="btn-primary" (click)="player1Finished()">Finished</button>
+    </div>
 </div>
 
+
+
   <div *ngIf="player2Choosing">
-    <p>Player 2 select counter and click Finished</p>
-    <button class="btn-primary" (click)="player2Finished()">Finished</button>
+    Player 2 enter your name:
+    <form (ngSubmit)="player2NameEntered() "#p2Form="ngForm">
+      <div class="form-group row">
+        <label for="player2Name" class="col-sm-2 col-form-label col-form-label"></label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="player2Name"
+                 required
+                 [(ngModel)]="player2Name" name="player2Name" placeholder="Player 2 name">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success btn-lg " [disabled]="!p2Form.form.valid">Submit</button>
+    </form>
+
+    <div *ngIf="player2EnteredName === true">
+      <p>{{player2Name}} select your counter</p>
+      <div *ngIf="player2Counter != undefined">
+        <img src='../../assets/{{player2Counter}}100.png'>
+      </div>
+      <button class="btn-primary" (click)="player2Finished()">Finished</button>
+    </div>
   </div>
 
-  <div class="row">
-    <div class="col">
-      <div *ngIf="player1Counter != undefined">
-      <p>Player 1 counter</p>
-      <img src='../../assets/{{player1Counter}}100.png'>
-      </div>
-    </div>
-    <div class="col">
-      <div *ngIf="player2Counter != undefined">
-      <p>Player 2 counter</p>
-      <img src="../../assets/{{player2Counter}}100.png">
-      </div>
-    </div>
-  </div>
 
 </div>

@@ -3,31 +3,22 @@
   <img src="../../assets/GameWithNumber.jpg" class="boardImg">
   <img class="p1" src="../../assets/{{p1Counter}}.png" [style.top]="p1Top" [style.left]="p1Left">
   <img src="../../assets/{{p2Counter}}.png" class="p2" [style.top]="p2Top" [style.left]="p2Left">
-  </div>
-
-<!-- teetotum modal -->
-  <ng-template #teetotum let-modal>
-    <div class="modal-header">
-<!--      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>-->
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-
-
-
-    </div>
-    <div class="modal-body">
-     <img src="../../assets/teetotum.jpg">
-      {{lastRoll}}
-    </div>
-  </ng-template>
 
 
   <div class="info">
-   <p>Player 1: {{p1Square}}</p>
-    <p>Player 2: {{p2Square}}</p>
-    {{lastRoll}}
-    <p>Current player: {{currentPlayer}}</p>
+<!--   <p>Player 1: {{p1Square}}</p>-->
+<!--    <p>Player 2: {{p2Square}}</p>-->
+
+
+<!--    display current player-->
+    <div *ngIf="currentPlayer === 1">
+    <p>Current player: {{p1Name}}</p>
+    </div>
+    <div *ngIf="currentPlayer === 2">
+      <p>Current player: {{p2Name}}</p>
+    </div>
+
+
     <button class="btn-primary" (click)="roll(teetotum)">Roll</button>
     <button class="btn-primary" (click)="startAgain()">Play again</button>
 
@@ -36,6 +27,26 @@
 
     <p>{{winningMessage}}</p>
   </div>
+
+
+  <div class="pool">
+    Pool {{pool}}
+  </div>
+  </div>
+
+  <!-- teetotum modal -->
+  <ng-template #teetotum let-modal>
+    <div class="modal-header">
+      <!--      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>-->
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <img src="../../assets/teetotum.jpg">
+      {{lastRoll}}
+    </div>
+  </ng-template>
 
 
 </div>
