@@ -3,30 +3,47 @@
   <div class="container">
     <div class="row">
       <div class="col-3">
-        <img src="../../assets/boat100.png" class="img-fluid" >
+<!--         don't show counters that are set to false to indicate they have been chosen-->
+        <div *ngIf="player1Counter != one && player2Counter != one">
+        <img src="../../assets/boat100.png" class="img-fluid" (click)="setCounter(1)">
+        </div>
       </div>
       <div class="col-3">
-        <img src="../../assets/crown100.png" class="img-fluid" >
+        <div *ngIf="player1Counter != two && player2Counter != two">
+        <img src="../../assets/crown100.png" class="img-fluid" (click)="setCounter(2)">
+        </div>
       </div>
       <div class="col-3">
-        <img src="../../assets/horse100.png" class="img-fluid">
+        <div *ngIf="player1Counter != three &&  player2Counter != three">
+        <img src="../../assets/horse100.png" class="img-fluid" (click)="setCounter(3)">
+        </div>
       </div>
       <div class="col-3">
-        <img src="../../assets/lion100.png" class="img-fluid">
+        <div *ngIf="player1Counter != four && player2Counter != four">
+        <img src="../../assets/lion100.png" class="img-fluid" (click)="setCounter(4)">
+        </div>
       </div>
     </div>
   <div class="row">
     <div class="col-3">
-      <img src="../../assets/monument100.png" class="img-fluid">
+      <div *ngIf="player1Counter != five && player2Counter != four">
+      <img src="../../assets/monument100.png" class="img-fluid" (click)="setCounter(5)">
+      </div>
     </div>
     <div class="col-3">
-      <img src="../../assets/punch100.png" class="img-fluid">
+      <div *ngIf="player1Counter != six && player2Counter != six ">
+      <img src="../../assets/punch100.png" class="img-fluid" (click)="setCounter(6)">
+      </div>
     </div>
     <div class="col-3">
-      <img src="../../assets/sarco100.png" class="img-fluid">
+      <div *ngIf="player1Counter != seven && player2Counter != seven">
+      <img src="../../assets/sarco100.png" class="img-fluid" (click)="setCounter(7)">
+      </div>
     </div>
     <div class="col-3">
-      <img src="../../assets/woman100.png" class="img-fluid">
+      <div *ngIf="player1Counter != eight && player2Counter != eight">
+      <img src="../../assets/woman100.png" class="img-fluid" (click)="setCounter(8)">
+      </div>
     </div>
   </div>
   </div>
@@ -38,17 +55,21 @@
 
   <div *ngIf="player2Choosing">
     <p>Player 2 select counter and click Finished</p>
-    <button class="btn" (click)="player2Finished()">Finished</button>
+    <button class="btn-primary" (click)="player2Finished()">Finished</button>
   </div>
 
   <div class="row">
     <div class="col">
+      <div *ngIf="player1Counter != undefined">
       <p>Player 1 counter</p>
-      <img src="../../assets/monument100.png">
+      <img src='../../assets/{{player1Counter}}100.png'>
+      </div>
     </div>
     <div class="col">
+      <div *ngIf="player2Counter != undefined">
       <p>Player 2 counter</p>
-      <img src="../../assets/punch100.png">
+      <img src="../../assets/{{player2Counter}}100.png">
+      </div>
     </div>
   </div>
 

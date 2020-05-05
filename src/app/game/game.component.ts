@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GlobalsService} from '../globals.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-game',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-teetotum;
+
 p1Square;
 p2Square;
 currentPlayer;
@@ -19,9 +21,15 @@ p1Left;
 p2Top;
 p2Left;
 
+p1Counter;
+p2Counter;
 
 
-  constructor() { }
+
+  constructor(
+    private globalsService: GlobalsService,
+    private modalService: NgbModal
+  ) { }
 
   ngOnInit(): void {
     this.currentPlayer = 1;
@@ -29,6 +37,10 @@ p2Left;
     this.p2Square = 1;
     this.moveP1Icon(1);
     this.moveP2Icon(1);
+
+    // get counter images from globals
+    this.p1Counter = this.globalsService.player1Counter;
+    this.p2Counter = this.globalsService.player2Counter;
   }
 
   step1On() {
@@ -73,9 +85,18 @@ p2Left;
   }
 
   // pass random number between 1 and 4 to the move method
-  roll() {
+  roll(teetotum) {
     this.lastRoll = Math.floor((Math.random() * 4) + 1);
+
+    // open teetotum modal
+    this.openTeetotum(teetotum);
+
     this.move(this.lastRoll);
+  }
+
+  openTeetotum(teetotum) {
+    this.modalService.open(teetotum, {ariaLabelledBy: 'teetotum-modal'}).result.then((result) => {
+    });
   }
 
   changePlayer() {
