@@ -1,0 +1,16 @@
+.titleImg {
+  max-width: 100%;
+  position: relative;
+}
+
+.options {
+  position: absolute;
+  left: 45%;
+  top: 40%;
+}
+
+.modal-body {
+  background-image: url('../../assets/rulesEmpty.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

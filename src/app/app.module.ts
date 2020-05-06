@@ -8,12 +8,14 @@ import { CountersComponent } from './counters/counters.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameComponent,
-    CountersComponent
+    CountersComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

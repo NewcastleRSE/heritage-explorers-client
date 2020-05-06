@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GlobalsService} from '../globals.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {animate, style, transition} from '@angular/animations';
 
 
 @Component({
