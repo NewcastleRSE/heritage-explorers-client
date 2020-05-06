@@ -77,8 +77,8 @@ player2Name;
           this.player1Counter = this.eight;
           break;
       }
-console.log('play' + this.player1Counter + '.mp3');
-      let audio = new Audio();
+      console.log('play' + this.player1Counter + '.mp3');
+      const audio = new Audio();
       audio.src = '../../assets/sounds/' + this.player1Counter + '3.mp3';
       audio.load();
       audio.play();
@@ -110,8 +110,8 @@ console.log('play' + this.player1Counter + '.mp3');
           this.player2Counter = this.eight;
           break;
       }
-
-      let audio = new Audio();
+      console.log('play' + this.player1Counter + '.mp3');
+      const audio = new Audio();
       audio.src = '../../assets/sounds/' + this.player2Counter + '3.mp3';
       audio.load();
       audio.play();
