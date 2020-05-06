@@ -77,6 +77,12 @@ player2Name;
           this.player1Counter = this.eight;
           break;
       }
+console.log('play' + this.player1Counter + '.mp3');
+      let audio = new Audio();
+      audio.src = '../../assets/sounds/' + this.player1Counter + '3.mp3';
+      audio.load();
+      audio.play();
+
     } else if (this.player2Choosing ===  true && this.player2EnteredName === true) {
       switch (counterChoice) {
         case 1:
@@ -104,6 +110,11 @@ player2Name;
           this.player2Counter = this.eight;
           break;
       }
+
+      let audio = new Audio();
+      audio.src = '../../assets/sounds/' + this.player2Counter + '3.mp3';
+      audio.load();
+      audio.play();
     }
   }
 
