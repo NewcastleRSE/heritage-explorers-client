@@ -109,7 +109,7 @@ pool;
   }
 
   openTeetotum(teetotum) {
-    this.modalService.open(teetotum, {ariaLabelledBy: 'teetotum-modal'});
+    this.modalService.open(teetotum, {windowClass: 'teetotum-modal'});
   }
 
   changePlayer() {

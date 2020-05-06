@@ -1,102 +1,119 @@
 <div class="container">
 
+  <!-- Counters-->
   <div class="container">
     <div class="row">
       <div class="col-3">
-<!--         don't show counters that are set to false to indicate they have been chosen-->
+        <!--         don't show counters that are set to false to indicate they have been chosen-->
         <div *ngIf="player1Counter != one && player2Counter != one">
-        <img src="../../assets/boat100.png" class="img-fluid" (click)="setCounter(1)">
+          <img (click)="setCounter(1)" class="img-fluid" src="../../assets/boat100.png">
         </div>
       </div>
       <div class="col-3">
         <div *ngIf="player1Counter != two && player2Counter != two">
-        <img src="../../assets/crown100.png" class="img-fluid" (click)="setCounter(2)">
+          <img (click)="setCounter(2)" class="img-fluid" src="../../assets/crown100.png">
         </div>
       </div>
       <div class="col-3">
         <div *ngIf="player1Counter != three &&  player2Counter != three">
-        <img src="../../assets/horse100.png" class="img-fluid" (click)="setCounter(3)">
+          <img (click)="setCounter(3)" class="img-fluid" src="../../assets/horse100.png">
         </div>
       </div>
       <div class="col-3">
         <div *ngIf="player1Counter != four && player2Counter != four">
-        <img src="../../assets/lion100.png" class="img-fluid" (click)="setCounter(4)">
+          <img (click)="setCounter(4)" class="img-fluid" src="../../assets/lion100.png">
         </div>
       </div>
     </div>
-  <div class="row">
-    <div class="col-3">
-      <div *ngIf="player1Counter != five && player2Counter != four">
-      <img src="../../assets/monument100.png" class="img-fluid" (click)="setCounter(5)">
+    <div class="row">
+      <div class="col-3">
+        <div *ngIf="player1Counter != five && player2Counter != four">
+          <img (click)="setCounter(5)" class="img-fluid" src="../../assets/monument100.png">
+        </div>
+      </div>
+      <div class="col-3">
+        <div *ngIf="player1Counter != six && player2Counter != six ">
+          <img (click)="setCounter(6)" class="img-fluid" src="../../assets/punch100.png">
+        </div>
+      </div>
+      <div class="col-3">
+        <div *ngIf="player1Counter != seven && player2Counter != seven">
+          <img (click)="setCounter(7)" class="img-fluid" src="../../assets/sarco100.png">
+        </div>
+      </div>
+      <div class="col-3">
+        <div *ngIf="player1Counter != eight && player2Counter != eight">
+          <img (click)="setCounter(8)" class="img-fluid" src="../../assets/woman100.png">
+        </div>
       </div>
     </div>
-    <div class="col-3">
-      <div *ngIf="player1Counter != six && player2Counter != six ">
-      <img src="../../assets/punch100.png" class="img-fluid" (click)="setCounter(6)">
-      </div>
-    </div>
-    <div class="col-3">
-      <div *ngIf="player1Counter != seven && player2Counter != seven">
-      <img src="../../assets/sarco100.png" class="img-fluid" (click)="setCounter(7)">
-      </div>
-    </div>
-    <div class="col-3">
-      <div *ngIf="player1Counter != eight && player2Counter != eight">
-      <img src="../../assets/woman100.png" class="img-fluid" (click)="setCounter(8)">
-      </div>
-    </div>
-  </div>
   </div>
 
+  <!--   end counters-->
+  <ngb-alert (close)="closeAlert()" *ngIf="showCounterAlert" type='warning'>Please select a counter</ngb-alert>
+
+  <!--  player 1 choices-->
   <div *ngIf="player1Choosing">
-Player 1 enter your name:
-    <form (ngSubmit)="player1NameEntered() "#p1Form="ngForm">
-      <div class="form-group row">
-        <label for="player1Name" class="col-sm-2 col-form-label col-form-label"></label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="player1Name"
-                 required
-                 [(ngModel)]="player1Name" name="player1Name" placeholder="Player 1 name">
+    <!--    player 1 enter name-->
+    <div *ngIf="player1EnteredName === false">
+      Player 1 enter your name:
+      <form #p1Form="ngForm" (ngSubmit)="player1NameEntered() ">
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label col-form-label" for="player1Name"></label>
+          <div class="col-sm-10">
+            <input [(ngModel)]="player1Name" class="form-control" id="player1Name"
+                   name="player1Name"
+                   placeholder="Player 1 name" required type="text">
+          </div>
         </div>
-      </div>
 
-      <button type="submit" class="btn btn-success btn-lg " [disabled]="!p1Form.form.valid">Submit</button>
-    </form>
+        <button [disabled]="!p1Form.form.valid" class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+    <!--    player 1 end choosing name-->
 
+    <!--    player 1 choose counter-->
     <div *ngIf="player1EnteredName === true">
-  <p>{{player1Name}} select your counter</p>
-    <div *ngIf="player1Counter != undefined">
-      <img src='../../assets/{{player1Counter}}100.png'>
-    </div>
-        <button class="btn-primary" (click)="player1Finished()">Finished</button>
-    </div>
-</div>
-
-
-
-  <div *ngIf="player2Choosing">
-    Player 2 enter your name:
-    <form (ngSubmit)="player2NameEntered() "#p2Form="ngForm">
-      <div class="form-group row">
-        <label for="player2Name" class="col-sm-2 col-form-label col-form-label"></label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="player2Name"
-                 required
-                 [(ngModel)]="player2Name" name="player2Name" placeholder="Player 2 name">
-        </div>
+      <p>{{player1Name}} select your counter</p>
+      <div *ngIf="player1Counter != undefined">
+        <img src='../../assets/{{player1Counter}}100.png'>
       </div>
+      <button (click)="player1Finished()" class="btn btn-primary">Finished</button>
+    </div>
+  </div>
+  <!--player 1 end choices-->
 
-      <button type="submit" class="btn btn-success btn-lg " [disabled]="!p2Form.form.valid">Submit</button>
-    </form>
+  <!--   player 2 choices-->
+  <div *ngIf="player2Choosing">
+    <!--    player 2 enter name-->
+    <div *ngIf="player2EnteredName === false">
+      Player 2 enter your name:
+      <form #p2Form="ngForm" (ngSubmit)="player2NameEntered() ">
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label col-form-label" for="player2Name"></label>
+          <div class="col-sm-10">
+            <input [(ngModel)]="player2Name" class="form-control" id="player2Name"
+                   name="player2Name"
+                   placeholder="Player 2 name" required type="text">
+          </div>
+        </div>
 
+        <button [disabled]="!p2Form.form.valid" class="btn btn-primary " type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!--   player 2 end entering name-->
+
+    <!--  player 2 choose counter-->
     <div *ngIf="player2EnteredName === true">
       <p>{{player2Name}} select your counter</p>
       <div *ngIf="player2Counter != undefined">
         <img src='../../assets/{{player2Counter}}100.png'>
       </div>
-      <button class="btn-primary" (click)="player2Finished()">Finished</button>
+      <button (click)="player2Finished()" class="btn btn-primary">Finished</button>
     </div>
+    <!--   end player 2 choosing counter-->
   </div>
-
+  <!--  player 2 end choices-->
 
 </div>
