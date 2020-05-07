@@ -31,6 +31,10 @@ p2Name;
 
 pool;
 
+// counters that keep track if a player is missing a go. When set to 0 the player can continue as normal.
+p1MissAGo = 0;
+p2MissAGo = 0;
+
   constructor(
     private globalsService: GlobalsService,
     private modalService: NgbModal
@@ -86,24 +90,59 @@ pool;
       this.p2Square = moveTo;
       this.moveP2Icon(moveTo);
     }
+    this.squareInteraction(moveTo);
+  }
 
+  // set current player's miss a go counter to the appropriate number
+  missAGo(numberOfGoes) {
+    if (this.currentPlayer === 1) {
+      this.p1MissAGo = numberOfGoes;
+    } else if (this.currentPlayer === 2) {
+      this.p2MissAGo = numberOfGoes;
+    }
+  }
+
+  squareInteraction(squareNumber) {
     // if 18 stop game
-    if (moveTo === 18) {
+    if (squareNumber === 18) {
       // todo winner modal
       this.winningMessage = 'Player ' + this.currentPlayer + ' wins!';
     }
-    else {
-      this.changePlayer();
+
+    // Square 5 - miss 2 turns. Add 3 to account for player 2's first legitimate go
+    if (squareNumber === 5) {
+      // todo modal
+      if (this.currentPlayer === 1) {
+        console.log('player 1 misses next 2 goes');
+        this.p1MissAGo = 3;
+      } else  if (this.currentPlayer === 2) {
+        console.log('player 2 misses next 2 goes');
+        this.p2MissAGo = 3;
+      }
     }
+
+    // after interact with cell then change to next player
+      this.changePlayer();
   }
 
   // pass random number between 1 and 4 to the move method
   roll(teetotum) {
+    console.log('p1 miss a go count ' + this.p1MissAGo);
+    console.log('p2 miss a go count ' + this.p2MissAGo);
+
+    // if other player has just missed a go, reduce their miss a go flag by 1
+    if (this.currentPlayer === 1 && this.p2MissAGo > 0) {
+      this.p2MissAGo = this.p2MissAGo - 1;
+    } else if (this.currentPlayer === 2 && this.p1MissAGo > 0) {
+      this.p1MissAGo = this.p1MissAGo - 1;
+    }
+
     this.lastRoll = Math.floor((Math.random() * 4) + 1);
 
     // open teetotum modal
     this.openTeetotum(teetotum);
 
+    // move player
     this.move(this.lastRoll);
   }
 
@@ -111,12 +150,16 @@ pool;
     this.modalService.open(teetotum, {windowClass: 'teetotum-modal'});
   }
 
+  // change player unless the next player is sitting out goes
   changePlayer() {
-    if (this.currentPlayer === 1) {
+    if (this.currentPlayer === 1 && this.p2MissAGo === 0) {
+      console.log('change to player 2');
       this.currentPlayer = 2;
-    } else {
+    } else if (this.currentPlayer === 2 && this.p1MissAGo === 0) {
+      console.log('change to player 1');
       this.currentPlayer = 1;
     }
+    // if next player has a value against their miss a go counter, then don't change the current player
   }
 
   startAgain() {
