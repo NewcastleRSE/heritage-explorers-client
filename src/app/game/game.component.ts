@@ -29,6 +29,11 @@ p2Counter;
 p1Name;
 p2Name;
 
+// todo decide how many players should start with
+p1Pool = 5;
+p2Pool = 5;
+
+// todo decide if the pool should start with anything in it
 pool;
 
 // counters that keep track if a player is missing a go. When set to 0 the player can continue as normal.
@@ -134,6 +139,21 @@ missAGoAlertClosed = true;
         this.p2MissAGo = 3;
       }
     }
+
+    // ----- Square 16 - loose all counters
+    if (squareNumber === 16) {
+      console.log('land on 16 so loose all pool');
+      if (this.currentPlayer === 1) {
+        // add sweets to pool then empty
+        this.pool = this.pool + this.p1Pool;
+        this.p1Pool = 0;
+      } else if (this.currentPlayer === 2) {
+        // add sweets to pool then empty
+        this.pool = this.pool + this.p2Pool;
+        this.p2Pool = 0;
+      }
+    }
+
 
     // ----- Square 18 stop game
     if (squareNumber === 18) {
