@@ -95,6 +95,7 @@ missAGoAlertClosed = true;
     this.squareInteraction(moveTo);
   }
 
+
   // set current player's miss a go counter to the appropriate number
   missAGo(numberOfGoes) {
     if (this.currentPlayer === 1) {
@@ -104,14 +105,25 @@ missAGoAlertClosed = true;
     }
   }
 
+  // consequences of landing on a square plus trigger viewing square
   squareInteraction(squareNumber) {
-    // if 18 stop game
-    if (squareNumber === 18) {
-      // todo winner modal
-      this.winningMessage = 'Player ' + this.currentPlayer + ' wins!';
+
+
+    // ----- Square 3 - go to 5
+    if (squareNumber === 3) {
+      console.log('landed on 3 so move to 5');
+      // todo modal
+      // move counter to 5
+      if (this.currentPlayer === 1) {
+        this.p1Square = 5;
+        this.moveP1Icon(5);
+      } else {
+        this.p2Square = 5;
+        this.moveP2Icon(5);
+      }
     }
 
-    // Square 5 - miss 2 turns. Add 3 to account for player 2's first legitimate go
+    // ----- Square 5 - miss 2 turns. Add 3 to account for player 2's first legitimate go
     if (squareNumber === 5) {
       // todo modal
       if (this.currentPlayer === 1) {
@@ -123,6 +135,13 @@ missAGoAlertClosed = true;
       }
     }
 
+    // ----- Square 18 stop game
+    if (squareNumber === 18) {
+      // todo winner modal
+      this.winningMessage = 'Player ' + this.currentPlayer + ' wins!';
+      // todo don't change player - restart game
+    }
+
     // after interact with cell then change to next player
       this.changePlayer();
   }
@@ -131,9 +150,6 @@ missAGoAlertClosed = true;
   roll(teetotum) {
     // close miss a go alert if it is still open
     this.missAGoAlertClosed = true;
-
-    console.log('p1 miss a go count ' + this.p1MissAGo);
-    console.log('p2 miss a go count ' + this.p2MissAGo);
 
     // if other player has just missed a go, reduce their miss a go flag by 1
     if (this.currentPlayer === 1 && this.p2MissAGo > 0) {
@@ -158,10 +174,8 @@ missAGoAlertClosed = true;
   // change player unless the next player is sitting out goes
   changePlayer() {
     if (this.currentPlayer === 1 && this.p2MissAGo === 0) {
-      console.log('change to player 2');
       this.currentPlayer = 2;
     } else if (this.currentPlayer === 2 && this.p1MissAGo === 0) {
-      console.log('change to player 1');
       this.currentPlayer = 1;
     }
     // if next player has a value against their miss a go counter, then don't change the current player, but do display popup
