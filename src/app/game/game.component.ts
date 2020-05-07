@@ -34,6 +34,8 @@ pool;
 // counters that keep track if a player is missing a go. When set to 0 the player can continue as normal.
 p1MissAGo = 0;
 p2MissAGo = 0;
+missAGoMessage;
+missAGoAlertClosed = true;
 
   constructor(
     private globalsService: GlobalsService,
@@ -127,6 +129,9 @@ p2MissAGo = 0;
 
   // pass random number between 1 and 4 to the move method
   roll(teetotum) {
+    // close miss a go alert if it is still open
+    this.missAGoAlertClosed = true;
+
     console.log('p1 miss a go count ' + this.p1MissAGo);
     console.log('p2 miss a go count ' + this.p2MissAGo);
 
@@ -159,7 +164,18 @@ p2MissAGo = 0;
       console.log('change to player 1');
       this.currentPlayer = 1;
     }
-    // if next player has a value against their miss a go counter, then don't change the current player
+    // if next player has a value against their miss a go counter, then don't change the current player, but do display popup
+    if (this.p2MissAGo > 0) {
+      console.log('trigger alert for player 1');
+      this.missAGoMessage = this.p2Name + ' misses a go';
+      this.missAGoAlertClosed = false;
+      setTimeout(() => this.missAGoAlertClosed = true, 5000);
+    } else if (this.p1MissAGo > 0) {
+      console.log('trigger alert for player 1');
+      this.missAGoMessage = this.p1Name + ' misses a go';
+      this.missAGoAlertClosed = false;
+      setTimeout(() => this.missAGoAlertClosed = true, 5000);
+    }
   }
 
   startAgain() {

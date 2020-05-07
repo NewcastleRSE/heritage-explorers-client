@@ -1,4 +1,7 @@
 <div class="container">
+
+<!--  <ngb-alert type="info" *ngIf="!missAGoAlertClosed" (close)="missAGoAlertClosed = true">{{missAGoMessage}}</ngb-alert>-->
+
   <div class="board">
   <img src="../../assets/gameTransparent.png" class="boardImg">
   <img class="counter" src="../../assets/{{p1Counter}}125.png" [style.top]="p1Top" [style.left]="p1Left">
@@ -26,6 +29,11 @@
 <!--    <button class="btn-primary" (click)="step2On()">Step 1 on</button>-->
 
     <p>{{winningMessage}}</p>
+
+    <div *ngIf="!missAGoAlertClosed" class="missAGoMessage">
+    <h3>{{missAGoMessage}}</h3>
+    </div>
+
   </div>
 
 
@@ -34,6 +42,7 @@
     <p class="poolTally">Pool {{pool}}</p>
   </div>
   </div>
+
 
   <!-- teetotum modal -->
   <ng-template #teetotum let-modal>
