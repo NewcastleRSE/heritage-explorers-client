@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import ImageMap from 'image-map';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-explorer-board',
@@ -8,7 +9,9 @@ import ImageMap from 'image-map';
 })
 export class ExplorerBoardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     ImageMap('img[usemap]');
@@ -16,6 +19,11 @@ export class ExplorerBoardComponent implements OnInit {
 
   clickSquare(squareNumber) {
     console.log(squareNumber);
+    switch (squareNumber) {
+      // todo add holding message for other squares
+      case 11:
+        this.router.navigate(['museumgame']);
+    }
   }
 
 }
