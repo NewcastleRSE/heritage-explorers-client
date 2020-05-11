@@ -5,6 +5,7 @@ import {CountersComponent} from './counters/counters.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {ExplorerBoardComponent} from './explorer-board/explorer-board.component';
 import {MuseumGameComponent} from './museum-game/museum-game.component';
+import {Square3Component} from './square3/square3.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'game', component: GameComponent},
   { path: 'counters', component: CountersComponent},
   { path: 'explorer', component: ExplorerBoardComponent},
-  { path: 'museumgame', component: MuseumGameComponent}
+  { path: 'museumgame', component: MuseumGameComponent},
+  { path: 'three', component: Square3Component}
 ];
 
 @NgModule({

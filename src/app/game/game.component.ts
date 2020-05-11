@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {GlobalsService} from '../globals.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Square3Component} from '../square3/square3.component';
 
 
 @Component({
@@ -29,6 +30,9 @@ p2Counter;
 p1Name;
 p2Name;
 
+// for testing
+  testSquare;
+
 // todo decide how many players should start with
 p1Pool = 5;
 p2Pool = 5;
@@ -56,13 +60,31 @@ missAGoAlertClosed = true;
 
     this.pool = 0;
 
-    // get counter images and names from globals
+    // get counter images and names from globals. If undefined use fallbacks.
     // todo sort out counter size
-    this.p1Counter = this.globalsService.player1Counter;
-    this.p2Counter = this.globalsService.player2Counter;
-    this.p1Name = this.globalsService.player1Name;
-    this.p2Name = this.globalsService.player2Name;
 
+    if (this.globalsService.player1Counter !== undefined) {
+      this.p1Counter = this.globalsService.player1Counter;
+    } else {
+      this.p1Counter = 'boat';
+    }
+    if (this.globalsService.player2Counter !== undefined) {
+      this.p2Counter = this.globalsService.player2Counter;
+    } else {
+      this.p2Counter = 'crown';
+    }
+
+    if (this.globalsService.player1Name !== undefined) {
+      this.p1Name = this.globalsService.player1Name;
+    } else {
+      this.p1Name = 'Player 1';
+    }
+
+    if (this.globalsService.player2Name !== undefined) {
+      this.p2Name = this.globalsService.player2Name;
+    } else {
+      this.p2Name = 'Player 2';
+    }
   }
 
 
@@ -118,6 +140,7 @@ missAGoAlertClosed = true;
     if (squareNumber === 3) {
       console.log('landed on 3 so move to 5');
       // todo modal
+    this.modalService.open(Square3Component);
       // move counter to 5
       if (this.currentPlayer === 1) {
         this.p1Square = 5;
@@ -377,6 +400,11 @@ missAGoAlertClosed = true;
         this.p2Left = '8%';
         break;
     }
+  }
+
+  testMoveSquare() {
+    console.log('test square ' + this.testSquare);
+    this.squareInteraction(parseInt(this.testSquare));
   }
 
 }

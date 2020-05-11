@@ -3,6 +3,7 @@ import ImageMap from 'image-map';
 import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'infoModal',
   template: `
     <div class="modal-header">

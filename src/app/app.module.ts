@@ -10,7 +10,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ExplorerBoardComponent } from './explorer-board/explorer-board.component';
-import { MuseumGameComponent } from './museum-game/museum-game.component';
+import {InfoModal, MuseumGameComponent} from './museum-game/museum-game.component';
+import { Square3Component } from './square3/square3.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MuseumGameComponent } from './museum-game/museum-game.component';
     CountersComponent,
     WelcomeComponent,
     ExplorerBoardComponent,
-    MuseumGameComponent
+    MuseumGameComponent,
+    Square3Component
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,7 @@ import { MuseumGameComponent } from './museum-game/museum-game.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [InfoModal, Square3Component]
 })
 export class AppModule { }
