@@ -1,11 +1,12 @@
 .titleImg {
   max-width: 100%;
-  position: relative;
+  //position: relative;
+  margin: auto;
 }
 
 .options {
   position: absolute;
-  left: 45%;
+  left: 34%;
   top: 40%;
 }
 
@@ -13,4 +14,8 @@
   background-image: url('../../assets/rulesEmpty.png');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+button {
+ margin: 10px;
 }

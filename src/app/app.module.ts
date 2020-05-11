@@ -9,13 +9,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { ExplorerBoardComponent } from './explorer-board/explorer-board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameComponent,
     CountersComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ExplorerBoardComponent
   ],
   imports: [
     BrowserModule,

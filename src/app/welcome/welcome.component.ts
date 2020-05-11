@@ -25,5 +25,8 @@ export class WelcomeComponent implements OnInit {
     this.modalService.open(rulesModal);
   }
 
+  playExplorer() {
+    this.router.navigate(['explorer']);
+  }
 
 }
