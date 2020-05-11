@@ -10,6 +10,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ExplorerBoardComponent } from './explorer-board/explorer-board.component';
+import { MuseumGameComponent } from './museum-game/museum-game.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ExplorerBoardComponent } from './explorer-board/explorer-board.componen
     GameComponent,
     CountersComponent,
     WelcomeComponent,
-    ExplorerBoardComponent
+    ExplorerBoardComponent,
+    MuseumGameComponent
   ],
   imports: [
     BrowserModule,
