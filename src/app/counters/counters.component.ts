@@ -1,13 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import {GlobalsService} from '../globals.service';
 import {Router} from '@angular/router';
+import {transition, trigger, useAnimation} from '@angular/animations';
+import {bounce} from 'ng-animate';
 
 @Component({
   selector: 'app-counters',
   templateUrl: './counters.component.html',
-  styleUrls: ['./counters.component.scss']
+  styleUrls: ['./counters.component.scss'],
+  animations: [
+    trigger('bounce', [transition('* => *', useAnimation(bounce))])
+  ]
 })
 export class CountersComponent implements OnInit {
+  bounce: any;
+
 player1Choosing: boolean;
 player2Choosing: boolean;
 
