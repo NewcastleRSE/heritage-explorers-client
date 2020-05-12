@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {transition, trigger, useAnimation} from '@angular/animations';
+import {zoomIn} from 'ng-animate';
 
 @Component({
   selector: 'app-square3',
@@ -10,7 +12,8 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 <!--&lt;!&ndash;        <span aria-hidden="true">&times;</span>&ndash;&gt;-->
 <!--&lt;!&ndash;      </button>&ndash;&gt;-->
 <!--    </div>-->
-    <div class="modal-body">
+
+    <div [@zoomIn]="zoomIn" class="modal-body">
       <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -22,10 +25,13 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 <!--      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Play mini game</button>-->
     </div>
   `,
-  styleUrls: ['./square3.component.scss']
+  styleUrls: ['./square3.component.scss'],
+  animations: [
+    trigger('zoomIn', [transition('* => *', useAnimation(zoomIn))]),
+  ]
 })
 export class Square3Component implements OnInit {
-
+zoomIn: any;
   constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit(): void {

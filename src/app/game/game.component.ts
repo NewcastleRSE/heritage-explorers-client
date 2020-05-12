@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {GlobalsService} from '../globals.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {Square3Component} from '../square3/square3.component';
-
+import {transition, trigger, useAnimation} from '@angular/animations';
+import {bounce, slideInLeft, zoomIn} from 'ng-animate';
 
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.scss']
+  styleUrls: ['./game.component.scss'],
+  animations: [
+    trigger('bounce', [transition('* => *', useAnimation(bounce))]),
+    trigger('zoomIn', [transition('* => *', useAnimation(zoomIn))])
+  ]
 })
 export class GameComponent implements OnInit {
+// animations
+  bounce: any;
+zoomIn: any;
 
 p1Square;
 p2Square;
@@ -45,6 +53,10 @@ p1MissAGo = 0;
 p2MissAGo = 0;
 missAGoMessage;
 missAGoAlertClosed = true;
+
+// view squares
+  @ViewChild('modal3') modal3;
+  @ViewChild('modal5') modal5;
 
   constructor(
     private globalsService: GlobalsService,
@@ -97,7 +109,7 @@ missAGoAlertClosed = true;
     this.moveP2Icon(this.p2Square);
   }
 
-  move(numberRolled) {
+  async move(numberRolled) {
     let currentSquare = 0;
     if (this.currentPlayer === 1) {
       currentSquare = this.p1Square;
@@ -133,38 +145,27 @@ missAGoAlertClosed = true;
   }
 
   // consequences of landing on a square plus trigger viewing square
-  squareInteraction(squareNumber) {
-
+  async squareInteraction(squareNumber) {
 
     // ----- Square 3 - go to 5
     if (squareNumber === 3) {
-      console.log('landed on 3 so move to 5');
-      // todo modal
-    this.modalService.open(Square3Component);
-      // move counter to 5
-      if (this.currentPlayer === 1) {
-        this.p1Square = 5;
-        this.moveP1Icon(5);
-      } else {
-        this.p2Square = 5;
-        this.moveP2Icon(5);
-      }
+      console.log('square interaction reached');
+     this.square3Interaction().then(() => {
+       // after interact with cell then change to next player
+       this.changePlayer();
+     });
     }
 
+
     // ----- Square 5 - miss 2 turns. Add 3 to account for player 2's first legitimate go
-    if (squareNumber === 5) {
-      // todo modal
-      if (this.currentPlayer === 1) {
-        console.log('player 1 misses next 2 goes');
-        this.p1MissAGo = 3;
-      } else  if (this.currentPlayer === 2) {
-        console.log('player 2 misses next 2 goes');
-        this.p2MissAGo = 3;
-      }
+    else if (squareNumber === 5) {
+      this.square5Interaction().then(() => {
+        this.changePlayer();
+      });
     }
 
     // ----- Square 16 - loose all counters
-    if (squareNumber === 16) {
+    else if (squareNumber === 16) {
       console.log('land on 16 so loose all pool');
       if (this.currentPlayer === 1) {
         // add sweets to pool then empty
@@ -179,15 +180,59 @@ missAGoAlertClosed = true;
 
 
     // ----- Square 18 stop game
-    if (squareNumber === 18) {
+    else if (squareNumber === 18) {
       // todo winner modal
       this.winningMessage = 'Player ' + this.currentPlayer + ' wins!';
       // todo don't change player - restart game
     }
 
-    // after interact with cell then change to next player
+    // default if not specific behaviour
+    else {
       this.changePlayer();
+    }
+
   }
+
+async square3Interaction() {
+  if (this.currentPlayer === 1) {
+    this.p1Square = 3;
+    this.moveP1Icon(3);
+  } else {
+    this.p2Square = 3;
+    this.moveP2Icon(3);
+  }
+  console.log('landed on 3 so move to 5');
+  // this.modalService.open(Square3Component);
+  const m3 = this.modalService.open(this.modal3);
+  m3.result.then(() => {
+    console.log('When user closes');
+  }, () => {
+    // after closing modal move counter to 5
+    if (this.currentPlayer === 1) {
+      this.p1Square = 5;
+      this.moveP1Icon(5);
+    } else {
+      this.p2Square = 5;
+      this.moveP2Icon(5);
+    }
+  });
+}
+
+async square5Interaction() {
+  if (this.currentPlayer === 1) {
+    this.p1Square = 5;
+    this.moveP1Icon(5);
+    console.log('player 1 misses next 2 goes');
+    this.p1MissAGo = 3;
+  } else {
+    this.p2Square = 5;
+    this.moveP2Icon(5);
+    console.log('player 2 misses next 2 goes');
+    this.p2MissAGo = 3;
+  }
+  this.modalService.open(this.modal5);
+}
+
 
   // pass random number between 1 and 4 to the move method
   roll(teetotum) {
@@ -203,15 +248,19 @@ missAGoAlertClosed = true;
 
     this.lastRoll = Math.floor((Math.random() * 4) + 1);
 
-    // open teetotum modal
+    // open teetotum modal then move player after closing
     this.openTeetotum(teetotum);
 
-    // move player
-    this.move(this.lastRoll);
+
   }
 
   openTeetotum(teetotum) {
-    this.modalService.open(teetotum, {windowClass: 'teetotum-modal'});
+    const m = this.modalService.open(teetotum, {windowClass: 'teetotum-modal'});
+    m.result.then(() => {
+    }, () => {
+      // move player
+      this.move(this.lastRoll);
+    });
   }
 
   // change player unless the next player is sitting out goes
@@ -222,17 +271,17 @@ missAGoAlertClosed = true;
       this.currentPlayer = 1;
     }
     // if next player has a value against their miss a go counter, then don't change the current player, but do display popup
-    if (this.p2MissAGo > 0) {
-      console.log('trigger alert for player 1');
-      this.missAGoMessage = this.p2Name + ' misses a go';
-      this.missAGoAlertClosed = false;
-      setTimeout(() => this.missAGoAlertClosed = true, 5000);
-    } else if (this.p1MissAGo > 0) {
-      console.log('trigger alert for player 1');
-      this.missAGoMessage = this.p1Name + ' misses a go';
-      this.missAGoAlertClosed = false;
-      setTimeout(() => this.missAGoAlertClosed = true, 5000);
-    }
+  //   if (this.p2MissAGo > 0) {
+  //     console.log('trigger alert for player 1');
+  //     this.missAGoMessage = this.p2Name + ' misses a go';
+  //     this.missAGoAlertClosed = false;
+  //     setTimeout(() => this.missAGoAlertClosed = true, 5000);
+  //   } else if (this.p1MissAGo > 0) {
+  //     console.log('trigger alert for player 1');
+  //     this.missAGoMessage = this.p1Name + ' misses a go';
+  //     this.missAGoAlertClosed = false;
+  //     setTimeout(() => this.missAGoAlertClosed = true, 5000);
+  //   }
   }
 
   startAgain() {

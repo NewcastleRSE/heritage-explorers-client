@@ -4,8 +4,8 @@
 
   <div class="board">
   <img src="../../assets/gameTransparent.png" class="boardImg">
-  <img class="counter" src="../../assets/{{p1Counter}}125.png" [style.top]="p1Top" [style.left]="p1Left">
-  <img src="../../assets/{{p2Counter}}125.png" class="counter" [style.top]="p2Top" [style.left]="p2Left">
+  <img [@bounce]="bounce" class="counter" src="../../assets/{{p1Counter}}125.png" [style.top]="p1Top" [style.left]="p1Left">
+  <img [@bounce]="bounce" src="../../assets/{{p2Counter}}125.png" class="counter" [style.top]="p2Top" [style.left]="p2Left">
 
 
   <div class="info">
@@ -31,7 +31,7 @@
     <p>{{winningMessage}}</p>
 
     <div *ngIf="!missAGoAlertClosed" class="missAGoMessage">
-    <h3>{{missAGoMessage}}</h3>
+
     </div>
 
   </div>
@@ -78,6 +78,28 @@
         <button class="btn btn-primary " type="submit">Submit</button>
       </div>
     </form>
+
+
+<!--    squares-->
+    <ng-template #modal3 let-modal>
+    <div  class="modal-body">
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <img src="../../assets/3.png">
+      The Horse Armoury. Go on to the Wild Beasts, No. 5.
+    </div>
+    </ng-template>
+
+    <ng-template #modal5 let-modal>
+      <div  class="modal-body">
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <img src="../../assets/5.png">
+        The Wild Beasts. Stop two turns, and see them feed.
+      </div>
+    </ng-template>
 
 </div>
 
