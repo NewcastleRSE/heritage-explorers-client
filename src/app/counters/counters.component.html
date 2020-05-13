@@ -78,10 +78,10 @@
   <div class="container  counters">
     <div class="row">
       <div class="col-3">
-        <!--         don't show counters that are set to false to indicate they have been chosen-->
-        <div *ngIf="player1Counter != one && player2Counter != one">
-          <img (click)="setCounter(1)" class="img-fluid" src="../../assets/boat125.png">
-        </div>
+
+<!--        <div *ngIf="player1Counter != one && player2Counter != one">-->
+          <img [ngClass]="{'highlight1': player1CounterNumber === 1, 'highlight2' : player2CounterNumber === 1}"  (click)="setCounter(1)" class="img-fluid" src="../../assets/boat125.png">
+<!--        </div>-->
       </div>
       <div class="col-3">
         <div *ngIf="player1Counter != two && player2Counter != two">
@@ -124,4 +124,6 @@
   </div>
   <!--   end counters-->
   </div>
+
+
 </div>
