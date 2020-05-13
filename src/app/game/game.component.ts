@@ -54,9 +54,12 @@ p2MissAGo = 0;
 missAGoMessage;
 missAGoAlertClosed = true;
 
+
+
 // view squares
   @ViewChild('modal3') modal3;
   @ViewChild('modal5') modal5;
+  @ViewChild('modal16') modal16;
 
   constructor(
     private globalsService: GlobalsService,
@@ -149,7 +152,6 @@ missAGoAlertClosed = true;
 
     // ----- Square 3 - go to 5
     if (squareNumber === 3) {
-      console.log('square interaction reached');
      this.square3Interaction().then(() => {
        // after interact with cell then change to next player
        this.changePlayer();
@@ -166,16 +168,9 @@ missAGoAlertClosed = true;
 
     // ----- Square 16 - loose all counters
     else if (squareNumber === 16) {
-      console.log('land on 16 so loose all pool');
-      if (this.currentPlayer === 1) {
-        // add sweets to pool then empty
-        this.pool = this.pool + this.p1Pool;
-        this.p1Pool = 0;
-      } else if (this.currentPlayer === 2) {
-        // add sweets to pool then empty
-        this.pool = this.pool + this.p2Pool;
-        this.p2Pool = 0;
-      }
+      this.square16Interaction().then(() => {
+        this.changePlayer();
+      });
     }
 
 
@@ -230,10 +225,24 @@ async square5Interaction() {
     console.log('player 2 misses next 2 goes');
     this.p2MissAGo = 3;
   }
-  this.modalService.open(this.modal5);
+
+  this.modalService.open(this.modal5, {windowClass: 'modalTransparent'});
 }
 
-
+async square16Interaction() {
+    // todo open image
+  console.log('land on 16 so lose all pool');
+  if (this.currentPlayer === 1) {
+    // add sweets to pool then empty
+    this.pool = this.pool + this.p1Pool;
+    this.p1Pool = 0;
+  } else if (this.currentPlayer === 2) {
+    // add sweets to pool then empty
+    this.pool = this.pool + this.p2Pool;
+    this.p2Pool = 0;
+  }
+  this.modalService.open(this.modal16);
+}
   // pass random number between 1 and 4 to the move method
   roll(teetotum) {
     // close miss a go alert if it is still open
@@ -296,7 +305,7 @@ async square5Interaction() {
 
   // move icons around 2 'tracks' around the board using their relative position to the board
   moveP1Icon(moveTo) {
-  switch(moveTo) {
+  switch (moveTo) {
     case 1:
       this.p1Top = '10%';
       this.p1Left = '5%';

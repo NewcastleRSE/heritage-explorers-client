@@ -8,6 +8,8 @@
   <img [@bounce]="bounce" src="../../assets/{{p2Counter}}125.png" class="counter" [style.top]="p2Top" [style.left]="p2Left">
 
 
+<!--    <img [@zoomIn]=zoomIn  class="square5" src="../../assets/5.png" [style.visibility]="square5Visibility" >-->
+
   <div class="info">
 <!--   <p>Player 1: {{p1Square}}</p>-->
 <!--    <p>Player 2: {{p2Square}}</p>-->
@@ -83,21 +85,25 @@
 <!--    squares-->
     <ng-template #modal3 let-modal>
     <div  class="modal-body">
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      <img src="../../assets/3.png">
-      The Horse Armoury. Go on to the Wild Beasts, No. 5.
+      <img class="modalImg" src="../../assets/3.png">
+      <h3 class="text-center">The Horse Armoury. Go on to the Wild Beasts, No. 5.</h3>
     </div>
     </ng-template>
 
     <ng-template #modal5 let-modal>
+      <div  class="modal-body modal-overlay">
+<!--        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">-->
+<!--          <span aria-hidden="true">&times;</span>-->
+<!--        </button>-->
+        <img class="modalImg" src="../../assets/5.png" [style.padding]=" '10px'">
+        <h3 class="text-center">The Wild Beasts. Stop two turns, and see them feed.</h3>
+      </div>
+    </ng-template>
+
+    <ng-template #modal16 let-modal>
       <div  class="modal-body">
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <img src="../../assets/5.png">
-        The Wild Beasts. Stop two turns, and see them feed.
+        <img class="modalImg" src="../../assets/16.png">
+        <h3 class="text-center">Vauxhall Gardens. Here you have your pocket picked, and lose all the Counters you have left.</h3>
       </div>
     </ng-template>
 
