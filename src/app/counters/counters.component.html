@@ -33,9 +33,9 @@
     <!--    player 1 choose counter-->
     <div *ngIf="player1EnteredName === true">
       <p>{{player1Name}} select your counter</p>
-      <div *ngIf="player1Counter != undefined">
-        <img src='../../assets/{{player1Counter}}100.png'>
-      </div>
+<!--      <div *ngIf="player1Counter != undefined">-->
+<!--        <img src='../../assets/{{player1Counter}}100.png'>-->
+<!--      </div>-->
       <button (click)="player1Finished()" class="btn btn-primary">Finished</button>
     </div>
   </div>
@@ -64,9 +64,9 @@
     <!--  player 2 choose counter-->
     <div *ngIf="player2EnteredName === true">
       <p>{{player2Name}} select your counter</p>
-      <div *ngIf="player2Counter != undefined">
-        <img src='../../assets/{{player2Counter}}100.png'>
-      </div>
+<!--      <div *ngIf="player2Counter != undefined">-->
+<!--        <img src='../../assets/{{player2Counter}}100.png'>-->
+<!--      </div>-->
       <button (click)="player2Finished()" class="btn btn-primary">Finished</button>
     </div>
     <!--   end player 2 choosing counter-->
@@ -84,41 +84,29 @@
 <!--        </div>-->
       </div>
       <div class="col-3">
-        <div *ngIf="player1Counter != two && player2Counter != two">
-          <img (click)="setCounter(2)" class="img-fluid" src="../../assets/crown125.png">
-        </div>
+          <img [ngClass]="{'highlight1': player1CounterNumber === 2, 'highlight2' : player2CounterNumber === 2}"  (click)="setCounter(2)" class="img-fluid" src="../../assets/crown125.png">
       </div>
       <div class="col-3">
-        <div *ngIf="player1Counter != three &&  player2Counter != three">
-          <img (click)="setCounter(3)" class="img-fluid" src="../../assets/horse125.png">
-        </div>
+
+          <img [ngClass]="{'highlight1': player1CounterNumber === 3, 'highlight2' : player2CounterNumber === 3}"  (click)="setCounter(3)" class="img-fluid" src="../../assets/horse125.png">
+
       </div>
       <div class="col-3">
-        <div *ngIf="player1Counter != four && player2Counter != four">
-          <img (click)="setCounter(4)" class="img-fluid" src="../../assets/lion125.png">
-        </div>
+          <img [ngClass]="{'highlight1': player1CounterNumber === 4, 'highlight2' : player2CounterNumber === 4}"  (click)="setCounter(4)" class="img-fluid" src="../../assets/lion125.png">
       </div>
     </div>
     <div class="row">
       <div class="col-3">
-        <div *ngIf="player1Counter != five && player2Counter != four">
-          <img (click)="setCounter(5)" class="img-fluid" src="../../assets/monument125.png">
-        </div>
+          <img [ngClass]="{'highlight1': player1CounterNumber === 5, 'highlight2' : player2CounterNumber === 5}"  (click)="setCounter(5)" class="img-fluid" src="../../assets/monument125.png">
       </div>
       <div class="col-3">
-        <div *ngIf="player1Counter != six && player2Counter != six ">
-          <img (click)="setCounter(6)" class="img-fluid" src="../../assets/punch125.png">
-        </div>
+          <img [ngClass]="{'highlight1': player1CounterNumber === 6, 'highlight2' : player2CounterNumber === 6}"  (click)="setCounter(6)" class="img-fluid" src="../../assets/punch125.png">
       </div>
       <div class="col-3">
-        <div *ngIf="player1Counter != seven && player2Counter != seven">
-          <img (click)="setCounter(7)" class="img-fluid" src="../../assets/sarco125.png">
-        </div>
+          <img [ngClass]="{'highlight1': player1CounterNumber === 7, 'highlight2' : player2CounterNumber === 7}"  (click)="setCounter(7)" class="img-fluid" src="../../assets/sarco125.png">
       </div>
       <div class="col-3">
-        <div *ngIf="player1Counter != eight && player2Counter != eight">
-          <img (click)="setCounter(8)" class="img-fluid" src="../../assets/woman125.png">
-        </div>
+          <img [ngClass]="{'highlight1': player1CounterNumber === 8, 'highlight2' : player2CounterNumber === 8}"  (click)="setCounter(8)" class="img-fluid" src="../../assets/woman125.png">
       </div>
     </div>
   </div>

@@ -110,30 +110,51 @@ player2Name;
             this.player2CounterNumber = 1;
           break;
         case 2:
+          if (this.player1CounterNumber === 2) {
+            return;
+          }
           this.player2Counter = this.two;
           this.player2CounterNumber = 2;
           break;
         case 3:
+          if (this.player1CounterNumber === 3) {
+            return;
+          }
           this.player2Counter = this.three;
           this.player2CounterNumber = 3;
           break;
         case 4:
+          if (this.player1CounterNumber === 4) {
+            return;
+          }
           this.player2Counter = this.four;
           this.player2CounterNumber = 4;
           break;
         case 5:
+          if (this.player1CounterNumber === 5) {
+            return;
+          }
           this.player2Counter = this.five;
           this.player2CounterNumber = 5;
           break;
         case 6:
+          if (this.player1CounterNumber === 6) {
+            return;
+          }
           this.player2Counter = this.six;
           this.player2CounterNumber = 6;
           break;
         case 7:
+          if (this.player1CounterNumber === 7) {
+            return;
+          }
           this.player2Counter = this.seven;
           this.player2CounterNumber = 7;
           break;
         case 8:
+          if (this.player1CounterNumber === 8) {
+            return;
+          }
           this.player2Counter = this.eight;
           this.player2CounterNumber = 8;
           break;
