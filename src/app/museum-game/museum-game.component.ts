@@ -54,6 +54,7 @@ export class MuseumGameComponent implements OnInit {
     ImageMap('img[usemap]');
     this.openInfoModal();
   }
+// todo help option to highlight when can't find something?
 
   reset() {
     this.sarco = false;
