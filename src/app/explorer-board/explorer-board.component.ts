@@ -13,6 +13,8 @@ export class ExplorerBoardComponent implements OnInit {
     private router: Router
   ) { }
 
+  // todo fix bug that means the map isn't clickable until you refresh the page
+
   ngOnInit(): void {
     ImageMap('img[usemap]');
   }

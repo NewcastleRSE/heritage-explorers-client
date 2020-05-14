@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import ImageMap from 'image-map';
 import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Router} from '@angular/router';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -45,12 +46,30 @@ export class MuseumGameComponent implements OnInit {
 
 
   constructor(
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     ImageMap('img[usemap]');
     this.openInfoModal();
+  }
+
+  reset() {
+    this.sarco = false;
+    this.mask = false;
+    this.cockerel = false;
+    this.peacock = false;
+    this.duck = false;
+    this.snake = false;
+    this.yFish = false;
+    this.turkey = false;
+    this.bigFish = false;
+    this.hat = false;
+  }
+
+  returnToBoard() {
+    this.router.navigate(['/explorer']);
   }
 
   openInfoModal() {

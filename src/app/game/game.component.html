@@ -30,6 +30,8 @@
 <!--    use for testing counter positioning-->
 <!--    <button class="btn-primary" (click)="step2On()">Step 1 on</button>-->
 
+    <button class="btn btn-primary" (click)="viewRules(rulesModal)">How to play</button>
+
     <p>{{winningMessage}}</p>
 
     <div *ngIf="!missAGoAlertClosed" class="missAGoMessage">
@@ -69,7 +71,7 @@
     </div>
   </ng-template>
 
-    <button class="btn btn-primary" (click)="viewRules(rulesModal)">How to play</button>
+
 
     <form #test="ngForm" (ngSubmit)="testMoveSquare()">
       <div class="form-group row">

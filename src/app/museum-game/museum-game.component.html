@@ -50,6 +50,11 @@
 </div>
 </div>
 
+  <div class="text-center" *ngIf="sarco === true && mask === true && cockerel === true && peacock === true && duck === true && snake === true && yFish === true && turkey === true && bigFish === true && hat === true">
+    <h3>Well done, you found all the objects!</h3>
+    <button class="btn btn-primary" (click)="reset()">Play again</button>
+    <button class="btn btn-primary" (click)="returnToBoard()">Return to explorer board</button>
+  </div>
 
 
 </div>
