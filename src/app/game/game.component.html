@@ -4,8 +4,8 @@
 
   <div class="board">
   <img src="../../assets/gameTransparent.png" class="boardImg">
-  <img [@bounce]="bounce" class="counter" src="../../assets/{{p1Counter}}125.png" [style.top]="p1Top" [style.left]="p1Left">
-  <img [@bounce]="bounce" src="../../assets/{{p2Counter}}125.png" class="counter" [style.top]="p2Top" [style.left]="p2Left">
+  <img [@bounce]="bounce" class="counter player1Colour" src="../../assets/{{p1Counter}}125nb.png" [style.top]="p1Top" [style.left]="p1Left">
+  <img [@bounce]="bounce" class=" counter player2Colour" src="../../assets/{{p2Counter}}125nb.png"  [style.top]="p2Top" [style.left]="p2Left">
 
 
 <!--    <img [@zoomIn]=zoomIn  class="square5" src="../../assets/5.png" [style.visibility]="square5Visibility" >-->
@@ -40,17 +40,17 @@
 
 
   <div class="pool">
-    <img src="../../assets/bag1002.png">
-    <p class="poolTally">Pool <br> {{pool}}</p>
+    <img src="../../assets/gemy.svg" height="50">
+    <p class="poolTally">Pool {{pool}}</p>
   </div>
 
   <div class="player1Bag">
-    <img src="../../assets/bag1002.png">
+    <img src="../../assets/gem1.svg" height="50">
     <p class="p1Pool">{{p1Name}} <br> {{p1Pool}}</p>
   </div>
 
     <div class="player2Bag">
-    <img src="../../assets/bag1002.png">
+      <img src="../../assets/gem2.svg" height="50">
     <p class="p2Pool">{{p2Name}} <br> {{p2Pool}}</p>
     </div>
 
@@ -69,6 +69,7 @@
     </div>
   </ng-template>
 
+    <button class="btn btn-primary" (click)="viewRules(rulesModal)">How to play</button>
 
     <form #test="ngForm" (ngSubmit)="testMoveSquare()">
       <div class="form-group row">
@@ -80,6 +81,23 @@
         <button class="btn btn-primary " type="submit">Submit</button>
       </div>
     </form>
+
+    <!-- rules modal -->
+    <ng-template  #rulesModal let-modal>
+      <div class="modal-header">
+        <!--      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>-->
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <br>
+        <br>
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+    </ng-template>
 
 
 <!--    squares-->

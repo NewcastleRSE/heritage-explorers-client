@@ -460,6 +460,10 @@ async square16Interaction() {
     }
   }
 
+  viewRules(rulesModal) {
+    this.modalService.open(rulesModal);
+  }
+
   testMoveSquare() {
     console.log('test square ' + this.testSquare);
     this.squareInteraction(parseInt(this.testSquare));
