@@ -1,9 +1,12 @@
 <div class="container">
+  <h2>Line of Kings</h2>
+    <h3>The Armoury</h3>
 
-  <div cdkDropList (cdkDropListDropped)="drop($event)">
-    <div *ngFor="let king of kings" cdkDrag >
-      <img src="../../assets/face.svg" alt="King image">
-        <h5>{{king}}</h5>
+  <div cdkDropListOrientation="horizontal" class=" kingsList" cdkDropList (cdkDropListDropped)="drop($event)">
+    <div class="card kingBox" *ngFor="let king of kings" cdkDrag >
+      <img class="card-img-top" src="../../assets/face.svg" alt="King image">
+     <div class="card-title">{{king}}</div>
+
     </div>
   </div>
 
