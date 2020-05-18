@@ -7,4 +7,9 @@
     </div>
   </div>
 
+  <div *ngIf="correctOrder">
+    <h3>Correct order!</h3>
+    <button class="btn btn-primary" (click)="reset()">Play again</button>
+  </div>
+
 </div>
