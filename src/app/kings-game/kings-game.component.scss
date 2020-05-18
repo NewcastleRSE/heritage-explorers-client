@@ -1,3 +1,12 @@
+h2 {
+  padding: 10px;
+}
+
+h3 {
+  padding: 10px;
+}
+
+//----- CDK reorderable list
 .cdk-drag-preview {
   box-sizing: border-box;
   border-radius: 4px;
@@ -56,10 +65,26 @@
 //  top: 0;
 //}
 
-h2 {
-  padding: 10px;
+//----- Speech bubbles
+.speech-bubble {
+  position: relative;
+  background: #00aabb;
+  border-radius: .4em;
+  p {
+    padding: 20px;
+  }
 }
 
-h3 {
-  padding: 10px;
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 22px solid transparent;
+  border-bottom-color: #00aabb;
+  border-top: 0;
+  margin-left: -22px;
+  margin-top: -22px;
 }

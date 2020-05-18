@@ -1,18 +1,29 @@
 <div class="container">
   <h2>Line of Kings</h2>
-    <h3>The Armoury</h3>
-
+  <h3>The Armoury</h3>
+<p>Drag and drop the King's until they are in chronological order. Click on a King's picture to get a tip.</p>
   <div cdkDropListOrientation="horizontal" class=" kingsList" cdkDropList (cdkDropListDropped)="drop($event)">
-    <div class="card kingBox" *ngFor="let king of kings" cdkDrag >
-      <img class="card-img-top" src="../../assets/face.svg" alt="King image">
-     <div class="card-title">{{king}}</div>
+    <div id="{{king.id}}" class="card kingBox" *ngFor="let king of kings" cdkDrag>
+      <img (click)="viewHelp(king.id)" class="card-img-top" src="../../assets/face.svg" alt="King image">
+      <div class="card-title">{{king.name}}</div>
+      <p>{{king.viewHelp}}</p>
+      <!--       help bubble-->
+      <div *ngIf="king.viewHelp" class="speech-bubble">
+
+        <p>{{king.helpText}}</p>
+        <button type="button" (click)="closeHelp(king.id)" class="close" data-dismiss="modal" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
+      </div>
 
     </div>
+
+    <!--  todo trigger closeHelp when user tries to move king and after time period-->
   </div>
 
-  <div *ngIf="correctOrder">
-    <h3>Correct order!</h3>
-    <button class="btn btn-primary" (click)="reset()">Play again</button>
-  </div>
+    <div *ngIf="correctOrder">
+      <h3>Correct order!</h3>
+      <button class="btn btn-primary" (click)="reset()">Play again</button>
+    </div>
+
 
 </div>

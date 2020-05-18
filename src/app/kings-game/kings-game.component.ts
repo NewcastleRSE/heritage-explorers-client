@@ -8,25 +8,24 @@ import {shuffle} from 'lodash';
   styleUrls: ['./kings-game.component.scss']
 })
 export class KingsGameComponent implements OnInit {
+
+  //display speech bubbles
+
 // this list changes order to reflect what's displayed on screen
   kings = [
-  'King 1',
-  'King 2',
-  'King 3',
-  'King 4',
-  'King 5',
-  'King 6'
+    { id : 1, name : 'King 1', viewHelp: false, helpText : 'I was born...'},
+    { id : 2, name : 'King 2',  viewHelp: false, helpText : 'I was alive during...'},
+    { id : 3, name : 'King 3',  viewHelp: false, helpText : 'I died in...'}
 ];
 
   // this list contains the correct order to compare user's list against
 correctKings = [
-  'King 1',
-  'King 2',
-  'King 3',
-  'King 4',
-  'King 5',
-  'King 6'
+  { id : 1, name : 'King 1'},
+  { id : 2, name : 'King 2'},
+  { id : 3, name : 'King 3'}
 ];
+
+
 // flag to indicate the order is correct
 correctOrder = false;
 
@@ -54,11 +53,12 @@ correctOrder = false;
   }
 
   compareOrder(userList) {
+
     let match = false;
 
-    // compare each index in the correct and user generated list. If any of them are false then stop looking
+    // compare each index in the correct and user generated list (comparing the id fields only). If any of them are false then stop looking
     for (let index = 0; index < this.kings.length; index++) {
-     if (this.correctKings[index] === userList[index]) {
+     if (this.correctKings[index].id === userList[index].id) {
        match = true;
      } else {
        return false;
@@ -76,5 +76,27 @@ correctOrder = false;
     this.shuffleKings();
   }
 
+  // editing copied list and then updating full list to trigger changes in Angular
+  viewHelp(kingId) {
+    const copiedList = this.kings;
+    for (let i = 0; i < this.kings.length; i++) {
+      if (copiedList[i].id === kingId){
+       copiedList[i].viewHelp = true;
+       this.kings = copiedList;
+       console.log(this.kings[i].viewHelp);
+      }
+    }
+    }
 
+  closeHelp(kingId) {
+    console.log('close');
+    const copiedList = this.kings;
+    for (let i = 0; i < this.kings.length; i++) {
+      if (copiedList[i].id === kingId){
+        copiedList[i].viewHelp = false;
+        this.kings = copiedList;
+        console.log(this.kings[i].viewHelp);
+      }
+    }
+  }
 }
