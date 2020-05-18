@@ -6,6 +6,10 @@ h3 {
   padding: 10px;
 }
 
+img {
+  cursor: pointer;
+}
+
 //----- CDK reorderable list
 .cdk-drag-preview {
   box-sizing: border-box;
@@ -24,55 +28,53 @@ h3 {
 }
 
 .kingsList {
-  //width: 1000px;
+  margin-top: 60px;
   max-width: 100%;
-  //border: solid 1px #ccc;
   min-height: 60px;
   display: flex;
   flex-direction: row;
   //background: white;
   //border-radius: 4px;
-  overflow: hidden;
+  //overflow: hidden;
   //position: relative;
+  // width: 1000px;
+  //border: solid 1px #ccc;
+
 }
 
 .kingBox {
-  padding: 20px 10px;
-  border: solid 1px #ccc;
-  color: rgba(0, 0, 0, 0.87);
-  //display: flex;
-  //flex-direction: row;
-  align-items: center;
-  //justify-content: space-between;
-  //box-sizing: border-box;
+  // cursor to use if browser doesn't support grab
   cursor: move;
-  //background: white;
+  cursor: grab;
+  padding: 20px 10px;
+  //border: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
   font-size: 14px;
   flex-grow: 1;
   flex-basis: 0;
   text-align: center;
+  align-items: center;
+  //justify-content: space-between;
+  //box-sizing: border-box;
+  //display: flex;
+  //flex-direction: row;
+  //background: white;
 }
-//
-//.kingsName {
-//  position: absolute;
-//  text-align: center;
-//  bottom: 0;
+
+//.kingBox:active {
+//  cursor: grabbing;
 //}
-//
-//.kingImg {
-//  position: absolute;
-//  text-align: center;
-//  top: 0;
-//}
+
 
 //----- Speech bubbles
 .speech-bubble {
-  position: relative;
-  background: #00aabb;
+  position: absolute;
+  background: #6c757d;
   border-radius: .4em;
   p {
     padding: 20px;
   }
+  top: 110%;
 }
 
 .speech-bubble:after {
@@ -82,9 +84,24 @@ h3 {
   left: 50%;
   width: 0;
   height: 0;
-  border: 22px solid transparent;
-  border-bottom-color: #00aabb;
+  border: 20px solid transparent;
+  border-bottom-color: #6c757d;
   border-top: 0;
-  margin-left: -22px;
-  margin-top: -22px;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+
+.card {
+  margin: 10px;
+}
+.close {
+  padding: 10px;
+}
+
+button {
+  margin: 10px;
+}
+
+.correctMessage {
+  margin : auto;
 }

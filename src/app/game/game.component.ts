@@ -264,6 +264,7 @@ async square16Interaction() {
   }
 
   openTeetotum(teetotum) {
+
     const m = this.modalService.open(teetotum, {windowClass: 'teetotum-modal'});
     m.result.then(() => {
     }, () => {

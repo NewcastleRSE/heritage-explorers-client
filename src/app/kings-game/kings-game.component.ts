@@ -9,20 +9,26 @@ import {shuffle} from 'lodash';
 })
 export class KingsGameComponent implements OnInit {
 
-  //display speech bubbles
+  // display speech bubbles
 
 // this list changes order to reflect what's displayed on screen
   kings = [
-    { id : 1, name : 'King 1', viewHelp: false, helpText : 'I was born...'},
-    { id : 2, name : 'King 2',  viewHelp: false, helpText : 'I was alive during...'},
-    { id : 3, name : 'King 3',  viewHelp: false, helpText : 'I died in...'}
+    { id : 1, name : 'King 1', filename: 'face.svg', viewHelp: false, helpText : 'I was born etc.'},
+    { id : 2, name : 'King 2', filename: 'face.svg', viewHelp: false, helpText : 'I was alive during etc.'},
+    { id : 3, name : 'King 3', filename: 'face.svg', viewHelp: false, helpText : 'I died in etc.'},
+    { id : 4, name : 'King 4', filename: 'face.svg', viewHelp: false, helpText : 'I was born etc.'},
+    { id : 5, name : 'King 5', filename: 'face.svg', viewHelp: false, helpText : 'I was alive during etc.'},
+    { id : 6, name : 'King 6', filename: 'face.svg', viewHelp: false, helpText : 'I died in etc.'}
 ];
 
   // this list contains the correct order to compare user's list against
 correctKings = [
   { id : 1, name : 'King 1'},
   { id : 2, name : 'King 2'},
-  { id : 3, name : 'King 3'}
+  { id : 3, name : 'King 3'},
+  { id : 4, name : 'King 4'},
+  { id : 5, name : 'King 5'},
+  { id : 6, name : 'King 6'}
 ];
 
 

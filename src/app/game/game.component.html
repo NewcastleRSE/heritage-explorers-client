@@ -24,13 +24,13 @@
     </div>
 
 
-    <button class="btn btn-primary" (click)="roll(teetotum)">Spin teetotum</button>
+    <button class="btn btn-secondary" (click)="roll(teetotum)">Spin teetotum</button>
 <!--    <button class="btn-primary" (click)="startAgain()">Play again</button>-->
 
 <!--    use for testing counter positioning-->
 <!--    <button class="btn-primary" (click)="step2On()">Step 1 on</button>-->
 
-    <button class="btn btn-primary" (click)="viewRules(rulesModal)">How to play</button>
+    <button class="btn btn-info" (click)="viewRules(rulesModal)">How to play</button>
 
     <p>{{winningMessage}}</p>
 
@@ -59,12 +59,12 @@
 
   <!-- teetotum modal -->
   <ng-template #teetotum let-modal>
-    <div class="modal-header">
-      <!--      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>-->
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
+<!--    <div class="modal-header">-->
+<!--      &lt;!&ndash;      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>&ndash;&gt;-->
+<!--      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">-->
+<!--        <span aria-hidden="true">&times;</span>-->
+<!--      </button>-->
+<!--    </div>-->
     <div class="modal-body">
       <img src="../../assets/teetotum.jpg">
       {{lastRoll}}
@@ -86,12 +86,12 @@
 
     <!-- rules modal -->
     <ng-template  #rulesModal let-modal>
-      <div class="modal-header">
-        <!--      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>-->
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+<!--      <div class="modal-header">-->
+<!--        &lt;!&ndash;      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>&ndash;&gt;-->
+<!--        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">-->
+<!--          <span aria-hidden="true">&times;</span>-->
+<!--        </button>-->
+<!--      </div>-->
       <div class="modal-body">
 
         <br>
