@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./explorer-board.component.scss']
 })
 export class ExplorerBoardComponent implements OnInit {
+squareTitle;
 
   constructor(
     private router: Router
@@ -26,6 +27,22 @@ export class ExplorerBoardComponent implements OnInit {
       case 11:
         this.router.navigate(['museumgame']);
     }
+  }
+
+  viewTitle(squareNumber) {
+    switch (squareNumber) {
+      // todo add holding message for other squares
+      case 11:
+        this.squareTitle = 'British Museum hidden objects';
+        break;
+      case 12:
+        this.squareTitle = "St Paul's and Blackfriars Bridge";
+        break;
+    }
+  }
+
+  removeTitle() {
+    this.squareTitle = '';
   }
 
 }

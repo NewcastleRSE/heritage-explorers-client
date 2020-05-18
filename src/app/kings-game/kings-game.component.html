@@ -1,0 +1,10 @@
+<div class="container">
+
+  <div cdkDropList (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let king of kings" cdkDrag >
+      <img src="../../assets/face.svg" alt="King image">
+        <h5>{{king}}</h5>
+    </div>
+  </div>
+
+</div>

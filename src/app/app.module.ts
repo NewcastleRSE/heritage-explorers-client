@@ -12,6 +12,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ExplorerBoardComponent } from './explorer-board/explorer-board.component';
 import {InfoModal, MuseumGameComponent} from './museum-game/museum-game.component';
 import { Square3Component } from './square3/square3.component';
+import { KingsGameComponent } from './kings-game/kings-game.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,16 @@ import { Square3Component } from './square3/square3.component';
     WelcomeComponent,
     ExplorerBoardComponent,
     MuseumGameComponent,
-    Square3Component
+    Square3Component,
+    KingsGameComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent],
