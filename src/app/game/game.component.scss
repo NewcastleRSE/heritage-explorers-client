@@ -106,3 +106,69 @@
   border: 3px solid #D9B23D;
   border-radius: 8px;
 }
+//animate to move between squares
+.move13 {
+  position: absolute;
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  top: 10% !important;
+  left: 35% !important;
+}
+
+.move15 {
+  position: absolute;
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  top: 10% !important;
+  left: 65% !important;
+}
+
+.move116 {
+  position: absolute;
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  top: 70% !important;
+  left: 35% !important;
+}
+
+.move23 {
+  position: absolute;
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  top: 10% !important;
+  left: 29% !important;
+}
+
+.move25 {
+  position: absolute;
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  top: 10% !important;
+  left: 75% !important;
+}
+
+.move216 {
+  position: absolute;
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  top: 60% !important;
+  left: 8% !important;
+}

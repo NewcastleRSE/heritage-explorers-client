@@ -4,7 +4,7 @@
 
   <div class="board">
   <img src="../../assets/gameTransparent.png" class="boardImg">
-  <img [@bounce]="bounce" class="counter player1Colour" src="../../assets/{{p1Counter}}125nb.png" [style.top]="p1Top" [style.left]="p1Left">
+  <img [@bounce]="bounce" id="p1Counter" class="counter player1Colour" src="../../assets/{{p1Counter}}125nb.png" [style.top]="p1Top" [style.left]="p1Left">
   <img [@bounce]="bounce" class=" counter player2Colour" src="../../assets/{{p2Counter}}125nb.png"  [style.top]="p2Top" [style.left]="p2Left">
 
 
@@ -71,8 +71,6 @@
     </div>
   </ng-template>
 
-
-
     <form #test="ngForm" (ngSubmit)="testMoveSquare()">
       <div class="form-group row">
         <label class="col-sm-2 col-form-label col-form-label" for="testSquare">Test square:</label>
@@ -126,6 +124,5 @@
         <h3 class="text-center">Vauxhall Gardens. Here you have your pocket picked, and lose all the Counters you have left.</h3>
       </div>
     </ng-template>
-
 </div>
 

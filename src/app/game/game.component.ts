@@ -162,6 +162,7 @@ missAGoAlertClosed = true;
     // ----- Square 5 - miss 2 turns. Add 3 to account for player 2's first legitimate go
     else if (squareNumber === 5) {
       this.square5Interaction().then(() => {
+
         this.changePlayer();
       });
     }
@@ -273,25 +274,13 @@ async square16Interaction() {
     });
   }
 
-  // change player unless the next player is sitting out goes
+  // change player unless the next player is missing a go
   changePlayer() {
     if (this.currentPlayer === 1 && this.p2MissAGo === 0) {
       this.currentPlayer = 2;
     } else if (this.currentPlayer === 2 && this.p1MissAGo === 0) {
       this.currentPlayer = 1;
     }
-    // if next player has a value against their miss a go counter, then don't change the current player, but do display popup
-  //   if (this.p2MissAGo > 0) {
-  //     console.log('trigger alert for player 1');
-  //     this.missAGoMessage = this.p2Name + ' misses a go';
-  //     this.missAGoAlertClosed = false;
-  //     setTimeout(() => this.missAGoAlertClosed = true, 5000);
-  //   } else if (this.p1MissAGo > 0) {
-  //     console.log('trigger alert for player 1');
-  //     this.missAGoMessage = this.p1Name + ' misses a go';
-  //     this.missAGoAlertClosed = false;
-  //     setTimeout(() => this.missAGoAlertClosed = true, 5000);
-  //   }
   }
 
   startAgain() {
@@ -306,6 +295,7 @@ async square16Interaction() {
 
   // move icons around 2 'tracks' around the board using their relative position to the board
   moveP1Icon(moveTo) {
+    const p1 = document.getElementById('p1Counter');
   switch (moveTo) {
     case 1:
       this.p1Top = '10%';
@@ -316,16 +306,19 @@ async square16Interaction() {
       this.p1Left = '20%';
       break;
     case 3:
-      this.p1Top = '10%';
-      this.p1Left = '35%';
+      // this.p1Top = '10%';
+      // this.p1Left = '35%';
+      console.log('animate player 1 to 3');
+      p1.classList.add('move13');
       break;
     case 4:
       this.p1Top = '10%';
       this.p1Left = '50%';
       break;
     case 5:
-      this.p1Top = '10%';
-      this.p1Left = '65%';
+      // this.p1Top = '10%';
+      // this.p1Left = '65%';
+      p1.classList.add('move15');
       break;
     case 6:
       this.p1Top = '10%';
@@ -368,8 +361,9 @@ async square16Interaction() {
       this.p1Left = '15%';
       break;
     case 16:
-      this.p1Top = '70%';
-      this.p1Left = '8%';
+      // this.p1Top = '70%';
+      // this.p1Left = '8%';
+      p1.classList.add('move116');
       break;
     case 17:
       this.p1Top = '50%';
