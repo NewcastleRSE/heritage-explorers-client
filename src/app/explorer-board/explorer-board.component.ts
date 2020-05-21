@@ -24,8 +24,13 @@ squareTitle;
     console.log(squareNumber);
     switch (squareNumber) {
       // todo add holding message for other squares
+      case 3:
+        this.router.navigate(['kingsgame']);
+        break;
       case 11:
         this.router.navigate(['museumgame']);
+        break;
+
     }
   }
 
