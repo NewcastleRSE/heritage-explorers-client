@@ -199,7 +199,7 @@ async square3Interaction() {
   console.log('landed on 3 so move to 5');
   // this.modalService.open(Square3Component);
   const m3 = this.modalService.open(this.modal3);
-  m3.result.then(() => {
+  await m3.result.then(() => {
     console.log('When user closes');
   }, () => {
     // after closing modal move counter to 5
