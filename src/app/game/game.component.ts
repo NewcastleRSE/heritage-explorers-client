@@ -308,27 +308,27 @@ async square16Interaction() {
   moveP1Icon(moveTo) {
   switch (moveTo) {
     case 1:
-      this.p1Top = '10%';
-      this.p1Left = '5%';
+      this.p1Top = '7%';
+      this.p1Left = '2%';
       break;
     case 2:
-      this.p1Top = '10%';
-      this.p1Left = '20%';
+      this.p1Top = '7%';
+      this.p1Left = '18%';
       break;
     case 3:
-      this.p1Top = '10%';
+      this.p1Top = '7%';
       this.p1Left = '35%';
       break;
     case 4:
-      this.p1Top = '10%';
+      this.p1Top = '7%';
       this.p1Left = '50%';
       break;
     case 5:
-      this.p1Top = '10%';
+      this.p1Top = '7%';
       this.p1Left = '65%';
       break;
     case 6:
-      this.p1Top = '10%';
+      this.p1Top = '7%';
       this.p1Left = '80%';
       break;
     case 7:
@@ -387,27 +387,27 @@ async square16Interaction() {
   moveP2Icon(moveTo) {
     switch (moveTo) {
       case 1:
-        this.p2Top = '10%';
-        this.p2Left = '14%';
+        this.p2Top = '7%';
+        this.p2Left = '9%';
         break;
       case 2:
-        this.p2Top = '10%';
-        this.p2Left = '29%';
+        this.p2Top = '7%';
+        this.p2Left = '25%';
         break;
       case 3:
-        this.p2Top = '10%';
+        this.p2Top = '7%';
         this.p2Left = '44%';
         break;
       case 4:
-        this.p2Top = '10%';
+        this.p2Top = '7%';
         this.p2Left = '59%';
         break;
       case 5:
-        this.p2Top = '10%';
+        this.p2Top = '7%';
         this.p2Left = '75%';
         break;
       case 6:
-        this.p2Top = '10%';
+        this.p2Top = '7%';
         this.p2Left = '90%';
         break;
       case 7:

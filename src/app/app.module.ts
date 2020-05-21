@@ -14,6 +14,8 @@ import {InfoModal, MuseumGameComponent} from './museum-game/museum-game.componen
 import { Square3Component } from './square3/square3.component';
 import { KingsGameComponent } from './kings-game/kings-game.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { CosmoramaGameComponent } from './cosmorama-game/cosmorama-game.component';
+import { CosmoramaGameMainComponent } from './cosmorama-game-main/cosmorama-game-main.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     ExplorerBoardComponent,
     MuseumGameComponent,
     Square3Component,
-    KingsGameComponent
+    KingsGameComponent,
+    CosmoramaGameComponent,
+    CosmoramaGameMainComponent
   ],
   imports: [
     BrowserModule,

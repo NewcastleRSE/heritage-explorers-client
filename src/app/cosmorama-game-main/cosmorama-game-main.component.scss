@@ -1,0 +1,27 @@
+.container2 {
+  position: absolute;
+  width: 800px;
+  overflow: hidden;
+  height: 800px;
+  top:0;
+  left:0;
+}
+
+#backgroundImg {
+  height: 1200px;
+  position:relative;
+  z-index: 1;
+}
+
+#foregroundImg {
+  width: 1000px;
+  height:auto;
+  position:relative;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.container {
+  overflow:hidden;
+}
