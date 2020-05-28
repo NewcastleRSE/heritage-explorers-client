@@ -8,8 +8,8 @@ import {shuffle} from 'lodash';
   styleUrls: ['./kings-game.component.scss']
 })
 export class KingsGameComponent implements OnInit {
-
-  // display speech bubbles
+meyrickVisible;
+kingsVisible;
 
 // this list changes order to reflect what's displayed on screen
   kings = [
@@ -43,6 +43,8 @@ correctOrder = false;
 
   ngOnInit(): void {
    this.shuffleKings();
+   this.meyrickVisible = true;
+   this.kingsVisible = false;
   }
 
   shuffleKings() {
@@ -108,5 +110,10 @@ correctOrder = false;
         console.log(this.kings[i].viewHelp);
       }
     }
+  }
+
+  finishMeyrick() {
+    this.meyrickVisible = false;
+    this.kingsVisible = true;
   }
 }

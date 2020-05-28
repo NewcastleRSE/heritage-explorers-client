@@ -1,10 +1,13 @@
 <div class="container">
-  <div class="header text-center">
-    <h2>Line of Kings</h2>
-    <h3>The Armoury</h3>
-    <p>Drag and drop the King's until they are in chronological order. Click on a King's picture to get a tip.</p>
-  </div>
 
+
+
+<div *ngIf="kingsVisible">
+  <div class="header text-center">
+  <h2>Line of Kings</h2>
+  <h3>The Armoury</h3>
+    <p>Drag and drop the King's until they are in chronological order. Click on a King's picture to get a tip.</p>
+</div>
 
   <div cdkDropListOrientation="horizontal" class=" kingsList" cdkDropList (cdkDropListDropped)="drop($event)">
     <div id="{{king.id}}" class="card   kingBox" *ngFor="let king of kings" cdkDrag>
@@ -17,16 +20,26 @@
           aria-hidden="true">&times;</span></button>
         <p>{{king.helpText}}</p>
       </div>
-
     </div>
 
-
   </div>
+</div>
 
     <div class="correctMessage text-center" *ngIf="correctOrder">
       <h3>Correct!</h3>
       <button class="btn btn-primary" (click)="reset()">Play again</button>
     </div>
 
+<div *ngIf="meyrickVisible">
+  <div class="meyrickContainer">
+    <img class="img-fluid" src="../../assets/kings/meyrick.png">
+    <div class="meyrickText">
+      My name is Sir Samuel Meyrick and I need your help! .............
+    </div>
+    <button class="btn btn-primary" (click)="finishMeyrick()">Ready to play</button>
+  </div>
+
+
+</div>
 
 </div>
