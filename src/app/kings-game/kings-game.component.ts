@@ -13,12 +13,14 @@ export class KingsGameComponent implements OnInit {
 
 // this list changes order to reflect what's displayed on screen
   kings = [
-    { id : 1, name : 'King 1', filename: 'face.svg', viewHelp: false, helpText : 'I was born etc.'},
-    { id : 2, name : 'King 2', filename: 'face.svg', viewHelp: false, helpText : 'I was alive during etc.'},
-    { id : 3, name : 'King 3', filename: 'face.svg', viewHelp: false, helpText : 'I died in etc.'},
-    { id : 4, name : 'King 4', filename: 'face.svg', viewHelp: false, helpText : 'I was born etc.'},
-    { id : 5, name : 'King 5', filename: 'face.svg', viewHelp: false, helpText : 'I was alive during etc.'},
-    { id : 6, name : 'King 6', filename: 'face.svg', viewHelp: false, helpText : 'I died in etc.'}
+    { id : 1, name : 'Edward I', filename: 'edi.PNG', viewHelp: false, helpText : 'I was born etc.'},
+    { id : 2, name : 'Henry VI', filename: 'henvi.png', viewHelp: false, helpText : 'I was alive during etc.'},
+    { id : 3, name : 'Edward IV', filename: 'ediv.png', viewHelp: false, helpText : 'I died in etc.'},
+    { id : 4, name : 'Henry VII', filename: 'henvii.png', viewHelp: false, helpText : 'I was born etc.'},
+    { id : 5, name : 'Edward VI', filename: 'edvi.png', viewHelp: false, helpText : 'I was alive during etc.'},
+    { id : 6, name : 'James I', filename: 'jami.png', viewHelp: false, helpText : 'I died in etc.'},
+    { id : 7, name : 'Charles I', filename: 'chasi.png', viewHelp: false, helpText : 'I was alive during etc.'},
+    { id : 8, name : 'James II', filename: 'jamii.png', viewHelp: false, helpText : 'I died in etc.'}
 ];
 
   // this list contains the correct order to compare user's list against
@@ -28,7 +30,9 @@ correctKings = [
   { id : 3, name : 'King 3'},
   { id : 4, name : 'King 4'},
   { id : 5, name : 'King 5'},
-  { id : 6, name : 'King 6'}
+  { id : 6, name : 'King 6'},
+  { id : 7, name : 'King 6'},
+  { id : 8, name : 'King 6'}
 ];
 
 

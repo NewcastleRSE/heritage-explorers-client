@@ -2,13 +2,17 @@ h2 {
   padding: 10px;
 }
 
-h3 {
-  padding: 10px;
+h4 {
+  padding-top: 20px;
 }
 
 img {
   cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
+
+
 
 //----- CDK reorderable list
 .cdk-drag-preview {
@@ -92,7 +96,8 @@ img {
 }
 
 .card {
-  margin: 10px;
+  margin: 5px;
+  padding: 0!important;
 }
 .close {
   padding: 10px;

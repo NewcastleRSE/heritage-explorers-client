@@ -7,9 +7,9 @@
 
 
   <div cdkDropListOrientation="horizontal" class=" kingsList" cdkDropList (cdkDropListDropped)="drop($event)">
-    <div id="{{king.id}}" class="card text-white bg-info kingBox" *ngFor="let king of kings" cdkDrag>
-      <img (click)="viewHelp(king.id)" class="card-img-top" src="../../assets/{{king.filename}}" alt="King image">
-      <div class="card-title"><h3>{{king.name}}</h3></div>
+    <div id="{{king.id}}" class="card   kingBox" *ngFor="let king of kings" cdkDrag>
+      <img (click)="viewHelp(king.id)" class="card-img-top" src="../../assets/kings/{{king.filename}}" alt="King image">
+      <h4 class="card-title">{{king.name}}</h4>
 
       <!--       help bubble to display when user selects. Doesn't display if order is correct-->
       <div *ngIf="king.viewHelp && correctOrder === false" class="speech-bubble">
