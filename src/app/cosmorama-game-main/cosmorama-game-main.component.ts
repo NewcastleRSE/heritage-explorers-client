@@ -10,6 +10,7 @@ export class CosmoramaGameMainComponent implements OnInit, AfterViewInit {
   backgroundTop;
   backgroundLeft;
 
+
   constructor() { }
 
   ngOnInit(): void {
@@ -77,6 +78,11 @@ export class CosmoramaGameMainComponent implements OnInit, AfterViewInit {
     this.backgroundTop = parseInt(this.backgroundTop) + 20 + 'px';
   }
 
-
+// tick found items
+  check(itemNo) {
+    const itemCode = 'item' + itemNo;
+    document.getElementById(itemCode).classList.add('active');
+    document.getElementById(itemCode).innerHTML += '   &#10003;';
+  }
 
 }

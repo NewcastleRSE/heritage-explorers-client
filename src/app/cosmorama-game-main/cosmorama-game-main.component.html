@@ -1,6 +1,41 @@
 <div class ="container">
+<div class="header">
+  <h3>Cosmorama</h3>
+  <h5>Use your keyboard arrows or the controls to move around the image. Try and find all the items on the list. when you find something, click on it to tick it off the list.</h5> <br>
+</div>
+
+  <div class="row">
+    <div class="col-2">
+      <ul class="list-group findList">
+        <!--      show as active once item has been found-->
+        <li class="list-group-item" id="item1" (click)="check(1)">Sarcophagus</li>
+        <li  class="list-group-item " id="item2" (click)="check(2)">Duck</li>
+        <li  class="list-group-item " id="item3" (click)="check(3)">Snake</li>
+        <li class="list-group-item " id="item4" (click)="check(4)">Mask</li>
+        <li  class="list-group-item " id="item5" (click)="check(5)">Yellow fish</li>
+        <li  class="list-group-item " id="item6" (click)="check(6)">Turkey</li>
+        <li class="list-group-item " id="item7" (click)="check(7)">Peacock</li>
+        <li  class="list-group-item " id="item8" (click)="check(8)">Cockerel?</li>
+        <li  class="list-group-item " id="item9" (click)="check(9)">Chinese dragon</li>
+        <li  class="list-group-item" id="item10" (click)="check(10)">Top hat</li>
+      </ul>
+    </div>
+
+
+    <div class="col">
 <div class="container2" id="c2" [style.backgroundPositionX]="backgroundLeft" [style.backgroundPositionY]="backgroundTop">
-  <img id="foregroundImg" src="../../assets/cosmoB3.png">
+
+
+
+      <img class="foregroundImg" src="../../assets/cosmoB3.png">
+    </div>
+  </div>
+
+
+  </div>
+
+
+
 <!--  <img id="backgroundImg" [style.left]="backgroundLeft" [style.top]="backgroundTop" src="../../assets/sampleCosmoImg.jpg" />-->
 
   <div class ='controls'>
@@ -12,4 +47,4 @@
   </div>
 
 </div>
-</div>
+

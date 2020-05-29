@@ -12,14 +12,24 @@
   }
 }
 
-#foregroundImg {
+
+.foregroundImg {
   width: 1100px;
   height: auto;
   //position:relative;
-  top: 0;
-  left: 0;
+  //top: 0;
+  //left: 0;
   z-index: 2;
 }
+
+//.findList {
+//  position: relative;
+//  top: 0;
+//  left: 0;
+//  z-index: 3;
+//}
+
+
 
 .container {
   //overflow:hidden;
@@ -43,7 +53,7 @@
   align-items:center;
   justify-content:center;
   align-content:center;
-
+z-index: 4;
 }
 #up{
   margin:5px 100px;
