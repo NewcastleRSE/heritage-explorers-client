@@ -5,12 +5,12 @@
     <div class="header text-center">
       <h2>Line of Kings</h2>
       <h3>The Armoury</h3>
-      <p>Drag and drop the King's until they are in chronological order. Click on a King's picture to get a tip.</p>
+      <p>Drag and drop the King's until they are in chronological order. Click on a King's picture to view a helpful hint.</p>
     </div>
 
     <div (cdkDropListDropped)="drop($event)" cdkDropList cdkDropListOrientation="horizontal" class=" kingsList">
       <div *ngFor="let king of kings" cdkDrag class="card kingBox" id="{{king.id}}">
-        <img (click)="viewHelp(king.id)" alt="King image" class="card-img-top"
+        <img (click)="viewHelp(king.id)" alt="King image" class="card-img-top smallCardImg"
              src="../../assets/kings/{{king.filename}}">
         <h4 class="card-title">{{king.name}}</h4>
 
