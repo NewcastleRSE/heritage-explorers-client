@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {shuffle} from 'lodash';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-kings-game',
@@ -42,7 +43,9 @@ correctKings = [
 // flag to indicate the order is correct
 correctOrder = false;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
    this.shuffleKings();
@@ -126,5 +129,9 @@ correctOrder = false;
   finishMeyrick() {
     this.meyrickVisible = false;
     this.kingsVisible = true;
+  }
+
+  returnToBoard() {
+    this.router.navigate(['/explorer']);
   }
 }

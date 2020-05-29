@@ -1,4 +1,5 @@
-import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cosmorama-game-main',
@@ -10,8 +11,13 @@ export class CosmoramaGameMainComponent implements OnInit, AfterViewInit {
   backgroundTop;
   backgroundLeft;
 
+  upIsPressing = false;
+pressingTimer;
 
-  constructor() { }
+  constructor(
+    private elementRef: ElementRef,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.backgroundTop = 0;
@@ -40,10 +46,34 @@ export class CosmoramaGameMainComponent implements OnInit, AfterViewInit {
 
     console.log('h = ' + height);
     console.log('w = ' + width);
+    // document.getElementById('up').addEventListener('mousedown', this.upOnDown.bind(this));
+    // document.getElementById('up').addEventListener('mouseup', this.upOnUp.bind(this));
 
   }
 
-  @HostListener('window:keyup', ['$event'])
+  returnToBoard() {
+    this.router.navigate(['/explorer']);
+  }
+
+//   upOnDown(event) {
+//     console.log('up');
+//     // this.upIsPressing = true;
+//     this.startUpMoving();
+//   }
+//
+// startUpMoving() {
+//     console.log('start pressing');
+//   this.pressingTimer = setInterval(this.moveUp, 5000);
+// }
+//   upOnUp() {
+//     console.log('stop');
+//     clearInterval(this.pressingTimer);
+//
+//     // when user stops pressing key change long pressing flag to false
+//     // this.upIsPressing = false;
+//   }
+
+  @HostListener('window:keydown', ['$event'])
   getKeyAndMove(e: KeyboardEvent){
     // prevent default which is to move around the page
     e.preventDefault();
@@ -65,18 +95,30 @@ export class CosmoramaGameMainComponent implements OnInit, AfterViewInit {
     }
   }
   moveLeft(){
-    this.backgroundLeft = parseInt(this.backgroundLeft) - 20 + 'px';
-    console.log(this.backgroundLeft);
+    if (parseInt(this.backgroundLeft) >= -340) {
+      this.backgroundLeft = parseInt(this.backgroundLeft) - 10 + 'px';
+
+    }
+
   }
   moveUp(){
-    this.backgroundTop = parseInt(this.backgroundTop) - 20 + 'px';
+    if (parseInt(this.backgroundTop) >= -285) {
+      this.backgroundTop = parseInt(this.backgroundTop) - 10 + 'px';
+    }
   }
   moveRight(){
-    this.backgroundLeft = parseInt(this.backgroundLeft) + 20 + 'px';
+    if (parseInt(this.backgroundLeft) <= 150) {
+      this.backgroundLeft = parseInt(this.backgroundLeft) + 10 + 'px';
+    }
   }
   moveDown(){
-    this.backgroundTop = parseInt(this.backgroundTop) + 20 + 'px';
+    if (parseInt(this.backgroundTop) <= 150) {
+      this.backgroundTop = parseInt(this.backgroundTop) + 10 + 'px';
+    }
   }
+
+
+
 
 // tick found items
   check(itemNo) {

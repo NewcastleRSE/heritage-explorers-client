@@ -1,5 +1,20 @@
 <div class="container">
+<h3>British Museum</h3>
 
+  <div *ngIf="!playingGame">
+    <div class="characterBox">
+      <button class="btn btn-primary readyBtn" (click)="playingGame = true">Ready to play</button>
+    <div class="characterText">
+      My name is...
+    </div>
+    <img class="img-fluid characterImg" src="../../assets/kings/meyrick.png">
+    <img src="../../assets/11.png" class="boardImg">
+
+    </div>
+
+  </div>
+
+  <div *ngIf="playingGame">
 <div class="row">
   <div class="col">
 
@@ -48,6 +63,7 @@
   </div>
 </div>
 </div>
+  </div>
 
   <div class="text-center" *ngIf="sarco === true && mask === true && cockerel === true && peacock === true && duck === true && snake === true && yFish === true && turkey === true && bigFish === true && hat === true">
     <h3>Well done, you found all the objects!</h3>
@@ -55,6 +71,7 @@
     <button class="btn btn-primary" (click)="returnToBoard()">Return to explorer board</button>
   </div>
 
+  <button class="btn btn-primary returnBtn" (click)="returnToBoard()">Return to Explorer Mode Board</button>
 
 </div>
 

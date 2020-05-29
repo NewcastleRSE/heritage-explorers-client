@@ -44,6 +44,8 @@ export class MuseumGameComponent implements OnInit {
   bigFish = false;
   hat = false;
 
+  playingGame = false;
+
 
   constructor(
     private modalService: NgbModal,
@@ -52,7 +54,7 @@ export class MuseumGameComponent implements OnInit {
 
   ngOnInit(): void {
     ImageMap('img[usemap]');
-    this.openInfoModal();
+    // this.openInfoModal();
   }
 // todo help option to highlight when can't find something?
 
@@ -73,9 +75,9 @@ export class MuseumGameComponent implements OnInit {
     this.router.navigate(['/explorer']);
   }
 
-  openInfoModal() {
-    this.modalService.open(InfoModal);
-  }
+  // openInfoModal() {
+  //   this.modalService.open(InfoModal);
+  // }
 
   foundItem(itemName) {
     console.log('found ' + itemName);
