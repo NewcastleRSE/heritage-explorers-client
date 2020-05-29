@@ -1,45 +1,68 @@
 <div class="container">
 
 
+  <div *ngIf="kingsVisible">
+    <div class="header text-center">
+      <h2>Line of Kings</h2>
+      <h3>The Armoury</h3>
+      <p>Drag and drop the King's until they are in chronological order. Click on a King's picture to get a tip.</p>
+    </div>
 
-<div *ngIf="kingsVisible">
-  <div class="header text-center">
-  <h2>Line of Kings</h2>
-  <h3>The Armoury</h3>
-    <p>Drag and drop the King's until they are in chronological order. Click on a King's picture to get a tip.</p>
-</div>
+    <div (cdkDropListDropped)="drop($event)" cdkDropList cdkDropListOrientation="horizontal" class=" kingsList">
+      <div *ngFor="let king of kings" cdkDrag class="card kingBox" id="{{king.id}}">
+        <img (click)="viewHelp(king.id)" alt="King image" class="card-img-top"
+             src="../../assets/kings/{{king.filename}}">
+        <h4 class="card-title">{{king.name}}</h4>
 
-  <div cdkDropListOrientation="horizontal" class=" kingsList" cdkDropList (cdkDropListDropped)="drop($event)">
-    <div id="{{king.id}}" class="card   kingBox" *ngFor="let king of kings" cdkDrag>
-      <img (click)="viewHelp(king.id)" class="card-img-top" src="../../assets/kings/{{king.filename}}" alt="King image">
-      <h4 class="card-title">{{king.name}}</h4>
+        <!--       help bubble to display when user selects. Doesn't display if order is correct-->
+        <div *ngIf="king.viewHelp && correctOrder === false" class="speech-bubble">
+          <button (click)="closeHelp(king.id)" aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+            aria-hidden="true">&times;</span></button>
+          <p>{{king.helpText}}</p>
+        </div>
 
-      <!--       help bubble to display when user selects. Doesn't display if order is correct-->
-      <div *ngIf="king.viewHelp && correctOrder === false" class="speech-bubble">
-        <button type="button" (click)="closeHelp(king.id)" class="close" data-dismiss="modal" aria-label="Close"><span
-          aria-hidden="true">&times;</span></button>
-        <p>{{king.helpText}}</p>
+
       </div>
+
     </div>
 
-  </div>
-</div>
+    <div *ngIf="viewingHelp">
+      <div *ngFor="let king of viewingHelpKings" class="card w-25 mx-auto text-center">
 
-    <div class="correctMessage text-center" *ngIf="correctOrder">
+        <div class="closeButton">
+          <button (click)="closeHelp(king.id)" aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+            aria-hidden="true">&times;</span></button>
+      </div>
+                    <img id="helpCardImg" alt="King image" class="card-img-top" src="../../assets/kings/{{king.filename}}">
+                    <h4>{{king.helpText}}</h4>
+                    <h5 class="card-title">{{king.name}}</h5>
+
+            <!--        &lt;!&ndash;       help bubble to display when user selects. Doesn't display if order is correct&ndash;&gt;-->
+<!--        <div *ngIf="king.viewHelp && correctOrder === false" class="speech-bubble">-->
+<!--          <button (click)="closeHelp(king.id)" aria-label="Close" class="close" data-dismiss="modal" type="button"><span-->
+<!--            aria-hidden="true">&times;</span></button>-->
+<!--          <p>{{king.helpText}}</p>-->
+<!--        </div>-->
+      </div>
+
+    </div>
+  </div>
+
+    <div *ngIf="correctOrder" class="correctMessage text-center">
       <h3>Correct!</h3>
-      <button class="btn btn-primary" (click)="reset()">Play again</button>
+      <button (click)="reset()" class="btn btn-primary">Play again</button>
     </div>
 
-<div *ngIf="meyrickVisible">
-  <div class="meyrickContainer">
-    <img class="img-fluid" src="../../assets/kings/meyrick.png">
-    <div class="meyrickText">
-      My name is Sir Samuel Meyrick and I need your help! .............
+    <div *ngIf="meyrickVisible">
+      <div class="meyrickContainer">
+        <img class="img-fluid" src="../../assets/kings/meyrick.png">
+        <div class="meyrickText">
+          My name is Sir Samuel Meyrick and I need your help! .............
+        </div>
+        <button (click)="finishMeyrick()" class="btn btn-primary">Ready to play</button>
+      </div>
+
+
     </div>
-    <button class="btn btn-primary" (click)="finishMeyrick()">Ready to play</button>
+
   </div>
-
-
-</div>
-
-</div>

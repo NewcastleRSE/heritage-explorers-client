@@ -10,6 +10,7 @@ import {shuffle} from 'lodash';
 export class KingsGameComponent implements OnInit {
 meyrickVisible;
 kingsVisible;
+viewingHelp;
 
 // this list changes order to reflect what's displayed on screen
   kings = [
@@ -35,6 +36,8 @@ correctKings = [
   { id : 8, name : 'King 6'}
 ];
 
+// king currently displaying as help
+  viewingHelpKings = [];
 
 // flag to indicate the order is correct
 correctOrder = false;
@@ -88,26 +91,34 @@ correctOrder = false;
     this.shuffleKings();
   }
 
-  // editing copied list and then updating full list to trigger changes in Angular
+
   viewHelp(kingId) {
+    document.getElementById(kingId).classList.add('invisible');
+  this.viewingHelp = true;
+
     const copiedList = this.kings;
     for (let i = 0; i < this.kings.length; i++) {
       if (copiedList[i].id === kingId){
        copiedList[i].viewHelp = true;
-       this.kings = copiedList;
-       console.log(this.kings[i].viewHelp);
+
+       this.viewingHelpKings.push(copiedList[i]);
       }
     }
     }
 
   closeHelp(kingId) {
+    document.getElementById(kingId).classList.remove('invisible');
+    this.viewingHelp = false;
+
     console.log('close');
     const copiedList = this.kings;
     for (let i = 0; i < this.kings.length; i++) {
       if (copiedList[i].id === kingId){
         copiedList[i].viewHelp = false;
-        this.kings = copiedList;
-        console.log(this.kings[i].viewHelp);
+
+        this.viewingHelpKings = [];
+        // this.kings = copiedList;
+        // console.log(this.kings[i].viewHelp);
       }
     }
   }

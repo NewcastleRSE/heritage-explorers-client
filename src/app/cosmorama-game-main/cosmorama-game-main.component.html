@@ -1,8 +1,15 @@
 <div class ="container">
-<div class="container2">
-  <img id="foregroundImg" src="../../assets/14Z.png">
-  <img id="backgroundImg" [style.left]="backgroundLeft" [style.top]="backgroundTop" src="../../assets/sampleCosmoImg.jpg" />
+<div class="container2" id="c2" [style.backgroundPositionX]="backgroundLeft" [style.backgroundPositionY]="backgroundTop">
+  <img id="foregroundImg" src="../../assets/cosmoBack2.png">
+<!--  <img id="backgroundImg" [style.left]="backgroundLeft" [style.top]="backgroundTop" src="../../assets/sampleCosmoImg.jpg" />-->
 
+  <div class ='controls'>
+    <button id="up" class="btn btn-primary btn-sm" (click)="moveDown()"><img src="../../assets/arrow-up-outline.svg" height="25px"></button>
+    <button id="left" class="btn btn-primary btn-sm" (click)="moveRight()"><img src="../../assets/arrow-back-outline.svg" height="25px"></button>
+    <button id="right" class="btn btn-primary btn-sm" (click)="moveLeft()"><img src="../../assets/arrow-forward-outline.svg" height="25px"></button>
+    <button id="down" class="btn btn-primary btn-sm" (click)="moveUp()"><img src="../../assets/arrow-down-outline.svg" height="25px"></button>
+
+  </div>
 
 </div>
 </div>
