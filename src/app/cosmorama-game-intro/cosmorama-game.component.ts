@@ -19,5 +19,8 @@ export class CosmoramaGameComponent implements OnInit {
     this.router.navigate(['cosmogamemain']);
   }
 
+  returnToBoard() {
+    this.router.navigate(['/explorer']);
+  }
 }
 
