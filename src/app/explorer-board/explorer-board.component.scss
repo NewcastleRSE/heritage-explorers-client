@@ -28,3 +28,59 @@ area {
   left: 40%;
   top: 30%;
 }
+
+.characterContainer {
+  position: relative;
+  button {
+    position: absolute;
+    top: 60%;
+    left: 70%;
+  }
+}
+
+.characterText {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+#image-map {
+  width: 100%;
+  //max-width: 812px;
+  position: relative;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+#Square3 {
+  //border: 1px solid red;
+  height: 15%;
+  width: 15%;
+  position: absolute;
+  left: 34%;
+  top: 2%;
+}
+
+#Square11 {
+  //border: 1px solid red;
+  height: 15%;
+  width: 15%;
+  position: absolute;
+  left: 68%;
+  top: 82%;
+}
+
+#Square14 {
+  //border: 1px solid red;
+  height: 15%;
+  width: 15%;
+  position: absolute;
+  left: 19%;
+  top: 83%;
+}
+
+a {
+  cursor: pointer;
+}
