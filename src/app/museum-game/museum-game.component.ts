@@ -44,7 +44,7 @@ export class MuseumGameComponent implements OnInit {
   bigFish = false;
   hat = false;
 
-  playingGame = true;
+  playingGame = false;
 
 
   constructor(
@@ -82,7 +82,8 @@ export class MuseumGameComponent implements OnInit {
   foundItem(itemName) {
     console.log('found ' + itemName);
     // remove border if have asked for hint
-    document.getElementById('sarco').style.border = '';
+    document.getElementById(itemName).style.border = '';
+
     switch (itemName) {
       case 'sarco':
         this.sarco = true;
@@ -119,7 +120,8 @@ export class MuseumGameComponent implements OnInit {
 
   reveal(itemName) {
     console.log('reveal ' + itemName);
-    document.getElementById(itemName).style.border = '1px solid red';
+    document.getElementById(itemName).style.borderRadius = '30px 30px 30px 30px';
+    document.getElementById(itemName).style.border = '5px dashed  #f50808';
   }
 
 

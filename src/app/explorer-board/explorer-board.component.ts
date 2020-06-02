@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class ExplorerBoardComponent implements OnInit, AfterViewInit {
 squareNumber;
-viewingBoard = true;
+
 
   constructor(
     private router: Router
@@ -48,9 +48,6 @@ viewingBoard = true;
     this.squareNumber = '';
   }
 
-  viewBoard() {
-    this.viewingBoard = true;
-  }
 
 }
 // coords="737,595,99,117"

@@ -9,6 +9,7 @@ import {Square3Component} from './square3/square3.component';
 import {KingsGameComponent} from './kings-game/kings-game.component';
 import {CosmoramaGameComponent} from './cosmorama-game-intro/cosmorama-game.component';
 import {CosmoramaGameMainComponent} from './cosmorama-game-main/cosmorama-game-main.component';
+import {ExplorerIntroComponent} from './explorer-intro/explorer-intro.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'game', component: GameComponent},
   { path: 'counters', component: CountersComponent},
   { path: 'explorer', component: ExplorerBoardComponent},
+  { path: 'explorerintro', component: ExplorerIntroComponent},
   { path: 'museumgame', component: MuseumGameComponent},
   { path: 'kingsgame', component: KingsGameComponent},
   { path: 'cosmointro', component: CosmoramaGameComponent},

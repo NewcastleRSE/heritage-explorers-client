@@ -26,7 +26,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   playExplorer() {
-    this.router.navigate(['explorer']);
+    this.router.navigate(['explorerintro']);
   }
 
 }
