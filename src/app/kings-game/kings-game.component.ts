@@ -15,14 +15,14 @@ viewingHelp;
 
 // this list changes order to reflect what's displayed on screen
   kings = [
-    { id : 1, name : 'Edward I', filename: 'edi.PNG', viewHelp: false, helpText : 'I was born etc.'},
-    { id : 2, name : 'Henry VI', filename: 'henvi.png', viewHelp: false, helpText : 'I was alive during etc.'},
-    { id : 3, name : 'Edward IV', filename: 'ediv.png', viewHelp: false, helpText : 'I died in etc.'},
-    { id : 4, name : 'Henry VII', filename: 'henvii.png', viewHelp: false, helpText : 'I was born etc.'},
-    { id : 5, name : 'Edward VI', filename: 'edvi.png', viewHelp: false, helpText : 'I was alive during etc.'},
-    { id : 6, name : 'James I', filename: 'jami.png', viewHelp: false, helpText : 'I died in etc.'},
-    { id : 7, name : 'Charles I', filename: 'chasi.png', viewHelp: false, helpText : 'I was alive during etc.'},
-    { id : 8, name : 'James II', filename: 'jamii.png', viewHelp: false, helpText : 'I died in etc.'}
+    { id : 1, name : 'Edward I', filename: 'edi.PNG', helpText : 'I was born etc.'},
+    { id : 2, name : 'Henry VI', filename: 'henvi.png',  helpText : 'I was alive during etc.'},
+    { id : 3, name : 'Edward IV', filename: 'ediv.png', helpText : 'I died in etc.'},
+    { id : 4, name : 'Henry VII', filename: 'henvii.png',  helpText : 'I was born etc.'},
+    { id : 5, name : 'Edward VI', filename: 'edvi.png', helpText : 'I was alive during etc.'},
+    { id : 6, name : 'James I', filename: 'jami.png', helpText : 'I died in etc.'},
+    { id : 7, name : 'Charles I', filename: 'chasi.png', helpText : 'I was alive during etc.'},
+    { id : 8, name : 'James II', filename: 'jamii.png', helpText : 'I died in etc.'}
 ];
 
   // this list contains the correct order to compare user's list against
@@ -96,14 +96,22 @@ correctOrder = false;
 
 
   viewHelp(kingId) {
+    // if there is currently a card in viewing help list, then make it visible again and remove from list
+    if (this.viewingHelpKings.length > 0) {
+      const kingId = this.viewingHelpKings[0].id;
+      document.getElementById(kingId).classList.remove('invisible');
+
+        // clear list of any previous cards
+      this.viewingHelpKings = [];
+    }
+
     document.getElementById(kingId).classList.add('invisible');
-  this.viewingHelp = true;
+    this.viewingHelp = true;
 
     const copiedList = this.kings;
+    // add king to viewing list
     for (let i = 0; i < this.kings.length; i++) {
       if (copiedList[i].id === kingId){
-       copiedList[i].viewHelp = true;
-
        this.viewingHelpKings.push(copiedList[i]);
       }
     }
@@ -117,7 +125,6 @@ correctOrder = false;
     const copiedList = this.kings;
     for (let i = 0; i < this.kings.length; i++) {
       if (copiedList[i].id === kingId){
-        copiedList[i].viewHelp = false;
 
         this.viewingHelpKings = [];
         // this.kings = copiedList;
