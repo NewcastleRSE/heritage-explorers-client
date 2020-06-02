@@ -14,6 +14,7 @@ import {ExplorerIntroComponent} from './explorer-intro/explorer-intro.component'
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent},
+  { path: 'home', component: WelcomeComponent},
   { path: 'game', component: GameComponent},
   { path: 'counters', component: CountersComponent},
   { path: 'explorer', component: ExplorerBoardComponent},

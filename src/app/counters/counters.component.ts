@@ -220,4 +220,8 @@ if (this.player2Counter !== undefined) {
 
  }
 
+ returnToHome() {
+    this.router.navigate(['home']);
+ }
+
 }

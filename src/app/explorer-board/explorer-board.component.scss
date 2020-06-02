@@ -71,3 +71,10 @@ area {
 a {
   cursor: pointer;
 }
+
+.returnBtn {
+  position: absolute;
+  bottom: 10%;
+  left: 3%;
+  z-index: 5;
+}

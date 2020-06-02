@@ -71,3 +71,13 @@ h3 {
   border: 2px solid #fd7e14;
   border-radius: 8px;
 }
+
+.box {
+  position: relative;
+}
+
+.returnBtn {
+  position: absolute;
+  bottom: 10%;
+  z-index: 5;
+}

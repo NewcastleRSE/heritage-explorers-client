@@ -19,4 +19,7 @@ export class ExplorerIntroComponent implements OnInit {
     this.router.navigate(['explorer']);
   }
 
+  returnToHome() {
+    this.router.navigate(['home']);
+  }
 }

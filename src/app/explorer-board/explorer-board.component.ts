@@ -48,7 +48,9 @@ squareNumber;
     this.squareNumber = '';
   }
 
-
+returnToHome() {
+    this.router.navigate(['home']);
+}
 }
 // coords="737,595,99,117"
 // coords="803,93,1444,579"

@@ -4,6 +4,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {Square3Component} from '../square3/square3.component';
 import {transition, trigger, useAnimation} from '@angular/animations';
 import {bounce, slideInLeft, zoomIn} from 'ng-animate';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -63,7 +64,8 @@ missAGoAlertClosed = true;
 
   constructor(
     private globalsService: GlobalsService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -469,5 +471,7 @@ async square16Interaction() {
     console.log('test square ' + this.testSquare);
     this.squareInteraction(parseInt(this.testSquare));
   }
-
+returnToHome() {
+    this.router.navigate(['home']);
+}
 }
