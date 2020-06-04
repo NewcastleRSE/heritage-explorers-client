@@ -1,20 +1,24 @@
 <div class ="container text-center">
 
   <h3>The Cosmorama Exhibition</h3>
+  <div class="box sb3">
+    Oh hello, are you visiting the Cosmorama rooms today too? They are the talk of London. All the fashionable people come here to look through the glass and see pictures of animals and far away cities and battles from the past. Go on, click on the window to take a look at the pictures. Can you find the hidden objects?
+
+  </div>
 
   <div class="row">
     <div class="col mainCol">
-      <div class="characterText">
-      My name is...
-    </div>
         <img class="img-fluid characterImg" src="../../assets/kings/meyrick.png">
+
       <img class="img-fluid boardImg" src="../../assets/14.png">
+      <a id="rm1" (click)="clickWindow1()"></a>
    </div>
 
   </div>
 
 
 
-    <button class="btn btn-primary" (click)='clickWindow1()'>View cosmorama one<img src="../../assets/arrow_forward.svg"></button>
+
+<!--    <button class="btn btn-primary" (click)='clickWindow1()'>View cosmorama one<img src="../../assets/arrow_forward.svg"></button>-->
   <button class="btn btn-primary returnBtn" (click)="returnToBoard()"><img src="../../assets/arrow_back.svg">Return to Explorer Mode Board</button>
 </div>
