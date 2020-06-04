@@ -111,9 +111,7 @@ button {
   margin: 10px;
 }
 
-.correctMessage {
-  margin : auto;
-}
+
 
 .meyrickContainer {
   position: relative;
@@ -142,4 +140,42 @@ button {
 .returnBtn {
   position: absolute;
   bottom: 10%;
+}
+//speech bubble
+
+.box {
+  margin: 50px auto;
+  background: #1D2C40;
+  padding: 20px;
+  text-align: center;
+  max-width: 20%;
+  color: #fff;
+  position: absolute;
+  left: 65%;
+  top: 5%;
+  border-radius: 15px;
+}
+
+.sb3:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #1D2C40;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  left: -17px;
+}
+
+//button {
+//  z-index: 5;
+//}
+
+.characterImg {
+  position: absolute;
+  left: 20%;
+  bottom: 20%;
+  z-index: 1;
+  max-width: 50%;
 }
