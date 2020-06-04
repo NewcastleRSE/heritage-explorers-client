@@ -19,10 +19,11 @@ viewingHelp;
     { id : 2, name : 'Henry VI', filename: 'henvi.png',  helpText : 'I was alive during etc.'},
     { id : 3, name : 'Edward IV', filename: 'ediv.png', helpText : 'I died in etc.'},
     { id : 4, name : 'Henry VII', filename: 'henvii.png',  helpText : 'I was born etc.'},
-    { id : 5, name : 'Edward VI', filename: 'edvi.png', helpText : 'I was alive during etc.'},
-    { id : 6, name : 'James I', filename: 'jami.png', helpText : 'I died in etc.'},
-    { id : 7, name : 'Charles I', filename: 'chasi.png', helpText : 'I was alive during etc.'},
-    { id : 8, name : 'James II', filename: 'jamii.png', helpText : 'I died in etc.'}
+    { id : 5, name : 'Henry VIII', filename: 'henviii.png',  helpText : 'I was born etc.'},
+    { id : 6, name : 'Edward VI', filename: 'edvi.png', helpText : 'I was alive during etc.'},
+    { id : 7, name : 'James I', filename: 'jami.png', helpText : 'I died in etc.'},
+    { id : 8, name : 'Charles I', filename: 'chasi.png', helpText : 'I was alive during etc.'},
+    { id : 9, name : 'James II', filename: 'jamii.png', helpText : 'I died in etc.'}
 ];
 
   // this list contains the correct order to compare user's list against
@@ -33,8 +34,9 @@ correctKings = [
   { id : 4, name : 'King 4'},
   { id : 5, name : 'King 5'},
   { id : 6, name : 'King 6'},
-  { id : 7, name : 'King 6'},
-  { id : 8, name : 'King 6'}
+  { id : 7, name : 'King 7'},
+  { id : 8, name : 'King 8'},
+  { id : 9, name : 'King 9'}
 ];
 
 // king currently displaying as help
