@@ -2,23 +2,22 @@
 <h3>British Museum</h3>
 
   <div *ngIf="!playingGame">
-    <div class="characterBox">
-      <button class="btn btn-primary readyBtn" (click)="playingGame = true">Ready to play</button>
-    <div class="characterText">
-      My name is...
-    </div>
-    <img class="img-fluid characterImg" src="../../assets/kings/meyrick.png">
-    <img src="../../assets/11.png" class="boardImg">
 
+<!--      <button class="btn btn-primary readyBtn" (click)="playingGame = true">Ready to play<img src="../../assets/arrow_forward.svg"></button>-->
+
+    <img class="img-fluid characterImg" src="../../assets/kings/meyrick.png">
+    <div class="box sb3">Hello, yes, you there. Do you have your ticket? Only visitors with a ticket can enter the British Museum. Wait, how old are you? We don’t normally allow children here but I suppose you are ok. I am your guide today - you aren’t allowed to explore on your own of course. Welcome, welcome everyone to the first room. Can you find all the objects?
+      <button class="btn btn-primary" (click)="playingGame = true">Ready to play<img src="../../assets/arrow_forward.svg"></button>
     </div>
+
 
   </div>
 
-  <div *ngIf="playingGame">
+
 <div class="row">
-  <div class="col">
+  <div class="col-8">
 <div id="image-map">
-    <img src="../../assets/11.png">
+    <img class="img-fluid" src="../../assets/11.png">
   <a id="sarco" (click)="foundItem('sarco')"></a>
   <a id="mask" (click)="foundItem('mask')" ></a>
   <a id="cockerel" (click)="foundItem('cockerel')" ></a>
@@ -45,11 +44,9 @@
 <!--    <area target="" alt="" title="" (click)="foundItem('hat')" coords="323,358,342,354,375,346,369,368,371,383,363,391" shape="poly">-->
 <!--  </map>-->
   </div>
-<div class="col-3">
+  <div *ngIf="playingGame">
+<div class="col">
   <div class="findList">
-   <h4>Can you find these items in the museum scene? </h4>
-    <p>Click on an item name if you can't find it.</p><br>
-
     <ul class="list-group">
 <!--      show as active once item has been found-->
       <li *ngIf="sarco === false" (click)="reveal('sarco')" class="list-group-item">Sarcophagus</li>
@@ -76,7 +73,7 @@
   </div>
 </div>
 </div>
-  </div>
+</div>
 
   <div class="text-center" *ngIf="sarco === true && mask === true && cockerel === true && peacock === true && duck === true && snake === true && yFish === true && turkey === true && bigFish === true && hat === true">
     <h3>Well done, you found all the objects!</h3>
