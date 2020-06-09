@@ -6,29 +6,26 @@
 
   <div class="row">
     <div class="col-2">
-      <ul class="list-group findList">
+      <ul class="list-group findList text-center">
         <!--      show as active once item has been found-->
-        <li class="list-group-item" id="item1" (click)="check(1)">Sarcophagus</li>
-        <li  class="list-group-item " id="item2" (click)="check(2)">Duck</li>
-        <li  class="list-group-item " id="item3" (click)="check(3)">Snake</li>
-        <li class="list-group-item " id="item4" (click)="check(4)">Mask</li>
-        <li  class="list-group-item " id="item5" (click)="check(5)">Yellow fish</li>
-        <li  class="list-group-item " id="item6" (click)="check(6)">Turkey</li>
-        <li class="list-group-item " id="item7" (click)="check(7)">Peacock</li>
-        <li  class="list-group-item " id="item8" (click)="check(8)">Cockerel?</li>
-        <li  class="list-group-item " id="item9" (click)="check(9)">Chinese dragon</li>
-        <li  class="list-group-item" id="item10" (click)="check(10)">Top hat</li>
+        <li class="list-group-item" id="item1" (click)="check(1)">St Paul's Church<img height="80px" src="../../assets/cosmo/stPauls.png"></li>
+        <li  class="list-group-item " id="item2" (click)="check(2)">The Globe<img height="80px" src="../../assets/cosmo/globe.png"></li>
+        <li  class="list-group-item " id="item3" (click)="check(3)">etc.</li>
+
       </ul>
     </div>
 
 
     <div class="col">
-<div class="container2" id="c2" [style.backgroundPositionX]="backgroundLeft" [style.backgroundPositionY]="backgroundTop">
+<!--    <div class="container2" id="c2" [style.backgroundPositionX]="backgroundLeft" [style.backgroundPositionY]="backgroundTop">-->
+<div class="imageContainer">
+  <img id="panorama" src="../../assets/London_panorama.jpg" [style.left]="backgroundLeft" [style.top]="backgroundTop">
+  <img class="img-fluid foregroundImg" src="../../assets/cosmoB322.png">
+
+</div>
 
 
-
-      <img class="img-fluid foregroundImg" src="../../assets/cosmoB3.png">
-    </div>
+<!--    </div>-->
   </div>
 
 

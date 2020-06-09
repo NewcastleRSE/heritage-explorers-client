@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, ElementRef, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-cosmorama-game-main',
   templateUrl: './cosmorama-game-main.component.html',
@@ -20,8 +21,12 @@ pressingTimer;
   ) { }
 
   ngOnInit(): void {
-    this.backgroundTop = 0;
-    this.backgroundLeft = 0;
+    // todo start cosmo background image in the centre
+
+
+  this.backgroundTop = 0;
+  this.backgroundLeft = 0;
+
     // this.objImage = document.getElementById('backgroundImg');
     // this.objImage.style.position = 'relative';
     // this.objImage.style.left = '0px';
@@ -31,6 +36,9 @@ pressingTimer;
   }
 
   ngAfterViewInit() {
+    // this.backgroundLeft = 2000;
+    // console.log(this.backgroundLeft);
+
     // get height and width of background image
     const imageSrc = document
       .getElementById('c2')
@@ -95,26 +103,29 @@ pressingTimer;
     }
   }
   moveLeft(){
-    if (parseInt(this.backgroundLeft) >= -340) {
+    if (parseInt(this.backgroundLeft) >= -4185) {
       this.backgroundLeft = parseInt(this.backgroundLeft) - 10 + 'px';
 
     }
 
   }
   moveUp(){
-    if (parseInt(this.backgroundTop) >= -285) {
+    if (parseInt(this.backgroundTop) >= -530) {
       this.backgroundTop = parseInt(this.backgroundTop) - 10 + 'px';
+
     }
   }
   moveRight(){
-    if (parseInt(this.backgroundLeft) <= 150) {
+    if (parseInt(this.backgroundLeft) <= 90) {
       this.backgroundLeft = parseInt(this.backgroundLeft) + 10 + 'px';
+
     }
   }
   moveDown(){
-    if (parseInt(this.backgroundTop) <= 150) {
+    if (parseInt(this.backgroundTop) <= 90) {
       this.backgroundTop = parseInt(this.backgroundTop) + 10 + 'px';
     }
+
   }
 
 

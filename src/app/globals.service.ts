@@ -8,7 +8,12 @@ export class GlobalsService {
   player2Counter;
   player1Name;
   player2Name;
+  passwordEntered;
 
   constructor() {
+  }
+
+  setPasswordEntered(entered: boolean) {
+    this.passwordEntered = entered;
   }
 }
