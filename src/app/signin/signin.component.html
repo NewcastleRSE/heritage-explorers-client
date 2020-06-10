@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container text-center">
 
   <div class="loginWindow">
     <h1>Login</h1>
@@ -6,11 +6,11 @@
 
     <form (ngSubmit)="onSubmit()"#regForm="ngForm">
       <div class="form-group row">
-        <label for="password" class="col-sm-2 col-form-label col-form-label"><img src="../assets/lock.svg"
+        <label for="password" class="col-sm-2 col-form-label col-form-label"><img src="../assets/key.svg"
                                                                                   height="25"/></label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="password"
-                 required appPassword
+                 required
                  [(ngModel)]="password" name="password" placeholder="Password">
         </div>
       </div>

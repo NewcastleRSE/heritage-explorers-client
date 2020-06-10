@@ -19,8 +19,12 @@
     <div class="col">
 <!--    <div class="container2" id="c2" [style.backgroundPositionX]="backgroundLeft" [style.backgroundPositionY]="backgroundTop">-->
 <div class="imageContainer">
-  <img id="panorama" src="../../assets/London_panorama.jpg" [style.left]="backgroundLeft" [style.top]="backgroundTop">
-  <img class="img-fluid foregroundImg" src="../../assets/cosmoB322.png">
+  <div id="panorama" [style.left]="backgroundLeft" [style.top]="backgroundTop">
+  <img id="panoramaimg" src="../../assets/London_panorama.jpg" >
+<!--    <a (click)="clicked()" id="stpauls"></a>-->
+</div>
+
+ <img class="img-fluid foregroundImg" src="../../assets/cosmoB322.png">
 
 </div>
 

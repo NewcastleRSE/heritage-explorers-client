@@ -138,4 +138,9 @@ pressingTimer;
     document.getElementById(itemCode).innerHTML += '   &#10003;';
   }
 
+  clicked() {
+    console.log('clicked');
+  }
+
+
 }
