@@ -8,4 +8,4 @@ RUN ng build --prod="true"
 
 FROM nginx:alpine
 COPY --from=builder /usr/local/app/dist/* /usr/share/nginx/html
-COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+RUN ls /usr/share/nginx/html
