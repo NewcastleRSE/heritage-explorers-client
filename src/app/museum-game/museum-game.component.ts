@@ -120,8 +120,8 @@ export class MuseumGameComponent implements OnInit {
 
   reveal(itemName) {
     console.log('reveal ' + itemName);
-    document.getElementById(itemName).style.borderRadius = '30px 30px 30px 30px';
-    document.getElementById(itemName).style.border = '5px dashed  #f50808';
+    // document.getElementById(itemName).style.borderRadius = '30px 30px 30px 30px';
+    document.getElementById(itemName).style.border = '3px solid #fd7e14';
   }
 
 
