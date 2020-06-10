@@ -8,6 +8,7 @@
   width: 100%;
   height: auto;
   position: relative;
+  overflow: visible;
 }
 
 .boardImg {
@@ -65,7 +66,7 @@
 
 .player2Bag{
   position: absolute;
-  left: 100%;
+  left: 101%;
   top: 25%;
 }
 
