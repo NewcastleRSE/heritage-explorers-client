@@ -134,8 +134,12 @@ pressingTimer;
 // tick found items
   check(itemNo) {
     const itemCode = 'item' + itemNo;
-    document.getElementById(itemCode).classList.add('active');
-    document.getElementById(itemCode).innerHTML += '   &#10003;';
+
+    // if already active then don't do anything
+    if (!document.getElementById(itemCode).classList.contains('active')) {
+      document.getElementById(itemCode).classList.add('active');
+      document.getElementById(itemCode).innerHTML += '   &#10003;';
+    }
   }
 
   clicked() {
