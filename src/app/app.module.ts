@@ -18,6 +18,7 @@ import { CosmoramaGameComponent } from './cosmorama-game-intro/cosmorama-game.co
 import { CosmoramaGameMainComponent } from './cosmorama-game-main/cosmorama-game-main.component';
 import { ExplorerIntroComponent } from './explorer-intro/explorer-intro.component';
 import { SigninComponent } from './signin/signin.component';
+import { PasswordDirective } from './password.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { SigninComponent } from './signin/signin.component';
     CosmoramaGameComponent,
     CosmoramaGameMainComponent,
     ExplorerIntroComponent,
-    SigninComponent
+    SigninComponent,
+    PasswordDirective,
+    PasswordDirective
   ],
   imports: [
     BrowserModule,
