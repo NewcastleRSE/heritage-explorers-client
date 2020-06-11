@@ -44,6 +44,7 @@ export class MuseumGameComponent implements OnInit {
   bigFish = false;
   hat = false;
 hier = false;
+dog = false;
   playingGame = false;
 
 
@@ -69,6 +70,8 @@ hier = false;
     this.turkey = false;
     this.bigFish = false;
     this.hat = false;
+    this.hier = false;
+    this.dog = false;
   }
 
   returnToBoard() {
@@ -117,6 +120,8 @@ hier = false;
         break;
       case 'hier':
         this.hier = true;
+      case 'dog':
+        this.dog = true;
     }
   }
 
