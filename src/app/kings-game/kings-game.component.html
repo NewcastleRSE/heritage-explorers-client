@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container text-center">
   <h3>The Horse Armoury</h3>
 
     <div class="header text-center">
@@ -7,7 +7,8 @@
         hint.</p>
     </div>
 
-    <div (cdkDropListDropped)="drop($event)" cdkDropList cdkDropListOrientation="horizontal" class=" kingsList">
+  <div class="cardRow">
+    <div (cdkDropListDropped)="drop($event)" cdkDropList cdkDropListOrientation="horizontal" class="kingsList">
       <div *ngFor="let king of kings" cdkDrag class="card kingBox" id="{{king.id}}">
         <img (click)="viewHelp(king.id)" alt="King image" class="card-img-top smallCardImg"
              src="../../assets/kings/{{king.filename}}">
@@ -24,7 +25,7 @@
       </div>
 
     </div>
-
+</div>
     <div *ngIf="viewingHelp">
       <div *ngFor="let king of viewingHelpKings" class="card w-25 mx-auto text-center">
 
