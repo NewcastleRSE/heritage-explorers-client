@@ -103,7 +103,7 @@ pressingTimer;
     }
   }
   moveLeft(){
-    if (parseInt(this.backgroundLeft) >= -4185) {
+    if (parseInt(this.backgroundLeft) >= -4125) {
       this.backgroundLeft = parseInt(this.backgroundLeft) - 10 + 'px';
 
     }
@@ -116,13 +116,13 @@ pressingTimer;
     }
   }
   moveRight(){
-    if (parseInt(this.backgroundLeft) <= 90) {
+    if (parseInt(this.backgroundLeft) <= 30) {
       this.backgroundLeft = parseInt(this.backgroundLeft) + 10 + 'px';
 
     }
   }
   moveDown(){
-    if (parseInt(this.backgroundTop) <= 90) {
+    if (parseInt(this.backgroundTop) <= 45) {
       this.backgroundTop = parseInt(this.backgroundTop) + 10 + 'px';
     }
 
