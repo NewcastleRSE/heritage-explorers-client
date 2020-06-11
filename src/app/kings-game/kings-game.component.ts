@@ -135,11 +135,6 @@ correctOrder = false;
     }
   }
 
-  finishMeyrick() {
-    this.meyrickVisible = false;
-    this.kingsVisible = true;
-  }
-
   returnToBoard() {
     this.router.navigate(['/explorer']);
   }

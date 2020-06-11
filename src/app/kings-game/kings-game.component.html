@@ -1,28 +1,6 @@
 <div class="container">
   <h3>The Horse Armoury</h3>
 
-  <div *ngIf="meyrickVisible">
-    <img class="img-fluid characterImg" src="../../assets/kings/meyrick.png">
-    <div class="box sb3"><p>
-      Hello, my name is Samuel Rush Meyrick. I hope you are enjoying your visit to the Tower of London. Come closer and
-      take a look at the statues of famous kings from the past. I put them in chronological order (that is from oldest
-      to newest). I know so much about arms and armour and have made sure that my display is exactly right. But oh no!
-      Someone has mixed up the kings. Can you help me put them in the right order?
-
-      Use your cursor to drag the kings to the correct place. Remember to click the kings and they will give you clues.
-      You can use the buttons to leave the Horse Armoury and to play again.
-    </p>
-      <button (click)="finishMeyrick()" class="btn btn-primary">Ready to play<img src="../../assets/arrow_forward.svg">
-      </button>
-    </div>
-
-
-    <!--        <button (click)="finishMeyrick()" class="btn btn-primary">Ready to play<img src="../../assets/arrow_forward.svg"></button>-->
-
-
-  </div>
-
-  <div *ngIf="kingsVisible">
     <div class="header text-center">
 
       <p>Drag and drop the King's until they are in chronological order. Click on a King's picture to view a helpful
@@ -67,7 +45,7 @@
       </div>
 
     </div>
-  </div>
+
 
   <div *ngIf="correctOrder" class="correctMessage text-center">
     <h3>Correct!</h3>
@@ -80,4 +58,5 @@
   <button class="btn btn-primary returnBtn" (click)="returnToBoard()"><img src="../../assets/arrow_back.svg">Return to
     Explorer Board
   </button>
+
 </div>

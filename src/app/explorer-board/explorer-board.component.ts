@@ -15,7 +15,6 @@ squareNumber;
     private router: Router
   ) { }
 
-  // todo fix bug that means the map isn't clickable until you refresh the page
 
   ngOnInit(): void {
 
@@ -30,7 +29,7 @@ squareNumber;
     switch (squareNumber) {
       // todo add holding message for other squares
       case 3:
-        this.router.navigate(['kingsgame']);
+        this.router.navigate(['kingsintro']);
         break;
       case 11:
         this.router.navigate(['museumgame']);

@@ -32,6 +32,7 @@ h4 {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
+
 .kingsList {
   margin-top: 60px;
   max-width: 100%;
@@ -101,7 +102,15 @@ h4 {
   padding: 0!important;
 
 }
-
+.boardImg {
+  //float: right;
+  z-index: -1;
+  //position: absolute;
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #1D2C40;
+}
 
 .close {
   padding: 10px;
@@ -111,22 +120,25 @@ button {
   margin: 10px;
 }
 
-
-
-.meyrickContainer {
+.mainCol {
   position: relative;
- button {
-    position: absolute;
-   top: 60%;
-   left: 70%;
-  }
 }
 
-.meyrickText {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-}
+//
+//.meyrickContainer {
+//  position: relative;
+// button {
+//    position: absolute;
+//   top: 60%;
+//   left: 70%;
+//  }
+//}
+//
+//.meyrickText {
+//  position: absolute;
+//  top: 20%;
+//  left: 50%;
+//}
 
 #helpCardImg {
 //margin-left: auto;

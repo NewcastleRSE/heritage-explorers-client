@@ -12,6 +12,7 @@ import {CosmoramaGameMainComponent} from './cosmorama-game-main/cosmorama-game-m
 import {ExplorerIntroComponent} from './explorer-intro/explorer-intro.component';
 import {RouteGuardService} from './route-guard.service';
 import {SigninComponent} from './signin/signin.component';
+import {KingsIntroComponent} from './kings-intro/kings-intro.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'explorerintro', component: ExplorerIntroComponent, canActivate: [RouteGuardService]},
   { path: 'museumgame', component: MuseumGameComponent, canActivate: [RouteGuardService]},
   { path: 'kingsgame', component: KingsGameComponent, canActivate: [RouteGuardService]},
+  { path: 'kingsintro', component: KingsIntroComponent, canActivate: [RouteGuardService]},
   { path: 'cosmointro', component: CosmoramaGameComponent, canActivate: [RouteGuardService]},
   { path: 'cosmogamemain', component: CosmoramaGameMainComponent, canActivate: [RouteGuardService]},
   { path: 'three', component: Square3Component, canActivate: [RouteGuardService]},
