@@ -32,7 +32,7 @@ squareNumber;
         this.router.navigate(['kingsintro']);
         break;
       case 11:
-        this.router.navigate(['museumgame']);
+        this.router.navigate(['museumintro']);
         break;
       case 14:
         this.router.navigate(['cosmointro']);

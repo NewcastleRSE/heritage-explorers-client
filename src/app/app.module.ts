@@ -20,6 +20,7 @@ import { ExplorerIntroComponent } from './explorer-intro/explorer-intro.componen
 import { SigninComponent } from './signin/signin.component';
 import { PasswordDirective } from './password.directive';
 import { KingsIntroComponent } from './kings-intro/kings-intro.component';
+import { MuseumIntroComponent } from './museum-intro/museum-intro.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { KingsIntroComponent } from './kings-intro/kings-intro.component';
     SigninComponent,
     PasswordDirective,
     PasswordDirective,
-    KingsIntroComponent
+    KingsIntroComponent,
+    MuseumIntroComponent
   ],
   imports: [
     BrowserModule,
