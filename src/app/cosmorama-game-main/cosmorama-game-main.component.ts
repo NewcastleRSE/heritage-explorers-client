@@ -116,13 +116,13 @@ pressingTimer;
     }
   }
   moveRight(){
-    if (parseInt(this.backgroundLeft) <= 30) {
+    if (parseInt(this.backgroundLeft) <= -3) {
       this.backgroundLeft = parseInt(this.backgroundLeft) + 10 + 'px';
 
     }
   }
   moveDown(){
-    if (parseInt(this.backgroundTop) <= 45) {
+    if (parseInt(this.backgroundTop) <= 0) {
       this.backgroundTop = parseInt(this.backgroundTop) + 10 + 'px';
     }
 
