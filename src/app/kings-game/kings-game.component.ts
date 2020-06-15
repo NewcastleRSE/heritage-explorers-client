@@ -88,7 +88,10 @@ correctOrder = false;
   }
 
   triggerWin() {
-    this.correctOrder = true;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['kingsintro'], { queryParams: { i: false}});
+    });
+
   }
 
   reset() {

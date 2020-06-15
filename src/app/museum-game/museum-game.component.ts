@@ -120,8 +120,10 @@ dog = false;
         break;
       case 'hier':
         this.hier = true;
+        break;
       case 'dog':
         this.dog = true;
+        break;
     }
   }
 

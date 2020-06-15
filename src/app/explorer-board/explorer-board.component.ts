@@ -29,7 +29,7 @@ squareNumber;
     switch (squareNumber) {
       // todo add holding message for other squares
       case 3:
-        this.router.navigate(['kingsintro']);
+        this.router.navigate(['kingsintro'], { queryParams: { i: true}});
         break;
       case 11:
         this.router.navigate(['museumintro']);

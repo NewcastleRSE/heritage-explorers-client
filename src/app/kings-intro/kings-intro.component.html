@@ -2,6 +2,7 @@
 
   <h3>The Cosmorama Exhibition</h3>
 
+  <div *ngIf="introShowing">
   <div class="box sb3"><p>
     Hello, my name is Samuel Rush Meyrick. I hope you are enjoying your visit to the Tower of London. Come closer and
     take a look at the statues of famous kings from the past. I put them in chronological order (that is from oldest
@@ -14,6 +15,20 @@
     <button (click)="finishMeyrick()" class="btn btn-primary">Ready to play<img src="../../assets/arrow_forward.svg">
     </button>
   </div>
+</div>
+
+  <div *ngIf="!introShowing">
+    <div class="box sb3"><p>
+    Thank you, you have really helped me...
+    </p>
+
+      <button (click)="returnToBoard()" class="btn btn-primary">Finish<img src="../../assets/arrow_forward.svg">
+      </button>
+      <button (click)="finishMeyrick()" class="btn btn-primary">Play again<img src="../../assets/arrow_forward.svg">
+      </button>
+    </div>
+  </div>
+
 
   <div class="mainCol">
     <img class="img-fluid characterImg" src="../../assets/kings/meyrick.png">

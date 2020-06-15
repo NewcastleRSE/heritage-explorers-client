@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-kings-intro',
@@ -7,12 +7,29 @@ import {Router} from '@angular/router';
   styleUrls: ['./kings-intro.component.scss']
 })
 export class KingsIntroComponent implements OnInit {
+// page shows intro and completion messages depending on flag
+  introShowing: boolean;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+
+    // check if showing intro our well done message
+    this.route.queryParams
+      .subscribe(params => {
+        console.log(typeof params.i);
+        if (params.i === 'false') {
+          console.log('intro is false');
+          this.introShowing = false;
+          console.log('intro' + this.introShowing);
+        } else if (params.i === 'true') {
+          this.introShowing = true;
+        }
+
+      });
   }
 
 
