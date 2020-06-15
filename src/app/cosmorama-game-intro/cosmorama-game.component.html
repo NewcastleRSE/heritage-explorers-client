@@ -1,8 +1,14 @@
 <div class ="container text-center">
 
   <h3>The Cosmorama Exhibition</h3>
+  <div *ngIf="introShowing">
   <div class="box sb3">
     Oh hello, are you visiting the Cosmorama rooms today too? They are the talk of London. All the fashionable people come here to look through the glass and see pictures of animals and far away cities and battles from the past. Go on, click on the window to take a look at the pictures. Can you find the hidden objects?
+  </div>
+</div>
+
+  <div *ngIf="!introShowing">
+    <div class="box sb3">Well done, either play again or return to the explorer board</div>
   </div>
 
 <!--  <div class="row">-->

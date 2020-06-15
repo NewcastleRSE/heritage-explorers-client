@@ -8,12 +8,14 @@ import {Router} from '@angular/router';
   styleUrls: ['./cosmorama-game-main.component.scss']
 })
 export class CosmoramaGameMainComponent implements OnInit, AfterViewInit {
-  objImage;
+
   backgroundTop;
   backgroundLeft;
 
-  upIsPressing = false;
-pressingTimer;
+item1;
+item2;
+item3;
+
 
   constructor(
     private elementRef: ElementRef,
@@ -135,11 +137,28 @@ pressingTimer;
   check(itemNo) {
     const itemCode = 'item' + itemNo;
 
+    switch(itemCode) {
+      case 'item1':
+        this.item1 = true;
+        break;
+      case 'item2':
+        this.item2 = true;
+        break;
+      case 'item3':
+        this.item3 = true;
+    }
+
     // if already active then don't do anything
     if (!document.getElementById(itemCode).classList.contains('active')) {
       document.getElementById(itemCode).classList.add('active');
       document.getElementById(itemCode).innerHTML += '   &#10003;';
     }
+
+    // check if list is complete
+if (this.item1 === true && this.item2 === true && this.item3 === true) {
+  // complete
+  this.router.navigate(['cosmointro'], { queryParams: { i: false}})
+}
   }
 
   clicked() {

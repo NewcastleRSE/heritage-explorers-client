@@ -32,10 +32,10 @@ squareNumber;
         this.router.navigate(['kingsintro'], { queryParams: { i: true}});
         break;
       case 11:
-        this.router.navigate(['museumintro']);
+        this.router.navigate(['museumintro'], { queryParams: { i: true}});
         break;
       case 14:
-        this.router.navigate(['cosmointro']);
+        this.router.navigate(['cosmointro'], { queryParams: { i: true}});
     }
   }
 
