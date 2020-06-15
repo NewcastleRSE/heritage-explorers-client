@@ -57,7 +57,7 @@ dog = false;
     ImageMap('img[usemap]');
     // this.openInfoModal();
   }
-// todo help option to highlight when can't find something?
+
 
   reset() {
     this.sarco = false;
@@ -125,6 +125,15 @@ dog = false;
         this.dog = true;
         break;
     }
+
+    // check if everything has been found
+
+    if (this.sarco === true && this.duck === true && this.snake === true && this.yFish === true &&
+      this.turkey === true && this.peacock === true && this.cockerel === true &&
+      this.bigFish === true && this.hat === true && this.hier === true && this.dog === true) {
+      // game is complete
+      this.router.navigate(['museumintro'], { queryParams: { i: false}});
+    }
   }
 
   reveal(itemName) {
@@ -132,6 +141,7 @@ dog = false;
     // document.getElementById(itemName).style.borderRadius = '30px 30px 30px 30px';
     document.getElementById(itemName).style.border = '3px solid #fd7e14';
   }
+
 
 
 }

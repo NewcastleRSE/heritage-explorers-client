@@ -1,6 +1,7 @@
 <div class="container text-center">
   <h3>British Museum</h3>
 
+  <div *ngIf="introShowing">
   <div class="box sb3">Hello, yes, you there. Do you have your ticket? Only visitors with a ticket can enter the British Museum. Wait, how old are you? We don’t normally allow children here but I suppose you are ok. I am your guide today - you aren’t allowed to explore on your own of course. Welcome, welcome everyone to the first room. Can you find all the objects?
     <button class="btn btn-primary bubbleBtn" (click)="playGame()">Ready to play<img src="../../assets/arrow_forward.svg"></button>
   </div>
@@ -10,6 +11,24 @@
   <!--      <button class="btn btn-primary readyBtn" (click)="playingGame = true">Ready to play<img src="../../assets/arrow_forward.svg"></button>-->
 
   <img class="img-fluid characterImg" src="../../assets/kings/meyrick.png">
+  </div>
+
+  <div *ngIf="!introShowing">
+    <div class="box sb3"> Well done you found all the objects....
+      <button (click)="returnToBoard()" class="btn btn-primary">Finish<img src="../../assets/arrow_back.svg">
+      </button>
+      <button (click)="returnToBoard()" class="btn btn-primary">Play again<img src="../../assets/arrow_forward.svg">
+      </button>
+    </div>
+
+    <img class="img-fluid boardImg" src="../../assets/11.png">
+
+    <!--      <button class="btn btn-primary readyBtn" (click)="playingGame = true">Ready to play<img src="../../assets/arrow_forward.svg"></button>-->
+
+    <img class="img-fluid characterImg" src="../../assets/kings/meyrick.png">
+  </div>
+
+
   <button class="btn btn-primary returnBtn" (click)="returnToBoard()"><img src="../../assets/arrow_back.svg">Return to Explorer Board</button>
 
 </div>
