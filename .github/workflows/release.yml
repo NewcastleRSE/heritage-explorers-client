@@ -16,7 +16,7 @@ jobs:
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
         registry: hassPilotsCR.azurecr.io
-        name: hassPilotsCR.azurecr.io/hands-on-app
+        name: hassPilotsCR.azurecr.io/heritage-explorers-client
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
         tag_semver: true
