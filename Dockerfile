@@ -7,6 +7,6 @@ RUN npm rebuild node-sass
 RUN ng build --prod="true"
 
 FROM nginx
-COPY --from=builder /usr/local/app/dist/angular-template/* /usr/share/nginx/html/
+COPY --from=builder /usr/local/app/dist/heritage-explorers-client /usr/share/nginx/html/
 RUN ls /usr/share/nginx/html/
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
