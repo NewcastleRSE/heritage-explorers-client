@@ -33,8 +33,12 @@
           <button (click)="closeHelp(king.id)" aria-label="Close" class="close" data-dismiss="modal" type="button"><span
             aria-hidden="true">&times;</span></button>
         </div>
+
         <img id="helpCardImg" alt="King image" class="card-img-top" src="../../assets/kings/{{king.filename}}">
         <h4>{{king.helpText}}</h4>
+
+        <button class="btn btn-primary btn-sm listenBtn" (click)="playClue(king.id)">Listen to clue<img id="soundIcon" src="../../assets/kings/volume.svg" height="30"></button>
+
         <h5 class="card-title">{{king.name}}</h5>
 
         <!--        &lt;!&ndash;       help bubble to display when user selects. Doesn't display if order is correct&ndash;&gt;-->

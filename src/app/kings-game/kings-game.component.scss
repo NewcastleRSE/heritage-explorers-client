@@ -153,10 +153,7 @@ button {
   float: right;
 }
 
-.returnBtn {
-  position: absolute;
-  bottom: 10%;
-}
+
 //speech bubble
 
 .box {
@@ -197,7 +194,17 @@ button {
 //}
 .returnBtn {
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   z-index: 3;
-  left: 22%;
+  left: 10%;
+}
+
+#soundIcon {
+  margin-left: 5px;
+}
+
+.listenBtn {
+  max-width: 50%;
+  margin-right: auto;
+  margin-left: auto;
 }

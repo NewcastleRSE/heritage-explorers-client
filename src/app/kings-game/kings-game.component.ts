@@ -141,4 +141,8 @@ correctOrder = false;
   returnToBoard() {
     this.router.navigate(['/explorer']);
   }
+
+  playClue(kingsID) {
+    console.log(kingsID);
+  }
 }
