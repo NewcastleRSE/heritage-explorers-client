@@ -4,6 +4,13 @@
   margin: auto;
 }
 
+.characterImg {
+  position: absolute;
+max-width: 30%;
+  left: 20%;
+  top: 24%;
+}
+
 .options {
 
 }
@@ -35,8 +42,8 @@ button {
   max-width: 20%;
   color: #fff;
   position: absolute;
-  left: 60%;
-  top: 15%;
+  left: 53%;
+  top: 13%;
   border-radius: 15px;
 }
 .sb3:before {
@@ -49,6 +56,7 @@ button {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   left: -20px;
+  top: 60px;
 }
 
 

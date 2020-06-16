@@ -7,6 +7,24 @@ import {Router} from '@angular/router';
   styleUrls: ['./race-intro.component.scss']
 })
 export class RaceIntroComponent implements OnInit {
+  p1Square;
+  p2Square;
+  currentPlayer;
+  winningMessage;
+  lastRoll;
+  rolls = [1, 2, 3, 4];
+
+// counter positioning
+  p1Top;
+  p1Left;
+  p2Top;
+  p2Left;
+
+  p1Counter;
+  p2Counter;
+
+  p1Name;
+  p2Name;
 
   constructor(
     private router: Router
