@@ -15,8 +15,8 @@ jobs:
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        registry: atnuregistry.azurecr.io
-        name: atnuregistry.azurecr.io/hands-on-app
+        registry: hassPilotsCR.azurecr.io
+        name: hassPilotsCR.azurecr.io/hands-on-app
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
         tag_semver: true
