@@ -1,0 +1,57 @@
+.mainCol {
+  position: relative;
+}
+
+.characterImg {
+  position: absolute;
+  width: 29%;
+  top: 26%;
+  left: 22%;
+  z-index: 1;
+
+}
+
+
+.boardImg {
+  z-index: -1;
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #1D2C40;
+}
+
+
+.returnBtn {
+  position: absolute;
+  bottom: 10%;
+  z-index: 5;
+  left: 22%;
+}
+
+//speech bubble
+
+.box {
+  margin: 50px auto;
+  background: #1D2C40;
+  padding: 20px;
+  text-align: center;
+  max-width: 20%;
+  color: #fff;
+  position: absolute;
+  left: 48%;
+  top: 19%;
+  border-radius: 15px;
+  z-index: 1;
+}
+.sb3:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #1D2C40;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  left: -20px;
+}
+

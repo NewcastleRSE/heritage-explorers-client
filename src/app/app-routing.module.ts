@@ -14,6 +14,7 @@ import {RouteGuardService} from './route-guard.service';
 import {SigninComponent} from './signin/signin.component';
 import {KingsIntroComponent} from './kings-intro/kings-intro.component';
 import {MuseumIntroComponent} from './museum-intro/museum-intro.component';
+import {RaceIntroComponent} from './race-intro/race-intro.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'museumintro', component: MuseumIntroComponent, canActivate: [RouteGuardService]},
   { path: 'cosmogamemain', component: CosmoramaGameMainComponent, canActivate: [RouteGuardService]},
   { path: 'three', component: Square3Component, canActivate: [RouteGuardService]},
+  { path: 'raceintro', component: RaceIntroComponent, canActivate: [RouteGuardService]},
   {path: 'signin', component: SigninComponent},
 ];
 

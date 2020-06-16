@@ -210,7 +210,7 @@ if (this.player2Counter !== undefined) {
   this.globalsService.player2Name = this.player2Name;
 
   // nav to game
-  this.router.navigate(['game']);
+  this.router.navigate(['raceintro']);
 }
 
  }
