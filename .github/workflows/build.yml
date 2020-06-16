@@ -1,22 +1,23 @@
 # This workflow will build the docker image and push to Azure Container Registry
+# This workflow will do a clean install of python dependencies, run tests, build the docker images and deploy to Azure Container Instances
 
-name: Build
+name: Build & Deploy
 
 on:
   push:
-    branches:
+    branches: 
       - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-      - name: Publish to Registry
-        uses: elgohr/Publish-Docker-Github-Action@master
-        with:
-          registry: hassPilotsCR.azurecr.io
-          name: hassPilotsCR.azurecr.io/heritage-explorers-client
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        registry: hassPilotsCR.azurecr.io
+        name: hassPilotsCR.azurecr.io/hands-on-app
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
