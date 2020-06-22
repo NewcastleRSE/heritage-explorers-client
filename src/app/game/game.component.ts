@@ -178,9 +178,13 @@ missAGoAlertClosed = true;
 
     // ----- Square 18 stop game
     else if (squareNumber === 18) {
-      // todo winner modal
       this.winningMessage = 'Player ' + this.currentPlayer + ' wins!';
-      // todo don't change player - restart game
+
+      if (this.currentPlayer === 1) {
+        this.router.navigate(['win'], { queryParams: { w: this.p1Name}});
+      } else if (this.currentPlayer === 2) {
+        this.router.navigate(['win'], { queryParams: { w: this.p2Name}});
+      }
     }
 
     // default if not specific behaviour
@@ -232,7 +236,7 @@ async square5Interaction() {
 }
 
 async square16Interaction() {
-    // todo open image
+
   console.log('land on 16 so lose all pool');
   if (this.currentPlayer === 1) {
     // add sweets to pool then empty

@@ -22,6 +22,7 @@ import { PasswordDirective } from './password.directive';
 import { KingsIntroComponent } from './kings-intro/kings-intro.component';
 import { MuseumIntroComponent } from './museum-intro/museum-intro.component';
 import { RaceIntroComponent } from './race-intro/race-intro.component';
+import { RaceWinComponent } from './race-win/race-win.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { RaceIntroComponent } from './race-intro/race-intro.component';
     PasswordDirective,
     KingsIntroComponent,
     MuseumIntroComponent,
-    RaceIntroComponent
+    RaceIntroComponent,
+    RaceWinComponent
   ],
   imports: [
     BrowserModule,
