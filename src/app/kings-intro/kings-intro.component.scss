@@ -4,18 +4,17 @@
 
 .characterImg {
   position: absolute;
-  width: 60%;
-  top: 15%;
-  left: -10%;
-  z-index: 1;
-
+  left: 70%;
+  bottom: 0%;
+  z-index: 2;
+  max-width: 30%;
 }
 
 
 .boardImg {
   z-index: -1;
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  margin-right: 30px;
   border-radius: 10px;
   box-shadow: 0 0 30px #1D2C40;
 }
@@ -23,9 +22,9 @@
 
 .returnBtn {
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   z-index: 5;
-  left: 22%;
+  left: 5%;
 }
 
 //speech bubble
@@ -35,14 +34,14 @@
   background: #1D2C40;
   padding: 20px;
   text-align: center;
-  max-width: 30%;
+  max-width: 23%;
   color: #fff;
   position: absolute;
-  left: 42%;
+  left: 56%;
   top: 16%;
   border-radius: 15px;
   z-index: 1;
-
+  box-shadow: 0 0 50px #1D2C40;
 
 }
 
@@ -51,12 +50,12 @@
   width: 0px;
   height: 0px;
   position: absolute;
-  border-left: 10px solid transparent;
-  border-right: 10px solid #1D2C40;
+  border-left: 10px solid #1D2C40;
+  border-right: 10px solid transparent;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  left: -17px;
-  top: 55px;
+  right: -17px;
+  top: 200px;
 }
 
 button {
