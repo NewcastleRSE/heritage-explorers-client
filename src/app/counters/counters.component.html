@@ -5,13 +5,15 @@
   </div>
 
 
-  <ngb-alert (close)="closeAlert()" *ngIf="showCounterAlert" type='warning'>Please select a counter</ngb-alert>
+  <ngb-alert (close)="closeAlert()" *ngIf="showCounterAlert" type='warning'>Please enter your name and select a counter</ngb-alert>
+    <ngb-alert (close)="closeAlert()" *ngIf="showSameNameAlert" type='warning'>Player 2 must have a different name to {{this.player1Name}}</ngb-alert>
 
   <!--  player 1 choices-->
   <div *ngIf="player1Choosing">
     <h3 class="player1Colour">Player 1</h3>
+    <p>Enter your name and click on the counters below to listen to their sounds and choose which you want to use. Then click Finished.</p>
     <!--    player 1 enter name-->
-    <div *ngIf="player1EnteredName === false">
+
 
       <form #p1Form="ngForm" (ngSubmit)="player1NameEntered() ">
         <div class="form-group row">
@@ -22,35 +24,37 @@
            required type="text">
           </div>
           <div class="col-4">
-            <button [disabled]="!p1Form.form.valid" class="btn btn-primary" type="submit">Choose counter</button>
+            <button (click)="player1Finished()"  class="btn btn-primary">Finished</button>
           </div>
+<!--          <div class="col-4">-->
+<!--&lt;!&ndash;            <button [disabled]="!p1Form.form.valid" class="btn btn-primary" type="submit">Choose counter</button>&ndash;&gt;-->
+<!--          </div>-->
         </div>
 
 
       </form>
-    </div>
+
     <!--    player 1 end choosing name-->
 
     <!--    player 1 choose counter-->
-    <div *ngIf="player1EnteredName === true">
+<!--    <div *ngIf="player1EnteredName === true">-->
       <div class="row">
-        <div class="col-9">
-          <p>Hello {{player1Name}}, click on the images below to select your counter. When you are happy, click Finished.</p>
-        </div>
-        <div class="col-3">
-          <button (click)="player1Finished()" class="btn btn-primary">Finished</button>
-        </div>
+<!--        <div class="col-9">-->
+<!--          <p>Hello {{player1Name}}, click on the images below to select your counter. When you are happy, click Finished.</p>-->
+<!--        </div>-->
+
       </div>
 
-    </div>
+<!--    </div>-->
   </div>
   <!--player 1 end choices-->
 
   <!--   player 2 choices-->
   <div *ngIf="player2Choosing">
     <h3 class="player2Colour">Player 2</h3>
+    <p>Enter your name and click on the counters below to listen to their sounds and choose which you want to use. Then click Finished.</p>
     <!--    player 2 enter name-->
-    <div *ngIf="player2EnteredName === false">
+
 
       <form #p2Form="ngForm" (ngSubmit)="player2NameEntered() ">
         <div class="form-group row">
@@ -61,63 +65,65 @@
                     required type="text">
           </div>
           <div class="col-4">
-            <button [disabled]="!p2Form.form.valid" class="btn btn-primary " type="submit">Choose counter</button>
+            <button (click)="player2Finished()" class="btn btn-primary">Finished</button>
           </div>
+<!--          <div class="col-4">-->
+<!--            <button  class="btn btn-primary " type="submit">Choose counter</button>-->
+<!--          </div>-->
         </div>
       </form>
-    </div>
+
 
     <!--   player 2 end entering name-->
 
     <!--  player 2 choose counter-->
-    <div *ngIf="player2EnteredName === true">
+<!--    <div *ngIf="player2EnteredName === true">-->
       <div class="row">
-        <div class="col-9">
-          <p>Hello {{player2Name}}, click on the images below to select your counter. When you are happy, click Finished.</p>
-        </div>
-        <div class="col-3">
-          <button (click)="player2Finished()" class="btn btn-primary">Finished</button>
-        </div>
+<!--        <div class="col-9">-->
+<!--          <p>Hello {{player2Name}}, click on the images below to select your counter. When you are happy, click Finished.</p>-->
+<!--        </div>-->
+
       </div>
     </div>
     <!--   end player 2 choosing counter-->
-  </div>
+<!--  </div>-->
   <!--  player 2 end choices-->
 
 
   <!-- Counters-->
   <div class="container  counters">
     <div class="row">
-      <div class="col-3">
+      <div class="col-4">
   <img [ngClass]="{'highlight1': player1CounterNumber === 1, 'highlight2' : player2CounterNumber === 1, 'noHighlight' : player1CounterNumber != 1 && player2CounterNumber != 1}"  (click)="setCounter(1)" class="img-fluid" src="../../assets/boat125nb.png">
 
 <!--        <div *ngIf="player1Counter != one && player2Counter != one">-->
 
 <!--        </div>-->
       </div>
-      <div class="col-3">
+      <div class="col-4">
           <img [ngClass]="{'highlight1': player1CounterNumber === 2, 'highlight2' : player2CounterNumber === 2, 'noHighlight' : player1CounterNumber != 2 && player2CounterNumber != 2}"  (click)="setCounter(2)" class="img-fluid" src="../../assets/crown125nb.png">
       </div>
-      <div class="col-3">
+      <div class="col-4">
 
           <img [ngClass]="{'highlight1': player1CounterNumber === 3, 'highlight2' : player2CounterNumber === 3, 'noHighlight' : player1CounterNumber != 3 && player2CounterNumber != 3}"  (click)="setCounter(3)" class="img-fluid" src="../../assets/horse125nb.png">
 
       </div>
-      <div class="col-3">
-          <img [ngClass]="{'highlight1': player1CounterNumber === 4, 'highlight2' : player2CounterNumber === 4, 'noHighlight' : player1CounterNumber != 4 && player2CounterNumber != 4}"  (click)="setCounter(4)" class="img-fluid" src="../../assets/lion125nb.png">
-      </div>
+
     </div>
     <div class="row">
-      <div class="col-3">
-          <img [ngClass]="{'highlight1': player1CounterNumber === 5, 'highlight2' : player2CounterNumber === 5, 'noHighlight' : player1CounterNumber != 5 && player2CounterNumber != 5}"  (click)="setCounter(5)" class="img-fluid" src="../../assets/monument125nb.png">
+      <div class="col-4">
+        <img [ngClass]="{'highlight1': player1CounterNumber === 4, 'highlight2' : player2CounterNumber === 4, 'noHighlight' : player1CounterNumber != 4 && player2CounterNumber != 4}"  (click)="setCounter(4)" class="img-fluid" src="../../assets/lion125nb.png">
       </div>
-      <div class="col-3">
-          <img [ngClass]="{'highlight1': player1CounterNumber === 6, 'highlight2' : player2CounterNumber === 6, 'noHighlight' : player1CounterNumber != 6 && player2CounterNumber != 6}"  (click)="setCounter(6)" class="img-fluid" src="../../assets/punch125nb.png">
-      </div>
-      <div class="col-3">
+<!--      <div class="col-3">-->
+<!--          <img [ngClass]="{'highlight1': player1CounterNumber === 5, 'highlight2' : player2CounterNumber === 5, 'noHighlight' : player1CounterNumber != 5 && player2CounterNumber != 5}"  (click)="setCounter(5)" class="img-fluid" src="../../assets/monument125nb.png">-->
+<!--      </div>-->
+<!--      <div class="col-3">-->
+<!--          <img [ngClass]="{'highlight1': player1CounterNumber === 6, 'highlight2' : player2CounterNumber === 6, 'noHighlight' : player1CounterNumber != 6 && player2CounterNumber != 6}"  (click)="setCounter(6)" class="img-fluid" src="../../assets/punch125nb.png">-->
+<!--      </div>-->
+      <div class="col-4">
           <img [ngClass]="{'highlight1': player1CounterNumber === 7, 'highlight2' : player2CounterNumber === 7, 'noHighlight' : player1CounterNumber != 7 && player2CounterNumber != 7}"  (click)="setCounter(7)" class="img-fluid" src="../../assets/sarco125nb.png">
       </div>
-      <div class="col-3">
+      <div class="col-4">
           <img [ngClass]="{'highlight1': player1CounterNumber === 8, 'highlight2' : player2CounterNumber === 8, 'noHighlight' : player1CounterNumber != 8 && player2CounterNumber != 8}"  (click)="setCounter(8)" class="img-fluid" src="../../assets/woman125nb.png">
       </div>
     </div>
