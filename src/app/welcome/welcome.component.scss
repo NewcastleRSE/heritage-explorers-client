@@ -1,14 +1,10 @@
-.titleImg {
-  max-width: 100%;
-  //position: relative;
-  margin: auto;
-}
+
 
 .characterImg {
   position: absolute;
-max-width: 50%;
-  left: 11%;
-  top: 20%;
+max-width: 40%;
+  left: 15%;
+  top: 30%;
 }
 
 .options {
@@ -42,8 +38,8 @@ button {
   max-width: 20%;
   color: #fff;
   position: absolute;
-  left: 60%;
-  top: 18%;
+  left: 58%;
+  top: 20%;
   border-radius: 15px;
 }
 .sb3:before {
@@ -56,9 +52,15 @@ button {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   left: -20px;
-  top: 100px;
+  top: 120px;
 }
 
 
-
+.boardImg {
+  z-index: -1;
+  width: 100%;
+  margin-right: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #1D2C40;
+}
 
