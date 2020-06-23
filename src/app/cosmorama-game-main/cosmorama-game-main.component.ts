@@ -16,6 +16,9 @@ item1;
 item2;
 item3;
 
+complete;
+
+  currentRouter = this.router.url;
 
   constructor(
     private elementRef: ElementRef,
@@ -25,7 +28,7 @@ item3;
   ngOnInit(): void {
     // todo start cosmo background image in the centre
 
-
+  this.complete = false;
   this.backgroundTop = 0;
   this.backgroundLeft = 0;
 
@@ -157,7 +160,8 @@ item3;
     // check if list is complete
 if (this.item1 === true && this.item2 === true && this.item3 === true) {
   // complete
-  this.router.navigate(['cosmointro'], { queryParams: { i: false}})
+  // this.router.navigate(['cosmointro'], { queryParams: { i: false}})
+  this.complete = true;
 }
   }
 
@@ -165,5 +169,13 @@ if (this.item1 === true && this.item2 === true && this.item3 === true) {
     console.log('clicked');
   }
 
+  backToCosmoIntro() {
+    this.router.navigate(['cosmointro'], { queryParams: { i: true}});
+  }
+
+  reload() {
+    console.log('clicked');
+    this.router.navigate([this.currentRouter])
+  }
 
 }

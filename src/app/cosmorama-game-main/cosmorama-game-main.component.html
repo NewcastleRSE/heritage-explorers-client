@@ -47,6 +47,17 @@
 
   </div>
 
+
+  <div *ngIf="complete">
+    <div class="box sb3">
+ Well done, you have found all the hidden objects! <br>
+      <button class="btn btn-primary" (click)="backToCosmoIntro()">Return to Cosmorama Rooms menu</button>
+      <button class="btn btn-primary" (click)="reload()">Play again</button>
+    </div>
+    <img class="img-fluid characterImg" src="../../assets/cosmo/comsoWoman2.png">
+  </div>
+
+
   <button class="btn btn-primary returnBtn" (click)="returnToBoard()"><img src="../../assets/arrow_back.svg">Return to Explorer Board</button>
 </div>
 
