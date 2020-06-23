@@ -1,17 +1,25 @@
 <div class ="container text-center">
 
 
-<br>
-    <div class="box sb3">
-   Intro to race game... <br>
-      <button class="btn btn-primary" (click)="readyToPlay()"><img src="../../assets/arrow_forward.svg">Ready to Play</button>
-    </div>
+  <br>
+  <div class="box sb3">
+   Congratulations on winning {{winner}}!<br>
+    <button class="btn btn-primary" (click)="newPlayers()"><img src="../../assets/arrow_back.svg">New players</button>
+    <button class="btn btn-primary" (click)="readyToPlay()"><img src="../../assets/arrow_forward.svg">Play again</button>
+
+  </div>
 
 
-
+  <!--  <div class="row">-->
+  <!--    <div class="col mainCol">-->
+  <div class="mainCol">
     <img class="img-fluid characterImg" src="../../assets/boyFather2.png">
 
     <img class="img-fluid boardImg" src="../../assets/Game2.jpg">
+  </div>
+  <!--   </div>-->
+
+  <!--  </div>-->
 
 
 

@@ -1,15 +1,16 @@
 <div class="container text-center">
-  <h3>The Horse Armoury</h3>
-
+<br>
     <div class="header text-center">
 
-      <p>Drag and drop the King's until they are in chronological order. Click on a King's picture to view a helpful
+      <p>Drag and drop the Kings until they are in chronological order. Click on a King's picture to view a helpful
         hint.</p>
     </div>
 
+
+
   <div class="cardRow">
     <div (cdkDropListDropped)="drop($event)" cdkDropList cdkDropListOrientation="horizontal" class="kingsList">
-      <div *ngFor="let king of kings" cdkDrag class="card kingBox" id="{{king.id}}">
+      <div *ngFor="let king of kings" cdkDrag class="card normal-card kingBox" id="{{king.id}}">
         <img (click)="viewHelp(king.id)" alt="King image" class="card-img-top smallCardImg"
              src="../../assets/kings/{{king.filename}}">
         <h4 class="card-title">{{king.name}}</h4>
@@ -24,22 +25,41 @@
 
       </div>
 
+
     </div>
 </div>
     <div *ngIf="viewingHelp">
-      <div *ngFor="let king of viewingHelpKings" class="card w-25 mx-auto text-center">
+      <div *ngFor="let king of viewingHelpKings" class="card help-card w-50 mx-auto text-center">
 
+<!--        <div class="row">-->
+<!--          <div class="col text-center">-->
+
+<!--          </div>-->
+<!--          <div class="co-2">-->
+
+<!--          </div>-->
+<!--        </div>-->
+
+
+          <div class="header">
         <div class="closeButton">
           <button (click)="closeHelp(king.id)" aria-label="Close" class="close" data-dismiss="modal" type="button"><span
             aria-hidden="true">&times;</span></button>
         </div>
 
+
+          <h5 class="card-title">{{king.name}}, {{king.region}} </h5>
+          <p>{{king.bio}}<br>
+            {{king.house}}</p>
+        </div>
+
+
         <img id="helpCardImg" alt="King image" class="card-img-top" src="../../assets/kings/{{king.filename}}">
-        <h4>{{king.helpText}}</h4>
+        <p>{{king.helpText}}</p>
 
-        <button class="btn btn-primary btn-sm listenBtn" (click)="playClue(king.id)">Listen to clue<img id="soundIcon" src="../../assets/kings/volume.svg" height="30"></button>
+        <button class="btn btn-primary btn-sm listenBtn disabled" (click)="playClue(king.id)">Listen to clue<img id="soundIcon" src="../../assets/kings/volume.svg" height="30"></button>
 
-        <h5 class="card-title">{{king.name}}</h5>
+
 
         <!--        &lt;!&ndash;       help bubble to display when user selects. Doesn't display if order is correct&ndash;&gt;-->
         <!--        <div *ngIf="king.viewHelp && correctOrder === false" class="speech-bubble">-->
@@ -58,8 +78,25 @@
 <!--    <button class="btn btn-primary returnBtn" (click)="returnToBoard()"><img src="../../assets/arrow_back.svg">Finish</button>-->
 <!--  </div>-->
 
+<div *ngIf="correctOrder">
+  <img class="img-fluid characterImg" src="../../assets/kings/meyrick.png">
+
+  <div class="box sb3"><p>
+    Thank you, you have really helped me...
+  </p>
+
+    <button (click)="returnToBoard()" class="btn btn-primary">Finish</button>
+    <button (click)="reset()" class="btn btn-primary playAgain">Play again</button>
 
 
+</div>
+
+</div>
+
+  <div *ngIf="!correctOrder">
+  <button class="btn btn-primary solveBtn" (click)="setToCorrectOrder()">Solve
+  </button>
+</div>
   <button class="btn btn-primary returnBtn" (click)="returnToBoard()"><img src="../../assets/arrow_back.svg">Return to
     Explorer Board
   </button>

@@ -1,9 +1,16 @@
 <div class ="container text-center">
+  <br>
+  <img class="img-fluid characterImg" src="../../assets/cosmo/comsoWoman.png">
 
-  <h3>The Cosmorama Exhibition</h3>
+  <div class="boardContainer">
+    <img class="img-fluid boardImg" src="../../assets/cosmo/board.jpg">
+    <a id="rm1" (click)="clickWindow1()"> <img id="rm1eye" src="../../assets/eye.svg"></a>
+  </div>
+
+
   <div *ngIf="introShowing">
   <div class="box sb3">
-    Oh hello, are you visiting the Cosmorama rooms today too? They are the talk of London. All the fashionable people come here to look through the glass and see pictures of animals and far away cities and battles from the past. Go on, click on the window to take a look at the pictures. Can you find the hidden objects?
+    Oh hello, are you visiting the <span class="bold">Cosmorama Rooms </span> today too? They are the talk of London. All the fashionable people come here to look through the glass and see pictures of animals and far away cities and battles from the past. Go on, click on the window to take a look at the pictures. Can you find the hidden objects?
   </div>
 </div>
 
@@ -11,17 +18,9 @@
     <div class="box sb3">Well done, either play again or return to the explorer board</div>
   </div>
 
-<!--  <div class="row">-->
-<!--    <div class="col mainCol">-->
-  <div class="mainCol">
-        <img class="img-fluid characterImg" src="../../assets/cosmo/comsoWoman.png">
 
-      <img class="img-fluid boardImg" src="../../assets/14.png">
-      <a id="rm1" (click)="clickWindow1()"> <img id="rm1eye" src="../../assets/eye.svg"></a>
-</div>
-<!--   </div>-->
 
-<!--  </div>-->
+
 
 
 

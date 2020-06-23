@@ -178,9 +178,13 @@ missAGoAlertClosed = true;
 
     // ----- Square 18 stop game
     else if (squareNumber === 18) {
-      // todo winner modal
       this.winningMessage = 'Player ' + this.currentPlayer + ' wins!';
-      // todo don't change player - restart game
+
+      if (this.currentPlayer === 1) {
+        this.router.navigate(['win'], { queryParams: { w: this.p1Name}});
+      } else if (this.currentPlayer === 2) {
+        this.router.navigate(['win'], { queryParams: { w: this.p2Name}});
+      }
     }
 
     // default if not specific behaviour
@@ -232,7 +236,7 @@ async square5Interaction() {
 }
 
 async square16Interaction() {
-    // todo open image
+
   console.log('land on 16 so lose all pool');
   if (this.currentPlayer === 1) {
     // add sweets to pool then empty
@@ -310,76 +314,76 @@ async square16Interaction() {
   moveP1Icon(moveTo) {
   switch (moveTo) {
     case 1:
-      this.p1Top = '7%';
-      this.p1Left = '2%';
+      this.p1Top = '6%';
+      this.p1Left = '2.25%';
       break;
     case 2:
-      this.p1Top = '7%';
-      this.p1Left = '18%';
+      this.p1Top = '6%';
+      this.p1Left = '18.25%';
       break;
     case 3:
-      this.p1Top = '7%';
-      this.p1Left = '35%';
+      this.p1Top = '6%';
+      this.p1Left = '34.75%';
       break;
     case 4:
-      this.p1Top = '7%';
-      this.p1Left = '50%';
+      this.p1Top = '6%';
+      this.p1Left = '51%';
       break;
     case 5:
-      this.p1Top = '7%';
-      this.p1Left = '65%';
+      this.p1Top = '6%';
+      this.p1Left = '67%';
       break;
     case 6:
-      this.p1Top = '7%';
-      this.p1Left = '80%';
+      this.p1Top = '6%';
+      this.p1Left = '83.25%';
       break;
     case 7:
-      this.p1Top = '24%';
-      this.p1Left = '87%';
+      this.p1Top = '18.5%';
+      this.p1Left = '89.5%';
       break;
     case 8:
-      this.p1Top = '41%';
-      this.p1Left = '87%';
+      this.p1Top = '40.25%';
+      this.p1Left = '89.5%';
       break;
     case 9:
-      this.p1Top = '60%';
-      this.p1Left = '87%';
+      this.p1Top = '62%';
+      this.p1Left = '89.5%';
       break;
     case 10:
-      this.p1Top = '82%';
+      this.p1Top = '85%';
       this.p1Left = '90%';
       break;
     case 11:
-      this.p1Top = '82%';
-      this.p1Left = '75%';
+      this.p1Top = '85%';
+      this.p1Left = '75.25%';
       break;
     case 12:
-      this.p1Top = '82%';
-      this.p1Left = '60%';
+      this.p1Top = '85%';
+      this.p1Left = '59%';
       break;
     case 13:
-      this.p1Top = '82%';
-      this.p1Left = '45%';
+      this.p1Top = '85%';
+      this.p1Left = '43%';
       break;
     case 14:
-      this.p1Top = '82%';
-      this.p1Left = '30%';
+      this.p1Top = '85%';
+      this.p1Left = '26.5%';
       break;
     case 15:
-      this.p1Top = '82%';
-      this.p1Left = '15%';
+      this.p1Top = '85%';
+      this.p1Left = '10%';
       break;
     case 16:
-      this.p1Top = '70%';
-      this.p1Left = '8%';
+      this.p1Top = '72.25%';
+      this.p1Left = '4.5%';
       break;
     case 17:
-      this.p1Top = '50%';
-      this.p1Left = '8%';
+      this.p1Top = '50.75%';
+      this.p1Left = '4.5%';
       break;
     case 18:
-      this.p1Top = '32%';
-      this.p1Left = '8%';
+      this.p1Top = '29%';
+      this.p1Left = '4.5%';
       break;
 
   }
@@ -389,76 +393,76 @@ async square16Interaction() {
   moveP2Icon(moveTo) {
     switch (moveTo) {
       case 1:
-        this.p2Top = '7%';
-        this.p2Left = '9%';
+        this.p2Top = '6%';
+        this.p2Left = '9.75%';
         break;
       case 2:
-        this.p2Top = '7%';
-        this.p2Left = '25%';
+        this.p2Top = '6%';
+        this.p2Left = '25.75%';
         break;
       case 3:
-        this.p2Top = '7%';
-        this.p2Left = '44%';
+        this.p2Top = '6%';
+        this.p2Left = '42%';
         break;
       case 4:
-        this.p2Top = '7%';
-        this.p2Left = '59%';
+        this.p2Top = '6%';
+        this.p2Left = '58.35%';
         break;
       case 5:
-        this.p2Top = '7%';
-        this.p2Left = '75%';
+        this.p2Top = '6%';
+        this.p2Left = '74.5%';
         break;
       case 6:
-        this.p2Top = '7%';
-        this.p2Left = '90%';
+        this.p2Top = '6%';
+        this.p2Left = '90.5%';
         break;
       case 7:
-        this.p2Top = '32%';
-        this.p2Left = '87%';
+        this.p2Top = '28%';
+        this.p2Left = '89.5%';
         break;
       case 8:
-        this.p2Top = '50%';
-        this.p2Left = '87%';
+        this.p2Top = '49.5%';
+        this.p2Left = '89.5%';
         break;
       case 9:
-        this.p2Top = '70%';
-        this.p2Left = '87%';
+        this.p2Top = '71.3%';
+        this.p2Left = '89.5%';
         break;
       case 10:
-        this.p2Top = '82%';
-        this.p2Left = '80%';
+        this.p2Top = '85%';
+        this.p2Left = '84.25%';
         break;
       case 11:
-        this.p2Top = '82%';
-        this.p2Left = '65%';
+        this.p2Top = '85%';
+        this.p2Left = '68%';
         break;
       case 12:
-        this.p2Top = '82%';
-        this.p2Left = '50%';
+        this.p2Top = '85%';
+        this.p2Left = '51.75%';
         break;
       case 13:
-        this.p2Top = '82%';
-        this.p2Left = '35%';
+        this.p2Top = '85%';
+        this.p2Left = '35.75%';
         break;
       case 14:
-        this.p2Top = '82%';
-        this.p2Left = '20%';
+        this.p2Top = '85%';
+        this.p2Left = '19%';
         break;
       case 15:
-        this.p2Top = '82%';
-        this.p2Left = '5%';
+        this.p2Top = '85%';
+        this.p2Left = '2.5%';
         break;
       case 16:
-        this.p2Top = '60%';
-        this.p2Left = '8%';
+        this.p2Top = '63%';
+        this.p2Left = '4.5%';
         break;
       case 17:
-        this.p2Top = '41%';
-        this.p2Left = '8%';
+        this.p2Top = '41.5%';
+        this.p2Left = '4.5%';
         break;
       case 18:
-        this.p2Top = '24%';
-        this.p2Left = '8%';
+        this.p2Top = '19.75%';
+        this.p2Left = '4.5%';
         break;
     }
   }

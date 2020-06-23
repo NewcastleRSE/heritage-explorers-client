@@ -6,12 +6,41 @@ h4 {
   padding-top: 20px;
 }
 
+.playAgain {
+  z-index: 5;
+}
+
   .smallCardImg {
     cursor: pointer;
     margin: 0;
     padding: 0;
   }
 
+.box {
+  margin: 50px auto;
+  background: #1D2C40;
+  padding: 20px;
+  text-align: center;
+  max-width: 15%;
+  color: #fff;
+  position: absolute;
+  left: 21%;
+  top: 31%;
+  border-radius: 15px;
+}
+
+.sb3:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #1D2C40;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  left: -20px;
+  top: 60px;
+}
 
 
 
@@ -145,58 +174,43 @@ button {
 //}
 
 #helpCardImg {
-//margin-left: auto;
-//  margin-right: auto;
+width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  position: relative;
+
+}
+
+.wholeHeader {
+  position: relative;
 }
 
 .closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.titleCol {
   float: right;
 }
 
 
-//speech bubble
-
-.box {
-  margin: 50px auto;
-  background: #1D2C40;
-  padding: 20px;
-  text-align: center;
-  max-width: 20%;
-  color: #fff;
-  position: absolute;
-  left: 62%;
-  top: 5%;
-  border-radius: 15px;
-}
-
-.sb3:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 20px solid transparent;
-  border-right: 20px solid #1D2C40;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  left: -35px;
-}
-
-//button {
-//  z-index: 5;
-//}
-
-//.characterImg {
-//  position: absolute;
-//  left: 20%;
-//  bottom: 20%;
-//  z-index: 1;
-//  max-width: 40%;
-//}
 .returnBtn {
   position: absolute;
   bottom: 5%;
-  z-index: 3;
+  z-index: 5;
   left: 10%;
+}
+
+.solveBtn {
+  position: absolute;
+  bottom: 5%;
+  z-index: 3;
+  left: 80%;
 }
 
 #soundIcon {
@@ -207,4 +221,21 @@ button {
   max-width: 50%;
   margin-right: auto;
   margin-left: auto;
+}
+
+.help-card {
+  box-shadow:  0 0 30px #1D2C40;
+}
+
+.normal-card {
+  box-shadow:  0 0 10px #1D2C40;
+}
+
+
+.characterImg {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  z-index: 0;
+  max-width: 30%;
 }

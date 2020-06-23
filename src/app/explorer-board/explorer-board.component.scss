@@ -1,6 +1,8 @@
 .board {
   width: 100%;
   height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #1D2C40;
 }
 
 area {
@@ -81,9 +83,9 @@ a {
 
 .character {
   position: absolute;
-  top: 20%;
-  left: 35%;
-  width: 12%;
+  top: 22%;
+  left: 50%;
+  width: 16%;
 }
 
 
@@ -97,7 +99,7 @@ a {
  max-width: 20%;
   color: #fff;
   position: absolute;
-  left: 47%;
+  left: 30%;
   top: 18%;
   border-radius: 15px;
 }
@@ -107,10 +109,10 @@ a {
   width: 0px;
   height: 0px;
   position: absolute;
-  border-left: 10px solid transparent;
-  border-right: 10px solid #1D2C40;
+  border-left: 10px solid #1D2C40;
+  border-right: 10px solid transparent;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  left: -20px;
-  top: 100px;
+  right: -20px;
+  top: 60px;
 }

@@ -2,29 +2,16 @@
   position: relative;
 }
 
-.characterImg {
-  position: absolute;
-  left: 70%;
-  bottom: 0%;
-  z-index: 2;
-  max-width: 30%;
+
+button {
+  margin: 10px;
 }
-
-
-.boardImg {
-  z-index: -1;
-  width: 100%;
-  margin-right: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 30px #1D2C40;
-}
-
 
 .returnBtn {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   z-index: 5;
-  left: 5%;
+  left: 7%;
 }
 
 //speech bubble
@@ -34,17 +21,14 @@
   background: #1D2C40;
   padding: 20px;
   text-align: center;
-  max-width: 23%;
+  max-width: 20%;
   color: #fff;
   position: absolute;
-  left: 56.5%;
-  top: 16%;
+  left: 35%;
+  top: 23%;
   border-radius: 15px;
   z-index: 1;
-  box-shadow: 0 0 50px #1D2C40;
-
 }
-
 .sb3:before {
   content: "";
   width: 0px;
@@ -54,15 +38,32 @@
   border-right: 10px solid transparent;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  right: -17px;
-  top: 210px;
+  right: -20px;
 }
 
-button {
-  margin: 10px;
+.board {
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: visible;
 }
 
-.bold {
-  font-weight: bold;
-  color: #D9B23D;
+.characterImg {
+  position: absolute;
+  width: 30%;
+  top: 26%;
+  left: 50%;
+  z-index: 1;
+
 }
+
+
+.boardImg {
+  max-width: 100%;
+  -webkit-box-shadow: 6px 5px 14px 2px rgba(0,0,0,0.58);
+  box-shadow: 6px 5px 14px 2px rgba(0,0,0,0.58);
+}
+
+
+

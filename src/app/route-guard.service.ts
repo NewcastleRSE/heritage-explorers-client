@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { Router, CanActivate } from '@angular/router';
+import {Router, CanActivate, ActivatedRoute, RouterStateSnapshot} from '@angular/router';
 import * as moment from 'moment';
 
 @Injectable({
@@ -9,9 +9,15 @@ import * as moment from 'moment';
 export class RouteGuardService implements CanActivate {
   constructor(public router: Router) {}
 
-  canActivate(): boolean {
+  // @ts-ignore
+  canActivate(route: ActivatedRoute, state: RouterStateSnapshot): boolean {
+
     if (!this.isLoggedIn()) {
-      this.router.navigate(['signin']);
+      this.router.navigate(['signin'], {
+        queryParams: {
+          return: state.url
+        }
+      });
       return false;
     }
     return true;

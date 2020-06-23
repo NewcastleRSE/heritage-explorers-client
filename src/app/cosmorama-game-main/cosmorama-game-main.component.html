@@ -1,6 +1,6 @@
 <div class ="container">
 <div class="header">
-  <h3>Cosmorama</h3>
+<br>
   <p>Use your keyboard arrows or the controls to move around the image. Try and find all the items on the list. When you find something, click on it on the list to tick it off.</p> <br>
 </div>
 
@@ -46,6 +46,17 @@
     <button id="down" class="btn btn-primary btn-sm" (click)="moveUp()"><img src="../../assets/arrow-down-outline.svg" height="25px"></button>
 
   </div>
+
+
+  <div *ngIf="complete">
+    <div class="box sb3">
+ Well done, you have found all the hidden objects! <br>
+      <button class="btn btn-primary" (click)="backToCosmoIntro()">Return to Cosmorama Rooms menu</button>
+      <button class="btn btn-primary" (click)="reload()">Play again</button>
+    </div>
+    <img class="img-fluid characterImg" src="../../assets/cosmo/comsoWoman2.png">
+  </div>
+
 
   <button class="btn btn-primary returnBtn" (click)="returnToBoard()"><img src="../../assets/arrow_back.svg">Return to Explorer Board</button>
 </div>

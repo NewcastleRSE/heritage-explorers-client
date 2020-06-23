@@ -22,20 +22,23 @@ player1EnteredName: boolean;
 player2EnteredName: boolean;
 
 showCounterAlert = false;
+showSameNameAlert = false;
 
 player1Counter;
 player1CounterNumber;
 player2Counter;
 player2CounterNumber;
 
+p1FormValid = false;
+p2FormValid = false;
 
 // label counters
 one = 'boat';
 two = 'crown';
 three = 'horse';
 four = 'lion';
-five = 'monument';
-six = 'punch';
+// five = 'monument';
+// six = 'punch';
 seven = 'sarco';
 eight = 'woman';
 
@@ -59,7 +62,7 @@ player2Name;
     this.showCounterAlert = false;
 
     // don't let user select counter before adding name
-    if (this.player1Choosing === true && this.player1EnteredName === true) {
+    if (this.player1Choosing === true) {
       switch (counterChoice) {
         case 1:
           this.player1Counter = this.one;
@@ -77,14 +80,14 @@ player2Name;
           this.player1Counter = this.four;
           this.player1CounterNumber = 4;
           break;
-        case 5:
-          this.player1Counter = this.five;
-          this.player1CounterNumber = 5;
-          break;
-        case 6:
-          this.player1Counter = this.six;
-          this.player1CounterNumber = 6;
-          break;
+        // case 5:
+        //   this.player1Counter = this.five;
+        //   this.player1CounterNumber = 5;
+        //   break;
+        // case 6:
+        //   this.player1Counter = this.six;
+        //   this.player1CounterNumber = 6;
+        //   break;
         case 7:
           this.player1Counter = this.seven;
           this.player1CounterNumber = 7;
@@ -100,7 +103,7 @@ player2Name;
       audio.load();
       audio.play();
 
-    } else if (this.player2Choosing ===  true && this.player2EnteredName === true) {
+    } else if (this.player2Choosing ===  true) {
       switch (counterChoice) {
         case 1:
           if (this.player1CounterNumber === 1) {
@@ -130,20 +133,20 @@ player2Name;
           this.player2Counter = this.four;
           this.player2CounterNumber = 4;
           break;
-        case 5:
-          if (this.player1CounterNumber === 5) {
-            return;
-          }
-          this.player2Counter = this.five;
-          this.player2CounterNumber = 5;
-          break;
-        case 6:
-          if (this.player1CounterNumber === 6) {
-            return;
-          }
-          this.player2Counter = this.six;
-          this.player2CounterNumber = 6;
-          break;
+        // case 5:
+        //   if (this.player1CounterNumber === 5) {
+        //     return;
+        //   }
+        //   this.player2Counter = this.five;
+        //   this.player2CounterNumber = 5;
+        //   break;
+        // case 6:
+        //   if (this.player1CounterNumber === 6) {
+        //     return;
+        //   }
+        //   this.player2Counter = this.six;
+        //   this.player2CounterNumber = 6;
+        //   break;
         case 7:
           if (this.player1CounterNumber === 7) {
             return;
@@ -173,44 +176,69 @@ this.player1EnteredName = true;
  }
 
  player2NameEntered() {
-    // todo prevent player 2 using same name as player 1
 
-    this.player2EnteredName = true;
+
  }
 
 
  player1Finished() {
-if (this.player1Counter !== undefined) {
+    if (this.player1Name === undefined) {
+      this.showCounterAlert = true;
+    }
+
+    if (this.player1Counter === undefined) {
+      this.showCounterAlert = true;
+    }
+
+if (this.player1Counter !== undefined && this.player1Name !== undefined) {
   console.log('player 1 finished');
+  this.player1EnteredName = true;
+  console.log(this.player1Name);
+  console.log(this.player1Counter);
   console.log(this.player1EnteredName);
   // switch to player 2
   this.player1Choosing = false;
   this.player2Choosing = true;
-} else {
-// trigger alert
-  this.showCounterAlert = true;
 }
-
  }
 
  closeAlert() {
     this.showCounterAlert = false;
+    this.showSameNameAlert = false;
  }
 
  player2Finished() {
-  // trigger alert if no counter chosen
-   this.showCounterAlert = true;
+   if (this.player2Name === undefined) {
+     this.showCounterAlert = true;
+   }
+
+   if (this.player2Counter === undefined) {
+     this.showCounterAlert = true;
+   }
+
 
    // only move forward if player 2 has chosen counter
-if (this.player2Counter !== undefined) {
-  // save both counter choices to globals
-  this.globalsService.player1Counter = this.player1Counter;
-  this.globalsService.player2Counter = this.player2Counter;
-  this.globalsService.player1Name = this.player1Name;
-  this.globalsService.player2Name = this.player2Name;
+if (this.player2Counter !== undefined &&  this.player2Name !== undefined) {
 
-  // nav to game
-  this.router.navigate(['raceintro']);
+  // only move forward if players have different names
+  const lowerCase1 = this.player1Name.toLowerCase();
+  const lowerCase2 = this.player2Name.toLowerCase();
+  if (lowerCase1 !== lowerCase2) {
+    this.player2EnteredName = true;
+
+    // save both counter choices to globals
+    this.globalsService.player1Counter = this.player1Counter;
+    this.globalsService.player2Counter = this.player2Counter;
+    this.globalsService.player1Name = this.player1Name;
+    this.globalsService.player2Name = this.player2Name;
+
+    // nav to game
+    this.router.navigate(['raceintro']);
+  } else {
+    this.showSameNameAlert = true;
+  }
+
+
 }
 
  }
