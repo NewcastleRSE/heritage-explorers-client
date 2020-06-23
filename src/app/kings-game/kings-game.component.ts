@@ -84,7 +84,7 @@ correctOrder = false;
    this.shuffleKings();
    this.meyrickVisible = true;
    this.kingsVisible = false;
-   this.viewingHelp = true;
+   this.viewingHelp = false;
   }
 
   shuffleKings() {
@@ -128,12 +128,22 @@ correctOrder = false;
   // }
 
   reset() {
+    // if viewing help, get this card's id and close it
+    this.closeAnyHelp();
+
     this.correctOrder = false;
     this.shuffleKings();
+
   }
 
+  closeAnyHelp() {
+    if (this.viewingHelp === true) {
+      this.closeHelp(this.viewingHelpKings[0].id);
+    }
+  }
 
   viewHelp(kingId) {
+
     // if there is currently a card in viewing help list, then make it visible again and remove from list
     if (this.viewingHelpKings.length > 0) {
       const kingId = this.viewingHelpKings[0].id;
@@ -157,6 +167,7 @@ correctOrder = false;
     }
 
     setToCorrectOrder() {
+    this.closeAnyHelp();
     this.kings = _.sortBy(this.kings, ['id']);
     this.correctOrder = true;
     }
@@ -171,8 +182,6 @@ correctOrder = false;
       if (copiedList[i].id === kingId){
 
         this.viewingHelpKings = [];
-        // this.kings = copiedList;
-        // console.log(this.kings[i].viewHelp);
       }
     }
   }
