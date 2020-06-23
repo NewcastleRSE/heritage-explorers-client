@@ -12,6 +12,7 @@ export class SigninComponent implements OnInit {
   password: string;
   correctPassword: string;
 message;
+  return;
 
   constructor(
     private globalService: GlobalsService,
@@ -21,7 +22,14 @@ message;
 
   ngOnInit() {
     this.correctPassword = 'HE2020';
-    this.globalService.setPasswordEntered(false);
+    this.route.queryParams
+      .subscribe(params => {
+        if (params.return !== undefined) {
+          this.return = params.return;
+        } else {
+          this.return = '';
+        }
+      });
   }
 
 
@@ -29,34 +37,14 @@ message;
     if (this.password === this.correctPassword) {
       this.globalService.setPasswordEntered(true);
       this.setSession();
-      // navigate to home or to route saved in local storage
-      const route = this.routeInLocal();
-      const paramKey = localStorage.getItem('paramKey');
-      const paramValue = localStorage.getItem('paramValue');
-      console.log(route);
-      if (route === undefined || route === null) {
-        this.router.navigate(['/home']);
-      } else {
-        localStorage.removeItem('route');
-        if (paramKey === null || paramValue === null) {
-          this.router.navigate([route]);
-        }
-        else {
-          localStorage.removeItem('paramKey');
-          localStorage.removeItem('paramValue');
-          this.router.navigate([route], {queryParams: {paramKey: paramValue}} );
-        }
-
-      }
+      console.log('return:' + this.return);
+      this.router.navigateByUrl(this.return);
     } else {
       this.password = '';
       this.message = 'Incorrect password, please try again';
     }
   }
 
-  routeInLocal(): string {
-    return localStorage.getItem('route');
-  }
 
   setSession() {
     const expiresAt = moment().add(2, 'hour');
