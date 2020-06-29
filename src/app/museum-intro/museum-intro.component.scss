@@ -12,16 +12,16 @@
 }
 
 
-.boardImg {
-  z-index: -1;
-  height: 95vh;
 
+.boardImg {
+  display: block;
+  z-index: -1;
+ height: 95vh;
+width: auto;
   border-radius: 10px;
   box-shadow: 0 0 30px #1D2C40;
   position: absolute;
-  top: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
+  margin-top: 5px;
 }
 
 

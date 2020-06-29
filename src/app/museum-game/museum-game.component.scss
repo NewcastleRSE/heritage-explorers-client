@@ -1,6 +1,6 @@
 .board {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 95vh;
 }
 
 area {
@@ -9,10 +9,7 @@ area {
 }
 
 
-button {
-  margin: 10px;
 
-}
 
 .characterBox {
   position: relative;
@@ -44,13 +41,12 @@ margin-right: 30px;
 position: absolute;
   top: 600px;
   right: 10%;
-
-
 }
 
 .returnBtn {
   position: absolute;
-  bottom: 10%;
+  bottom: 0;
+  left: 5%;
 }
 
 #image-map {

@@ -1,41 +1,14 @@
 .board {
-  width: 100%;
-  height: auto;
+  height: 95vh;
+  width: auto;
   border-radius: 10px;
   box-shadow: 0 0 30px #1D2C40;
+  margin-top: 5px;
 }
-
-area {
-  display: block;
-  cursor: pointer;
-}
-
-.info {
-  position: absolute;
-  left: 40%;
-  top: 30%;
-
-}
-
-.list-group-item-mine {
-  background-color: #F2D16D;
-}
-
-.list-group-mine {
-  border-radius: 25px;
-}
-
-.title {
-  position: absolute;
-  left: 40%;
-  top: 30%;
-}
-
 
 
 #image-map {
   width: 100%;
-  //max-width: 812px;
   position: relative;
 
   img {
@@ -85,7 +58,7 @@ a {
   position: absolute;
   top: 22%;
   left: 50%;
-  width: 16%;
+ height: 50vh;
 }
 
 

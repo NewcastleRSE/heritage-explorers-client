@@ -1,14 +1,14 @@
 <div class="container text-center">
-<br>
-    <div class="header text-center">
+
+
 
       <p>Drag and drop the Kings until they are in chronological order. Click on a King's picture to view a helpful
         hint.</p>
-    </div>
 
 
 
-  <div class="cardRow">
+
+
     <div (cdkDropListDropped)="drop($event)" cdkDropList cdkDropListOrientation="horizontal" class="kingsList">
       <div *ngFor="let king of kings" cdkDrag class="card normal-card kingBox" id="{{king.id}}">
         <img (click)="viewHelp(king.id)" alt="King image" class="card-img-top smallCardImg"
@@ -27,7 +27,7 @@
 
 
     </div>
-</div>
+
     <div *ngIf="viewingHelp">
       <div *ngFor="let king of viewingHelpKings" class="card help-card w-50 mx-auto text-center">
 
