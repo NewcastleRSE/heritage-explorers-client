@@ -45,7 +45,7 @@ position: absolute;
 
 .returnBtn {
   position: absolute;
-  bottom: 0;
+  bottom: 5%;
   left: 5%;
 }
 
@@ -204,9 +204,4 @@ a {
   border-bottom: 10px solid transparent;
   left: -17px;
 }
-.returnBtn {
-  position: absolute;
-  bottom: 10%;
-  z-index: 3;
-  left: 22%;
-}
+

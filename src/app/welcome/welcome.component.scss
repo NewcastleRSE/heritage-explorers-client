@@ -9,10 +9,13 @@ width: 40vw;
 
 
 
-button {
- margin: 10px;
+.btn-primary {
+  margin: 5px;
 }
 
+.btn-sm {
+  margin-top: 3px;
+}
 
 
 //speech bubble
@@ -25,7 +28,7 @@ button {
   color: #fff;
   position: absolute;
   left: 58%;
-  top: 20%;
+  bottom: 20%;
   border-radius: 15px;
 }
 .sb3:before {
@@ -51,3 +54,7 @@ button {
   box-shadow: 0 0 30px #1D2C40;
 }
 
+.bold {
+  font-weight: bold;
+  color: #D9B23D;
+}

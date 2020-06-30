@@ -57,7 +57,7 @@ a {
 .character {
   position: absolute;
   top: 22%;
-  left: 50%;
+  left: 55%;
  height: 50vh;
 }
 
@@ -72,7 +72,7 @@ a {
  max-width: 20%;
   color: #fff;
   position: absolute;
-  left: 30%;
+  left: 35%;
   top: 18%;
   border-radius: 15px;
 }
@@ -88,4 +88,12 @@ a {
   border-bottom: 10px solid transparent;
   right: -20px;
   top: 60px;
+}
+.bold {
+  font-weight: bold;
+  color: #D9B23D;
+}
+
+button {
+  margin-top: 5px;
 }

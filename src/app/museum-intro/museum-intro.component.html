@@ -5,6 +5,7 @@
 
     <img class="img-fluid boardImg" src="../../assets/museum/11Border.jpg">
     <div class="box sb3">Hello, yes, you there. Do you have your ticket? Only visitors with a ticket can enter the <span class="bold">British Museum</span>. Wait, how old are you? We don’t normally allow children here but I suppose you are ok. I am your guide today - you aren’t allowed to explore on your own of course. Welcome, welcome everyone to the first room. Can you find all the objects?
+     <br> <button class="btn btn-primary btn-sm listenBtn disabled" ><img id="soundIcon" src="../../assets/kings/volume.svg" height="30"></button>
     <button class="btn btn-primary bubbleBtn" (click)="playGame()">Ready to play<img src="../../assets/arrow_forward.svg"></button>
   </div>
 
@@ -23,19 +24,23 @@
       </button>
     </div>
 
-    <img class="img-fluid boardImg" src="../../assets/museum/11BorderHier.jpg">
-    <a id="sarco" ></a>
-    <!--  <a id="mask" (click)="foundItem('mask')" ></a>-->
-    <a id="cockerel"  ></a>
-    <a id="peacock"  ></a>
-    <a id="duck"  ></a>
-    <a id="snake" ></a>
-    <a id="yFish"  ></a>
-    <a id="turkey" ></a>
-    <a id="bigFish"  ></a>
-    <a id="hat"  ></a>
-    <a id="hier"  ></a>
-    <a id="dog"  ></a>
+    <div class="boardContainer">
+      <a id="sarco" ></a>
+      <!--  <a id="mask" (click)="foundItem('mask')" ></a>-->
+      <a id="cockerel"  ></a>
+      <a id="peacock"  ></a>
+      <a id="duck"  ></a>
+      <a id="snake" ></a>
+      <a id="yFish"  ></a>
+      <a id="turkey" ></a>
+      <a id="bigFish"  ></a>
+      <a id="dog"  ></a>
+      <a id="hat"  ></a>
+      <a id="hier"  ></a>
+
+      <img class="img-fluid boardImg" src="../../assets/museum/11BorderHier.jpg">
+    </div>
+
 
     <!--      <button class="btn btn-primary readyBtn" (click)="playingGame = true">Ready to play<img src="../../assets/arrow_forward.svg"></button>-->
 
