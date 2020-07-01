@@ -24,11 +24,12 @@ width: 40vw;
   background: #1D2C40;
   padding: 20px;
   text-align: center;
-  width: 20vw;
+  max-height: 60vh;
+  max-width: 30vw;
   color: #fff;
   position: absolute;
-  left: 58%;
-  bottom: 20%;
+  left: 65%;
+ top: 25%;
   border-radius: 15px;
 }
 .sb3:before {
