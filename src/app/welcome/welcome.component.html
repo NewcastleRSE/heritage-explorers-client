@@ -1,16 +1,29 @@
 <div class="container">
-<br>
-
-
   <img class="boardImg" src="../../assets/2B.jpg">
 
     <img class="characterImg" src="../../assets/raven4.png">
 
     <div class="box sb3">
-    Welcome to London in 1820....... Would you like to play the board game or explore the board? (to do text)
-      <br>
-      <button class="btn btn-primary" (click)="playGame()">Race game</button>
-      <button class="btn btn-primary" (click)="playExplorer()">Explorer mini games</button>
+
+      Hello, I am a Raven and I live in the <span class="bold">Tower of London</span>. You may have heard of the Tower Ravens?
+
+      Follow me and we will travel back in time to London long ago by bringing to life a board game made in the 1820s for children like you.
+
+      But first you must make a choice…
+
+      Would you like to play the board game or use it to explore the sites of London?
+<br>
+      <button class="btn btn-primary btn-sm listenBtn disabled" ><img id="soundIcon" src="../../assets/kings/volume.svg" height="30"></button>
+    <br>
+      Choose by clicking on one of the buttons below.
+
+      You can return to this screen at any time by clicking ‘Return to Welcome Screen’
+
+
+
+      <button class="btn btn-primary raceBtn" (click)="playGame()">Race around the board</button>
+      <button class="btn btn-primary" (click)="playExplorer()">Explore the board</button>
+
     </div>
 
 

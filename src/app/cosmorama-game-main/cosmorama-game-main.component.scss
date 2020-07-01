@@ -1,8 +1,5 @@
 .container2 {
   position: absolute;
-  //width: 800px;
-  //overflow:hidden;
-  //height: 800px;
   background-image: url("src/assets/cosmo/London_panorama.jpg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -93,8 +90,8 @@ z-index: 4;
 
 .returnBtn {
   position: absolute;
-  top: 80%;
-  left: 10%;
+  bottom: 5%;
+  left: 5%;
 }
 
 button {
@@ -120,10 +117,10 @@ button {
 
 .characterImg {
   position: absolute;
-  left: 77%;
-  top: 5%;
+  left: 80%;
+  bottom: 0;
   z-index: 2;
-  max-width: 20%;
+  height: 90vh;
 }
 //speech bubble
 
@@ -138,7 +135,7 @@ button {
   left: 63%;
   top: 10%;
   border-radius: 15px;
-  z-index: 2;
+  z-index: 3;
   box-shadow: 0 0 50px #1D2C40;
 }
 .sb3:before {

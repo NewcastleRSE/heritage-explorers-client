@@ -24,9 +24,10 @@ h4 {
   max-width: 15%;
   color: #fff;
   position: absolute;
-  left: 21%;
+  left: 26%;
   top: 31%;
   border-radius: 15px;
+  z-index: 3;
 }
 
 .sb3:before {
@@ -61,13 +62,10 @@ h4 {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-.cardRow {
-  width: 130%;
-  margin-left: -100px;
-}
+
 
 .kingsList {
-  margin-top: 60px;
+
   width: 100%;
   min-height: 60px;
   display: flex;
@@ -181,7 +179,6 @@ width: 50%;
 
 .header {
   position: relative;
-
 }
 
 .wholeHeader {
@@ -234,8 +231,9 @@ width: 50%;
 
 .characterImg {
   position: absolute;
-  left: 0%;
-  bottom: 0%;
-  z-index: 0;
-  max-width: 30%;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  width: auto;
+  height: 70vh;
 }

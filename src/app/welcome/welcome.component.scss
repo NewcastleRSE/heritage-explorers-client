@@ -2,44 +2,33 @@
 
 .characterImg {
   position: absolute;
-width: 40%;
+width: 40vw;
   left: 15%;
   top: 30%;
 }
 
-.options {
 
+
+.btn-primary {
+  margin: 5px;
 }
 
-.modal-body {
-  background-image: url('../../assets/rulesEmpty.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+.btn-sm {
+  margin-top: 3px;
 }
 
-button {
- margin: 10px;
-}
-
-.welcomeContainer {
-  text-align: center;
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 //speech bubble
-
 .box {
   margin: 50px auto;
   background: #1D2C40;
   padding: 20px;
   text-align: center;
-  max-width: 20%;
+  width: 20vw;
   color: #fff;
   position: absolute;
   left: 58%;
-  top: 20%;
+  bottom: 20%;
   border-radius: 15px;
 }
 .sb3:before {
@@ -58,9 +47,14 @@ button {
 
 .boardImg {
   z-index: -1;
-  width: 100%;
-  margin-right: 30px;
+  height: 95vh;
+  width: auto;
+  margin-top: 5px;
   border-radius: 10px;
   box-shadow: 0 0 30px #1D2C40;
 }
 
+.bold {
+  font-weight: bold;
+  color: #D9B23D;
+}
