@@ -15,10 +15,12 @@ export class CosmoramaGameMainComponent implements OnInit, AfterViewInit {
 item1;
 item2;
 item3;
+item4;
+item5;
 
 complete;
 
-  currentRouter = this.router.url;
+
 
   constructor(
     private elementRef: ElementRef,
@@ -149,6 +151,13 @@ complete;
         break;
       case 'item3':
         this.item3 = true;
+        break;
+      case 'item4':
+        this.item4 = true;
+        break;
+      case 'item5':
+        this.item5 = true;
+        break;
     }
 
     // if already active then don't do anything
@@ -158,8 +167,9 @@ complete;
     }
 
     // check if list is complete
-if (this.item1 === true && this.item2 === true && this.item3 === true) {
+  if (this.item1 === true && this.item2 === true && this.item3 === true && this.item4 === true && this.item5 === true) {
   // complete
+    console.log('conplete');
   // this.router.navigate(['cosmointro'], { queryParams: { i: false}})
   this.complete = true;
 }
@@ -173,9 +183,5 @@ if (this.item1 === true && this.item2 === true && this.item3 === true) {
     this.router.navigate(['cosmointro'], { queryParams: { i: true}});
   }
 
-  reload() {
-    console.log('clicked');
-    this.router.navigate([this.currentRouter])
-  }
 
 }
