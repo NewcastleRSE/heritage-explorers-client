@@ -6,11 +6,11 @@ area {
   cursor: pointer;
 }
 
-.boardContainer {
-  position: relative;
-  width: auto;
-  height: 95vh;
-}
+//.boardContainer {
+//  position: relative;
+//  width: auto;
+//  height: 95vh;
+//}
 
 #img-map {
   & img {
@@ -41,16 +41,19 @@ area {
 
 .boardImg {
   z-index: -1;
-  width: auto;
-  height: 100%;
-  margin-top: 5px;
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  max-height: 100vh;
+  /* mobile viewport bug fix */
+  max-height: -webkit-fill-available;
   border-radius: 10px;
   box-shadow: 0 0 30px #1D2C40;
 }
 
 
 .returnBtn {
-  position: fixed;
+  position: absolute;
   bottom: 10%;
   z-index: 5;
   left: 5%;
