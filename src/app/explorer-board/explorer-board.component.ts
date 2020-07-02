@@ -1,5 +1,5 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import ImageMap from 'image-map';
+import {AfterContentChecked, AfterViewChecked, AfterViewInit, Component, OnInit} from '@angular/core';
+import ImageMap from "image-map";
 import {Router} from '@angular/router';
 
 @Component({
@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
   templateUrl: './explorer-board.component.html',
   styleUrls: ['./explorer-board.component.scss']
 })
-export class ExplorerBoardComponent implements OnInit, AfterViewInit {
+export class ExplorerBoardComponent implements OnInit, AfterViewChecked {
 squareNumber;
 
 
@@ -20,9 +20,12 @@ squareNumber;
 
   }
 
-  ngAfterViewInit() {
-    ImageMap('img[usemap]');
+
+
+  ngAfterViewChecked() {
+     ImageMap('img[usemap]');
   }
+
 
   clickSquare(squareNumber) {
     console.log(squareNumber);

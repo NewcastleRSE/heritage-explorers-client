@@ -2,10 +2,23 @@
   position: relative;
 }
 
+area {
+  cursor: pointer;
+}
+
 .boardContainer {
   position: relative;
   width: auto;
   height: 95vh;
+}
+
+#img-map {
+  & img {
+    margin-top: 3px;
+    height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #1D2C40;
+  }
 }
 
 .characterImg {
