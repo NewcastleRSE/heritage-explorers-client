@@ -35,10 +35,6 @@ export class CosmoramaGameComponent implements OnInit, AfterViewChecked {
    ImageMap('img[usemap]');
   }
 
-  // ngAfterContentChecked() {
-  //   ImageMap('img[usemap]');
-  // }
-
   clickWindow1() {
     this.router.navigate(['cosmogamemain']);
   }
