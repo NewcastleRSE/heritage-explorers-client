@@ -29,14 +29,13 @@ viewingHelp;
 
   bigCardList = [
     { id : 1, name : 'Edward I', filename: 'edi.PNG', bio: 'Born 1239. Became king 1272. Died in 1307 ', house: 'Plantagenet', region: 'King of England', helpText : 'My nickname was ‘longshanks’ because I was so tall.\n' +
-        'On Crusade an assassin wounded me with a poison dagger\n' +
+        'On Crusade an assassin wounded me with a poison dagger.\n' +
         'During my reign, England and Scotland were at war. I fought against William Wallace – you may have heard of him?\n'},
     { id : 2, name : 'Henry VI', filename: 'henvi.png', bio: 'Born 1421. Became king 1422. Died 1471 ', house: 'Lancaster', region: 'King of England',  helpText : 'My father was the famous Henry V who won the battle of Agincourt.\n' +
         'During my reign, the Wars of the Roses began – when different nobles fought against each other to rule England. I was imprisoned by Edward IV and died in the Tower of London. \n' +
         'My sons (Edward and Richard) were the famous Princes in the Tower. Some say they were murdered by their uncle Richard III.\n' +
         'The Wars of the Roses continued during my reign.\n'},
-    { id : 3, name : 'Edward IV', filename: 'ediv.png', bio: 'Born 1442. Became king 1461. Died in 1483 ', house: 'York', region: 'King of England',  helpText : 'I won the battle of Shrewsbury against Henry ‘Hotspur’ Percy in 1403\n' +
-        'My sons (Edward and Richard) were the famous Princes in the Tower. Some say they were murdered by their uncle Richard III.\n' +
+    { id : 3, name : 'Edward IV', filename: 'ediv.png', bio: 'Born 1442. Became king 1461. Died in 1483 ', house: 'York', region: 'King of England',  helpText : 'My sons (Edward and Richard) were the famous Princes in the Tower. Some say they were murdered by their uncle Richard III.\n' +
         'The Wars of the Roses continued during my reign.\n'},
     { id : 4, name : 'Henry VII', filename: 'henvii.png', bio: 'Born 1457. Became king 1485. Died 1509 ', house: 'Tudor', region: 'King of England', helpText : 'I defeated King Richard III at the Battle of Bosworth in 1485 to become King of England.\n' +
         'My eldest son Prince Arthur died at Ludlow castle in 1502.\n' +
