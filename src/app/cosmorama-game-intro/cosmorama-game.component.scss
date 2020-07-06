@@ -13,12 +13,28 @@ area {
 //}
 
 #img-map {
-  & img {
-    margin-top: 3px;
-    height: 90vh;
-    border-radius: 10px;
-    box-shadow: 0 0 30px #1D2C40;
-  }
+  margin-top: 3px;
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  max-height: 100vh;
+  /* mobile viewport bug fix */
+  max-height: -webkit-fill-available;
+width: auto;
+  position: relative;
+}
+
+svg {
+ display: block;
+  //max-width: 100%;
+  max-height: 100%;
+
+  border-radius: 10px;
+  box-shadow: 0 0 30px #1D2C40;
+}
+
+rect {
+  cursor:pointer;
 }
 
 .characterImg {
