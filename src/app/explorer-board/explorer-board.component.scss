@@ -17,8 +17,6 @@ area {
 #img-map {
 
   position: relative;
-
-  img {
     min-height: 100vh;
     /* mobile viewport bug fix */
     min-height: -webkit-fill-available;
@@ -26,40 +24,47 @@ area {
     /* mobile viewport bug fix */
     max-height: -webkit-fill-available;
     //max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 30px #1D2C40;
+
     //margin-top:3px;
-  }
 }
 
-#Square3 {
-  //border: 1px solid red;
-  height: 15%;
-  width: 15%;
-  position: absolute;
-  left: 34%;
-  top: 2%;
+svg {
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #1D2C40;
+  max-height: 100%;
 }
 
-#Square11 {
-  //border: 1px solid red;
-  height: 15%;
-  width: 15%;
-  position: absolute;
-  left: 68%;
-  top: 82%;
-}
 
-#Square14 {
-  //border: 1px solid red;
-  height: 15%;
-  width: 15%;
-  position: absolute;
-  left: 19%;
-  top: 83%;
-}
+//
+//#Square3 {
+//  //border: 1px solid red;
+//  height: 15%;
+//  width: 15%;
+//  position: absolute;
+//  left: 34%;
+//  top: 2%;
+//}
+//
+//#Square11 {
+//  //border: 1px solid red;
+//  height: 15%;
+//  width: 15%;
+//  position: absolute;
+//  left: 68%;
+//  top: 82%;
+//}
+//
+//#Square14 {
+//  //border: 1px solid red;
+//  height: 15%;
+//  width: 15%;
+//  position: absolute;
+//  left: 19%;
+//  top: 83%;
+//}
 
-a {
+rect {
   cursor: pointer;
 }
 
