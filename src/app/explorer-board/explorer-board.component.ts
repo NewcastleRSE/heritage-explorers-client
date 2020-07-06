@@ -7,9 +7,9 @@ import {Router} from '@angular/router';
   templateUrl: './explorer-board.component.html',
   styleUrls: ['./explorer-board.component.scss']
 })
-export class ExplorerBoardComponent implements OnInit, AfterViewChecked {
+export class ExplorerBoardComponent implements OnInit {
 squareNumber;
-
+audio;
 
   constructor(
     private router: Router
@@ -17,20 +17,22 @@ squareNumber;
 
 
   ngOnInit(): void {
-
+this.audio = new Audio();
   }
 
 
 
-  ngAfterViewChecked() {
-     ImageMap('img[usemap]');
-  }
+  // ngAfterViewChecked() {
+  //    ImageMap('img[usemap]');
+  // }
 
 
   clickSquare(squareNumber) {
+    // stop speaking
+    this.audio.pause();
+
     console.log(squareNumber);
     switch (squareNumber) {
-      // todo add holding message for other squares
       case 3:
         this.router.navigate(['kingsintro'], { queryParams: { i: true}});
         break;
@@ -55,10 +57,10 @@ returnToHome() {
 }
 
 play() {
-  const audio = new Audio();
-  audio.src = '../../assets/sounds/intros/Beefeater.m4a';
-  audio.load();
-  audio.play();
+
+  this.audio.src = '../../assets/sounds/intros/Beefeater.m4a';
+  this.audio.load();
+  this.audio.play();
 }
 
 }

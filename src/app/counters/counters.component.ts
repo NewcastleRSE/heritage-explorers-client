@@ -15,6 +15,8 @@ import {bounce} from 'ng-animate';
 export class CountersComponent implements OnInit {
   bounce: any;
 
+  audio;
+
 player1Choosing: boolean;
 player2Choosing: boolean;
 
@@ -55,6 +57,7 @@ player2Name;
     this.player2Choosing = false;
     this.player1EnteredName = false;
     this.player2EnteredName = false;
+    this.audio = new Audio();
   }
 
   setCounter(counterChoice) {
@@ -98,10 +101,9 @@ player2Name;
           break;
       }
       console.log('play' + this.player1Counter + '.mp3');
-      const audio = new Audio();
-      audio.src = '../../assets/sounds/' + this.player1Counter + '3.mp3';
-      audio.load();
-      audio.play();
+      this.audio.src = '../../assets/sounds/' + this.player1Counter + '3.mp3';
+      this.audio.load();
+      this.audio.play();
 
     } else if (this.player2Choosing ===  true) {
       switch (counterChoice) {
@@ -163,10 +165,10 @@ player2Name;
           break;
       }
       console.log('play' + this.player1Counter + '.mp3');
-      const audio = new Audio();
-      audio.src = '../../assets/sounds/' + this.player2Counter + '3.mp3';
-      audio.load();
-      audio.play();
+
+      this.audio.src = '../../assets/sounds/' + this.player2Counter + '3.mp3';
+      this.audio.load();
+      this.audio.play();
     }
   }
 
@@ -249,6 +251,7 @@ if (this.player2Counter !== undefined &&  this.player2Name !== undefined) {
  }
 
  returnToHome() {
+    this.audio.pause();
     this.router.navigate(['home']);
  }
 

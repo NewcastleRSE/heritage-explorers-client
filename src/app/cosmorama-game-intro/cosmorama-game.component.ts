@@ -7,9 +7,10 @@ import ImageMap from "image-map";
   templateUrl: './cosmorama-game.component.html',
   styleUrls: ['./cosmorama-game.component.scss']
 })
-export class CosmoramaGameComponent implements OnInit, AfterViewChecked {
+export class CosmoramaGameComponent implements OnInit {
 // page shows intro and completion messages depending on flag
   introShowing: boolean;
+audio;
 
   constructor(
     private router: Router,
@@ -31,22 +32,27 @@ export class CosmoramaGameComponent implements OnInit, AfterViewChecked {
       });
   }
 
-  ngAfterViewChecked() {
-   ImageMap('img[usemap]');
-  }
+  // ngAfterViewChecked() {
+  //  ImageMap('img[usemap]');
+  // }
 
   play() {
-    const audio = new Audio();
-    audio.src = '../../assets/sounds/intros/CosmoLadyI.m4a';
-    audio.load();
-    audio.play();
+
+    this.audio.src = '../../assets/sounds/intros/CosmoLadyI.m4a';
+    this.audio.load();
+    this.audio.play();
   }
 
   clickWindow1() {
+    // stop speaking
+    this.audio.pause();
+
     this.router.navigate(['cosmogamemain']);
   }
 
   returnToBoard() {
+    // stop speaking
+    this.audio.pause();
     this.router.navigate(['/explorer']);
   }
 }

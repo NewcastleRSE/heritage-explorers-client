@@ -9,6 +9,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class MuseumIntroComponent implements OnInit {
 // page shows intro and completion messages depending on flag
   introShowing: boolean;
+  audio;
 
   constructor(
     private router: Router,
@@ -16,6 +17,8 @@ export class MuseumIntroComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.audio = new Audio();
+
     // check if showing intro our well done message
     this.route.queryParams
       .subscribe(params => {
@@ -32,17 +35,22 @@ export class MuseumIntroComponent implements OnInit {
   }
 
   playGame() {
+    // stop speaking
+    this.audio.pause();
+
     this.router.navigate(['museumgame']);
   }
 
   play() {
-    const audio = new Audio();
-    audio.src = '../../assets/sounds/intros/BritishMuseumGuide.mp3';
-    audio.load();
-    audio.play();
+    this.audio.src = '../../assets/sounds/intros/BritishMuseumGuide.mp3';
+    this.audio.load();
+    this.audio.play();
   }
 
 returnToBoard() {
-    this.router.navigate(['explorer']);
+  // stop speaking
+  this.audio.pause();
+
+  this.router.navigate(['explorer']);
 }
 }

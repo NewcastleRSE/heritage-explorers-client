@@ -13,6 +13,7 @@ export class KingsGameComponent implements OnInit {
 meyrickVisible;
 kingsVisible;
 viewingHelp;
+audio;
 
 // this list changes order to reflect what's displayed on screen
   kings = [
@@ -84,6 +85,7 @@ correctOrder = false;
    this.meyrickVisible = true;
    this.kingsVisible = false;
    this.viewingHelp = false;
+   this.audio = new Audio();
   }
 
   shuffleKings() {
@@ -142,6 +144,8 @@ correctOrder = false;
   }
 
   viewHelp(kingId) {
+// stop king speaking
+    this.audio.pause();
 
     // if there is currently a card in viewing help list, then make it visible again and remove from list
     if (this.viewingHelpKings.length > 0) {
@@ -172,6 +176,9 @@ correctOrder = false;
     }
 
   closeHelp(kingId) {
+    // stop king speaking
+    this.audio.pause();
+
     document.getElementById(kingId).classList.remove('invisible');
     this.viewingHelp = false;
 
@@ -190,9 +197,8 @@ correctOrder = false;
   }
 
   playClue(kingsID) {
-    const audio = new Audio();
-    audio.src = '../../assets/sounds/kings/' + kingsID + '.mp3';
-    audio.load();
-    audio.play();
+    this.audio.src = '../../assets/sounds/kings/' + kingsID + '.mp3';
+    this.audio.load();
+    this.audio.play();
   }
 }
