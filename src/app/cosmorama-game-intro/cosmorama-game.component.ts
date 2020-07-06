@@ -35,6 +35,13 @@ export class CosmoramaGameComponent implements OnInit, AfterViewChecked {
    ImageMap('img[usemap]');
   }
 
+  play() {
+    const audio = new Audio();
+    audio.src = '../../assets/sounds/intros/CosmoLadyI.m4a';
+    audio.load();
+    audio.play();
+  }
+
   clickWindow1() {
     this.router.navigate(['cosmogamemain']);
   }

@@ -32,29 +32,28 @@ viewingHelp;
         'On Crusade an assassin wounded me with a poison dagger.\n' +
         'During my reign, England and Scotland were at war. I fought against William Wallace – you may have heard of him?\n'},
     { id : 2, name : 'Henry VI', filename: 'henvi.png', bio: 'Born 1421. Became king 1422. Died 1471 ', house: 'Lancaster', region: 'King of England',  helpText : 'My father was the famous Henry V who won the battle of Agincourt.\n' +
-        'During my reign, the Wars of the Roses began – when different nobles fought against each other to rule England. I was imprisoned by Edward IV and died in the Tower of London. \n' +
-        'My sons (Edward and Richard) were the famous Princes in the Tower. Some say they were murdered by their uncle Richard III.\n' +
-        'The Wars of the Roses continued during my reign.\n'},
+        'During my reign, the Wars of the Roses began – when different nobles fought against each other to rule England. I was imprisoned by Edward IV and died in the Tower of London.'},
     { id : 3, name : 'Edward IV', filename: 'ediv.png', bio: 'Born 1442. Became king 1461. Died in 1483 ', house: 'York', region: 'King of England',  helpText : 'My sons (Edward and Richard) were the famous Princes in the Tower. Some say they were murdered by their uncle Richard III.\n' +
         'The Wars of the Roses continued during my reign.\n'},
     { id : 4, name : 'Henry VII', filename: 'henvii.png', bio: 'Born 1457. Became king 1485. Died 1509 ', house: 'Tudor', region: 'King of England', helpText : 'I defeated King Richard III at the Battle of Bosworth in 1485 to become King of England.\n' +
         'My eldest son Prince Arthur died at Ludlow castle in 1502.\n' +
         'When I died, my second son Henry became King Henry VIII. \n'},
-    { id : 5, name : 'Henry VIII', filename: 'henviii.png', bio: 'Born 1491. Became king 1509. Died 1547 ', house: 'Tudor', region: 'King of England',   helpText : 'I had six wives – can you name them all?  \n' +
+    { id : 5, name : 'Henry VIII', filename: 'henviii.png', bio: 'Born 1491. Became king 1509. Died 1547 ', house: 'Tudor', region: 'King of England',
+      helpText : 'I had six wives – can you name them all?  \n' +
         'My first wife Catherine of Aragon was previously married to my brother Arthur.\n' +
-        'I started the English Reformation.\n'},
+        'I started the English Reformation, when the Church of England broke away from the Catholic Church in Rome, so that I could annul my marriage with Catherine.'},
     { id : 6, name : 'Edward VI', filename: 'edvi.png', bio: 'Born 1537. Became king 1547. Died 1553 ', house: 'Tudor', region: 'King of England',  helpText : 'I became King at age 9 ½ and died at age 15.\n' +
         'My father was Henry VIII.\n' +
         'When I died my cousin Jane became Queen. She ruled for 9 days. \n'},
     { id : 7, name : 'James I', filename: 'jami.png', bio: 'Born 1566. Became king of England 1603. Died 1625 ', house: 'Stuart', region: 'King of England and Scotland', helpText : 'Before I was king of England I was the King of Scotland. After the death of Elizabeth I, I ruled England too.\n' +
         'The Gunpowder plot – an attempt to blow up Parliament – happened in 1605.\n' +
         'During my reign, the famous explorer and spy Sir Walter Raleigh was executed.\n'},
-    { id : 8, name : 'Charles I', filename: 'chasi.png', bio: 'Born 1600. Became king 1625. Died 1649 ', house: 'Stuart', region: 'King of England, Scotland and Ireland', helpText : 'The English Civil Wars started during my reign.  The Parliamentarians fought against me and the Royalists or Cavaliers fought with me. The Royalists believed that a king should rule by divine right – that is, I shouldn’t have to do what Parliament wants.\n' +
+    { id : 8, name : 'Charles I', filename: 'chasi.png', bio: 'Born 1600. Became king 1625. Died 1649 ', house: 'Stuart', region: 'King of England, Scotland and Ireland',
+      helpText : 'The English Civil Wars started during my reign.  The Parliamentarians fought against me and the Royalists or Cavaliers fought with me. The Royalists believed that a king should rule by divine right – that is, I shouldn’t have to do what Parliament wants.\n' +
         'I was executed in 1649.\n' +
         'After my reign, England did not have a king. Oliver Cromwell ruled as Lord Protector.  \n'},
-    { id : 9, name : 'James II', filename: 'jamii.png', bio: 'Born 1633. Became king 1685. Died 1701 ', house: 'Stuart', region: 'King of England, Scotland and Ireland', helpText : 'I was the last Catholic ruler on the throne of England \n' +
-        'I was forced to abdicate, that is, give up the throne in favour of my Protestant daughter Mary and her husband William. \n' +
-        'My son, James, led a rebellion against King George I. His supporters called themselves the Jacobites.\n'}
+    { id : 9, name : 'James II', filename: 'jamii.png', bio: 'Born 1633. Became king 1685. Died 1701 ', house: 'Stuart', region: 'King of England, Scotland and Ireland',
+      helpText : 'I was the last Catholic ruler on the throne of England. But I was forced to give it up in favour of my Protestant daughter Mary and her Dutch husband, William of Orange, and I fled to France. My son, James, led a rebellion against King George I. His supporters called themselves the Jacobites.'}
   ];
 
   // this list contains the correct order to compare user's list against
@@ -191,6 +190,9 @@ correctOrder = false;
   }
 
   playClue(kingsID) {
-    console.log(kingsID);
+    const audio = new Audio();
+    audio.src = '../../assets/sounds/kings/' + kingsID + '.mp3';
+    audio.load();
+    audio.play();
   }
 }

@@ -53,6 +53,14 @@ squareNumber;
 returnToHome() {
     this.router.navigate(['home']);
 }
+
+play() {
+  const audio = new Audio();
+  audio.src = '../../assets/sounds/intros/Beefeater.m4a';
+  audio.load();
+  audio.play();
+}
+
 }
 // coords="737,595,99,117"
 // coords="803,93,1444,579"

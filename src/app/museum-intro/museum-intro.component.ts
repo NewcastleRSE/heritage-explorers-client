@@ -35,6 +35,13 @@ export class MuseumIntroComponent implements OnInit {
     this.router.navigate(['museumgame']);
   }
 
+  play() {
+    const audio = new Audio();
+    audio.src = '../../assets/sounds/intros/BritishMuseumGuide.mp3';
+    audio.load();
+    audio.play();
+  }
+
 returnToBoard() {
     this.router.navigate(['explorer']);
 }

@@ -29,4 +29,11 @@ export class WelcomeComponent implements OnInit {
     this.router.navigate(['explorer']);
   }
 
+  play() {
+    const audio = new Audio();
+    audio.src = '../../assets/sounds/intros/Raven.m4a';
+    audio.load();
+    audio.play();
+  }
+
 }
