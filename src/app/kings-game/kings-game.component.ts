@@ -192,6 +192,8 @@ correctOrder = false;
     }
   }
 
+
+
   returnToBoard() {
     this.router.navigate(['/explorer']);
   }
