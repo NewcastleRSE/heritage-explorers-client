@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
   templateUrl: './cosmorama-game-main.component.html',
   styleUrls: ['./cosmorama-game-main.component.scss']
 })
-export class CosmoramaGameMainComponent implements OnInit, AfterViewInit {
+export class CosmoramaGameMainComponent implements OnInit {
 
   backgroundTop;
   backgroundLeft;
@@ -42,29 +42,7 @@ complete;
 
   }
 
-  ngAfterViewInit() {
-    // this.backgroundLeft = 2000;
-    // console.log(this.backgroundLeft);
 
-    // get height and width of background image
-    const imageSrc = document
-      .getElementById('c2')
-      .style
-      .backgroundImage
-      .replace(/url\((['"])?(.*?)\1\)/gi, '$2')
-      .split(',')[0];
-    const image = new Image();
-    image.src = imageSrc;
-
-    const width = image.width;
-    const height = image.height;
-
-    console.log('h = ' + height);
-    console.log('w = ' + width);
-    // document.getElementById('up').addEventListener('mousedown', this.upOnDown.bind(this));
-    // document.getElementById('up').addEventListener('mouseup', this.upOnUp.bind(this));
-
-  }
 
   returnToBoard() {
     this.router.navigate(['/explorer']);

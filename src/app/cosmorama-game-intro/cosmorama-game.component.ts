@@ -18,6 +18,7 @@ audio;
   ) { }
 
   ngOnInit(): void {
+    this.audio = new Audio();
     this.route.queryParams
       .subscribe(params => {
         console.log(typeof params.i);
