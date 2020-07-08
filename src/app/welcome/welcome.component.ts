@@ -8,6 +8,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
+audio;
 
   constructor(
     private router: Router,
@@ -15,9 +16,11 @@ export class WelcomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.audio = new Audio();
   }
 
   playGame() {
+    this.audio.pause();
     this.router.navigate(['counters']);
   }
 
@@ -26,14 +29,14 @@ export class WelcomeComponent implements OnInit {
   }
 
   playExplorer() {
+    this.audio.pause();
     this.router.navigate(['explorer']);
   }
 
   play() {
-    const audio = new Audio();
-    audio.src = '../../assets/sounds/intros/Raven.m4a';
-    audio.load();
-    audio.play();
+    this.audio.src = '../../assets/sounds/intros/Raven.m4a';
+    this.audio.load();
+    this.audio.play();
   }
 
 }
