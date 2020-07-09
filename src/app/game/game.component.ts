@@ -18,59 +18,75 @@ import {Router} from '@angular/router';
 export class GameComponent implements OnInit {
 // animations
   bounce: any;
-zoomIn: any;
+  zoomIn: any;
 
 // keep track of squares players have landed on
   p1Visited = [1];
   p2Visited = [1];
 
-p1Square;
-p2Square;
-currentPlayer;
-winningMessage;
-lastRoll;
-rolls = [1, 2, 3, 4];
+  p1Square;
+  p2Square;
+  currentPlayer;
+  winningMessage;
+  lastRoll;
+  rolls = [1, 2, 3, 4];
 
 // counter positioning
-p1Top;
-p1Left;
-p2Top;
-p2Left;
+  p1Top;
+  p1Left;
+  p2Top;
+  p2Left;
 
-p1Counter;
-p2Counter;
+  p1Counter;
+  p2Counter;
 
-p1Name;
-p2Name;
+  p1Name;
+  p2Name;
 
 // for testing
   testSquare;
 
 // todo decide how many players should start with
-p1Pool = 5;
-p2Pool = 5;
+  p1Pool = 5;
+  p2Pool = 5;
 
 // todo decide if the pool should start with anything in it
-pool;
+  pool;
 
 // counters that keep track if a player is missing a go. When set to 0 the player can continue as normal.
-p1MissAGo = 0;
-p2MissAGo = 0;
-missAGoMessage;
-missAGoAlertClosed = true;
-
+  p1MissAGo = 0;
+  p2MissAGo = 0;
+  missAGoMessage;
+  missAGoAlertClosed = true;
 
 
 // view squares
+  @ViewChild('modal1') modal1;
+  @ViewChild('modal2') modal2;
   @ViewChild('modal3') modal3;
+  @ViewChild('modal4') modal4;
   @ViewChild('modal5') modal5;
+  @ViewChild('modal6') modal6;
+  @ViewChild('modal7') modal7;
+  @ViewChild('modal8') modal8;
+  @ViewChild('modal9') modal9;
+  @ViewChild('modal10') modal10;
+  @ViewChild('modal11') modal11;
+  @ViewChild('modal12') modal12;
+  @ViewChild('modal13') modal13;
+  @ViewChild('modal14') modal14;
+  @ViewChild('modal15') modal15;
   @ViewChild('modal16') modal16;
+  @ViewChild('modal17') modal17;
+  @ViewChild('modal18') modal18;
+
 
   constructor(
     private globalsService: GlobalsService,
     private modalService: NgbModal,
     private router: Router
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.currentPlayer = 1;
@@ -112,6 +128,7 @@ missAGoAlertClosed = true;
   step1On() {
     this.move(1);
   }
+
   step2On() {
     const current = this.p2Square;
     this.p2Square = current + 1;
@@ -128,9 +145,9 @@ missAGoAlertClosed = true;
     let moveTo = currentSquare + numberRolled;
 
     // if more than 18 go around the board from 1 again.
-      if (moveTo > 18) {
-        moveTo = moveTo - 18;
-      }
+    if (moveTo > 18) {
+      moveTo = moveTo - 18;
+    }
 
     // move player
     if (this.currentPlayer === 1) {
@@ -159,94 +176,123 @@ missAGoAlertClosed = true;
   async squareInteraction(squareNumber) {
 
     // ----- Square 1 - miss a go
-    this.square1Interaction().then(() => {
-      this.changePlayer();
-    });
-
-    // ------ Square 2 - pay 3
-  this.square2Interaction().then(() => {
-    this.changePlayer();
-  });
-
-    // ----- Square 3 - go to 5
-    if (squareNumber === 3) {
-     this.square3Interaction().then(() => {
-       // after interact with cell then change to next player
-       this.changePlayer();
-     });
+    if (squareNumber === 1) {
+      this.square1Interaction().then(() => {
+        this.changePlayer();
+      });
     }
 
-      // ------ Square 4 - Go to 13
-  this.square4Interaction().then(() => {
-    this.changePlayer();
-  });
 
+    // ------ Square 2 - pay 3
+    else if (squareNumber === 2) {
+      this.square2Interaction().then(() => {
+        this.changePlayer();
+      });
+    }
+    // ----- Square 3 - go to 5
+    else if (squareNumber === 3) {
+      this.square3Interaction().then(() => {
+        // after interact with cell then change to next player
+        this.changePlayer();
+      });
+    }
+
+    // ------ Square 4 - Go to 13
+    else if (squareNumber === 4) {
+      this.square4Interaction().then(() => {
+        this.changePlayer();
+      });
+    }
     // ----- Square 5 - miss 2 turns. Add 3 to account for player 2's first legitimate go
-    else if (squareNumber === 5) {
+  else if (squareNumber === 5) {
       this.square5Interaction().then(() => {
         this.changePlayer();
       });
     }
 
-      // ------ Square 6 - pay 6
-    this.square6Interaction().then(() => {
-      this.changePlayer();
-    });
-      // ------ Square 7 - miss a go
-    this.square7Interaction().then(() => {
-      this.changePlayer();
-    });
-      // ------ Square 8 - if you have not been to the tower, go back to 2
-    this.square8Interaction().then(() => {
-      this.changePlayer();
-    });
-      // ------ Square 9 - pay 2
-    this.square9Interaction().then(() => {
-      this.changePlayer();
-    });
-      // ------ Square 10 - move to 15
-    this.square10Interaction().then(() => {
-      this.changePlayer();
-    });
-      // ------ Square 11 - miss 3 turns
-    this.square11Interaction().then(() => {
-      this.changePlayer();
-    });
-      // ------ Square 12 - miss a go
-    this.square12Interaction().then(() => {
-      this.changePlayer();
-    });
-      // ------ Square 13 - go to 2
-    this.square13Interaction().then(() => {
-      this.changePlayer();
-    });
-      // ------ Square 14 - pay 1
-    this.square14Interaction().then(() => {
-      this.changePlayer();
-    });
-      // ------ Square 15 - go back to 12
-    this.square15Interaction().then(() => {
-      this.changePlayer();
-    });
+    // ------ Square 6 - pay 6
+    else if (squareNumber === 6) {
+      this.square6Interaction().then(() => {
+        this.changePlayer();
+      });
+    }
+    // ------ Square 7 - miss a go
+    else if (squareNumber === 7) {
+      this.square7Interaction().then(() => {
+        this.changePlayer();
+      });
+    }
+    // ------ Square 8 - if you have not been to the tower, go back to 2
+    else if (squareNumber === 8) {
+      this.square8Interaction().then(() => {
+        this.changePlayer();
+      });
+    }
+    // ------ Square 9 - pay 2
+    else if (squareNumber === 9) {
+      this.square9Interaction().then(() => {
+        this.changePlayer();
+      });
+    }
+    // ------ Square 10 - move to 15
+    else if (squareNumber === 10) {
+      this.square10Interaction().then(() => {
+        this.changePlayer();
+      });
+    }
+    // ------ Square 11 - miss 3 turns
+    else if (squareNumber === 11) {
+      this.square11Interaction().then(() => {
+        this.changePlayer();
+      });
+    }
+    // ------ Square 12 - miss a go
+    else if (squareNumber === 12) {
+      this.square12Interaction().then(() => {
+        this.changePlayer();
+      });
+    }
+    // ------ Square 13 - go to 2
+    else if (squareNumber === 13) {
+      this.square13Interaction().then(() => {
+        this.changePlayer();
+      });
+    }
+    // ------ Square 14 - pay 1
+    else if (squareNumber === 14) {
+      this.square14Interaction().then(() => {
+        this.changePlayer();
+      });
+    }
+    // ------ Square 15 - go back to 12
+    else if (squareNumber === 15) {
+      this.square15Interaction().then(() => {
+        this.changePlayer();
+      });
+    }
     // ----- Square 16 - loose all counters
-    else if (squareNumber === 16) {
+  else
+    if (squareNumber === 16) {
       this.square16Interaction().then(() => {
         this.changePlayer();
       });
     }
 
-      // ------ Square 17 - take half the counters in the pool
-    this.square17Interaction().then(() => {
-      this.changePlayer();
-    });
+    // ------ Square 17 - take half the counters in the pool
+    else if (squareNumber === 17) {
+      this.square17Interaction().then(() => {
+        this.changePlayer();
+      });
+    }
     // ----- Square 18 stop game
-    else if (squareNumber === 18) {
+  else
+    if (squareNumber === 18) {
       this.winningMessage = 'Player ' + this.currentPlayer + ' wins!';
 
       if (this.currentPlayer === 1) {
-        this.router.navigate(['win'], { queryParams: { w: this.p1Name}});
+        this.router.navigate(['win'], {queryParams: {w: this.p1Name}});
       } else if (this.currentPlayer === 2) {
-        this.router.navigate(['win'], { queryParams: { w: this.p2Name}});
+        this.router.navigate(['win'], {queryParams: {w: this.p2Name}});
       }
     }
 
@@ -257,30 +303,30 @@ missAGoAlertClosed = true;
 
   }
 
-async square3Interaction() {
-  if (this.currentPlayer === 1) {
-    this.p1Square = 3;
-    this.moveP1Icon(3);
-  } else {
-    this.p2Square = 3;
-    this.moveP2Icon(3);
-  }
-  console.log('landed on 3 so move to 5');
-  // this.modalService.open(Square3Component);
-  const m3 = this.modalService.open(this.modal3);
-  await m3.result.then(() => {
-    console.log('When user closes');
-  }, () => {
-    // after closing modal move counter to 5
+  async square3Interaction() {
     if (this.currentPlayer === 1) {
-      this.p1Square = 5;
-      this.moveP1Icon(5);
+      this.p1Square = 3;
+      this.moveP1Icon(3);
     } else {
-      this.p2Square = 5;
-      this.moveP2Icon(5);
+      this.p2Square = 3;
+      this.moveP2Icon(3);
     }
-  });
-}
+    console.log('landed on 3 so move to 5');
+    // this.modalService.open(Square3Component);
+    const m3 = this.modalService.open(this.modal3);
+    await m3.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      // after closing modal move counter to 5
+      if (this.currentPlayer === 1) {
+        this.p1Square = 5;
+        this.moveP1Icon(5);
+      } else {
+        this.p2Square = 5;
+        this.moveP2Icon(5);
+      }
+    });
+  }
 
   async square1Interaction() {
     if (this.currentPlayer === 1) {
@@ -301,8 +347,8 @@ async square3Interaction() {
   async square2Interaction() {
     if (this.currentPlayer === 1) {
       // take 3 sweets from player and add to pool
-     this.p1Pool = this.p1Pool - 3;
-     this.pool = this.pool + 3;
+      this.p1Pool = this.p1Pool - 3;
+      this.pool = this.pool + 3;
     } else if (this.currentPlayer === 2) {
       // take 3 sweets from player and add to pool
       this.p2Pool = this.p2Pool - 3;
@@ -336,21 +382,21 @@ async square3Interaction() {
     });
   }
 
-async square5Interaction() {
-  if (this.currentPlayer === 1) {
-    this.p1Square = 5;
-    this.moveP1Icon(5);
-    console.log('player 1 misses next 2 goes');
-    this.p1MissAGo = 3;
-  } else {
-    this.p2Square = 5;
-    this.moveP2Icon(5);
-    console.log('player 2 misses next 2 goes');
-    this.p2MissAGo = 3;
-  }
+  async square5Interaction() {
+    if (this.currentPlayer === 1) {
+      this.p1Square = 5;
+      this.moveP1Icon(5);
+      console.log('player 1 misses next 2 goes');
+      this.p1MissAGo = 3;
+    } else {
+      this.p2Square = 5;
+      this.moveP2Icon(5);
+      console.log('player 2 misses next 2 goes');
+      this.p2MissAGo = 3;
+    }
 
-  this.modalService.open(this.modal5, {windowClass: 'modalTransparent'});
-}
+    this.modalService.open(this.modal5, {windowClass: 'modalTransparent'});
+  }
 
   async square6Interaction() {
     if (this.currentPlayer === 1) {
@@ -389,19 +435,24 @@ async square5Interaction() {
       this.p2Square = 8;
       this.moveP2Icon(8);
     }
-    console.log('landed on 8 so move to 2');
-    // this.modalService.open(Square3Component);
+
     const m8 = this.modalService.open(this.modal8);
     await m8.result.then(() => {
       console.log('When user closes');
     }, () => {
-      // after closing modal move counter to 2
+      // if player has not visited 2, go back to it
       if (this.currentPlayer === 1) {
-        this.p1Square = 2;
-        this.moveP1Icon(2);
+        console.log(this.p1Visited);
+        if (this.p1Visited.includes(2)) {
+          this.p1Square = 2;
+          this.moveP1Icon(2);
+        }
       } else {
-        this.p2Square = 2;
-        this.moveP2Icon(2);
+        console.log(this.p2Visited);
+        if (this.p2Visited.includes(2)) {
+          this.p2Square = 2;
+          this.moveP2Icon(2);
+        }
       }
     });
   }
@@ -539,27 +590,27 @@ async square5Interaction() {
     });
   }
 
-async square16Interaction() {
+  async square16Interaction() {
 
-  console.log('land on 16 so lose all pool');
-  if (this.currentPlayer === 1) {
-    // add sweets to pool then empty
-    this.pool = this.pool + this.p1Pool;
-    this.p1Pool = 0;
-  } else if (this.currentPlayer === 2) {
-    // add sweets to pool then empty
-    this.pool = this.pool + this.p2Pool;
-    this.p2Pool = 0;
+    console.log('land on 16 so lose all pool');
+    if (this.currentPlayer === 1) {
+      // add sweets to pool then empty
+      this.pool = this.pool + this.p1Pool;
+      this.p1Pool = 0;
+    } else if (this.currentPlayer === 2) {
+      // add sweets to pool then empty
+      this.pool = this.pool + this.p2Pool;
+      this.p2Pool = 0;
+    }
+    this.modalService.open(this.modal16);
   }
-  this.modalService.open(this.modal16);
-}
 
   async square17Interaction() {
-  const halfPool = Math.ceil(this.pool / 2);
-  this.pool = this.pool - halfPool;
+    const halfPool = Math.ceil(this.pool / 2);
+    this.pool = this.pool - halfPool;
     if (this.currentPlayer === 1) {
       // take half sweets in pool
-this.p1Pool = this.p1Pool + halfPool;
+      this.p1Pool = this.p1Pool + halfPool;
     } else if (this.currentPlayer === 2) {
       this.p2Pool = this.p2Pool + halfPool;
     }
@@ -605,17 +656,17 @@ this.p1Pool = this.p1Pool + halfPool;
       this.currentPlayer = 1;
     }
     // if next player has a value against their miss a go counter, then don't change the current player, but do display popup
-  //   if (this.p2MissAGo > 0) {
-  //     console.log('trigger alert for player 1');
-  //     this.missAGoMessage = this.p2Name + ' misses a go';
-  //     this.missAGoAlertClosed = false;
-  //     setTimeout(() => this.missAGoAlertClosed = true, 5000);
-  //   } else if (this.p1MissAGo > 0) {
-  //     console.log('trigger alert for player 1');
-  //     this.missAGoMessage = this.p1Name + ' misses a go';
-  //     this.missAGoAlertClosed = false;
-  //     setTimeout(() => this.missAGoAlertClosed = true, 5000);
-  //   }
+    //   if (this.p2MissAGo > 0) {
+    //     console.log('trigger alert for player 1');
+    //     this.missAGoMessage = this.p2Name + ' misses a go';
+    //     this.missAGoAlertClosed = false;
+    //     setTimeout(() => this.missAGoAlertClosed = true, 5000);
+    //   } else if (this.p1MissAGo > 0) {
+    //     console.log('trigger alert for player 1');
+    //     this.missAGoMessage = this.p1Name + ' misses a go';
+    //     this.missAGoAlertClosed = false;
+    //     setTimeout(() => this.missAGoAlertClosed = true, 5000);
+    //   }
   }
 
   startAgain() {
@@ -630,81 +681,81 @@ this.p1Pool = this.p1Pool + halfPool;
 
   // move icons around 2 'tracks' around the board using their relative position to the board
   moveP1Icon(moveTo) {
-  switch (moveTo) {
-    case 1:
-      this.p1Top = '6%';
-      this.p1Left = '2.25%';
-      break;
-    case 2:
-      this.p1Top = '6%';
-      this.p1Left = '18.25%';
-      break;
-    case 3:
-      this.p1Top = '6%';
-      this.p1Left = '34.75%';
-      break;
-    case 4:
-      this.p1Top = '6%';
-      this.p1Left = '51%';
-      break;
-    case 5:
-      this.p1Top = '6%';
-      this.p1Left = '67%';
-      break;
-    case 6:
-      this.p1Top = '6%';
-      this.p1Left = '83.25%';
-      break;
-    case 7:
-      this.p1Top = '18.5%';
-      this.p1Left = '89.5%';
-      break;
-    case 8:
-      this.p1Top = '40.25%';
-      this.p1Left = '89.5%';
-      break;
-    case 9:
-      this.p1Top = '62%';
-      this.p1Left = '89.5%';
-      break;
-    case 10:
-      this.p1Top = '85%';
-      this.p1Left = '90%';
-      break;
-    case 11:
-      this.p1Top = '85%';
-      this.p1Left = '75.25%';
-      break;
-    case 12:
-      this.p1Top = '85%';
-      this.p1Left = '59%';
-      break;
-    case 13:
-      this.p1Top = '85%';
-      this.p1Left = '43%';
-      break;
-    case 14:
-      this.p1Top = '85%';
-      this.p1Left = '26.5%';
-      break;
-    case 15:
-      this.p1Top = '85%';
-      this.p1Left = '10%';
-      break;
-    case 16:
-      this.p1Top = '72.25%';
-      this.p1Left = '4.5%';
-      break;
-    case 17:
-      this.p1Top = '50.75%';
-      this.p1Left = '4.5%';
-      break;
-    case 18:
-      this.p1Top = '29%';
-      this.p1Left = '4.5%';
-      break;
+    switch (moveTo) {
+      case 1:
+        this.p1Top = '6%';
+        this.p1Left = '2.25%';
+        break;
+      case 2:
+        this.p1Top = '6%';
+        this.p1Left = '18.25%';
+        break;
+      case 3:
+        this.p1Top = '6%';
+        this.p1Left = '34.75%';
+        break;
+      case 4:
+        this.p1Top = '6%';
+        this.p1Left = '51%';
+        break;
+      case 5:
+        this.p1Top = '6%';
+        this.p1Left = '67%';
+        break;
+      case 6:
+        this.p1Top = '6%';
+        this.p1Left = '83.25%';
+        break;
+      case 7:
+        this.p1Top = '18.5%';
+        this.p1Left = '89.5%';
+        break;
+      case 8:
+        this.p1Top = '40.25%';
+        this.p1Left = '89.5%';
+        break;
+      case 9:
+        this.p1Top = '62%';
+        this.p1Left = '89.5%';
+        break;
+      case 10:
+        this.p1Top = '85%';
+        this.p1Left = '90%';
+        break;
+      case 11:
+        this.p1Top = '85%';
+        this.p1Left = '75.25%';
+        break;
+      case 12:
+        this.p1Top = '85%';
+        this.p1Left = '59%';
+        break;
+      case 13:
+        this.p1Top = '85%';
+        this.p1Left = '43%';
+        break;
+      case 14:
+        this.p1Top = '85%';
+        this.p1Left = '26.5%';
+        break;
+      case 15:
+        this.p1Top = '85%';
+        this.p1Left = '10%';
+        break;
+      case 16:
+        this.p1Top = '72.25%';
+        this.p1Left = '4.5%';
+        break;
+      case 17:
+        this.p1Top = '50.75%';
+        this.p1Left = '4.5%';
+        break;
+      case 18:
+        this.p1Top = '29%';
+        this.p1Left = '4.5%';
+        break;
 
-  }
+    }
 
   }
 
@@ -793,7 +844,8 @@ this.p1Pool = this.p1Pool + halfPool;
     console.log('test square ' + this.testSquare);
     this.squareInteraction(parseInt(this.testSquare));
   }
-returnToHome() {
+
+  returnToHome() {
     this.router.navigate(['home']);
-}
+  }
 }
