@@ -20,6 +20,10 @@ export class GameComponent implements OnInit {
   bounce: any;
 zoomIn: any;
 
+// keep track of squares players have landed on
+  p1Visited = [1];
+  p2Visited = [1];
+
 p1Square;
 p2Square;
 currentPlayer;
@@ -131,9 +135,11 @@ missAGoAlertClosed = true;
     // move player
     if (this.currentPlayer === 1) {
       this.p1Square = moveTo;
+      this.p1Visited.push(moveTo);
       this.moveP1Icon(moveTo);
     } else {
       this.p2Square = moveTo;
+      this.p2Visited.push(moveTo);
       this.moveP2Icon(moveTo);
     }
     this.squareInteraction(moveTo);
@@ -152,6 +158,11 @@ missAGoAlertClosed = true;
   // consequences of landing on a square plus trigger viewing square
   async squareInteraction(squareNumber) {
 
+    // ----- Square 1 - miss a go
+
+    // ------ Square 2 - pay 3
+
+
     // ----- Square 3 - go to 5
     if (squareNumber === 3) {
      this.square3Interaction().then(() => {
@@ -160,6 +171,7 @@ missAGoAlertClosed = true;
      });
     }
 
+      // ------ Square 4 - Go to 13
 
     // ----- Square 5 - miss 2 turns. Add 3 to account for player 2's first legitimate go
     else if (squareNumber === 5) {
@@ -168,6 +180,26 @@ missAGoAlertClosed = true;
       });
     }
 
+      // ------ Square 6 - pay 6
+
+      // ------ Square 7 - miss a go
+
+      // ------ Square 8 - if you have not been to the tower, go back to 2
+
+      // ------ Square 9 - pay 2
+
+      // ------ Square 10 - move to 15
+
+      // ------ Square 11 - miss 3 turns
+
+      // ------ Square 12 - miss a go
+
+      // ------ Square 13 - go to 2
+
+      // ------ Square 14 - pay 1
+
+      // ------ Square 15 - go back to 12
+
     // ----- Square 16 - loose all counters
     else if (squareNumber === 16) {
       this.square16Interaction().then(() => {
@@ -175,6 +207,7 @@ missAGoAlertClosed = true;
       });
     }
 
+      // ------ Square 17 - take half the counters in the pool
 
     // ----- Square 18 stop game
     else if (squareNumber === 18) {
