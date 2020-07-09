@@ -23,29 +23,11 @@
                    name="player1Name"
            required type="text">
           </div>
-          <div class="col-4">
+          <div class="col">
             <button (click)="player1Finished()"  class="btn btn-primary">Finished</button>
           </div>
-<!--          <div class="col-4">-->
-<!--&lt;!&ndash;            <button [disabled]="!p1Form.form.valid" class="btn btn-primary" type="submit">Choose counter</button>&ndash;&gt;-->
-<!--          </div>-->
         </div>
-
-
       </form>
-
-    <!--    player 1 end choosing name-->
-
-    <!--    player 1 choose counter-->
-<!--    <div *ngIf="player1EnteredName === true">-->
-      <div class="row">
-<!--        <div class="col-9">-->
-<!--          <p>Hello {{player1Name}}, click on the images below to select your counter. When you are happy, click Finished.</p>-->
-<!--        </div>-->
-
-      </div>
-
-<!--    </div>-->
   </div>
   <!--player 1 end choices-->
 
@@ -53,8 +35,6 @@
   <div *ngIf="player2Choosing">
     <h3 class="player2Colour">Player 2</h3>
     <p>Enter your name and click on the counters below to listen to their sounds and choose which you want to use. Then click Finished.</p>
-    <!--    player 2 enter name-->
-
 
       <form #p2Form="ngForm" (ngSubmit)="player2NameEntered() ">
         <div class="form-group row">
@@ -64,30 +44,14 @@
                    name="player2Name"
                     required type="text">
           </div>
-          <div class="col-4">
+          <div class="col">
             <button (click)="player2Finished()" class="btn btn-primary">Finished</button>
           </div>
-<!--          <div class="col-4">-->
-<!--            <button  class="btn btn-primary " type="submit">Choose counter</button>-->
-<!--          </div>-->
         </div>
       </form>
-
-
-    <!--   player 2 end entering name-->
-
-    <!--  player 2 choose counter-->
-<!--    <div *ngIf="player2EnteredName === true">-->
-      <div class="row">
-<!--        <div class="col-9">-->
-<!--          <p>Hello {{player2Name}}, click on the images below to select your counter. When you are happy, click Finished.</p>-->
-<!--        </div>-->
-
-      </div>
     </div>
     <!--   end player 2 choosing counter-->
-<!--  </div>-->
-  <!--  player 2 end choices-->
+
 
 
   <!-- Counters-->
