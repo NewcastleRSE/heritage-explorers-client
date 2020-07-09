@@ -41,10 +41,27 @@
 <!--  <img id="backgroundImg" [style.left]="backgroundLeft" [style.top]="backgroundTop" src="../../assets/sampleCosmoImg.jpg" />-->
 
   <div class ='controls'>
-    <button id="up" class="btn btn-primary btn-sm" (click)="moveDown()"><img src="../../assets/arrow-up-outline.svg" height="25px"></button>
-    <button id="left" class="btn btn-primary btn-sm" (click)="moveRight()"><img src="../../assets/arrow-back-outline.svg" height="25px"></button>
-    <button id="right" class="btn btn-primary btn-sm" (click)="moveLeft()"><img src="../../assets/arrow-forward-outline.svg" height="25px"></button>
-    <button id="down" class="btn btn-primary btn-sm" (click)="moveUp()"><img src="../../assets/arrow-down-outline.svg" height="25px"></button>
+    <button id="up" class="btn btn-primary btn-sm" (click)="moveDown()">
+      <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-up" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"/>
+        <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8 3.707 5.354 6.354a.5.5 0 1 1-.708-.708l3-3z"/>
+      </svg></button>
+    <button id="left" class="btn btn-primary btn-sm" (click)="moveRight()">
+      <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
+        <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+      </svg>
+      </button>
+    <button id="right" class="btn btn-primary btn-sm" (click)="moveLeft()">
+      <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
+        <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8z"/>
+      </svg></button>
+    <button id="down" class="btn btn-primary btn-sm" (click)="moveUp()">
+      <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M4.646 9.646a.5.5 0 0 1 .708 0L8 12.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 0-.708z"/>
+        <path fill-rule="evenodd" d="M8 2.5a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-1 0V3a.5.5 0 0 1 .5-.5z"/>
+      </svg></button>
 
   </div>
 
