@@ -159,9 +159,14 @@ missAGoAlertClosed = true;
   async squareInteraction(squareNumber) {
 
     // ----- Square 1 - miss a go
+    this.square1Interaction().then(() => {
+      this.changePlayer();
+    });
 
     // ------ Square 2 - pay 3
-
+  this.square2Interaction().then(() => {
+    this.changePlayer();
+  });
 
     // ----- Square 3 - go to 5
     if (squareNumber === 3) {
@@ -172,6 +177,9 @@ missAGoAlertClosed = true;
     }
 
       // ------ Square 4 - Go to 13
+  this.square4Interaction().then(() => {
+    this.changePlayer();
+  });
 
     // ----- Square 5 - miss 2 turns. Add 3 to account for player 2's first legitimate go
     else if (squareNumber === 5) {
@@ -181,25 +189,45 @@ missAGoAlertClosed = true;
     }
 
       // ------ Square 6 - pay 6
-
+    this.square6Interaction().then(() => {
+      this.changePlayer();
+    });
       // ------ Square 7 - miss a go
-
+    this.square7Interaction().then(() => {
+      this.changePlayer();
+    });
       // ------ Square 8 - if you have not been to the tower, go back to 2
-
+    this.square8Interaction().then(() => {
+      this.changePlayer();
+    });
       // ------ Square 9 - pay 2
-
+    this.square9Interaction().then(() => {
+      this.changePlayer();
+    });
       // ------ Square 10 - move to 15
-
+    this.square10Interaction().then(() => {
+      this.changePlayer();
+    });
       // ------ Square 11 - miss 3 turns
-
+    this.square11Interaction().then(() => {
+      this.changePlayer();
+    });
       // ------ Square 12 - miss a go
-
+    this.square12Interaction().then(() => {
+      this.changePlayer();
+    });
       // ------ Square 13 - go to 2
-
+    this.square13Interaction().then(() => {
+      this.changePlayer();
+    });
       // ------ Square 14 - pay 1
-
+    this.square14Interaction().then(() => {
+      this.changePlayer();
+    });
       // ------ Square 15 - go back to 12
-
+    this.square15Interaction().then(() => {
+      this.changePlayer();
+    });
     // ----- Square 16 - loose all counters
     else if (squareNumber === 16) {
       this.square16Interaction().then(() => {
@@ -208,7 +236,9 @@ missAGoAlertClosed = true;
     }
 
       // ------ Square 17 - take half the counters in the pool
-
+    this.square17Interaction().then(() => {
+      this.changePlayer();
+    });
     // ----- Square 18 stop game
     else if (squareNumber === 18) {
       this.winningMessage = 'Player ' + this.currentPlayer + ' wins!';
@@ -252,6 +282,60 @@ async square3Interaction() {
   });
 }
 
+  async square1Interaction() {
+    if (this.currentPlayer === 1) {
+      this.p1Square = 1;
+      this.moveP1Icon(1);
+      console.log('player 1 misses next go');
+      this.p1MissAGo = 1;
+    } else {
+      this.p2Square = 1;
+      this.moveP2Icon(1);
+      console.log('player 2 misses next go');
+      this.p2MissAGo = 1;
+    }
+
+    this.modalService.open(this.modal1, {windowClass: 'modalTransparent'});
+  }
+
+  async square2Interaction() {
+    if (this.currentPlayer === 1) {
+      // take 3 sweets from player and add to pool
+     this.p1Pool = this.p1Pool - 3;
+     this.pool = this.pool + 3;
+    } else if (this.currentPlayer === 2) {
+      // take 3 sweets from player and add to pool
+      this.p2Pool = this.p2Pool - 3;
+      this.pool = this.pool + 3;
+    }
+    this.modalService.open(this.modal2);
+  }
+
+  async square4Interaction() {
+    if (this.currentPlayer === 1) {
+      this.p1Square = 4;
+      this.moveP1Icon(4);
+    } else {
+      this.p2Square = 4;
+      this.moveP2Icon(4);
+    }
+    console.log('landed on 4 so move to 15');
+    // this.modalService.open(Square3Component);
+    const m4 = this.modalService.open(this.modal4);
+    await m4.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      // after closing modal move counter to 15
+      if (this.currentPlayer === 1) {
+        this.p1Square = 15;
+        this.moveP1Icon(15);
+      } else {
+        this.p2Square = 15;
+        this.moveP2Icon(15);
+      }
+    });
+  }
+
 async square5Interaction() {
   if (this.currentPlayer === 1) {
     this.p1Square = 5;
@@ -268,6 +352,193 @@ async square5Interaction() {
   this.modalService.open(this.modal5, {windowClass: 'modalTransparent'});
 }
 
+  async square6Interaction() {
+    if (this.currentPlayer === 1) {
+      // take 3 sweets from player and add to pool
+      this.p1Pool = this.p1Pool - 6;
+      this.pool = this.pool + 6;
+    } else if (this.currentPlayer === 2) {
+      // take 3 sweets from player and add to pool
+      this.p2Pool = this.p2Pool - 6;
+      this.pool = this.pool + 6;
+    }
+    this.modalService.open(this.modal6);
+  }
+
+  async square7Interaction() {
+    if (this.currentPlayer === 1) {
+      this.p1Square = 7;
+      this.moveP1Icon(7);
+      console.log('player 1 misses next go');
+      this.p1MissAGo = 1;
+    } else {
+      this.p2Square = 7;
+      this.moveP2Icon(7);
+      console.log('player 2 misses next go');
+      this.p2MissAGo = 1;
+    }
+
+    this.modalService.open(this.modal7, {windowClass: 'modalTransparent'});
+  }
+
+  async square8Interaction() {
+    if (this.currentPlayer === 1) {
+      this.p1Square = 8;
+      this.moveP1Icon(8);
+    } else {
+      this.p2Square = 8;
+      this.moveP2Icon(8);
+    }
+    console.log('landed on 8 so move to 2');
+    // this.modalService.open(Square3Component);
+    const m8 = this.modalService.open(this.modal8);
+    await m8.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      // after closing modal move counter to 2
+      if (this.currentPlayer === 1) {
+        this.p1Square = 2;
+        this.moveP1Icon(2);
+      } else {
+        this.p2Square = 2;
+        this.moveP2Icon(2);
+      }
+    });
+  }
+
+  async square9Interaction() {
+    if (this.currentPlayer === 1) {
+      // take 2 sweets from player and add to pool
+      this.p1Pool = this.p1Pool - 2;
+      this.pool = this.pool + 2;
+    } else if (this.currentPlayer === 2) {
+      // take 2 sweets from player and add to pool
+      this.p2Pool = this.p2Pool - 2;
+      this.pool = this.pool + 2;
+    }
+    this.modalService.open(this.modal9);
+  }
+
+  async square10Interaction() {
+    if (this.currentPlayer === 1) {
+      this.p1Square = 10;
+      this.moveP1Icon(10);
+    } else {
+      this.p2Square = 10;
+      this.moveP2Icon(10);
+    }
+    console.log('landed on 10 so move to 15');
+    // this.modalService.open(Square3Component);
+    const m10 = this.modalService.open(this.modal10);
+    await m10.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      // after closing modal move counter to 2
+      if (this.currentPlayer === 1) {
+        this.p1Square = 15;
+        this.moveP1Icon(15);
+      } else {
+        this.p2Square = 15;
+        this.moveP2Icon(15);
+      }
+    });
+  }
+
+  async square11Interaction() {
+    if (this.currentPlayer === 1) {
+      this.p1Square = 11;
+      this.moveP1Icon(11);
+      console.log('player 1 misses next 3 goes');
+      this.p1MissAGo = 3;
+    } else {
+      this.p2Square = 11;
+      this.moveP2Icon(11);
+      console.log('player 2 misses next 3 goes');
+      this.p2MissAGo = 3;
+    }
+
+    this.modalService.open(this.modal11, {windowClass: 'modalTransparent'});
+  }
+
+  async square12Interaction() {
+    if (this.currentPlayer === 1) {
+      this.p1Square = 12;
+      this.moveP1Icon(12);
+      console.log('player 1 misses next go');
+      this.p1MissAGo = 1;
+    } else {
+      this.p2Square = 12;
+      this.moveP2Icon(12);
+      console.log('player 2 misses next go');
+      this.p2MissAGo = 1;
+    }
+
+    this.modalService.open(this.modal12, {windowClass: 'modalTransparent'});
+  }
+
+  async square13Interaction() {
+    if (this.currentPlayer === 1) {
+      this.p1Square = 13;
+      this.moveP1Icon(13);
+    } else {
+      this.p2Square = 13;
+      this.moveP2Icon(13);
+    }
+    console.log('landed on 13 so move to 2');
+    // this.modalService.open(Square3Component);
+    const m13 = this.modalService.open(this.modal13);
+    await m13.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      // after closing modal move counter to 2
+      if (this.currentPlayer === 1) {
+        this.p1Square = 2;
+        this.moveP1Icon(2);
+      } else {
+        this.p2Square = 2;
+        this.moveP2Icon(2);
+      }
+    });
+  }
+
+  async square14Interaction() {
+    if (this.currentPlayer === 1) {
+      // take 1 sweets from player and add to pool
+      this.p1Pool = this.p1Pool - 1;
+      this.pool = this.pool + 1;
+    } else if (this.currentPlayer === 1) {
+      // take 1sweets from player and add to pool
+      this.p2Pool = this.p2Pool - 1;
+      this.pool = this.pool + 1;
+    }
+    this.modalService.open(this.modal14);
+  }
+
+  async square15Interaction() {
+    if (this.currentPlayer === 1) {
+      this.p1Square = 15;
+      this.moveP1Icon(15);
+    } else {
+      this.p2Square = 15;
+      this.moveP2Icon(15);
+    }
+    console.log('landed on 15 so move to 12');
+    // this.modalService.open(Square3Component);
+    const m15 = this.modalService.open(this.modal15);
+    await m15.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      // after closing modal move counter to 12
+      if (this.currentPlayer === 1) {
+        this.p1Square = 12;
+        this.moveP1Icon(12);
+      } else {
+        this.p2Square = 12;
+        this.moveP2Icon(12);
+      }
+    });
+  }
+
 async square16Interaction() {
 
   console.log('land on 16 so lose all pool');
@@ -282,6 +553,20 @@ async square16Interaction() {
   }
   this.modalService.open(this.modal16);
 }
+
+  async square17Interaction() {
+  const halfPool = Math.ceil(this.pool / 2);
+  this.pool = this.pool - halfPool;
+    if (this.currentPlayer === 1) {
+      // take half sweets in pool
+this.p1Pool = this.p1Pool + halfPool;
+    } else if (this.currentPlayer === 2) {
+      this.p2Pool = this.p2Pool + halfPool;
+    }
+    this.modalService.open(this.modal17);
+  }
+
+
   // pass random number between 1 and 4 to the move method
   roll(teetotum) {
     // close miss a go alert if it is still open
