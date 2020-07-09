@@ -24,7 +24,7 @@ margin-right: 30px;
 }
 
 .characterImg {
-  position: absolute;
+  position: fixed;
   left: 20%;
   bottom: 20%;
   z-index: 1;
@@ -44,7 +44,7 @@ position: absolute;
 }
 
 .returnBtn {
-  position: absolute;
+  position: fixed;
   bottom: 5%;
   left: 5%;
 }

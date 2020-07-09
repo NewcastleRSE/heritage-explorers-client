@@ -1,5 +1,5 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import ImageMap from 'image-map';
+import {AfterContentChecked, AfterViewChecked, AfterViewInit, Component, OnInit} from '@angular/core';
+import ImageMap from "image-map";
 import {Router} from '@angular/router';
 
 @Component({
@@ -7,9 +7,9 @@ import {Router} from '@angular/router';
   templateUrl: './explorer-board.component.html',
   styleUrls: ['./explorer-board.component.scss']
 })
-export class ExplorerBoardComponent implements OnInit, AfterViewInit {
+export class ExplorerBoardComponent implements OnInit {
 squareNumber;
-
+audio;
 
   constructor(
     private router: Router
@@ -17,17 +17,22 @@ squareNumber;
 
 
   ngOnInit(): void {
-
+this.audio = new Audio();
   }
 
-  ngAfterViewInit() {
-    ImageMap('img[usemap]');
-  }
+
+
+  // ngAfterViewChecked() {
+  //    ImageMap('img[usemap]');
+  // }
+
 
   clickSquare(squareNumber) {
+    // stop speaking
+    this.audio.pause();
+
     console.log(squareNumber);
     switch (squareNumber) {
-      // todo add holding message for other squares
       case 3:
         this.router.navigate(['kingsintro'], { queryParams: { i: true}});
         break;
@@ -50,6 +55,14 @@ squareNumber;
 returnToHome() {
     this.router.navigate(['home']);
 }
+
+play() {
+
+  this.audio.src = '../../assets/sounds/intros/Beefeater.m4a';
+  this.audio.load();
+  this.audio.play();
+}
+
 }
 // coords="737,595,99,117"
 // coords="803,93,1444,579"

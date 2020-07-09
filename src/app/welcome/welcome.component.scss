@@ -24,11 +24,12 @@ width: 40vw;
   background: #1D2C40;
   padding: 20px;
   text-align: center;
-  width: 20vw;
+  max-height: 60vh;
+  max-width: 30vw;
   color: #fff;
   position: absolute;
-  left: 58%;
-  bottom: 20%;
+  left: 65%;
+ top: 25%;
   border-radius: 15px;
 }
 .sb3:before {
@@ -47,9 +48,15 @@ width: 40vw;
 
 .boardImg {
   z-index: -1;
-  height: 95vh;
-  width: auto;
-  margin-top: 5px;
+  //height: 95vh;
+  //width: auto;
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  max-height: 100vh;
+  /* mobile viewport bug fix */
+  max-height: -webkit-fill-available;
+
   border-radius: 10px;
   box-shadow: 0 0 30px #1D2C40;
 }
@@ -57,4 +64,14 @@ width: 40vw;
 .bold {
   font-weight: bold;
   color: #D9B23D;
+}
+
+
+.btn-circle.btn-sm {
+  width: 40px;
+  height: 40px;
+  padding: 6px 0px;
+  border-radius: 20px;
+  font-size: 8px;
+  text-align: center;
 }

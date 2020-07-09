@@ -14,8 +14,12 @@
 
 .boardImg {
   z-index: -1;
-  height: 95vh;
-  width: auto;
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  max-height: 100vh;
+  /* mobile viewport bug fix */
+  max-height: -webkit-fill-available;
   margin-right: 30px;
   border-radius: 10px;
   box-shadow: 0 0 30px #1D2C40;
@@ -26,7 +30,7 @@
   position: absolute;
   bottom: 5%;
   z-index: 5;
-  left: 5%;
+  left: 3%;
 }
 
 //speech bubble
@@ -36,10 +40,10 @@
   background: #1D2C40;
   padding: 20px;
   text-align: center;
-  max-width: 23%;
+  max-width: 30%;
   color: #fff;
   position: absolute;
-  left: 56%;
+  right: 30%;
   top: 16%;
   border-radius: 15px;
   z-index: 3;
@@ -67,4 +71,13 @@ button {
 .bold {
   font-weight: bold;
   color: #D9B23D;
+}
+
+.btn-circle.btn-sm {
+  width: 40px;
+  height: 40px;
+  padding: 6px 0px;
+  border-radius: 20px;
+  font-size: 8px;
+  text-align: center;
 }

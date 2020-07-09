@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
   templateUrl: './cosmorama-game-main.component.html',
   styleUrls: ['./cosmorama-game-main.component.scss']
 })
-export class CosmoramaGameMainComponent implements OnInit, AfterViewInit {
+export class CosmoramaGameMainComponent implements OnInit {
 
   backgroundTop;
   backgroundLeft;
@@ -15,10 +15,12 @@ export class CosmoramaGameMainComponent implements OnInit, AfterViewInit {
 item1;
 item2;
 item3;
+item4;
+item5;
 
 complete;
 
-  currentRouter = this.router.url;
+
 
   constructor(
     private elementRef: ElementRef,
@@ -40,29 +42,7 @@ complete;
 
   }
 
-  ngAfterViewInit() {
-    // this.backgroundLeft = 2000;
-    // console.log(this.backgroundLeft);
 
-    // get height and width of background image
-    const imageSrc = document
-      .getElementById('c2')
-      .style
-      .backgroundImage
-      .replace(/url\((['"])?(.*?)\1\)/gi, '$2')
-      .split(',')[0];
-    const image = new Image();
-    image.src = imageSrc;
-
-    const width = image.width;
-    const height = image.height;
-
-    console.log('h = ' + height);
-    console.log('w = ' + width);
-    // document.getElementById('up').addEventListener('mousedown', this.upOnDown.bind(this));
-    // document.getElementById('up').addEventListener('mouseup', this.upOnUp.bind(this));
-
-  }
 
   returnToBoard() {
     this.router.navigate(['/explorer']);
@@ -149,6 +129,13 @@ complete;
         break;
       case 'item3':
         this.item3 = true;
+        break;
+      case 'item4':
+        this.item4 = true;
+        break;
+      case 'item5':
+        this.item5 = true;
+        break;
     }
 
     // if already active then don't do anything
@@ -158,8 +145,9 @@ complete;
     }
 
     // check if list is complete
-if (this.item1 === true && this.item2 === true && this.item3 === true) {
+  if (this.item1 === true && this.item2 === true && this.item3 === true && this.item4 === true && this.item5 === true) {
   // complete
+    console.log('conplete');
   // this.router.navigate(['cosmointro'], { queryParams: { i: false}})
   this.complete = true;
 }
@@ -173,9 +161,5 @@ if (this.item1 === true && this.item2 === true && this.item3 === true) {
     this.router.navigate(['cosmointro'], { queryParams: { i: true}});
   }
 
-  reload() {
-    console.log('clicked');
-    this.router.navigate([this.currentRouter])
-  }
 
 }

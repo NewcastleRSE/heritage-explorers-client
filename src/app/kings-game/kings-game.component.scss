@@ -24,7 +24,7 @@ h4 {
   max-width: 15%;
   color: #fff;
   position: absolute;
-  left: 26%;
+  left: 33%;
   top: 31%;
   border-radius: 15px;
   z-index: 3;
@@ -197,14 +197,14 @@ width: 50%;
 
 
 .returnBtn {
-  position: absolute;
+  position: fixed;
   bottom: 5%;
   z-index: 5;
   left: 10%;
 }
 
 .solveBtn {
-  position: absolute;
+  position: fixed;
   bottom: 5%;
   z-index: 3;
   left: 80%;
@@ -230,7 +230,7 @@ width: 50%;
 
 
 .characterImg {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   z-index: 2;

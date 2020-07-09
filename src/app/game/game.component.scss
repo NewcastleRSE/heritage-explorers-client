@@ -68,10 +68,11 @@
  }
 
  .returnBtn {
-   position: absolute;
-   left: -15%;
-   top: 75%;
+   position: fixed;
+   left: 5%;
+  bottom: 5%;
  }
+
 
 .player2Bag{
   position: absolute;

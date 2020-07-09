@@ -1,6 +1,4 @@
-.mainCol {
-  position: relative;
-}
+
 
 .characterImg {
   position: absolute;
@@ -14,12 +12,16 @@
 
 
 .boardImg {
-  height: 95vh;
-  width: auto;
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  max-height: 100vh;
+  /* mobile viewport bug fix */
+  max-height: -webkit-fill-available;
   //-webkit-box-shadow: 6px 5px 14px 2px rgba(0,0,0,0.58);
   border-radius: 10px;
   //box-shadow: 6px 5px 14px 2px rgba(0,0,0,0.58);
-  margin-top: 5px;
+
   box-shadow: 0 0 30px #1D2C40;
 }
 
@@ -40,8 +42,8 @@
   max-width: 20%;
   color: #fff;
   position: absolute;
-  left: 40%;
-  top: 23%;
+  left: 48%;
+  top: 38%;
   border-radius: 15px;
   z-index: 3;
 }
@@ -57,19 +59,15 @@
   right: -20px;
 }
 
-.board {
-  margin-top: 20px;
-  width: 100%;
-  height: auto;
-  position: relative;
-  overflow: visible;
-}
+//.board {
+//  margin-top: 20px;
+//  width: 100%;
+//  height: auto;
+//  position: relative;
+//  overflow: visible;
+//}
 
-.boardImg {
-  max-width: 100%;
-  -webkit-box-shadow: 6px 5px 14px 2px rgba(0,0,0,0.58);
-  box-shadow: 6px 5px 14px 2px rgba(0,0,0,0.58);
-}
+
 
 .counter {
   max-width: 7%;
@@ -114,59 +112,59 @@
 
 .returnBtn {
   position: absolute;
-  left: -15%;
-  top: 75%;
+  left: 5%;
+  bottom: 5%;
 }
 
-.player2Bag{
-  position: absolute;
-  left: 101%;
-  top: 25%;
-}
-
-.teetotum {
-  position: absolute;
-  left: 30%;
-  top: 25%;
-}
-
-// .p1Pool {
-//   position: absolute;
-//   left: 30%;
-//   top: 30%;
-// }
+//.player2Bag{
+//  position: absolute;
+//  left: 101%;
+//  top: 25%;
+//}
 //
-//.p2Pool {
+//.teetotum {
 //  position: absolute;
 //  left: 30%;
-//  top: 30%;
+//  top: 25%;
 //}
-
-
-.square5 {
-  position: absolute;
-  left: 30px;
-}
-
-.modalImg {
-  display: block;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.modal-body {
-  background-image: url('../../assets/plainBackground.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.player1Colour {
-  border: 3px solid #1D2C40;
-  border-radius: 8px;
-}
-
-.player2Colour {
-  border: 3px solid #D9B23D;
-  border-radius: 8px;
-}
+//
+//// .p1Pool {
+////   position: absolute;
+////   left: 30%;
+////   top: 30%;
+//// }
+////
+////.p2Pool {
+////  position: absolute;
+////  left: 30%;
+////  top: 30%;
+////}
+//
+//
+//.square5 {
+//  position: absolute;
+//  left: 30px;
+//}
+//
+//.modalImg {
+//  display: block;
+//  max-width: 100%;
+//  margin-left: auto;
+//  margin-right: auto;
+//}
+//
+//.modal-body {
+//  background-image: url('../../assets/plainBackground.png');
+//  background-repeat: no-repeat;
+//  background-size: cover;
+//}
+//
+//.player1Colour {
+//  border: 3px solid #1D2C40;
+//  border-radius: 8px;
+//}
+//
+//.player2Colour {
+//  border: 3px solid #D9B23D;
+//  border-radius: 8px;
+//}
