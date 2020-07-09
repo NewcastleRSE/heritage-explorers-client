@@ -53,6 +53,7 @@ this.audio = new Audio();
   }
 
 returnToHome() {
+    this.audio.pause();
     this.router.navigate(['home']);
 }
 
