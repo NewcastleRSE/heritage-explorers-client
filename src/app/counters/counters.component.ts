@@ -47,6 +47,8 @@ eight = 'woman';
 player1Name;
 player2Name;
 
+numberPlayers;
+
   constructor(
     private globalsService: GlobalsService,
     private router: Router
@@ -58,6 +60,7 @@ player2Name;
     this.player1EnteredName = false;
     this.player2EnteredName = false;
     this.audio = new Audio();
+    this.numberPlayers = this.globalsService.numberPlayers;
   }
 
   setCounter(counterChoice) {
@@ -198,9 +201,15 @@ if (this.player1Counter !== undefined && this.player1Name !== undefined) {
   console.log(this.player1Name);
   console.log(this.player1Counter);
   console.log(this.player1EnteredName);
-  // switch to player 2
-  this.player1Choosing = false;
-  this.player2Choosing = true;
+
+  if (this.numberPlayers === 2) {
+    // switch to player 2 if 2 players
+    this.player1Choosing = false;
+    this.player2Choosing = true;
+  } else if (this.numberPlayers === 1) {
+    this.router.navigate(['raceintro']);
+  }
+
 }
  }
 

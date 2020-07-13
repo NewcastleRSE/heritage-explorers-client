@@ -16,6 +16,7 @@ import {KingsIntroComponent} from './kings-intro/kings-intro.component';
 import {MuseumIntroComponent} from './museum-intro/museum-intro.component';
 import {RaceIntroComponent} from './race-intro/race-intro.component';
 import {RaceWinComponent} from './race-win/race-win.component';
+import {PlayerConfigComponent} from './player-config/player-config.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'home', component: WelcomeComponent, canActivate: [RouteGuardService]},
   { path: 'game', component: GameComponent, canActivate: [RouteGuardService]},
   { path: 'counters', component: CountersComponent, canActivate: [RouteGuardService]},
+  { path: 'players', component: PlayerConfigComponent, canActivate: [RouteGuardService]},
   { path: 'explorer', component: ExplorerBoardComponent, canActivate: [RouteGuardService]},
   { path: 'explorerintro', component: ExplorerIntroComponent, canActivate: [RouteGuardService]},
   { path: 'museumgame', component: MuseumGameComponent, canActivate: [RouteGuardService]},

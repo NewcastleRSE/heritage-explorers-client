@@ -23,6 +23,7 @@ import { KingsIntroComponent } from './kings-intro/kings-intro.component';
 import { MuseumIntroComponent } from './museum-intro/museum-intro.component';
 import { RaceIntroComponent } from './race-intro/race-intro.component';
 import { RaceWinComponent } from './race-win/race-win.component';
+import { PlayerConfigComponent } from './player-config/player-config.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { RaceWinComponent } from './race-win/race-win.component';
     KingsIntroComponent,
     MuseumIntroComponent,
     RaceIntroComponent,
-    RaceWinComponent
+    RaceWinComponent,
+    PlayerConfigComponent
   ],
   imports: [
     BrowserModule,

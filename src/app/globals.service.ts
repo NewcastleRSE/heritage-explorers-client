@@ -9,6 +9,7 @@ export class GlobalsService {
   player1Name;
   player2Name;
   passwordEntered;
+  numberPlayers;
 
   constructor() {
   }
