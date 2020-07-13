@@ -300,31 +300,7 @@ p2Visited2 = false;
 
   }
 
-  async square3Interaction() {
-    if (this.currentPlayer === 1) {
-      this.p1Square = 3;
-      this.moveP1Icon(3);
-    } else {
-      this.p2Square = 3;
-      this.moveP2Icon(3);
-    }
-    console.log('landed on 3 so move to 5');
-    // this.modalService.open(Square3Component);
-    const m3 = this.modalService.open(this.modal3);
-    await m3.result.then(() => {
-      console.log('When user closes');
-    }, () => {
-      // after closing modal move counter to 5
-      if (this.currentPlayer === 1) {
-        this.p1Square = 5;
-        this.moveP1Icon(5);
 
-      } else {
-        this.p2Square = 5;
-        this.moveP2Icon(5);
-      }
-    });
-  }
 
   async square1Interaction() {
     if (this.currentPlayer === 1) {
@@ -350,16 +326,59 @@ p2Visited2 = false;
       this.p2Square = 2;
       this.moveP2Icon(2);
     }
-    if (this.currentPlayer === 1) {
-      // take 3 sweets from player and add to pool
-      this.p1Pool = this.p1Pool - 3;
-      this.pool = this.pool + 3;
-    } else if (this.currentPlayer === 2) {
-      // take 3 sweets from player and add to pool
-      this.p2Pool = this.p2Pool - 3;
-      this.pool = this.pool + 3;
-    }
+    this.takeFromPlayer(3);
+
     this.modalService.open(this.modal2);
+  }
+
+  takeFromPlayer(decreasePlayer) {
+    if (this.currentPlayer === 1) {
+      // take n sweets from player and add to pool (preventing player going below 0)
+      let newTotal = this.p1Pool - decreasePlayer;
+      let increasePool = decreasePlayer;
+      if (newTotal < 0) {
+        newTotal = 0;
+        increasePool = this.p1Pool;
+      }
+      this.p1Pool = newTotal;
+      this.pool = this.pool + increasePool;
+    } else if (this.currentPlayer === 2) {
+      // take n sweets from player and add to pool (preventing player going below 0)
+      let newTotal = this.p2Pool - decreasePlayer;
+      let increasePool = decreasePlayer;
+      if (newTotal < 0) {
+        newTotal = 0;
+        increasePool = this.p2Pool;
+      }
+      this.p2Pool = newTotal;
+      this.pool = this.pool + increasePool;
+    }
+  }
+
+  async square3Interaction() {
+    if (this.currentPlayer === 1) {
+      this.p1Square = 3;
+      this.moveP1Icon(3);
+    } else {
+      this.p2Square = 3;
+      this.moveP2Icon(3);
+    }
+    console.log('landed on 3 so move to 5');
+    // this.modalService.open(Square3Component);
+    const m3 = this.modalService.open(this.modal3);
+    await m3.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      // after closing modal move counter to 5
+      if (this.currentPlayer === 1) {
+        this.p1Square = 5;
+        this.moveP1Icon(5);
+
+      } else {
+        this.p2Square = 5;
+        this.moveP2Icon(5);
+      }
+    });
   }
 
   async square4Interaction() {
@@ -411,15 +430,7 @@ p2Visited2 = false;
       this.p2Square = 6;
       this.moveP2Icon(6);
     }
-    if (this.currentPlayer === 1) {
-      // take 6 sweets from player and add to pool
-      this.p1Pool = this.p1Pool - 6;
-      this.pool = this.pool + 6;
-    } else if (this.currentPlayer === 2) {
-      // take 3 sweets from player and add to pool
-      this.p2Pool = this.p2Pool - 6;
-      this.pool = this.pool + 6;
-    }
+   this.takeFromPlayer(6);
     this.modalService.open(this.modal6);
   }
 
@@ -475,15 +486,7 @@ p2Visited2 = false;
       this.p2Square = 9;
       this.moveP2Icon(9);
     }
-    if (this.currentPlayer === 1) {
-      // take 2 sweets from player and add to pool
-      this.p1Pool = this.p1Pool - 2;
-      this.pool = this.pool + 2;
-    } else if (this.currentPlayer === 2) {
-      // take 2 sweets from player and add to pool
-      this.p2Pool = this.p2Pool - 2;
-      this.pool = this.pool + 2;
-    }
+    this.takeFromPlayer(2);
     this.modalService.open(this.modal9);
   }
 
@@ -577,15 +580,7 @@ p2Visited2 = false;
       this.p2Square = 14;
       this.moveP2Icon(14);
     }
-    if (this.currentPlayer === 1) {
-      // take 1 sweets from player and add to pool
-      this.p1Pool = this.p1Pool - 1;
-      this.pool = this.pool + 1;
-    } else if (this.currentPlayer === 1) {
-      // take 1sweets from player and add to pool
-      this.p2Pool = this.p2Pool - 1;
-      this.pool = this.pool + 1;
-    }
+   this.takeFromPlayer(1);
     this.modalService.open(this.modal14);
   }
 
