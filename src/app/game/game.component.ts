@@ -110,8 +110,11 @@ p2Visited2 = false;
     if (this.globalsService.player2Counter !== undefined) {
       this.p2Counter = this.globalsService.player2Counter;
     } else {
-      this.p2Counter = 'crown';
-      // todo make sure not the same as player 1 has chosen
+      if (this.p1Counter === 'crown') {
+        this.p2Counter = 'boat';
+      } else {
+        this.p2Counter = 'crown';
+      }
     }
 
     if (this.globalsService.player1Name !== undefined) {
@@ -613,7 +616,6 @@ p2Visited2 = false;
     });
   }
 
-  // todo negative counters?
   async square16Interaction() {
     if (this.currentPlayer === 1) {
       this.p1Square = 16;
