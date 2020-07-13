@@ -20,9 +20,8 @@ export class GameComponent implements OnInit {
   bounce: any;
   zoomIn: any;
 
-// keep track of squares players have landed on
-  p1Visited = [1];
-  p2Visited = [1];
+p1Visited2 = false;
+p2Visited2 = false;
 
   p1Square;
   p2Square;
@@ -152,11 +151,9 @@ export class GameComponent implements OnInit {
     // move player
     if (this.currentPlayer === 1) {
       this.p1Square = moveTo;
-      this.p1Visited.push(moveTo);
       this.moveP1Icon(moveTo);
     } else {
       this.p2Square = moveTo;
-      this.p2Visited.push(moveTo);
       this.moveP2Icon(moveTo);
     }
     this.squareInteraction(moveTo);
@@ -321,6 +318,7 @@ export class GameComponent implements OnInit {
       if (this.currentPlayer === 1) {
         this.p1Square = 5;
         this.moveP1Icon(5);
+
       } else {
         this.p2Square = 5;
         this.moveP2Icon(5);
@@ -346,6 +344,13 @@ export class GameComponent implements OnInit {
 
   async square2Interaction() {
     if (this.currentPlayer === 1) {
+      this.p1Square = 2;
+      this.moveP1Icon(2);
+    } else {
+      this.p2Square = 2;
+      this.moveP2Icon(2);
+    }
+    if (this.currentPlayer === 1) {
       // take 3 sweets from player and add to pool
       this.p1Pool = this.p1Pool - 3;
       this.pool = this.pool + 3;
@@ -365,7 +370,7 @@ export class GameComponent implements OnInit {
       this.p2Square = 4;
       this.moveP2Icon(4);
     }
-    console.log('landed on 4 so move to 15');
+    console.log('landed on 4 so move to 13');
     // this.modalService.open(Square3Component);
     const m4 = this.modalService.open(this.modal4);
     await m4.result.then(() => {
@@ -373,11 +378,11 @@ export class GameComponent implements OnInit {
     }, () => {
       // after closing modal move counter to 15
       if (this.currentPlayer === 1) {
-        this.p1Square = 15;
-        this.moveP1Icon(15);
+        this.p1Square = 13;
+        this.moveP1Icon(13);
       } else {
-        this.p2Square = 15;
-        this.moveP2Icon(15);
+        this.p2Square = 13;
+        this.moveP2Icon(13);
       }
     });
   }
@@ -400,7 +405,14 @@ export class GameComponent implements OnInit {
 
   async square6Interaction() {
     if (this.currentPlayer === 1) {
-      // take 3 sweets from player and add to pool
+      this.p1Square = 6;
+      this.moveP1Icon(6);
+    } else {
+      this.p2Square = 6;
+      this.moveP2Icon(6);
+    }
+    if (this.currentPlayer === 1) {
+      // take 6 sweets from player and add to pool
       this.p1Pool = this.p1Pool - 6;
       this.pool = this.pool + 6;
     } else if (this.currentPlayer === 2) {
@@ -442,14 +454,12 @@ export class GameComponent implements OnInit {
     }, () => {
       // if player has not visited 2, go back to it
       if (this.currentPlayer === 1) {
-        console.log(this.p1Visited);
-        if (this.p1Visited.includes(2)) {
+        if (this.p1Visited2 === false) {
           this.p1Square = 2;
           this.moveP1Icon(2);
         }
       } else {
-        console.log(this.p2Visited);
-        if (this.p2Visited.includes(2)) {
+        if (this.p2Visited2 === false) {
           this.p2Square = 2;
           this.moveP2Icon(2);
         }
@@ -458,6 +468,13 @@ export class GameComponent implements OnInit {
   }
 
   async square9Interaction() {
+    if (this.currentPlayer === 1) {
+      this.p1Square = 9;
+      this.moveP1Icon(9);
+    } else {
+      this.p2Square = 9;
+      this.moveP2Icon(9);
+    }
     if (this.currentPlayer === 1) {
       // take 2 sweets from player and add to pool
       this.p1Pool = this.p1Pool - 2;
@@ -554,6 +571,13 @@ export class GameComponent implements OnInit {
 
   async square14Interaction() {
     if (this.currentPlayer === 1) {
+      this.p1Square = 14;
+      this.moveP1Icon(14);
+    } else {
+      this.p2Square = 14;
+      this.moveP2Icon(14);
+    }
+    if (this.currentPlayer === 1) {
       // take 1 sweets from player and add to pool
       this.p1Pool = this.p1Pool - 1;
       this.pool = this.pool + 1;
@@ -590,8 +614,15 @@ export class GameComponent implements OnInit {
     });
   }
 
+  // todo negative counters?
   async square16Interaction() {
-
+    if (this.currentPlayer === 1) {
+      this.p1Square = 16;
+      this.moveP1Icon(16);
+    } else {
+      this.p2Square = 16;
+      this.moveP2Icon(16);
+    }
     console.log('land on 16 so lose all pool');
     if (this.currentPlayer === 1) {
       // add sweets to pool then empty
@@ -606,6 +637,13 @@ export class GameComponent implements OnInit {
   }
 
   async square17Interaction() {
+    if (this.currentPlayer === 1) {
+      this.p1Square = 17;
+      this.moveP1Icon(17);
+    } else {
+      this.p2Square = 17;
+      this.moveP2Icon(17);
+    }
     const halfPool = Math.ceil(this.pool / 2);
     this.pool = this.pool - halfPool;
     if (this.currentPlayer === 1) {
@@ -687,6 +725,7 @@ export class GameComponent implements OnInit {
         this.p1Left = '2.25%';
         break;
       case 2:
+        this.p1Visited2 = true;
         this.p1Top = '6%';
         this.p1Left = '18.25%';
         break;
@@ -760,12 +799,13 @@ export class GameComponent implements OnInit {
   }
 
   moveP2Icon(moveTo) {
-    switch (moveTo) {
+        switch (moveTo) {
       case 1:
         this.p2Top = '6%';
         this.p2Left = '9.75%';
         break;
       case 2:
+        this.p2Visited2 = true;
         this.p2Top = '6%';
         this.p2Left = '25.75%';
         break;
