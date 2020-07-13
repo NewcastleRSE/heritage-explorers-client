@@ -98,7 +98,9 @@ p2Visited2 = false;
 
     // get counter images and names from globals. If undefined use fallbacks.
     // todo sort out counter size
-
+console.log(this.globalsService.numberPlayers);
+console.log(this.globalsService.player1Name);
+console.log(this.globalsService.player2Name);
     if (this.globalsService.player1Counter !== undefined) {
       this.p1Counter = this.globalsService.player1Counter;
     } else {

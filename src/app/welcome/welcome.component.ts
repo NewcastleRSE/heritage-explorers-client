@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {GlobalsService} from '../globals.service';
 
 @Component({
   selector: 'app-welcome',
@@ -12,16 +13,18 @@ audio;
 
   constructor(
     private router: Router,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private globals: GlobalsService
   ) { }
 
   ngOnInit(): void {
     this.audio = new Audio();
+
   }
 
   playGame() {
     this.audio.pause();
-    this.router.navigate(['counters']);
+    this.router.navigate(['players']);
   }
 
   viewRules(rulesModal) {

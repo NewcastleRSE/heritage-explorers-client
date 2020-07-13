@@ -64,6 +64,9 @@ numberPlayers;
   }
 
   setCounter(counterChoice) {
+    // stop any sound
+    this.audio.pause();
+
     // close counter alert if open
     this.showCounterAlert = false;
 
@@ -187,6 +190,10 @@ this.player1EnteredName = true;
 
 
  player1Finished() {
+
+   // stop any sound
+   this.audio.pause();
+
     if (this.player1Name === undefined) {
       this.showCounterAlert = true;
     }
@@ -201,6 +208,10 @@ if (this.player1Counter !== undefined && this.player1Name !== undefined) {
   console.log(this.player1Name);
   console.log(this.player1Counter);
   console.log(this.player1EnteredName);
+
+  // save counter choices to globals
+  this.globalsService.player1Counter = this.player1Counter;
+  this.globalsService.player1Name = this.player1Name;
 
   if (this.numberPlayers === 2) {
     // switch to player 2 if 2 players
@@ -237,11 +248,12 @@ if (this.player2Counter !== undefined &&  this.player2Name !== undefined) {
   if (lowerCase1 !== lowerCase2) {
     this.player2EnteredName = true;
 
-    // save both counter choices to globals
-    this.globalsService.player1Counter = this.player1Counter;
-    this.globalsService.player2Counter = this.player2Counter;
-    this.globalsService.player1Name = this.player1Name;
+    // save counter choices to globals
     this.globalsService.player2Name = this.player2Name;
+    this.globalsService.player2Counter = this.player2Counter;
+
+    // stop any sound
+    this.audio.pause();
 
     // nav to game
     this.router.navigate(['raceintro']);

@@ -24,7 +24,7 @@ winner;
   }
 
 newPlayers() {
-  this.router.navigate(['counters']);
+  this.router.navigate(['players']);
 }
 
 readyToPlay() {
