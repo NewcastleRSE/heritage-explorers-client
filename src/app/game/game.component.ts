@@ -58,6 +58,7 @@ p2Visited2 = false;
   missAGoMessage;
   missAGoAlertClosed = true;
 
+  numberPlayers;
 
 // view squares
   @ViewChild('modal1') modal1;
@@ -79,6 +80,7 @@ p2Visited2 = false;
   @ViewChild('modal17') modal17;
   @ViewChild('modal18') modal18;
 
+  @ViewChild('teetotum') teetotum;
 
   constructor(
     private globalsService: GlobalsService,
@@ -94,13 +96,12 @@ p2Visited2 = false;
     this.moveP1Icon(1);
     this.moveP2Icon(1);
 
+    this.numberPlayers = this.globalsService.numberPlayers;
+
     this.pool = 0;
 
     // get counter images and names from globals. If undefined use fallbacks.
-    // todo sort out counter size
-console.log(this.globalsService.numberPlayers);
-console.log(this.globalsService.player1Name);
-console.log(this.globalsService.player2Name);
+
     if (this.globalsService.player1Counter !== undefined) {
       this.p1Counter = this.globalsService.player1Counter;
     } else {
@@ -110,6 +111,7 @@ console.log(this.globalsService.player2Name);
       this.p2Counter = this.globalsService.player2Counter;
     } else {
       this.p2Counter = 'crown';
+      // todo make sure not the same as player 1 has chosen
     }
 
     if (this.globalsService.player1Name !== undefined) {
@@ -126,15 +128,15 @@ console.log(this.globalsService.player2Name);
   }
 
 
-  step1On() {
-    this.move(1);
-  }
-
-  step2On() {
-    const current = this.p2Square;
-    this.p2Square = current + 1;
-    this.moveP2Icon(this.p2Square);
-  }
+  // step1On() {
+  //   this.move(1);
+  // }
+  //
+  // step2On() {
+  //   const current = this.p2Square;
+  //   this.p2Square = current + 1;
+  //   this.moveP2Icon(this.p2Square);
+  // }
 
   async move(numberRolled) {
     let currentSquare = 0;
@@ -685,23 +687,21 @@ console.log(this.globalsService.player2Name);
 
   // change player unless the next player is sitting out goes
   changePlayer() {
-    if (this.currentPlayer === 1 && this.p2MissAGo === 0) {
-      this.currentPlayer = 2;
-    } else if (this.currentPlayer === 2 && this.p1MissAGo === 0) {
-      this.currentPlayer = 1;
-    }
-    // if next player has a value against their miss a go counter, then don't change the current player, but do display popup
-    //   if (this.p2MissAGo > 0) {
-    //     console.log('trigger alert for player 1');
-    //     this.missAGoMessage = this.p2Name + ' misses a go';
-    //     this.missAGoAlertClosed = false;
-    //     setTimeout(() => this.missAGoAlertClosed = true, 5000);
-    //   } else if (this.p1MissAGo > 0) {
-    //     console.log('trigger alert for player 1');
-    //     this.missAGoMessage = this.p1Name + ' misses a go';
-    //     this.missAGoAlertClosed = false;
-    //     setTimeout(() => this.missAGoAlertClosed = true, 5000);
-    //   }
+
+      if (this.currentPlayer === 1 && this.p2MissAGo === 0) {
+        this.currentPlayer = 2;
+
+        // check for player 2 being computer and if so trigger roll
+        if (this.numberPlayers === 1) {
+          setTimeout(() => {
+            this.roll(this.teetotum);
+          }, 2000);
+        }
+      } else if (this.currentPlayer === 2 && this.p1MissAGo === 0) {
+        this.currentPlayer = 1;
+      }
+
+
   }
 
   startAgain() {

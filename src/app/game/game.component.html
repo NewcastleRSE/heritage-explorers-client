@@ -82,12 +82,10 @@
 
   <!-- teetotum modal -->
   <ng-template #teetotum let-modal class="text-center">
-<!--    <div class="modal-header">-->
-<!--      &lt;!&ndash;      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>&ndash;&gt;-->
-<!--      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">-->
-<!--        <span aria-hidden="true">&times;</span>-->
-<!--      </button>-->
-<!--    </div>-->
+    <div class="modal-header text-center">
+      <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has spun... </h3>
+      <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has spun... </h3>
+    </div>
     <div class="modal-body text-center">
       <img src="../../assets/boneTeeTrans.png" height="200">
       {{lastRoll}}
@@ -123,6 +121,11 @@
 
 <!--    squares-->
     <ng-template #modal1 let-modal>
+
+        <div class="modal-header text-center">
+          <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+          <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+        </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/1.png">
         <h3 class="text-center">Grosvenor Square. Stop one turn, and make a morning call.</h3>
@@ -130,6 +133,10 @@
     </ng-template>
 
     <ng-template #modal2 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/2.png">
         <h3 class="text-center">The Tower. Pay 3 to see its Curiosities.</h3>
@@ -138,6 +145,10 @@
 
 
     <ng-template #modal3 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
     <div  class="modal-body">
       <img class="modalImg" src="../../assets/3.2.2.png">
       <h3 class="text-center">The Horse Armoury. Go on to the Wild Beasts, No. 5.</h3>
@@ -145,6 +156,10 @@
     </ng-template>
 
     <ng-template #modal4 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/3.2.2.png">
         <h3 class="text-center">The Crown Jewels. Go on to Carlton Palace, No. 13.</h3>
@@ -152,6 +167,10 @@
     </ng-template>
 
     <ng-template #modal5 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body modal-overlay">
 <!--        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">-->
 <!--          <span aria-hidden="true">&times;</span>-->
@@ -162,6 +181,10 @@
     </ng-template>
 
     <ng-template #modal6 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/6.png">
         <h3 class="text-center">The Custom House. Pay 6 for your fare on board the Steam-boat to Calais.</h3>
@@ -169,6 +192,10 @@
     </ng-template>
 
     <ng-template #modal7 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/7.png">
         <h3 class="text-center">Punch's Puppet-Show. Stop one turn to laugh.</h3>
@@ -176,6 +203,10 @@
     </ng-template>
 
     <ng-template #modal8 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/8.png">
         <h3 class="text-center">The Monument. If you have not been to the tower, go back to No.2, and see that first.</h3>
@@ -183,6 +214,10 @@
     </ng-template>
 
     <ng-template #modal9 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/9.png">
         <h3 class="text-center">The Theatre. Pay 2 for admission.</h3>
@@ -190,6 +225,10 @@
     </ng-template>
 
     <ng-template #modal10 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/10.png">
         <h3 class="text-center">Westminster Bridge. Cross the River to Lambeth, No.15.</h3>
@@ -197,6 +236,10 @@
     </ng-template>
 
     <ng-template #modal11 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/11.png">
         <h3 class="text-center">British Museum. Stop three turns to see its contents, and you will not soon forget it.</h3>
@@ -204,6 +247,10 @@
     </ng-template>
 
     <ng-template #modal12 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/12.png">
         <h3 class="text-center">St. Paul's and Blackfriars Bridge. It will be worth your while to stop a turn, and enjoy a view of London from the iron gallery.</h3>
@@ -211,6 +258,10 @@
     </ng-template>
 
     <ng-template #modal13 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/13.png">
         <h3 class="text-center">Carlton Palace. Who gave you leave to intrude yourself here? You must be committed to the Tower, No. 2, till you learn to respect Royalty</h3>
@@ -218,6 +269,10 @@
     </ng-template>
 
     <ng-template #modal14 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/14.png">
         <h3 class="text-center">The Cosmorama Exhibition. Pay 1 for admission</h3>
@@ -225,6 +280,10 @@
     </ng-template>
 
     <ng-template #modal15 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/15.png">
         <h3 class="text-center">Lambeth Gardens. Go back to St. Paul's, No. 12.</h3>
@@ -232,6 +291,10 @@
     </ng-template>
 
     <ng-template #modal16 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/16.png">
         <h3 class="text-center">Vauxhall Gardens. Here you have your pocket picked, and lose all the Counters you have left.</h3>
@@ -239,6 +302,10 @@
     </ng-template>
 
     <ng-template #modal17 let-modal>
+      <div class="modal-header text-center">
+        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
+        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
+      </div>
       <div  class="modal-body">
         <img class="modalImg" src="../../assets/17.png">
         <h3 class="text-center">The Royal Exchange. Take half the Counters in the Pool.</h3>
