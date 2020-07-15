@@ -1,10 +1,10 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {GlobalsService} from '../globals.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {Square3Component} from '../square3/square3.component';
 import {transition, trigger, useAnimation} from '@angular/animations';
 import {bounce, slideInLeft, zoomIn} from 'ng-animate';
 import {Router} from '@angular/router';
+import * as SvgJs from '@svgdotjs/svg.js';
 
 @Component({
   selector: 'app-game',
@@ -15,7 +15,7 @@ import {Router} from '@angular/router';
     trigger('zoomIn', [transition('* => *', useAnimation(zoomIn))])
   ]
 })
-export class GameComponent implements OnInit {
+export class GameComponent implements OnInit, AfterViewInit {
 // animations
   bounce: any;
   zoomIn: any;
@@ -59,6 +59,10 @@ p2Visited2 = false;
   missAGoAlertClosed = true;
 
   numberPlayers;
+
+  svgCanvas;
+  svgCounter1;
+  svgCounter2;
 
 // view squares
   @ViewChild('modal1') modal1;
@@ -131,15 +135,16 @@ p2Visited2 = false;
   }
 
 
-  // step1On() {
-  //   this.move(1);
-  // }
-  //
-  // step2On() {
-  //   const current = this.p2Square;
-  //   this.p2Square = current + 1;
-  //   this.moveP2Icon(this.p2Square);
-  // }
+ngAfterViewInit() {
+    this.svgCanvas = SvgJs.SVG('#svgContainer');
+    this.svgCounter1 = SvgJs.SVG('#c1Group');
+    this.svgCounter2 = SvgJs.SVG('#c2Group');
+
+  }
+
+test1() {
+
+}
 
   async move(numberRolled) {
     let currentSquare = 0;
@@ -165,6 +170,9 @@ p2Visited2 = false;
     }
     this.squareInteraction(moveTo);
   }
+
+
+
 
 
   // set current player's miss a go counter to the appropriate number
@@ -718,79 +726,62 @@ p2Visited2 = false;
 
   // move icons around 2 'tracks' around the board using their relative position to the board
   moveP1Icon(moveTo) {
+
     switch (moveTo) {
       case 1:
-        this.p1Top = '6%';
-        this.p1Left = '2.25%';
+
         break;
       case 2:
         this.p1Visited2 = true;
-        this.p1Top = '6%';
-        this.p1Left = '18.25%';
+        this.svgCounter1.move(800, 235);
         break;
       case 3:
-        this.p1Top = '6%';
-        this.p1Left = '34.75%';
+        this.svgCounter1.move(1440, 235);
         break;
       case 4:
-        this.p1Top = '6%';
-        this.p1Left = '51%';
+        this.svgCounter1.move(2080, 235);
         break;
       case 5:
-        this.p1Top = '6%';
-        this.p1Left = '67%';
+        this.svgCounter1.move(2720, 235);
         break;
       case 6:
-        this.p1Top = '6%';
-        this.p1Left = '83.25%';
+        this.svgCounter1.move(3360, 235);
         break;
       case 7:
-        this.p1Top = '18.5%';
-        this.p1Left = '89.5%';
+        this.svgCounter1.move(3600, 630);
         break;
       case 8:
-        this.p1Top = '40.25%';
-        this.p1Left = '89.5%';
+        this.svgCounter1.move(3600, 1310);
         break;
       case 9:
-        this.p1Top = '62%';
-        this.p1Left = '89.5%';
+        this.svgCounter1.move(3600, 1990);
         break;
       case 10:
-        this.p1Top = '85%';
-        this.p1Left = '90%';
+        this.svgCounter1.move(3400, 2730);
         break;
       case 11:
-        this.p1Top = '85%';
-        this.p1Left = '75.25%';
+        this.svgCounter1.move(2750, 2730);
         break;
       case 12:
-        this.p1Top = '85%';
-        this.p1Left = '59%';
+        this.svgCounter1.move(2100, 2730);
         break;
       case 13:
-        this.p1Top = '85%';
-        this.p1Left = '43%';
+        this.svgCounter1.move(1470, 2730);
         break;
       case 14:
-        this.p1Top = '85%';
-        this.p1Left = '26.5%';
+        this.svgCounter1.move(830, 2730);
         break;
       case 15:
-        this.p1Top = '85%';
-        this.p1Left = '10%';
+        this.svgCounter1.move(160, 2730);
         break;
       case 16:
-        this.p1Top = '72.25%';
-        this.p1Left = '4.5%';
+        this.svgCounter1.move(230, 2020);
         break;
       case 17:
-        this.p1Top = '50.75%';
-        this.p1Left = '4.5%';
+        this.svgCounter1.move(230, 1340);
         break;
       case 18:
-        this.p1Top = '29%';
-        this.p1Left = '4.5%';
+        this.svgCounter1.move(230, 660);
         break;
 
     }
@@ -805,72 +796,55 @@ p2Visited2 = false;
         break;
       case 2:
         this.p2Visited2 = true;
-        this.p2Top = '6%';
-        this.p2Left = '25.75%';
+        this.svgCounter2.move(1070, 235);
         break;
       case 3:
-        this.p2Top = '6%';
-        this.p2Left = '42%';
+        this.svgCounter2.move(171, 235);
         break;
       case 4:
-        this.p2Top = '6%';
-        this.p2Left = '58.35%';
+        this.svgCounter2.move(2350, 235);
         break;
       case 5:
-        this.p2Top = '6%';
-        this.p2Left = '74.5%';
+        this.svgCounter2.move(2990, 235);
         break;
       case 6:
-        this.p2Top = '6%';
-        this.p2Left = '90.5%';
+        this.svgCounter2.move(3630, 235);
         break;
       case 7:
-        this.p2Top = '28%';
-        this.p2Left = '89.5%';
+        this.svgCounter2.move(3600, 910);
         break;
       case 8:
-        this.p2Top = '49.5%';
-        this.p2Left = '89.5%';
+        this.svgCounter2.move(3600, 1590);
         break;
       case 9:
-        this.p2Top = '71.3%';
-        this.p2Left = '89.5%';
+        this.svgCounter2.move(3600, 2270);
         break;
       case 10:
-        this.p2Top = '85%';
-        this.p2Left = '84.25%';
+        this.svgCounter2.move(3690, 730);
         break;
       case 11:
-        this.p2Top = '85%';
-        this.p2Left = '68%';
+        this.svgCounter2.move(3040, 730);
         break;
       case 12:
-        this.p2Top = '85%';
-        this.p2Left = '51.75%';
+        this.svgCounter2.move(2390, 730);
         break;
       case 13:
-        this.p2Top = '85%';
-        this.p2Left = '35.75%';
+        this.svgCounter2.move(1760, 730);
         break;
       case 14:
-        this.p2Top = '85%';
-        this.p2Left = '19%';
+        this.svgCounter2.move(1120, 730);
         break;
       case 15:
-        this.p2Top = '85%';
-        this.p2Left = '2.5%';
+        this.svgCounter2.move(470, 730);
         break;
       case 16:
-        this.p2Top = '63%';
-        this.p2Left = '4.5%';
+        this.svgCounter2.move(230, 2320);
         break;
       case 17:
-        this.p2Top = '41.5%';
-        this.p2Left = '4.5%';
+        this.svgCounter2.move(230, 1640);
         break;
       case 18:
-        this.p2Top = '19.75%';
-        this.p2Left = '4.5%';
+        this.svgCounter2.move(230, 60);
         break;
     }
   }

@@ -1,38 +1,66 @@
-<div class="container">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-<!--  <ngb-alert type="info" *ngIf="!missAGoAlertClosed" (close)="missAGoAlertClosed = true">{{missAGoMessage}}</ngb-alert>-->
-
-  <div class="board">
-<!--  <img src="../../assets/Game2.jpg" class="boardImg">-->
-<!--  <img [@bounce]="bounce" class="counter player1Colour" src="../../assets/{{p1Counter}}125nb.png" [style.top]="p1Top" [style.left]="p1Left">-->
-<!--  <img [@bounce]="bounce" class=" counter player2Colour" src="../../assets/{{p2Counter}}125nb.png"  [style.top]="p2Top" [style.left]="p2Left">-->
-
-
-
-<!--for testing position of counters-->
-<!--    <img id="t1" src="../../assets/boat125nb.png">-->
-<!--    <img id="t2" src="../../assets/crown125nb.png">-->
-
-
-
-    <!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      version="1.1"
-      viewBox="0 0 4350 3462"
-      id="svgContainer"
-    >
-      <defs
-        id="defs819" />
-      <g
-        id="boardGrp">
-        <image
-          id="boardSVG"
-          y="0"
-          x="0"
-          xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsK
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg815"
+   width="4350"
+   height="3462"
+   viewBox="0 0 4350 3462"
+   sodipodi:docname="Game2.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:label="board">
+  <metadata
+     id="metadata821">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs819" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview817"
+     showgrid="false"
+     inkscape:zoom="0.24494512"
+     inkscape:cx="2175"
+     inkscape:cy="1731"
+     inkscape:window-x="1919"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg815" />
+  <g
+     id="g848"
+     inkscape:label="boardGrp">
+    <image
+       inkscape:label="board"
+       y="0"
+       x="0"
+       id="image823"
+       xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsK
 CwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQU
 FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCA2GEP4DASIA
 AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
@@ -47285,21 +47313,20 @@ oKnuPLeXwOlG4NIm3g/TH8qKKz6m4scz7WUu2W68nFRLmOMkfQZOaKK0RLFikUzBCpxt3H68Usj+
 WwjJO08BR0ooqGh9BgYI5Vf5Uv8Aq1J9DiiiqWwmPxtUAnBIz8tIoJcZPFFFQNEe8bXU87c9fzqS
 NTM7/NheCFx04oopiP/Z
 "
-          preserveAspectRatio="none"
-          height="3462"
-          width="4350" />
-      </g>
-
-      <g
-        id="c1Group"
-        transform="matrix(1.1,0,0,1.1,-56.153546,-36.742941)"
-      >
-        <image (click)="test1()"
-          id="counter1"
-          width="250"
-          height="250"
-          preserveAspectRatio="xMidYMid meet"
-          xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9CAIAAAAA4vtyAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+       preserveAspectRatio="none"
+       height="3462"
+       width="4350" />
+  </g>
+  <g
+     id="g851"
+     inkscape:label="c1Group"
+     transform="matrix(1.1,0,0,1.1,-24.903546,-36.742941)">
+    <image
+       inkscape:label="counter1"
+       width="250"
+       height="250"
+       preserveAspectRatio="none"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9CAIAAAAA4vtyAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
 jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAFPmSURBVHhe7b0HfBzlvTU8fXa2d61WWvVeLcmy
 JTe5dxvbGExvBkxIAgmQkIQQWgIh9F5MNQYXwN24d1m2bHVbvXdt77vT53sU+03gvjf35ibkKt/3
 ceSftdoy5cz/Of9zpi0sSRL0A/7XgVz9/QP+d/ED7xODH3ifGPzA+8TgB94nBj/wPjH4gfeJwQ+8
@@ -47679,18 +47706,20 @@ Gxkc1Op046MdhnhOoCNREKwMer0r4MUpkqM5FMR/DAXqhYMy51mgDKBP4DBMc8AXRWAQUxEYKIbG
 YJSrVALPaXQGS2zs/z7df8HE8/7/T0zYBv//OX7gfWLwA+8Tgx94nxj8wPvE4AfeJwY/8D4x+IH3
 icEPvE8MfuB9YvAD7xMBCPp/AMFfb226wiDcAAAAAElFTkSuQmCC
 "
-          x="124.03546"
-          y="242.42941" />
-      </g>
-      <g
-        id="c2Group"
-        transform="matrix(1.1,0,0,1.1,-56.153546,-36.742941)">
-        <image
-          id="counter2SVG"
-          width="250"
-          height="250"
-          preserveAspectRatio="xMidYMid meet"
-          xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9CAIAAAAA4vtyAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+       id="image833"
+       x="124.03546"
+       y="242.42941" />
+  </g>
+  <g
+     id="g854"
+     inkscape:label="c2Group"
+     transform="matrix(1.1,0,0,1.1,-56.153546,-36.742941)">
+    <image
+       inkscape:label="counter2"
+       width="250"
+       height="250"
+       preserveAspectRatio="none"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9CAIAAAAA4vtyAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
 jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACs8SURBVHhe7X0HeB3Vte70cnov6sWqluSOG7ax
 IRSHQCDJSyHlppHkhtz7kpf+bu7jQRJy8+WS3Et6QnoDAoSOaQHjbsuWm3qXjnR6P9PLWyMdwKYY
 WzpCD6L/M2Jm75k5M/9ee61/7dkzg+q6jizhDQdW/P8S3lgs8b44WOJ9cbDE++JgiffFwRLvi4Ml
@@ -47888,299 +47917,8 @@ cCBVNVssrNlEkIQiSXBacECbxSTLIvAIx4PVWc7gbGEXkOewbGh0VcEwUOTwmxgc3JjFgaAmszGV
 3hcHS7wvDpZ4Xxws8b44WOJ9cbDE++JgiffFwRLvi4Ml3hcDCPL/AO0BE3N/buKzAAAAAElFTkSu
 QmCC
 "
-          x="436.53546"
-          y="242.42941" />
-      </g>
-    </svg>
-
-
-
-
-<div id="helpSection">
-    <img id="helpBoy" src="../../assets/boy.png">
-  <div class="box sb3" (click)="viewRules(rulesModal)">
-    Need help?
-  </div>
-  </div>
-
-    <div class="info">
-
-
-
-<!--    display current player-->
-    <div *ngIf="currentPlayer === 1" >
-    <h2>Current player: {{p1Name}}</h2>
-    </div>
-    <div *ngIf="currentPlayer === 2">
-      <h2>Current player: {{p2Name}}</h2>
-    </div>
-
-
-    <button class="btn btn-secondary" (click)="roll(teetotum)">Spin teetotum</button>
-<!--    <button class="btn-primary" (click)="startAgain()">Play again</button>-->
-
-<!--    use for testing counter positioning-->
-<!--    <button class="btn-primary" (click)="step2On()">Step 1 on</button>-->
-
-<!--    <button class="btn btn-info" (click)="viewRules(rulesModal)">How to play</button>-->
-
-    <p>{{winningMessage}}</p>
-
-    <div *ngIf="!missAGoAlertClosed" class="missAGoMessage">
-
-    </div>
-
-  </div>
-
-
-  <div class="pool">
-    <img src="../../assets/gemy.svg" height="50">
-    <p class="poolTally">Pool {{pool}}</p>
-  </div>
-
-    <button class="btn btn-primary returnBtn" (click)="returnToHome()">
-      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-return-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M5.854 5.646a.5.5 0 0 1 0 .708L3.207 9l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
-        <path fill-rule="evenodd" d="M13.5 2.5a.5.5 0 0 1 .5.5v4a2.5 2.5 0 0 1-2.5 2.5H3a.5.5 0 0 1 0-1h8.5A1.5 1.5 0 0 0 13 7V3a.5.5 0 0 1 .5-.5z"/>
-      </svg>
-      Return to <br/> welcome screen</button>
-
-  <div class="player1Bag text-center">
-    <img src="../../assets/gem1.svg" height="50">
-    <p class="p1Pool">{{p1Name}} <br> {{p1Pool}}</p>
-  </div>
-
-    <div class="player2Bag text-center">
-      <img src="../../assets/gem2.svg" height="50">
-    <p class="p2Pool">{{p2Name}} <br> {{p2Pool}}</p>
-    </div>
-
-
-  <!-- teetotum modal -->
-  <ng-template #teetotum let-modal class="text-center">
-    <div class="modal-header text-center">
-      <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has spun... </h3>
-      <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has spun... </h3>
-    </div>
-    <div class="modal-body text-center">
-      <img src="../../assets/boneTeeTrans.png" height="200">
-      {{lastRoll}}
-    </div>
-  </ng-template>
-
-
-
-<!--    <form #test="ngForm" (ngSubmit)="testMoveSquare()">-->
-<!--      <div class="form-group row">-->
-<!--        <label class="col-sm-2 col-form-label col-form-label" for="testSquare">Test square:</label>-->
-<!--        <div class="col-sm-10">-->
-<!--          <input [(ngModel)]="testSquare" class="form-control" id="testSquare"-->
-<!--                 name="testSquare">-->
-<!--        </div>-->
-<!--        <button class="btn btn-primary " type="submit">Submit</button>-->
-<!--      </div>-->
-<!--    </form>-->
-
-    <!-- rules modal -->
-    <ng-template  #rulesModal let-modal>
-      <div class="modal-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
-    </ng-template>
-
-
-<!--    squares-->
-    <ng-template #modal1 let-modal>
-
-        <div class="modal-header text-center">
-          <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-          <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-        </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/1.png">
-        <h3 class="text-center">Grosvenor Square. Stop one turn, and make a morning call.</h3>
-      </div>
-    </ng-template>
-
-    <ng-template #modal2 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/2.png">
-        <h3 class="text-center">The Tower. Pay 3 to see its Curiosities.</h3>
-      </div>
-    </ng-template>
-
-
-    <ng-template #modal3 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-    <div  class="modal-body">
-      <img class="modalImg" src="../../assets/3.2.2.png">
-      <h3 class="text-center">The Horse Armoury. Go on to the Wild Beasts, No. 5.</h3>
-    </div>
-    </ng-template>
-
-    <ng-template #modal4 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/3.2.2.png">
-        <h3 class="text-center">The Crown Jewels. Go on to Carlton Palace, No. 13.</h3>
-      </div>
-    </ng-template>
-
-    <ng-template #modal5 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body modal-overlay">
-<!--        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">-->
-<!--          <span aria-hidden="true">&times;</span>-->
-<!--        </button>-->
-        <img class="modalImg" src="../../assets/5.png" [style.padding]=" '10px'">
-        <h3 class="text-center">The Wild Beasts. Stop two turns, and see them feed.</h3>
-      </div>
-    </ng-template>
-
-    <ng-template #modal6 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/6.png">
-        <h3 class="text-center">The Custom House. Pay 6 for your fare on board the Steam-boat to Calais.</h3>
-      </div>
-    </ng-template>
-
-    <ng-template #modal7 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/7.png">
-        <h3 class="text-center">Punch's Puppet-Show. Stop one turn to laugh.</h3>
-      </div>
-    </ng-template>
-
-    <ng-template #modal8 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/8.png">
-        <h3 class="text-center">The Monument. If you have not been to the tower, go back to No.2, and see that first.</h3>
-      </div>
-    </ng-template>
-
-    <ng-template #modal9 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/9.png">
-        <h3 class="text-center">The Theatre. Pay 2 for admission.</h3>
-      </div>
-    </ng-template>
-
-    <ng-template #modal10 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/10.png">
-        <h3 class="text-center">Westminster Bridge. Cross the River to Lambeth, No.15.</h3>
-      </div>
-    </ng-template>
-
-    <ng-template #modal11 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/11.png">
-        <h3 class="text-center">British Museum. Stop three turns to see its contents, and you will not soon forget it.</h3>
-      </div>
-    </ng-template>
-
-    <ng-template #modal12 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/12.png">
-        <h3 class="text-center">St. Paul's and Blackfriars Bridge. It will be worth your while to stop a turn, and enjoy a view of London from the iron gallery.</h3>
-      </div>
-    </ng-template>
-
-    <ng-template #modal13 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/13.png">
-        <h3 class="text-center">Carlton Palace. Who gave you leave to intrude yourself here? You must be committed to the Tower, No. 2, till you learn to respect Royalty</h3>
-      </div>
-    </ng-template>
-
-    <ng-template #modal14 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/14.png">
-        <h3 class="text-center">The Cosmorama Exhibition. Pay 1 for admission</h3>
-      </div>
-    </ng-template>
-
-    <ng-template #modal15 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/15.png">
-        <h3 class="text-center">Lambeth Gardens. Go back to St. Paul's, No. 12.</h3>
-      </div>
-    </ng-template>
-
-    <ng-template #modal16 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/16.png">
-        <h3 class="text-center">Vauxhall Gardens. Here you have your pocket picked, and lose all the Counters you have left.</h3>
-      </div>
-    </ng-template>
-
-    <ng-template #modal17 let-modal>
-      <div class="modal-header text-center">
-        <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on... </h3>
-        <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on... </h3>
-      </div>
-      <div  class="modal-body">
-        <img class="modalImg" src="../../assets/17.png">
-        <h3 class="text-center">The Royal Exchange. Take half the Counters in the Pool.</h3>
-      </div>
-    </ng-template>
-
-</div>
-
+       id="image844"
+       x="436.53546"
+       y="242.42941" />
+  </g>
+</svg>
