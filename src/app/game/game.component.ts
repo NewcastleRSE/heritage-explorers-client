@@ -5,6 +5,13 @@ import {transition, trigger, useAnimation} from '@angular/animations';
 import {bounce, slideInLeft, zoomIn} from 'ng-animate';
 import {Router} from '@angular/router';
 import * as SvgJs from '@svgdotjs/svg.js';
+import * as crownjson from './crown.json';
+import * as boatjson from './boat.json';
+import * as womanjson from './woman.json';
+import * as lionjson from './lion.json';
+import * as sarcojson from './sarco.json';
+import * as horsejson from './horse.json';
+
 
 @Component({
   selector: 'app-game',
@@ -49,6 +56,9 @@ p2Visited2 = false;
   p1Pool = 5;
   p2Pool = 5;
 
+  counter1String;
+  counter2String;
+
 // todo decide if the pool should start with anything in it
   pool;
 
@@ -63,6 +73,8 @@ p2Visited2 = false;
   svgCanvas;
   svgCounter1;
   svgCounter2;
+
+
 
 // view squares
   @ViewChild('modal1') modal1;
@@ -103,22 +115,9 @@ p2Visited2 = false;
 
     this.pool = 0;
 
-    // get counter images and names from globals. If undefined use fallbacks.
 
-    if (this.globalsService.player1Counter !== undefined) {
-      this.p1Counter = this.globalsService.player1Counter;
-    } else {
-      this.p1Counter = 'boat';
-    }
-    if (this.globalsService.player2Counter !== undefined) {
-      this.p2Counter = this.globalsService.player2Counter;
-    } else {
-      if (this.p1Counter === 'crown') {
-        this.p2Counter = 'boat';
-      } else {
-        this.p2Counter = 'crown';
-      }
-    }
+    this.assignP1CounterXlink();
+    this.assignP2CounterXlink();
 
     if (this.globalsService.player1Name !== undefined) {
       this.p1Name = this.globalsService.player1Name;
@@ -131,21 +130,81 @@ p2Visited2 = false;
     } else {
       this.p2Name = 'Yellow';
     }
+
   }
 
 
 ngAfterViewInit() {
+
     this.svgCanvas = SvgJs.SVG('#svgContainer');
     this.svgCounter1 = SvgJs.SVG('#c1Group');
     this.svgCounter2 = SvgJs.SVG('#c2Group');
-  this.moveP1Icon(1);
-  this.moveP2Icon(1);
+    this.moveP1Icon(1);
+    this.moveP2Icon(1);
 
   }
 
-test1() {
+  assignP1CounterXlink() {
+    console.log('player 1 counter' + this.globalsService.player1Counter);
+    if (this.globalsService.player1Counter === undefined) {
+      this.counter1String = crownjson.xlink;
+    } else {
+      switch (this.globalsService.player1Counter) {
+        case 'sarco':
+          this.counter1String = sarcojson.xlink;
+          break;
+        case 'horse':
+          this.counter1String = horsejson.xlink;
+          break;
+        case 'lion':
+          this.counter1String = lionjson.xlink;
+          break;
+        case 'boat':
+          this.counter1String = boatjson.xlink;
+          break;
+        case 'crown':
+          this.counter1String = crownjson.xlink;
+          break;
+        case 'woman':
+          this.counter1String = womanjson.xlink;
+          break;
+      }
 
-}
+    }
+  }
+
+  assignP2CounterXlink() {
+    console.log('player 2 counter' + this.globalsService.player2Counter);
+    if (this.globalsService.player2Counter === undefined) {
+      if (this.globalsService.player1Counter === 'boat') {
+        this.counter2String = lionjson.xlink;
+      } else {
+        this.counter2String = boatjson.xlink;
+      }
+    } else {
+
+      switch (this.globalsService.player2Counter) {
+        case 'sarco':
+          this.counter2String = sarcojson.xlink;
+          break;
+        case 'horse':
+          this.counter2String = horsejson.xlink;
+          break;
+        case 'lion':
+          this.counter2String = lionjson.xlink;
+          break;
+        case 'boat':
+          this.counter2String = boatjson.xlink;
+          break;
+        case 'crown':
+          this.counter2String = crownjson.xlink;
+          break;
+        case 'woman':
+          this.counter2String = womanjson.xlink;
+          break;
+      }
+    }
+  }
 
   async move(numberRolled) {
     let currentSquare = 0;
