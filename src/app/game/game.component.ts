@@ -97,8 +97,7 @@ p2Visited2 = false;
     this.currentPlayer = 1;
     this.p1Square = 1;
     this.p2Square = 1;
-    this.moveP1Icon(1);
-    this.moveP2Icon(1);
+
 
     this.numberPlayers = this.globalsService.numberPlayers;
 
@@ -139,6 +138,8 @@ ngAfterViewInit() {
     this.svgCanvas = SvgJs.SVG('#svgContainer');
     this.svgCounter1 = SvgJs.SVG('#c1Group');
     this.svgCounter2 = SvgJs.SVG('#c2Group');
+  this.moveP1Icon(1);
+  this.moveP2Icon(1);
 
   }
 
@@ -792,8 +793,7 @@ test1() {
   moveP2Icon(moveTo) {
         switch (moveTo) {
       case 1:
-        this.p2Top = '6%';
-        this.p2Left = '9.75%';
+        this.svgCounter2.animate(600, 0, 'after').move(430, 235);
         break;
       case 2:
         this.p2Visited2 = true;

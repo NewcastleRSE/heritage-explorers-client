@@ -1,17 +1,8 @@
-
-
-//.board {
-//  margin-top: 20px;
-//  width: auto;
-//  height: 95vh;
-//  position: relative;
-//  overflow: visible;
-//}
-
-g #c1Group {
-  transform: rotate(45deg) rotate(-45deg);
-  transform-origin: 50% 50%; /* Chrome, Firefox behaves differently */
+svg {
+  z-index: 0
 }
+
+
 
 #helpBoy {
   position: absolute;
