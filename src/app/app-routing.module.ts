@@ -17,6 +17,7 @@ import {MuseumIntroComponent} from './museum-intro/museum-intro.component';
 import {RaceIntroComponent} from './race-intro/race-intro.component';
 import {RaceWinComponent} from './race-win/race-win.component';
 import {PlayerConfigComponent} from './player-config/player-config.component';
+import {IntroductionComponent} from './introduction/introduction.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'museumintro', component: MuseumIntroComponent, canActivate: [RouteGuardService]},
   { path: 'cosmogamemain', component: CosmoramaGameMainComponent, canActivate: [RouteGuardService]},
   { path: 'three', component: Square3Component, canActivate: [RouteGuardService]},
+  { path: 'intro', component: IntroductionComponent, canActivate: [RouteGuardService]},
   { path: 'raceintro', component: RaceIntroComponent, canActivate: [RouteGuardService]},
   { path: 'win', component: RaceWinComponent, canActivate: [RouteGuardService]},
   {path: 'signin', component: SigninComponent},
