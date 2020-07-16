@@ -45,9 +45,9 @@
      inkscape:window-height="1017"
      id="namedview817"
      showgrid="false"
-     inkscape:zoom="0.24494512"
-     inkscape:cx="2175"
-     inkscape:cy="1731"
+     inkscape:zoom="0.97978048"
+     inkscape:cx="621.02436"
+     inkscape:cy="3284.1051"
      inkscape:window-x="-8"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -1254,4 +1254,20 @@ QmCC
      height="125"
      width="125"
      inkscape:label="boat" />
+  <rect
+     style="opacity:1;fill:none;fill-opacity:1;stroke:#1d2c40;stroke-width:6.80314961;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke-linejoin:round"
+     id="rect900"
+     width="275"
+     height="275"
+     x="111.53546"
+     y="229.92941"
+     inkscape:label="c1Border" />
+  <rect
+     inkscape:label="c2Border"
+     y="229.92941"
+     x="424.03546"
+     height="275"
+     width="275"
+     id="rect902"
+     style="opacity:1;fill:none;fill-opacity:1;stroke:#d9b23d;stroke-width:6.8031497;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
 </svg>

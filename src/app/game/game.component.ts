@@ -790,59 +790,59 @@ ngAfterViewInit() {
 
     switch (moveTo) {
       case 1:
-        this.svgCounter1.animate(600, 0, 'after').move(160, 235);
+        this.svgCounter1.animate(600, 0, 'now').move(160, 235);
         break;
       case 2:
         this.p1Visited2 = true;
-        this.svgCounter1.animate(600, 0, 'after').move(800, 235);
+        this.svgCounter1.animate(600, 0, 'now').move(800, 235);
         break;
       case 3:
-        this.svgCounter1.animate(600, 0, 'after').move(1440, 235);
+        this.svgCounter1.animate(600, 0, 'now').move(1440, 235);
         break;
       case 4:
-        this.svgCounter1.animate(600, 0, 'after').move(2080, 235);
+        this.svgCounter1.animate(600, 0, 'now').move(2080, 235);
         break;
       case 5:
-        this.svgCounter1.animate(600, 0, 'after').move(2720, 235);
+        this.svgCounter1.animate(600, 0, 'now').move(2720, 235);
         break;
       case 6:
-        this.svgCounter1.animate(600, 0, 'after').move(3360, 235);
+        this.svgCounter1.animate(600, 0, 'now').move(3360, 235);
         break;
       case 7:
-        this.svgCounter1.animate(600, 0, 'after').move(3600, 630);
+        this.svgCounter1.animate(600, 0, 'now').move(3600, 630);
         break;
       case 8:
-        this.svgCounter1.animate(600, 0, 'after').move(3600, 1310);
+        this.svgCounter1.animate(600, 0, 'now').move(3600, 1310);
         break;
       case 9:
-        this.svgCounter1.animate(600, 0, 'after').move(3600, 1990);
+        this.svgCounter1.animate(600, 0, 'now').move(3600, 1990);
         break;
       case 10:
-        this.svgCounter1.animate(600, 0, 'after').move(3400, 2730);
+        this.svgCounter1.animate(600, 0, 'now').move(3400, 2730);
         break;
       case 11:
-        this.svgCounter1.animate(600, 0, 'after').move(2750, 2730);
+        this.svgCounter1.animate(600, 0, 'now').move(2750, 2730);
         break;
       case 12:
-        this.svgCounter1.animate(600, 0, 'after').move(2100, 2730);
+        this.svgCounter1.animate(600, 0, 'now').move(2100, 2730);
         break;
       case 13:
-        this.svgCounter1.animate(600, 0, 'after').move(1470, 2730);
+        this.svgCounter1.animate(600, 0, 'now').move(1470, 2730);
         break;
       case 14:
-        this.svgCounter1.animate(600, 0, 'after').move(830, 2730);
+        this.svgCounter1.animate(600, 0, 'now').move(830, 2730);
         break;
       case 15:
-        this.svgCounter1.animate(600, 0, 'after').move(160, 2730);
+        this.svgCounter1.animate(600, 0, 'now').move(160, 2730);
         break;
       case 16:
-        this.svgCounter1.animate(600, 0, 'after').move(230, 2020);
+        this.svgCounter1.animate(600, 0, 'now').move(230, 2020);
         break;
       case 17:
-        this.svgCounter1.animate(600, 0, 'after').move(230, 1340);
+        this.svgCounter1.animate(600, 0, 'now').move(230, 1340);
         break;
       case 18:
-        this.svgCounter1.animate(600, 0, 'after').move(230, 660);
+        this.svgCounter1.animate(600, 0, 'now').move(230, 660);
         break;
 
     }
@@ -852,59 +852,59 @@ ngAfterViewInit() {
   moveP2Icon(moveTo) {
         switch (moveTo) {
       case 1:
-        this.svgCounter2.animate(600, 0, 'after').move(430, 235);
+        this.svgCounter2.animate(600, 0, 'now').move(430, 235);
         break;
       case 2:
         this.p2Visited2 = true;
-        this.svgCounter2.animate(600, 0, 'after').move(1070, 235);
+        this.svgCounter2.animate(600, 0, 'now').move(1070, 235);
         break;
       case 3:
-        this.svgCounter2.animate(600, 0, 'after').move(171, 235);
+        this.svgCounter2.animate(600, 0, 'now').move(171, 235);
         break;
       case 4:
-        this.svgCounter2.animate(600, 0, 'after').move(2350, 235);
+        this.svgCounter2.animate(600, 0, 'now').move(2350, 235);
         break;
       case 5:
-        this.svgCounter2.animate(600, 0, 'after').move(2990, 235);
+        this.svgCounter2.animate(600, 0, 'now').move(2990, 235);
         break;
       case 6:
-        this.svgCounter2.animate(600, 0, 'after').move(3630, 235);
+        this.svgCounter2.animate(600, 0, 'now').move(3630, 235);
         break;
       case 7:
-        this.svgCounter2.animate(600, 0, 'after').move(3600, 910);
+        this.svgCounter2.animate(600, 0, 'now').move(3600, 910);
         break;
       case 8:
-        this.svgCounter2.animate(600, 0, 'after').move(3600, 1590);
+        this.svgCounter2.animate(600, 0, 'now').move(3600, 1590);
         break;
       case 9:
-        this.svgCounter2.animate(600, 0, 'after').move(3600, 2270);
+        this.svgCounter2.animate(600, 0, 'now').move(3600, 2270);
         break;
       case 10:
-        this.svgCounter2.animate(600, 0, 'after').move(3690, 730);
+        this.svgCounter2.animate(600, 0, 'now').move(3690, 730);
         break;
       case 11:
-        this.svgCounter2.animate(600, 0, 'after').move(3040, 730);
+        this.svgCounter2.animate(600, 0, 'now').move(3040, 730);
         break;
       case 12:
-        this.svgCounter2.animate(600, 0, 'after').move(2390, 730);
+        this.svgCounter2.animate(600, 0, 'now').move(2390, 730);
         break;
       case 13:
-        this.svgCounter2.animate(600, 0, 'after').move(1760, 730);
+        this.svgCounter2.animate(600, 0, 'now').move(1760, 730);
         break;
       case 14:
-        this.svgCounter2.animate(600, 0, 'after').move(1120, 730);
+        this.svgCounter2.animate(600, 0, 'now').move(1120, 730);
         break;
       case 15:
-        this.svgCounter2.animate(600, 0, 'after').move(470, 730);
+        this.svgCounter2.animate(600, 0, 'now').move(470, 730);
         break;
       case 16:
-        this.svgCounter2.animate(600, 0, 'after').move(230, 2320);
+        this.svgCounter2.animate(600, 0, 'now').move(230, 2320);
         break;
       case 17:
-        this.svgCounter2.animate(600, 0, 'after').move(230, 1640);
+        this.svgCounter2.animate(600, 0, 'now').move(230, 1640);
         break;
       case 18:
-        this.svgCounter2.animate(600, 0, 'after').move(230, 60);
+        this.svgCounter2.animate(600, 0, 'now').move(230, 60);
         break;
     }
   }
