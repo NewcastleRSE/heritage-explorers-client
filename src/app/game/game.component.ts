@@ -111,7 +111,8 @@ p2Visited2 = false;
     this.p2Square = 1;
 
 
-    this.numberPlayers = this.globalsService.numberPlayers;
+    this.numberPlayers = 2;
+
 
     this.pool = 0;
 
@@ -122,13 +123,13 @@ p2Visited2 = false;
     if (this.globalsService.player1Name !== undefined) {
       this.p1Name = this.globalsService.player1Name;
     } else {
-      this.p1Name = 'Blue';
+      this.p1Name = 'Crown1';
     }
 
     if (this.globalsService.player2Name !== undefined) {
       this.p2Name = this.globalsService.player2Name;
     } else {
-      this.p2Name = 'Yellow';
+      this.p2Name = 'Boat2';
     }
 
   }
@@ -250,7 +251,7 @@ ngAfterViewInit() {
     // ----- Square 1 - miss a go
     if (squareNumber === 1) {
       this.square1Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
 
@@ -258,102 +259,102 @@ ngAfterViewInit() {
     // ------ Square 2 - pay 3
     else if (squareNumber === 2) {
       this.square2Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
     // ----- Square 3 - go to 5
     else if (squareNumber === 3) {
       this.square3Interaction().then(() => {
         // after interact with cell then change to next player
-        this.changePlayer();
+
       });
     }
 
     // ------ Square 4 - Go to 13
     else if (squareNumber === 4) {
       this.square4Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
     // ----- Square 5 - miss 2 turns. Add 3 to account for player 2's first legitimate go
   else if (squareNumber === 5) {
       this.square5Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
 
     // ------ Square 6 - pay 6
     else if (squareNumber === 6) {
       this.square6Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
     // ------ Square 7 - miss a go
     else if (squareNumber === 7) {
       this.square7Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
     // ------ Square 8 - if you have not been to the tower, go back to 2
     else if (squareNumber === 8) {
       this.square8Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
     // ------ Square 9 - pay 2
     else if (squareNumber === 9) {
       this.square9Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
     // ------ Square 10 - move to 15
     else if (squareNumber === 10) {
       this.square10Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
     // ------ Square 11 - miss 3 turns
     else if (squareNumber === 11) {
       this.square11Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
     // ------ Square 12 - miss a go
     else if (squareNumber === 12) {
       this.square12Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
     // ------ Square 13 - go to 2
     else if (squareNumber === 13) {
       this.square13Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
     // ------ Square 14 - pay 1
     else if (squareNumber === 14) {
       this.square14Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
     // ------ Square 15 - go back to 12
     else if (squareNumber === 15) {
       this.square15Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
     // ----- Square 16 - loose all counters
   else
     if (squareNumber === 16) {
       this.square16Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
 
     // ------ Square 17 - take half the counters in the pool
     else if (squareNumber === 17) {
       this.square17Interaction().then(() => {
-        this.changePlayer();
+
       });
     }
     // ----- Square 18 stop game
@@ -368,10 +369,7 @@ ngAfterViewInit() {
       }
     }
 
-    // default if not specific behaviour
-    else {
-      this.changePlayer();
-    }
+
 
   }
 
@@ -390,7 +388,12 @@ ngAfterViewInit() {
       this.p2MissAGo = 1;
     }
 
-    this.modalService.open(this.modal1, {windowClass: 'modalTransparent'});
+    const modal = this.modalService.open(this.modal1);
+    await modal.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+    this.changePlayer();
+    });
   }
 
   async square2Interaction() {
@@ -403,7 +406,12 @@ ngAfterViewInit() {
     }
     this.takeFromPlayer(3);
 
-    this.modalService.open(this.modal2);
+    const modal = this.modalService.open(this.modal2);
+    await modal.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      this.changePlayer();
+    });
   }
 
   takeFromPlayer(decreasePlayer) {
@@ -453,6 +461,7 @@ ngAfterViewInit() {
         this.p2Square = 5;
         this.moveP2Icon(5);
       }
+      this.changePlayer();
     });
   }
 
@@ -478,6 +487,7 @@ ngAfterViewInit() {
         this.p2Square = 13;
         this.moveP2Icon(13);
       }
+      this.changePlayer();
     });
   }
 
@@ -494,7 +504,12 @@ ngAfterViewInit() {
       this.p2MissAGo = 3;
     }
 
-    this.modalService.open(this.modal5, {windowClass: 'modalTransparent'});
+    const modal = this.modalService.open(this.modal5, {windowClass: 'modalTransparent'});
+    await modal.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      this.changePlayer();
+    });
   }
 
   async square6Interaction() {
@@ -506,7 +521,12 @@ ngAfterViewInit() {
       this.moveP2Icon(6);
     }
    this.takeFromPlayer(6);
-    this.modalService.open(this.modal6);
+    const modal  = this.modalService.open(this.modal6);
+    await modal.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      this.changePlayer();
+    });
   }
 
   async square7Interaction() {
@@ -522,7 +542,12 @@ ngAfterViewInit() {
       this.p2MissAGo = 1;
     }
 
-    this.modalService.open(this.modal7, {windowClass: 'modalTransparent'});
+    const modal = this.modalService.open(this.modal7);
+    await modal.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      this.changePlayer();
+    });
   }
 
   async square8Interaction() {
@@ -550,6 +575,7 @@ ngAfterViewInit() {
           this.moveP2Icon(2);
         }
       }
+      this.changePlayer();
     });
   }
 
@@ -562,7 +588,12 @@ ngAfterViewInit() {
       this.moveP2Icon(9);
     }
     this.takeFromPlayer(2);
-    this.modalService.open(this.modal9);
+    const modal = this.modalService.open(this.modal9);
+    await modal.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      this.changePlayer();
+    });
   }
 
   async square10Interaction() {
@@ -587,6 +618,7 @@ ngAfterViewInit() {
         this.p2Square = 15;
         this.moveP2Icon(15);
       }
+      this.changePlayer();
     });
   }
 
@@ -603,7 +635,12 @@ ngAfterViewInit() {
       this.p2MissAGo = 3;
     }
 
-    this.modalService.open(this.modal11, {windowClass: 'modalTransparent'});
+    const modal = this.modalService.open(this.modal11, {windowClass: 'modalTransparent'});
+    await modal.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      this.changePlayer();
+    });
   }
 
   async square12Interaction() {
@@ -619,7 +656,12 @@ ngAfterViewInit() {
       this.p2MissAGo = 1;
     }
 
-    this.modalService.open(this.modal12, {windowClass: 'modalTransparent'});
+    const modal = this.modalService.open(this.modal12, {windowClass: 'modalTransparent'});
+    await modal.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      this.changePlayer();
+    });
   }
 
   async square13Interaction() {
@@ -644,6 +686,7 @@ ngAfterViewInit() {
         this.p2Square = 2;
         this.moveP2Icon(2);
       }
+      this.changePlayer();
     });
   }
 
@@ -656,7 +699,12 @@ ngAfterViewInit() {
       this.moveP2Icon(14);
     }
    this.takeFromPlayer(1);
-    this.modalService.open(this.modal14);
+    const modal = this.modalService.open(this.modal14);
+    await modal.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      this.changePlayer();
+    });
   }
 
   async square15Interaction() {
@@ -681,6 +729,7 @@ ngAfterViewInit() {
         this.p2Square = 12;
         this.moveP2Icon(12);
       }
+      this.changePlayer();
     });
   }
 
@@ -702,7 +751,12 @@ ngAfterViewInit() {
       this.pool = this.pool + this.p2Pool;
       this.p2Pool = 0;
     }
-    this.modalService.open(this.modal16);
+    const modal = this.modalService.open(this.modal16);
+    await modal.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      this.changePlayer();
+    });
   }
 
   async square17Interaction() {
@@ -713,6 +767,7 @@ ngAfterViewInit() {
       this.p2Square = 17;
       this.moveP2Icon(17);
     }
+    const modal = this.modalService.open(this.modal17);
     const halfPool = Math.ceil(this.pool / 2);
     this.pool = this.pool - halfPool;
     if (this.currentPlayer === 1) {
@@ -721,7 +776,12 @@ ngAfterViewInit() {
     } else if (this.currentPlayer === 2) {
       this.p2Pool = this.p2Pool + halfPool;
     }
-    this.modalService.open(this.modal17);
+    await modal.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      this.changePlayer();
+    });
+
   }
 
 
@@ -880,22 +940,22 @@ ngAfterViewInit() {
         this.svgCounter2.animate(600, 0, 'after').move(3600, 2270);
         break;
       case 10:
-        this.svgCounter2.animate(600, 0, 'after').move(3690, 730);
+        this.svgCounter2.animate(600, 0, 'after').move(3690, 2730);
         break;
       case 11:
-        this.svgCounter2.animate(600, 0, 'after').move(3040, 730);
+        this.svgCounter2.animate(600, 0, 'after').move(3040, 2730);
         break;
       case 12:
-        this.svgCounter2.animate(600, 0, 'after').move(2390, 730);
+        this.svgCounter2.animate(600, 0, 'after').move(2390, 2730);
         break;
       case 13:
-        this.svgCounter2.animate(600, 0, 'after').move(1760, 730);
+        this.svgCounter2.animate(600, 0, 'after').move(1760, 2730);
         break;
       case 14:
-        this.svgCounter2.animate(600, 0, 'after').move(1120, 730);
+        this.svgCounter2.animate(600, 0, 'after').move(1120, 2730);
         break;
       case 15:
-        this.svgCounter2.animate(600, 0, 'after').move(470, 730);
+        this.svgCounter2.animate(600, 0, 'after').move(470, 2730);
         break;
       case 16:
         this.svgCounter2.animate(600, 0, 'after').move(230, 2320);
