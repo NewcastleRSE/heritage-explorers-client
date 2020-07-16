@@ -129,13 +129,13 @@ p2Visited2 = false;
     if (this.globalsService.player1Name !== undefined) {
       this.p1Name = this.globalsService.player1Name;
     } else {
-      this.p1Name = 'Crown';
+      this.p1Name = 'Blue';
     }
 
     if (this.globalsService.player2Name !== undefined) {
       this.p2Name = this.globalsService.player2Name;
     } else {
-      this.p2Name = 'Boat';
+      this.p2Name = 'Yellow';
     }
 
   }

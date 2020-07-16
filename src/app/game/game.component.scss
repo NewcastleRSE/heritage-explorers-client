@@ -11,13 +11,18 @@ svg {
   left: 79%;
 }
 
-
-.boardImg {
-  max-width: 100%;
-  -webkit-box-shadow: 6px 5px 14px 2px rgba(0,0,0,0.58);
-  box-shadow: 6px 5px 14px 2px rgba(0,0,0,0.58);
-  border-radius: 15px;
+.board {
+  position: relative;
+  top: 0;
+  left: 0;
 }
+
+//.boardImg {
+//  max-width: 100%;
+//  -webkit-box-shadow: 6px 5px 14px 2px rgba(0,0,0,0.58);
+//  box-shadow: 6px 5px 14px 2px rgba(0,0,0,0.58);
+//  border-radius: 15px;
+//}
 
 .counter {
   max-width: 7%;

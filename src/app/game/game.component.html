@@ -2,7 +2,7 @@
 
 <!--  <ngb-alert type="info" *ngIf="!missAGoAlertClosed" (close)="missAGoAlertClosed = true">{{missAGoMessage}}</ngb-alert>-->
 
-  <div class="board">
+
 <!--  <img src="../../assets/Game2.jpg" class="boardImg">-->
 <!--  <img [@bounce]="bounce" class="counter player1Colour" src="../../assets/{{p1Counter}}125nb.png" [style.top]="p1Top" [style.left]="p1Left">-->
 <!--  <img [@bounce]="bounce" class=" counter player2Colour" src="../../assets/{{p2Counter}}125nb.png"  [style.top]="p2Top" [style.left]="p2Left">-->
@@ -15,7 +15,72 @@
 
     <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-    <svg
+
+
+<div class="board">
+
+
+<div id="helpSection">
+    <img id="helpBoy" src="../../assets/boy.png">
+  <div class="box sb3" (click)="viewRules(rulesModal)">
+    Need help?
+  </div>
+  </div>
+
+    <div class="info">
+
+
+
+<!--    display current player-->
+    <div *ngIf="currentPlayer === 1" >
+    <h2>Current player: {{p1Name}}</h2>
+    </div>
+    <div *ngIf="currentPlayer === 2">
+      <h2>Current player: {{p2Name}}</h2>
+    </div>
+
+
+    <button class="btn btn-secondary" (click)="roll(teetotum)">Spin teetotum</button>
+<!--    <button class="btn-primary" (click)="startAgain()">Play again</button>-->
+
+<!--    use for testing counter positioning-->
+<!--    <button class="btn-primary" (click)="step2On()">Step 1 on</button>-->
+
+<!--    <button class="btn btn-info" (click)="viewRules(rulesModal)">How to play</button>-->
+
+    <p>{{winningMessage}}</p>
+
+    <div *ngIf="!missAGoAlertClosed" class="missAGoMessage">
+
+    </div>
+
+  </div>
+
+
+  <div class="pool">
+    <img src="../../assets/gemy.svg" height="50">
+    <p class="poolTally">Pool {{pool}}</p>
+  </div>
+
+    <button class="btn btn-primary returnBtn" (click)="returnToHome()">
+      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-return-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M5.854 5.646a.5.5 0 0 1 0 .708L3.207 9l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
+        <path fill-rule="evenodd" d="M13.5 2.5a.5.5 0 0 1 .5.5v4a2.5 2.5 0 0 1-2.5 2.5H3a.5.5 0 0 1 0-1h8.5A1.5 1.5 0 0 0 13 7V3a.5.5 0 0 1 .5-.5z"/>
+      </svg>
+      Return to <br/> welcome screen</button>
+
+  <div class="player1Bag text-center">
+    <img src="../../assets/gem1.svg" height="50">
+    <p class="p1Pool">{{p1Name}} <br> {{p1Pool}}</p>
+  </div>
+
+    <div class="player2Bag text-center">
+      <img src="../../assets/gem2.svg" height="50">
+    <p class="p2Pool">{{p2Name}} <br> {{p2Pool}}</p>
+    </div>
+
+
+<svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       version="1.1"
@@ -47333,69 +47398,6 @@ NTM7/NheCFx04oopiP/Z
 
 
     </svg>
-
-
-
-
-<div id="helpSection">
-    <img id="helpBoy" src="../../assets/boy.png">
-  <div class="box sb3" (click)="viewRules(rulesModal)">
-    Need help?
-  </div>
-  </div>
-
-    <div class="info">
-
-
-
-<!--    display current player-->
-    <div *ngIf="currentPlayer === 1" >
-    <h2>Current player: {{p1Name}}</h2>
-    </div>
-    <div *ngIf="currentPlayer === 2">
-      <h2>Current player: {{p2Name}}</h2>
-    </div>
-
-
-    <button class="btn btn-secondary" (click)="roll(teetotum)">Spin teetotum</button>
-<!--    <button class="btn-primary" (click)="startAgain()">Play again</button>-->
-
-<!--    use for testing counter positioning-->
-<!--    <button class="btn-primary" (click)="step2On()">Step 1 on</button>-->
-
-<!--    <button class="btn btn-info" (click)="viewRules(rulesModal)">How to play</button>-->
-
-    <p>{{winningMessage}}</p>
-
-    <div *ngIf="!missAGoAlertClosed" class="missAGoMessage">
-
-    </div>
-
-  </div>
-
-
-  <div class="pool">
-    <img src="../../assets/gemy.svg" height="50">
-    <p class="poolTally">Pool {{pool}}</p>
-  </div>
-
-    <button class="btn btn-primary returnBtn" (click)="returnToHome()">
-      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-return-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M5.854 5.646a.5.5 0 0 1 0 .708L3.207 9l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
-        <path fill-rule="evenodd" d="M13.5 2.5a.5.5 0 0 1 .5.5v4a2.5 2.5 0 0 1-2.5 2.5H3a.5.5 0 0 1 0-1h8.5A1.5 1.5 0 0 0 13 7V3a.5.5 0 0 1 .5-.5z"/>
-      </svg>
-      Return to <br/> welcome screen</button>
-
-  <div class="player1Bag text-center">
-    <img src="../../assets/gem1.svg" height="50">
-    <p class="p1Pool">{{p1Name}} <br> {{p1Pool}}</p>
-  </div>
-
-    <div class="player2Bag text-center">
-      <img src="../../assets/gem2.svg" height="50">
-    <p class="p2Pool">{{p2Name}} <br> {{p2Pool}}</p>
-    </div>
-
 
   <!-- teetotum modal -->
   <ng-template #teetotum let-modal class="text-center">
