@@ -111,11 +111,17 @@ p2Visited2 = false;
     this.p2Square = 1;
 
 
-    this.numberPlayers = 2;
+     if (this.globalsService.numberPlayers !== undefined) {
+       this.numberPlayers = 2;
+     } else {
+       this.numberPlayers = this.globalsService.numberPlayers;
+     }
 
 
-    this.pool = 0;
+    this.pool = 5;
 
+    this.p1Visited2 = false;
+    this.p2Visited2 = false;
 
     this.assignP1CounterXlink();
     this.assignP2CounterXlink();
@@ -123,13 +129,13 @@ p2Visited2 = false;
     if (this.globalsService.player1Name !== undefined) {
       this.p1Name = this.globalsService.player1Name;
     } else {
-      this.p1Name = 'Crown1';
+      this.p1Name = 'Crown';
     }
 
     if (this.globalsService.player2Name !== undefined) {
       this.p2Name = this.globalsService.player2Name;
     } else {
-      this.p2Name = 'Boat2';
+      this.p2Name = 'Boat';
     }
 
   }
@@ -940,22 +946,22 @@ ngAfterViewInit() {
         this.svgCounter2.animate(600, 0, 'now').move(3600, 2270);
         break;
       case 10:
-        this.svgCounter2.animate(600, 0, 'now').move(3690, 730);
+        this.svgCounter2.animate(600, 0, 'now').move(3690, 2730);
         break;
       case 11:
-        this.svgCounter2.animate(600, 0, 'now').move(3040, 730);
+        this.svgCounter2.animate(600, 0, 'now').move(3040, 2730);
         break;
       case 12:
-        this.svgCounter2.animate(600, 0, 'now').move(2390, 730);
+        this.svgCounter2.animate(600, 0, 'now').move(2390, 2730);
         break;
       case 13:
-        this.svgCounter2.animate(600, 0, 'now').move(1760, 730);
+        this.svgCounter2.animate(600, 0, 'now').move(1760, 2730);
         break;
       case 14:
-        this.svgCounter2.animate(600, 0, 'now').move(1120, 730);
+        this.svgCounter2.animate(600, 0, 'now').move(1120, 2730);
         break;
       case 15:
-        this.svgCounter2.animate(600, 0, 'now').move(470, 730);
+        this.svgCounter2.animate(600, 0, 'now').move(470, 2730);
         break;
       case 16:
         this.svgCounter2.animate(600, 0, 'now').move(230, 2320);
