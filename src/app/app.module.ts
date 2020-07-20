@@ -24,6 +24,8 @@ import { MuseumIntroComponent } from './museum-intro/museum-intro.component';
 import { RaceIntroComponent } from './race-intro/race-intro.component';
 import { RaceWinComponent } from './race-win/race-win.component';
 import { PlayerConfigComponent } from './player-config/player-config.component';
+import { IntroductionComponent } from './introduction/introduction.component';
+import { ScrollSpyDirective } from './scroll-spy.directive';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { PlayerConfigComponent } from './player-config/player-config.component';
     MuseumIntroComponent,
     RaceIntroComponent,
     RaceWinComponent,
-    PlayerConfigComponent
+    PlayerConfigComponent,
+    IntroductionComponent,
+    ScrollSpyDirective
   ],
   imports: [
     BrowserModule,
