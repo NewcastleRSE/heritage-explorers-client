@@ -18,6 +18,7 @@ import {RaceIntroComponent} from './race-intro/race-intro.component';
 import {RaceWinComponent} from './race-win/race-win.component';
 import {PlayerConfigComponent} from './player-config/player-config.component';
 import {IntroductionComponent} from './introduction/introduction.component';
+import {BoardComponent} from './board/board.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'intro', component: IntroductionComponent, canActivate: [RouteGuardService]},
   { path: 'raceintro', component: RaceIntroComponent, canActivate: [RouteGuardService]},
   { path: 'win', component: RaceWinComponent, canActivate: [RouteGuardService]},
+  { path: 'board', component: BoardComponent },
   {path: 'signin', component: SigninComponent},
 ];
 

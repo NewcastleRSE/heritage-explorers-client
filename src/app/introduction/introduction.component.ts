@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-introduction',
@@ -6,16 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./introduction.component.scss']
 })
 export class IntroductionComponent implements OnInit {
- active = 1;
+  active = 1;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) {
+  }
 
   ngOnInit(): void {
   }
 
-clickedLink() {
-    console.log('clicked');
+openImage() {
+  const url = this.router.serializeUrl(
+    this.router.createUrlTree(['/board'])
+  );
+
+  window.open(url, '_blank');
 }
-
-
 }
