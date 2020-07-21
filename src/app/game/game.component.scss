@@ -3,9 +3,9 @@ svg {
 }
 
 .boardSvg {
-  min-height: 100vh;
+  height: 100vh;
   /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
+  height: -webkit-fill-available;
 }
 
 #helpBoy {
@@ -78,7 +78,7 @@ svg {
 
 .player2Bag{
   position: absolute;
-  left: 101%;
+  left: 106%;
   top: 25%;
 }
 
