@@ -22,8 +22,8 @@ import {BoardComponent} from './board/board.component';
 
 
 const routes: Routes = [
-  { path: '', component: WelcomeComponent, canActivate: [RouteGuardService]},
-  { path: 'home', component: WelcomeComponent, canActivate: [RouteGuardService]},
+  { path: '', component: IntroductionComponent, canActivate: [RouteGuardService]},
+  { path: 'home', component: IntroductionComponent, canActivate: [RouteGuardService]},
   { path: 'game', component: GameComponent, canActivate: [RouteGuardService]},
   { path: 'counters', component: CountersComponent, canActivate: [RouteGuardService]},
   { path: 'players', component: PlayerConfigComponent, canActivate: [RouteGuardService]},
@@ -39,6 +39,7 @@ const routes: Routes = [
   { path: 'intro', component: IntroductionComponent, canActivate: [RouteGuardService]},
   { path: 'raceintro', component: RaceIntroComponent, canActivate: [RouteGuardService]},
   { path: 'win', component: RaceWinComponent, canActivate: [RouteGuardService]},
+  { path: 'welcome', component: WelcomeComponent, canActivate: [RouteGuardService]},
   { path: 'board', component: BoardComponent },
   {path: 'signin', component: SigninComponent},
 ];
