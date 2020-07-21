@@ -26,6 +26,7 @@ import { RaceWinComponent } from './race-win/race-win.component';
 import { PlayerConfigComponent } from './player-config/player-config.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { ScrollSpyDirective } from './scroll-spy.directive';
+import { BoardComponent } from './board/board.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ScrollSpyDirective } from './scroll-spy.directive';
     RaceWinComponent,
     PlayerConfigComponent,
     IntroductionComponent,
-    ScrollSpyDirective
+    ScrollSpyDirective,
+    BoardComponent
   ],
   imports: [
     BrowserModule,

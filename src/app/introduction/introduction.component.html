@@ -1,28 +1,36 @@
 <div class="container">
-  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-    <li [ngbNavItem]="1">
-      <a ngbNavLink>Welcome to the site</a>
-      <ng-template ngbNavContent>
-        <p>Some info</p>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="2">
-      <a ngbNavLink>About Scenes of London board game</a>
-      <ng-template ngbNavContent>
-        <p>Some more info</p>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="3">
-      <a ngbNavLink>How the site is built</a>
-      <ng-template ngbNavContent>
-        <p>And some more info</p>
-      </ng-template>
-    </li>
-    <button class="btn btn-primary" (click)="clickedLink()">Take me to the games!</button>
-  </ul>
+<!--  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">-->
+<!--    <li [ngbNavItem]="1">-->
+<!--      <a ngbNavLink>Welcome to the site</a>-->
+<!--      <ng-template ngbNavContent>-->
+<!--        <p>Some info</p>-->
+<!--      </ng-template>-->
+<!--    </li>-->
+<!--    <li [ngbNavItem]="2">-->
+<!--      <a ngbNavLink>About Scenes of London board game</a>-->
+<!--      <ng-template ngbNavContent>-->
+<!--        <p>Some more info</p>-->
+<!--      </ng-template>-->
+<!--    </li>-->
+<!--    <li [ngbNavItem]="3">-->
+<!--      <a ngbNavLink>How the site is built</a>-->
+<!--      <ng-template ngbNavContent>-->
+<!--        <p>And some more info</p>-->
+<!--      </ng-template>-->
+<!--    </li>-->
+<!--    <button class="btn btn-primary" (click)="clickedLink()">Take me to the games!</button>-->
+<!--  </ul>-->
 
-  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+<!--  <div [ngbNavOutlet]="nav" class="mt-2"></div>-->
 
 
+  <h1 class="text-center">Scenes in London</h1>
+  <p>text...</p>
+  <h2 class="text-center">About the Board Game</h2>
+  <p>text...</p>
+  <figure class="figure" >
+    <img (click)="openImage()" src="../../assets/ScenesLondon.JPG" class="figure-img img-fluid rounded" alt="Scenes of London board game">
+    <figcaption class="figure-caption">Scenes in London. Wallis. 18??</figcaption>
+  </figure>
 
 </div>
