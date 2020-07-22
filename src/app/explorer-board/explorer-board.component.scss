@@ -1,50 +1,43 @@
 .boardContainer {
-  min-height: 100vh;
-  /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
-  max-height: 100vh;
-  /* mobile viewport bug fix */
-  max-height: -webkit-fill-available;
-  border-radius: 10px;
-  box-shadow: 0 0 30px #1D2C40;
-  margin-top: 5px;
-  z-index: 0;
+
+    top: 0;
+    left: 0;
 }
 
-.h-100 {
-  min-height: 100vh;
-  /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
-  max-height: 100vh;
-  /* mobile viewport bug fix */
-  max-height: -webkit-fill-available;
+svg {
+  z-index: 0
 }
+
+
+
 
 area {
   cursor: pointer;
 }
 
-#img-map {
-z-index: 3;
+//#img-map {
+//z-index: 3;
+//
+//  //top: 0;
+//    min-height: 100vh;
+//    /* mobile viewport bug fix */
+//    min-height: -webkit-fill-available;
+//    max-height: 100vh;
+//    /* mobile viewport bug fix */
+//    max-height: -webkit-fill-available;
+//    //max-width: 100%;
+//
+//    //margin-top:3px;
+//}
 
-  //top: 0;
-    min-height: 100vh;
-    /* mobile viewport bug fix */
-    min-height: -webkit-fill-available;
-    max-height: 100vh;
-    /* mobile viewport bug fix */
-    max-height: -webkit-fill-available;
-    //max-width: 100%;
+.boardsvg {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  max-height: 100vh;
+  /* mobile viewport bug fix */
+  max-height: -webkit-fill-available;
 
-    //margin-top:3px;
-}
-
-.boardsvg {  border-radius: 10px;
-  box-shadow: 0 0 30px #1D2C40;
-  max-height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 
@@ -106,7 +99,7 @@ rect {
   padding: 20px;
   text-align: center;
  max-width: 40vh;
-left: 40%;
+left: 25%;
   top:30%;
   color: #fff;
   position: absolute;

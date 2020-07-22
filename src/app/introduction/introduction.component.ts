@@ -24,4 +24,9 @@ openImage() {
 
   window.open(url, '_blank');
 }
+
+playGame() {
+    this.router.navigate(['welcome']);
+}
+
 }
