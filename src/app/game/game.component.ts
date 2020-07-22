@@ -52,9 +52,9 @@ p2Visited2 = false;
 // for testing
   testSquare;
 
-// todo decide how many players should start with
-  p1Pool = 5;
-  p2Pool = 5;
+
+  p1Pool = 24;
+  p2Pool = 24;
 
   counter1String;
   counter2String;
