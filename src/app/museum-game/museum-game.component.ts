@@ -47,6 +47,7 @@ hier = false;
 dog = false;
   playingGame = false;
 
+  showAlert = false;
 
   constructor(
     private modalService: NgbModal,
@@ -140,6 +141,10 @@ dog = false;
     console.log('reveal ' + itemName);
     // document.getElementById(itemName).style.borderRadius = '30px 30px 30px 30px';
     document.getElementById(itemName).style.border = '3px solid #fd7e14';
+  }
+
+  closeAlert() {
+    this.showAlert = false;
   }
 
 
