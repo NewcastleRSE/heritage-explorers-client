@@ -23,7 +23,7 @@ import {BoardComponent} from './board/board.component';
 
 const routes: Routes = [
   { path: '', component: IntroductionComponent, canActivate: [RouteGuardService]},
-  { path: 'home', component: IntroductionComponent, canActivate: [RouteGuardService]},
+  { path: 'home', component: WelcomeComponent, canActivate: [RouteGuardService]},
   { path: 'game', component: GameComponent, canActivate: [RouteGuardService]},
   { path: 'counters', component: CountersComponent, canActivate: [RouteGuardService]},
   { path: 'players', component: PlayerConfigComponent, canActivate: [RouteGuardService]},
