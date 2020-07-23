@@ -1,37 +1,147 @@
-<div class="container">
-<!--  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">-->
-<!--    <li [ngbNavItem]="1">-->
-<!--      <a ngbNavLink>Welcome to the site</a>-->
-<!--      <ng-template ngbNavContent>-->
-<!--        <p>Some info</p>-->
-<!--      </ng-template>-->
-<!--    </li>-->
-<!--    <li [ngbNavItem]="2">-->
-<!--      <a ngbNavLink>About Scenes of London board game</a>-->
-<!--      <ng-template ngbNavContent>-->
-<!--        <p>Some more info</p>-->
-<!--      </ng-template>-->
-<!--    </li>-->
-<!--    <li [ngbNavItem]="3">-->
-<!--      <a ngbNavLink>How the site is built</a>-->
-<!--      <ng-template ngbNavContent>-->
-<!--        <p>And some more info</p>-->
-<!--      </ng-template>-->
-<!--    </li>-->
-<!--    <button class="btn btn-primary" (click)="clickedLink()">Take me to the games!</button>-->
-<!--  </ul>-->
+<div class="container-fluid  introWindow"  >
+  <div class="header text-center">
+    <h1>Welcome to</h1>
+    <img class="img-fluid" src="../../assets/title3.png">
+    <h3>An 1820s board game brought to life online by researchers at Newcastle University</h3>
+    <hr>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-2">
+      <nav class="nav flex-column">
+        <div (click)="scrollTo('section1')" [ngClass]="{ 'current-section': currentSection === 'section1' }">A brief history of British made children’s board games
+        </div>
+        <div (click)="scrollTo('section2')" [ngClass]="{ 'current-section': currentSection === 'section2' }">Scenes in London
+        </div>
+        <div (click)="scrollTo('section3')" [ngClass]="{ 'current-section': currentSection === 'section3' }">The Scenes or ‘sites’ to visit
+        </div>
+        <div (click)="scrollTo('section4')" [ngClass]="{ 'current-section': currentSection === 'section4' }">Our Prototype
+        </div>
+        <div (click)="scrollTo('section5')" [ngClass]="{ 'current-section': currentSection === 'section5' }">About the Project
+        </div>
+        <div (click)="scrollTo('section6')" [ngClass]="{ 'current-section': currentSection === 'section6' }">Contact Us
+        </div>
+        <div (click)="scrollTo('section7')" [ngClass]="{ 'current-section': currentSection === 'section7' }">Links
+        </div>
+      </nav>
+      <button class="btn btn-primary" (click)="playGame()">Play the games</button>
+    </div>
 
-<!--  <div [ngbNavOutlet]="nav" class="mt-2"></div>-->
+    <div class="col">
+      <div id="parentDiv" appScrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)">
+        <div id="section1">
+          <h2>A brief history of British made children’s board games</h2>
+          <h4>Just as there are board games today, children in the past also played board games…</h4>
+
+          <p>From the eighteenth century, British publishers produced games alongside stories, alphabets, blocks and
+            toys in order to educate and entertain children. Mapmakers were early publishers of children’s games
+            creating dissections (or puzzles) of maps and developing new board and card games. By the late eighteenth
+            century, children’s book publishers, keen to delve into this new market, created their own toys and games
+            and sold them in their shops. London was at the centre of this children’s publishing trade.
+
+            Board games were used both as part of formal instruction and as informal instructive leisure pursuits and
+            their use reflected new views about the importance of play as a way to teach children. The games produced in
+            the Georgian and early Victorian eras were played by children on their own or with family groups and
+            educators. The cost of these games meant that they were primarily purchased for and played by middle and
+            upper-class children.
+
+            These educational games reveal the subjects that were seen to be important for children to know with games
+            featuring British history, classical myths and history, geography (of Britain and the world) and science
+            (including new astronomical discoveries). Some of the earliest board games were tours of England, Scotland,
+            Wales and Ireland. These games were designed to familiarise children with British heritage sites and
+            entertainments including the sites of London.
+          </p>
+        </div>
+        <div id="section2">
+          <h2>Scenes in London </h2>
+          <h4>Offers a child’s eye view of London in the late Georgian era.</h4>
+          <p>
+            Scenes in London was first made in the 1820s by children’s publisher Edward Wallis. It was a race game,
+            offering children a chance to tour the city of London while they competed to see who would arrive first at
+            the Bank of England.
+            </p>
+          <p>
+            <span class="font-weight-bold">Click on the game below to enlarge the image.</span>
+          </p>
+          <figure class="figure">
+            <img (click)="openImage()" src="../../assets/ScenesLondon.JPG" class="figure-img img-fluid rounded"
+                 alt="Scenes of London board game">
+          </figure>
+          <p>
+            This version of the game was on cloth (linen) and could be folded up and placed in a container (known as a slipcase). The game was coloured (that is painted) by hand. The bottom of the game gives the location of Edward Wallis’s shop in London – 42 Skinner Street. The instructions were placed in the centre of the game though this became less common in the nineteenth century when many games had separate rulebooks.
+
+            Today these games can be found in archives, museums and in the hands of private collectors. This image comes from the private collection of Dr Adrian Seville.
+
+          </p>
+        </div>
+        <div id="section3">
+          <h2>The Scenes or ‘sites’ to visit  </h2>
+          <p>
+            The game was designed to simulate a child’s visit to the capitol. Gameplay allowed children to replicate the experience of visiting so that children were asked to stop on specific spaces to mimic seeing a place, go backwards and forwards to see other sites and pay for experiences such as entry fees using their allotted 24 counters. Scenes in London features eighteen attractions that were deemed entertaining and educative for young audiences:
+
+          </p>
+          <ol  >
+          <li ><span class="font-weight-bold">Grosvenor Square. </span>Stop one turn, and make a morning call.</li>
+          <li ><span class="font-weight-bold">The Tower.</span> Pay 3 to see its Curiosities.</li>
+          <li ><span class="font-weight-bold">The Horse Armoury.</span> Go on to the Wild Beasts, No. 5.</li>
+          <li ><span class="font-weight-bold">The Crown Jewels.</span> Go on to Carlton Palace, No. 13.</li>
+          <li ><span class="font-weight-bold">The Wild Beasts.</span> Stop two turns, and see them fed.</li>
+          <li ><span class="font-weight-bold">The Custom House.</span> Pay 6 for your fare on board the Steam-boat to Calais.</li>
+          <li ><span class="font-weight-bold">Punch’s Puppet-Show.</span> Stop one turn to laugh.</li>
+          <li ><span class="font-weight-bold">The Monument.</span> If you have not been to the Tower, go back to No. 2, and see that first.</li>
+          <li ><span class="font-weight-bold">The Theatre.</span> Pay 2 for admission.</li>
+          <li ><span class="font-weight-bold">Westminster Bridge.</span> Cross the River to Lambeth, No. 15.</li>
+          <li ><span class="font-weight-bold">British Museum.</span> Stop three turns to see its contents, and you will not soon forget it.</li>
+          <li ><span class="font-weight-bold">St. Paul’s and Blackfriars Bridge.</span> It will be worth your while to stop a turn, and enjoy a view of London from the iron gallery.</li>
+          <li ><span class="font-weight-bold">Carlton Palace.</span> Who gave you leave to intrude yourself here? You must be committed to the Tower, No. 2, till you learn to respect Royalty.</li>
+          <li ><span class="font-weight-bold">The Cosmorama Exhibition.</span> Pay 1 for admission.</li>
+          <li ><span class="font-weight-bold">Lambeth Palace.</span> Go back to St. Paul’s, No. 12.</li>
+          <li ><span class="font-weight-bold">Vauxhall Gardens.</span> Here you have your pocket picked, and lose all the Counters you have left.</li>
+          <li ><span class="font-weight-bold">The Royal Exchange.</span> Take half the Counters in the Pool.</li>
+          <li ><span class="font-weight-bold">Bank of England.</span> – GAME!</li>
+        </ol>
+          <p>
+            Some of these sites may be familiar to you today. Four spaces were dedicated to the Tower of London which was a major tourist attraction in the nineteenth century. The Horse Armoury at the Tower included a line of kings (carved from wood) in armour on horseback. Children could also visit animals such as lions and tigers at the Tower’s menagerie.
+
+            Other sites no longer exist such as Carlton Palace which was demolished in 1826 and the Cosmorama rooms, an exhibition space, which opened in 1823. It is interesting to note that along with attractions and heritage sites that we might expect, children were also expected to know about sites like the Custom House, Bank of England and the Royal Exchange.
+          </p>
+          <img class="figure img-fluid rounded" src="../../assets/1Border.jpg">
+          <p>
+          <span class="font-weight-bold">Where’s Wally?</span> One of the interesting features of this game is that you follow two characters (possibly a father and his son) as they venture through London. Can you spot them in the scenes with people?
+          </p>
 
 
-  <h1 class="text-center">Scenes in London</h1>
-  <p>text...</p>
-  <h2 class="text-center">About the Board Game</h2>
-  <p>text...</p>
-  <figure class="figure" >
-    <img (click)="openImage()" src="../../assets/ScenesLondon.JPG" class="figure-img img-fluid rounded" alt="Scenes of London board game">
-    <figcaption class="figure-caption">Caption.....</figcaption>
-  </figure>
-  <button class="btn btn-primary" (click)="playGame()">Play the games</button>
+        </div>
+        <div id="section4">
+          <h2>Our Prototype</h2>
+          <button class="btn btn-primary" (click)="playGame()">Play the games</button>
+        </div>
+        <div id="section5">
+          <h2>About the Project</h2>
+          <p>
+            <a href="https://www.ncl.ac.uk/elll/staff/profile/barbaragribling.html#background" class="font-weight-bold">Dr Barbara Gribling</a> (School of English Literature, Language and Linguistics, Newcastle University) led this pilot project in collaboration with <span class="font-weight-bold">Dr Kate Court</span>, a <a  href="https://research.ncl.ac.uk/rse/" class="font-weight-bold">Research Software Engineer</a> at the Digital  Institute (Newcastle). The project ran from 1 May to 1 August 2020. It was funded by a HaSS (Humanities and Social Sciences) initiative to bring digital solutions to current problems by recreating the experience of playing these games at home or at school.
+
+            The board game Scenes in London was one of many artefacts unearthed as part of Dr Gribling’s work with <a href="https://www.ncl.ac.uk/elll/staff/profile/matthewgrenby.html#background" class="font-weight-bold">Professor Matthew Grenby </a>on their childhood and the history of heritage book project 1750-c.1950. Part of this work explores the many toys and games designed to engage children with British heritage-sites including ‘tour’ games. <span class="font-weight-bold">Dr Adrian Seville</span>, an external project partner and a board games historian and collector, provided a photograph of this game from his private collection.
+
+            This prototype forms part of a larger project ‘Heritage Explorers’ to digitally recreate popular British history and heritage-themed educational board games from the eighteenth and nineteenth centuries. The project lead and partners are exploring options for further funding to continue work on this game and to bring to life other games.
+
+          </p>
+        </div>
+        <div id="section6">
+          <h2>Contact us</h2>
+          <p>If you would like to contact us about the project or offer feedback on the prototype please email: <a href="mailto:Barbara.Gribling@newcastle.ac.uk">Barbara.Gribling@newcastle.ac.uk</a></p>
+        </div>
+
+        <div id="section7">
+          <h2>Find below links to books and websites dedicated to historical games</h2>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
 
 </div>
