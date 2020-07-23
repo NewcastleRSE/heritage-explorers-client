@@ -118,7 +118,7 @@ p2Visited2 = false;
      }
 
 
-    this.pool = 5;
+    this.pool = 0;
 
     this.p1Visited2 = false;
     this.p2Visited2 = false;

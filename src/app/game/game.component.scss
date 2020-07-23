@@ -48,9 +48,13 @@ svg {
 }
 
 .pool {
+margin-left: auto;
+  margin-right: auto;
   position: absolute;
-  left: 50%;
   top: 25%;
+  width: 100vh;
+  /* mobile viewport bug fix */
+  width: -webkit-fill-available;
 }
 
 //.poolTally {
