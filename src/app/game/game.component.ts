@@ -247,8 +247,8 @@ ngAfterViewInit() {
       } else {
         this.squareInteraction(moveTo);
       }
-    } else if (this.currentPlayer == 2) {
-      if(this.p1Square == moveTo) {
+    } else if (this.currentPlayer === 2) {
+      if(this.p1Square === moveTo) {
         this.triggerSameSquareInteraction(moveTo);
       } else {
         this.squareInteraction(moveTo);
