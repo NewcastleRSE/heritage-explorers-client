@@ -34,8 +34,20 @@ playGame() {
   }
 
   scrollTo(section) {
-    document.querySelector('#' + section)
-      .scrollIntoView();
+    this.clearActiveClass().then(() => {
+      this.currentSection = section;
+
+      document.querySelector('#' + section)
+        .scrollIntoView();
+      document.querySelector('#' + section + 'Link')
+        .setAttribute('class', 'nav-link active');
+    });
+
+  }
+
+  async clearActiveClass() {
+    document.querySelector('#' + this.currentSection + 'Link')
+      .setAttribute('class', 'nav-link');
   }
 
 }
