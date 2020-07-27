@@ -51,7 +51,7 @@ import { BoardComponent } from './board/board.component';
     PlayerConfigComponent,
     IntroductionComponent,
     ScrollSpyDirective,
-    BoardComponent
+    BoardComponent,
   ],
   imports: [
     BrowserModule,

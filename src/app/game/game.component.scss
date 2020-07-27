@@ -12,7 +12,7 @@ svg {
   position: absolute;
   width: 6%;
   top: 60%;
-  left: 40%;
+  left: 50%;
 }
 
 .board {
@@ -55,6 +55,11 @@ margin-left: auto;
   width: 100vh;
   /* mobile viewport bug fix */
   width: -webkit-fill-available;
+}
+
+.bold {
+  font-weight: bold;
+  color: #D9B23D;
 }
 
 //.poolTally {
@@ -144,7 +149,7 @@ margin-left: auto;
   max-width: 20%;
   color: #fff;
   position: absolute;
-  left: 30%;
+  left: 40%;
   top: 55%;
   border-radius: 15px;
   cursor: pointer;

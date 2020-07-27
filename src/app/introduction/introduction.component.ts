@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./introduction.component.scss']
 })
 export class IntroductionComponent implements OnInit {
-  active = 1;
+  currentSection = 'section1';
 
   constructor(
     private router: Router
@@ -28,5 +28,26 @@ openImage() {
 playGame() {
     this.router.navigate(['welcome']);
 }
+
+  onSectionChange(sectionId: string) {
+    this.currentSection = sectionId;
+  }
+
+  scrollTo(section) {
+    this.clearActiveClass().then(() => {
+      this.currentSection = section;
+
+      document.querySelector('#' + section)
+        .scrollIntoView();
+      document.querySelector('#' + section + 'Link')
+        .setAttribute('class', 'nav-link active');
+    });
+
+  }
+
+  async clearActiveClass() {
+    document.querySelector('#' + this.currentSection + 'Link')
+      .setAttribute('class', 'nav-link');
+  }
 
 }
