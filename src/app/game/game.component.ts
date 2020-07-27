@@ -77,6 +77,7 @@ p2Visited2 = false;
 
 
 // view squares
+  @ViewChild('sameSquareModal') sameSquareModal;
   @ViewChild('modal1') modal1;
   @ViewChild('modal2') modal2;
   @ViewChild('modal3') modal3;
@@ -235,7 +236,22 @@ ngAfterViewInit() {
       this.p2Square = moveTo;
       this.moveP2Icon(moveTo);
     }
-    this.squareInteraction(moveTo);
+
+    // if other player is already at the square, go back to start and display model
+    if (this.currentPlayer === 1) {
+      if (this.p2Square === moveTo) {
+        this.triggerSameSquareInteraction(moveTo);
+      } else {
+        this.squareInteraction(moveTo);
+      }
+    } else if (this.currentPlayer == 2) {
+      if(this.p1Square == moveTo) {
+        this.triggerSameSquareInteraction(moveTo);
+      } else {
+        this.squareInteraction(moveTo);
+      }
+    }
+
   }
 
 
@@ -377,6 +393,23 @@ ngAfterViewInit() {
 
 
 
+  }
+
+  async triggerSameSquareInteraction(moveTo) {
+    if (this.currentPlayer === 1) {
+      this.p1Square = 1;
+      this.moveP1Icon(1);
+    } else {
+      this.p2Square = 1;
+      this.moveP2Icon(1);
+    }
+
+    const modal = this.modalService.open(this.sameSquareModal);
+    await modal.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      this.changePlayer();
+    });
   }
 
 

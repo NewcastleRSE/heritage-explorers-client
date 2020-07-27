@@ -47433,6 +47433,18 @@ NTM7/NheCFx04oopiP/Z
 
 
 <!--    squares-->
+ <ng-template #sameSquareModal let-modal>
+        <div class="modal-header text-center">
+          <h3 *ngIf="this.currentPlayer === 1" class="modal-title">{{p1Name}} has landed on the same square as {{p2Name}} </h3>
+          <h3 *ngIf="this.currentPlayer === 2" class="modal-title">{{p2Name}} has landed on the same square as {{p1Name}} </h3>
+        </div>
+      <div  class="modal-body">
+        <img class="modalImg" src="../../assets/1.png">
+        <h3 class="text-center">When two players come to the same number, the last is to begin the Game again.</h3>
+      </div>
+    </ng-template>
+
+
     <ng-template #modal1 let-modal>
 
         <div class="modal-header text-center">
@@ -47624,6 +47636,8 @@ NTM7/NheCFx04oopiP/Z
         <h3 class="text-center">The Royal Exchange. Take half the Counters in the Pool.</h3>
       </div>
     </ng-template>
+
+
 
 </div>
 
