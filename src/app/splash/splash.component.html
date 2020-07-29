@@ -31,30 +31,37 @@
 <!--</div>-->
 <!--</div>-->
 
-<div class="d-flex flex-column full-height">
-<div id="page-content ">
-  <div class="container text-center">
-    <div class="row justify-content-center">
-      <div class="col-md-7">
-        <h1 class="font-weight-light mt-4 text-white">Welcome to Scenes in London</h1>
-        <h2 class="font-weight-light mt-4 text-white">An 1820s board game brought to life online by researchers at Newcastle University</h2>
-<!--        <p class="lead text-white-50">Use just two Bootstrap 4 utility classes and three custom CSS rules and you will have a flexbox enabled sticky footer for your website!</p>-->
-        <br>
-        <figure class="figure">
-              <img (click)="openImage()" src="../../assets/ScenesLondon.JPG" class="figure-img img-fluid rounded"
-                   alt="Scenes of London board game">
-            </figure>
+<div class="full-height">
+
+    <div class="container text-center">
+      <br>
+      <img class="rounded img-fluid board" src="../../assets/Game2.jpg">
+
+      <div class="text">
+        <h1 class="font-weight-light mt-4">Welcome to Scenes in London</h1>
+        <h2 class="font-weight-light mt-4">An 1820s board game brought to life online by researchers at Newcastle
+          University</h2>
+        <!--        <p class="lead text-white-50">Use just two Bootstrap 4 utility classes and three custom CSS rules and you will have a flexbox enabled sticky footer for your website!</p>-->
+
+        <!--        <figure class="figure">-->
+        <!--              <img (click)="openImage()" src="../../assets/ScenesLondon.JPG" class="figure-img img-fluid rounded"-->
+        <!--                   alt="Scenes of London board game">-->
+        <!--            </figure>-->
         <br>
 
-            <button class="btn btn-secondary" (click)="viewInfo()">Learn more</button>
-            <button class="btn btn-secondary" (click)="playGame()">Play the games</button>
+        <button class="btn btn-secondary" (click)="openImage()">High-res image of the original board</button>
+        <button class="btn btn-secondary" (click)="viewInfo()">Learn more</button>
+        <button class="btn btn-secondary" (click)="playGame()">Play the games</button>
+
       </div>
     </div>
-  </div>
-</div>
-<footer id="sticky-footer" class="py-4 bg-light text-black-50">
-  <div class="container text-center">
-    <small><img class="img-fluid" src="../../assets/Newcastle_University_logo.svg"> <p>Built by <a href="https://research.ncl.ac.uk/rse/" target="_blank">Newcastle University Research Software Engineering</a></p></small>
-  </div>
-</footer>
+
+  <br>
+  <footer id="sticky-footer" class="py-4 bg-light text-black-50">
+    <div class="container text-center">
+      <small><img class="img-fluid" src="../../assets/Newcastle_University_logo.svg">
+        <p>Built by <a href="https://research.ncl.ac.uk/rse/" target="_blank">Newcastle University Research Software
+          Engineering</a></p></small>
+    </div>
+  </footer>
 </div>
