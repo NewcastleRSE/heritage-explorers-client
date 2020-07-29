@@ -3,10 +3,22 @@
   margin-left: auto;
   margin-right: auto;
   width: 30%;
+
+  .clickable {
+    cursor: pointer;
+  }
 }
 .current-section {
   background-color: cornflowerblue
 }
+
+//h2 {
+//  font-weight: lighter;
+//}
+//
+//h4 {
+//  font-weight: lighter;
+//}
 
 //#parentDiv {
 //  height: 50vh;
