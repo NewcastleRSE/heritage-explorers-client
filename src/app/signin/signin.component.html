@@ -1,8 +1,8 @@
-<div class="container text-center">
+<div class="full-height text-center">
 
-  <div class="loginWindow">
-    <h1>Login</h1>
-
+  <div class="loginWindow font-weight-light mt-4 text-white">
+    <h1 class="">Login</h1>
+<br>
 
     <form (ngSubmit)="onSubmit()"#regForm="ngForm">
       <div class="form-group row">
@@ -15,8 +15,8 @@
                  [(ngModel)]="password" name="password" placeholder="Password">
         </div>
       </div>
-
-      <button type="submit" class="btn btn-success btn-lg " [disabled]="!regForm.form.valid">Submit</button>
+<br>
+      <button type="submit" class="btn btn-secondary btn-lg " [disabled]="!regForm.form.valid">Submit</button>
       <p>{{message}}</p>
     </form>
   </div>
