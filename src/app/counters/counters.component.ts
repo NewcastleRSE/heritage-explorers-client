@@ -61,6 +61,10 @@ numberPlayers;
     this.player2EnteredName = false;
     this.audio = new Audio();
     this.numberPlayers = this.globalsService.numberPlayers;
+    // fallback in case not set in globals
+    if (this.numberPlayers === undefined) {
+      this.numberPlayers = 2;
+    }
   }
 
   setCounter(counterChoice) {
@@ -212,8 +216,9 @@ if (this.player1Counter !== undefined && this.player1Name !== undefined) {
   // save counter choices to globals
   this.globalsService.player1Counter = this.player1Counter;
   this.globalsService.player1Name = this.player1Name;
-
+  console.log(this.numberPlayers);
   if (this.numberPlayers === 2) {
+
     // switch to player 2 if 2 players
     this.player1Choosing = false;
     this.player2Choosing = true;
