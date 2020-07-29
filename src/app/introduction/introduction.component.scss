@@ -33,7 +33,11 @@ h4 {
   padding-right: 40px;
 }
 
-.footer {
+#sticky-footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
   img {
     height: 30px;
   }
