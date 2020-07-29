@@ -14,6 +14,8 @@ export class RaceIntroComponent implements OnInit {
   lastRoll;
   rolls = [1, 2, 3, 4];
 
+  audio;
+
 // counter positioning
   p1Top;
   p1Left;
@@ -31,13 +33,22 @@ export class RaceIntroComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.audio = new Audio();
   }
 
   readyToPlay() {
+    this.audio.pause();
     this.router.navigate(['game']);
   }
 
   returnToWelcome() {
+    this.audio.pause();
     this.router.navigate(['home']);
+  }
+
+  play() {
+    this.audio.src = '../../assets/sounds/intros/raceIntro.mp3';
+    this.audio.load();
+    this.audio.play();
   }
 }

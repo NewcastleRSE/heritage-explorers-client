@@ -27,6 +27,7 @@ import { PlayerConfigComponent } from './player-config/player-config.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { ScrollSpyDirective } from './scroll-spy.directive';
 import { BoardComponent } from './board/board.component';
+import { SplashComponent } from './splash/splash.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { BoardComponent } from './board/board.component';
     IntroductionComponent,
     ScrollSpyDirective,
     BoardComponent,
+    SplashComponent,
   ],
   imports: [
     BrowserModule,

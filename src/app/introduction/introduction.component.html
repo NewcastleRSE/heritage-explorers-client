@@ -1,12 +1,12 @@
 <div class="container introWindow">
   <div class="header text-center">
 
-        <h1>Welcome to</h1>
-        <img class="img-fluid" src="../../assets/title3.png">
-        <h3>An 1820s board game brought to life online by researchers at Newcastle University</h3>
+        <h1 class="font-weight-light mt-4">Welcome to</h1>
+        <img class="img-fluid rounded" src="../../assets/title3.png">
+        <h3 class="font-weight-light mt-4">An 1820s board game brought to life online by researchers at Newcastle University</h3>
 
 
-        <button class="btn btn-primary" (click)="playGame()">Play the games</button>
+        <button class="btn btn-primary btn-lg" (click)="playGame()">Play the games</button>
 
     <hr>
   </div>
@@ -75,9 +75,9 @@
             the Bank of England.
           </p>
           <p>
-            <span class="font-weight-bold">Click on the game below to enlarge the image.</span>
+            <span class="font-weight-bold text-primary">Click on the game below to enlarge the image.</span>
           </p>
-          <figure class="figure">
+          <figure class="figure clickable">
             <img (click)="openImage()" src="../../assets/ScenesLondon.JPG" class="figure-img img-fluid rounded"
                  alt="Scenes of London board game">
           </figure>
@@ -201,18 +201,11 @@
 <!--    </div>-->
 
 
-<div class="footer">
-  <hr>
-  <div class="row">
-    <div class="col text-right">
-      <img class="img-fluid" src="../../assets/Newcastle_University_logo.svg">
+  <footer id="sticky-footer" class="py-4 bg-light text-black-50">
+    <div class="container text-center">
+      <small><img class="img-fluid" src="../../assets/Newcastle_University_logo.svg"> <p>Built by <a href="https://research.ncl.ac.uk/rse/" target="_blank">Newcastle University Research Software Engineering</a></p></small>
     </div>
-    <div class="col">
-      <p>Built by <a href="https://research.ncl.ac.uk/rse/" target="_blank">Newcastle University Research Software Engineering</a></p>
-    </div>
-  </div>
-
- </div>
+  </footer>
 
 <div>
 </div>

@@ -1,105 +1,154 @@
-<div class="container">
-  <div class="countersContainer">
+<div class="d-flex flex-column full-height">
+  <br>
   <div class="title align-content-center">
-    <h1>Players</h1>
+    <h1 class="font-weight-light">Players</h1>
   </div>
+  <div class="container">
+
+    <div class="countersContainer">
+      <br>
 
 
-  <ngb-alert (close)="closeAlert()" *ngIf="showCounterAlert" type='warning'>Please enter your name and select a counter</ngb-alert>
-    <ngb-alert (close)="closeAlert()" *ngIf="showSameNameAlert" type='warning'>Player 2 must have a different name to {{this.player1Name}}</ngb-alert>
+      <ngb-alert (close)="closeAlert()" *ngIf="showCounterAlert" type='warning'>Please enter your name and select a
+        counter
+      </ngb-alert>
+      <ngb-alert (close)="closeAlert()" *ngIf="showSameNameAlert" type='warning'>Player 2 must have a different name
+        to {{this.player1Name}}</ngb-alert>
 
-  <!--  player 1 choices-->
-  <div *ngIf="player1Choosing">
-    <h3 class="player1Colour">Player 1</h3>
-    <p>Enter your name and click on the counters below to listen to their sounds and choose which you want to use. Then click Finished.</p>
-    <!--    player 1 enter name-->
+      <!--  player 1 choices-->
+      <div *ngIf="player1Choosing">
+        <h3 class="player1Colour">Player 1</h3>
+        <p>Enter your name and click on the counters below to listen to their sounds and choose which you want to use.
+          Then click Finished.</p>
+        <!--    player 1 enter name-->
 
 
-      <form #p1Form="ngForm" (ngSubmit)="player1NameEntered() ">
-        <div class="form-group row">
-          <label class="col-1 col-form-label" for="player1Name">Name:</label>
-          <div class="col nameInput">
-            <input [(ngModel)]="player1Name" class="form-control mx-sm-3" id="player1Name"
-                   name="player1Name"
-           required type="text">
+        <form #p1Form="ngForm" (ngSubmit)="player1NameEntered() ">
+          <div class="form-group row">
+            <label class="col-1 col-form-label" for="player1Name">Name:</label>
+            <div class="col nameInput">
+              <input [(ngModel)]="player1Name" class="form-control mx-sm-3" id="player1Name"
+                     name="player1Name"
+                     required type="text">
+            </div>
+
+
           </div>
-          <div class="col">
-            <button (click)="player1Finished()"  class="btn btn-primary">Finished</button>
+        </form>
+      </div>
+      <!--player 1 end choices-->
+
+      <!--   player 2 choices-->
+      <div *ngIf="player2Choosing && numberPlayers===2">
+        <h3 class="player2Colour">Player 2</h3>
+        <p>Enter your name and click on the counters below to listen to their sounds and choose which you want to use.
+          Then click Finished.</p>
+
+        <form #p2Form="ngForm" (ngSubmit)="player2NameEntered() ">
+          <div class="form-group row">
+            <label class="col-1 col-form-label" for="player2Name">Name:</label>
+            <div class="col nameInput">
+              <input [(ngModel)]="player2Name" class="form-control" id="player2Name"
+                     name="player2Name"
+                     required type="text">
+            </div>
+
+
+          </div>
+        </form>
+      </div>
+      <!--   end player 2 choosing counter-->
+
+
+      <!-- Counters-->
+      <div class="container  counters">
+        <div class="row">
+          <div class="col-4 text-center">
+            <img
+              [ngClass]="{'highlight1': player1CounterNumber === 1, 'highlight2' : player2CounterNumber === 1, 'noHighlight' : player1CounterNumber != 1 && player2CounterNumber != 1}"
+              (click)="setCounter(1)" class="img-fluid" src="../../assets/boat125nb.png">
+
+            <!--        <div *ngIf="player1Counter != one && player2Counter != one">-->
+
+            <!--        </div>-->
+          </div>
+          <div class="col-4 text-center">
+            <img
+              [ngClass]="{'highlight1': player1CounterNumber === 2, 'highlight2' : player2CounterNumber === 2, 'noHighlight' : player1CounterNumber != 2 && player2CounterNumber != 2}"
+              (click)="setCounter(2)" class="img-fluid" src="../../assets/crown125nb.png">
+          </div>
+          <div class="col-4 text-center">
+
+            <img
+              [ngClass]="{'highlight1': player1CounterNumber === 3, 'highlight2' : player2CounterNumber === 3, 'noHighlight' : player1CounterNumber != 3 && player2CounterNumber != 3}"
+              (click)="setCounter(3)" class="img-fluid" src="../../assets/horse125nb.png">
+
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-4 text-center">
+            <img
+              [ngClass]="{'highlight1': player1CounterNumber === 4, 'highlight2' : player2CounterNumber === 4, 'noHighlight' : player1CounterNumber != 4 && player2CounterNumber != 4}"
+              (click)="setCounter(4)" class="img-fluid" src="../../assets/lion125nb.png">
+          </div>
+          <!--      <div class="col-3">-->
+          <!--          <img [ngClass]="{'highlight1': player1CounterNumber === 5, 'highlight2' : player2CounterNumber === 5, 'noHighlight' : player1CounterNumber != 5 && player2CounterNumber != 5}"  (click)="setCounter(5)" class="img-fluid" src="../../assets/monument125nb.png">-->
+          <!--      </div>-->
+          <!--      <div class="col-3">-->
+          <!--          <img [ngClass]="{'highlight1': player1CounterNumber === 6, 'highlight2' : player2CounterNumber === 6, 'noHighlight' : player1CounterNumber != 6 && player2CounterNumber != 6}"  (click)="setCounter(6)" class="img-fluid" src="../../assets/punch125nb.png">-->
+          <!--      </div>-->
+          <div class="col-4 text-center">
+            <img
+              [ngClass]="{'highlight1': player1CounterNumber === 7, 'highlight2' : player2CounterNumber === 7, 'noHighlight' : player1CounterNumber != 7 && player2CounterNumber != 7}"
+              (click)="setCounter(7)" class="img-fluid" src="../../assets/sarco125nb.png">
+          </div>
+          <div class="col-4 text-center">
+            <img
+              [ngClass]="{'highlight1': player1CounterNumber === 8, 'highlight2' : player2CounterNumber === 8, 'noHighlight' : player1CounterNumber != 8 && player2CounterNumber != 8}"
+              (click)="setCounter(8)" class="img-fluid" src="../../assets/woman125nb.png">
           </div>
         </div>
-      </form>
-  </div>
-  <!--player 1 end choices-->
-
-  <!--   player 2 choices-->
-  <div *ngIf="player2Choosing && numberPlayers===2">
-    <h3 class="player2Colour">Player 2</h3>
-    <p>Enter your name and click on the counters below to listen to their sounds and choose which you want to use. Then click Finished.</p>
-
-      <form #p2Form="ngForm" (ngSubmit)="player2NameEntered() ">
-        <div class="form-group row">
-          <label class="col-1 col-form-label" for="player2Name">Name:</label>
-          <div class="col nameInput">
-            <input [(ngModel)]="player2Name" class="form-control" id="player2Name"
-                   name="player2Name"
-                    required type="text">
-          </div>
-          <div class="col">
-            <button (click)="player2Finished()" class="btn btn-primary">Finished</button>
-          </div>
-        </div>
-      </form>
-    </div>
-    <!--   end player 2 choosing counter-->
-
-
-
-  <!-- Counters-->
-  <div class="container  counters">
-    <div class="row">
-      <div class="col-4">
-  <img [ngClass]="{'highlight1': player1CounterNumber === 1, 'highlight2' : player2CounterNumber === 1, 'noHighlight' : player1CounterNumber != 1 && player2CounterNumber != 1}"  (click)="setCounter(1)" class="img-fluid" src="../../assets/boat125nb.png">
-
-<!--        <div *ngIf="player1Counter != one && player2Counter != one">-->
-
-<!--        </div>-->
       </div>
-      <div class="col-4">
-          <img [ngClass]="{'highlight1': player1CounterNumber === 2, 'highlight2' : player2CounterNumber === 2, 'noHighlight' : player1CounterNumber != 2 && player2CounterNumber != 2}"  (click)="setCounter(2)" class="img-fluid" src="../../assets/crown125nb.png">
+      <!--   end counters-->
+      <br>
+      <div *ngIf="player1Choosing" class="text-center">
+        <button (click)="player1Finished()" class="btn btn-primary btn-lg">Finished
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-emoji-smile" fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path fill-rule="evenodd"
+                  d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683z"/>
+            <path
+              d="M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+          </svg>
+        </button>
       </div>
-      <div class="col-4">
-
-          <img [ngClass]="{'highlight1': player1CounterNumber === 3, 'highlight2' : player2CounterNumber === 3, 'noHighlight' : player1CounterNumber != 3 && player2CounterNumber != 3}"  (click)="setCounter(3)" class="img-fluid" src="../../assets/horse125nb.png">
-
+      <div *ngIf="player2Choosing && numberPlayers===2" class="text-center">
+        <button (click)="player2Finished()" class="btn btn-primary btn-lg">Finished
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-emoji-smile" fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path fill-rule="evenodd"
+                  d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683z"/>
+            <path
+              d="M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+          </svg>
+        </button>
       </div>
 
     </div>
-    <div class="row">
-      <div class="col-4">
-        <img [ngClass]="{'highlight1': player1CounterNumber === 4, 'highlight2' : player2CounterNumber === 4, 'noHighlight' : player1CounterNumber != 4 && player2CounterNumber != 4}"  (click)="setCounter(4)" class="img-fluid" src="../../assets/lion125nb.png">
-      </div>
-<!--      <div class="col-3">-->
-<!--          <img [ngClass]="{'highlight1': player1CounterNumber === 5, 'highlight2' : player2CounterNumber === 5, 'noHighlight' : player1CounterNumber != 5 && player2CounterNumber != 5}"  (click)="setCounter(5)" class="img-fluid" src="../../assets/monument125nb.png">-->
-<!--      </div>-->
-<!--      <div class="col-3">-->
-<!--          <img [ngClass]="{'highlight1': player1CounterNumber === 6, 'highlight2' : player2CounterNumber === 6, 'noHighlight' : player1CounterNumber != 6 && player2CounterNumber != 6}"  (click)="setCounter(6)" class="img-fluid" src="../../assets/punch125nb.png">-->
-<!--      </div>-->
-      <div class="col-4">
-          <img [ngClass]="{'highlight1': player1CounterNumber === 7, 'highlight2' : player2CounterNumber === 7, 'noHighlight' : player1CounterNumber != 7 && player2CounterNumber != 7}"  (click)="setCounter(7)" class="img-fluid" src="../../assets/sarco125nb.png">
-      </div>
-      <div class="col-4">
-          <img [ngClass]="{'highlight1': player1CounterNumber === 8, 'highlight2' : player2CounterNumber === 8, 'noHighlight' : player1CounterNumber != 8 && player2CounterNumber != 8}"  (click)="setCounter(8)" class="img-fluid" src="../../assets/woman125nb.png">
-      </div>
-    </div>
-  </div>
-  <!--   end counters-->
-  </div>
 
-  <button class="btn btn-primary returnBtn" (click)="returnToHome()">
-    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-return-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" d="M5.854 5.646a.5.5 0 0 1 0 .708L3.207 9l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
-      <path fill-rule="evenodd" d="M13.5 2.5a.5.5 0 0 1 .5.5v4a2.5 2.5 0 0 1-2.5 2.5H3a.5.5 0 0 1 0-1h8.5A1.5 1.5 0 0 0 13 7V3a.5.5 0 0 1 .5-.5z"/>
-    </svg>
-    Return to welcome screen</button>
-
+    <button class="btn btn-primary returnBtn" (click)="returnToHome()">
+      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-return-left" fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+              d="M5.854 5.646a.5.5 0 0 1 0 .708L3.207 9l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
+        <path fill-rule="evenodd"
+              d="M13.5 2.5a.5.5 0 0 1 .5.5v4a2.5 2.5 0 0 1-2.5 2.5H3a.5.5 0 0 1 0-1h8.5A1.5 1.5 0 0 0 13 7V3a.5.5 0 0 1 .5-.5z"/>
+      </svg>
+      Return to welcome screen
+    </button>
+  </div>
 </div>
+

@@ -27,6 +27,8 @@ export class GameComponent implements OnInit, AfterViewInit {
   bounce: any;
   zoomIn: any;
 
+  audio;
+
 p1Visited2 = false;
 p2Visited2 = false;
 
@@ -111,6 +113,7 @@ p2Visited2 = false;
     this.p1Square = 1;
     this.p2Square = 1;
 
+    this.audio = new Audio();
 
      if (this.globalsService.numberPlayers !== undefined) {
        this.numberPlayers = 2;
@@ -244,8 +247,8 @@ ngAfterViewInit() {
       } else {
         this.squareInteraction(moveTo);
       }
-    } else if (this.currentPlayer == 2) {
-      if(this.p1Square == moveTo) {
+    } else if (this.currentPlayer === 2) {
+      if(this.p1Square === moveTo) {
         this.triggerSameSquareInteraction(moveTo);
       } else {
         this.squareInteraction(moveTo);
@@ -1008,8 +1011,13 @@ ngAfterViewInit() {
     }
   }
 
-  viewRules(rulesModal) {
-    this.modalService.open(rulesModal);
+  async viewRules(rulesModal) {
+    const m = this.modalService.open(rulesModal);
+    await m.result.then(() => {
+      console.log('When user closes');
+    }, () => {
+      this.audio.pause();
+    });
   }
 
   testMoveSquare() {
@@ -1019,5 +1027,11 @@ ngAfterViewInit() {
 
   returnToHome() {
     this.router.navigate(['home']);
+  }
+
+  playHowTo() {
+    this.audio.src = '../../assets/sounds/intros/howToPlay.mp3';
+    this.audio.load();
+    this.audio.play();
   }
 }

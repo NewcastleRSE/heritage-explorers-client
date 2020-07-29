@@ -19,10 +19,11 @@ import {RaceWinComponent} from './race-win/race-win.component';
 import {PlayerConfigComponent} from './player-config/player-config.component';
 import {IntroductionComponent} from './introduction/introduction.component';
 import {BoardComponent} from './board/board.component';
+import {SplashComponent} from './splash/splash.component';
 
 
 const routes: Routes = [
-  { path: '', component: IntroductionComponent, canActivate: [RouteGuardService]},
+  { path: '', component: SplashComponent, canActivate: [RouteGuardService]},
   { path: 'home', component: WelcomeComponent, canActivate: [RouteGuardService]},
   { path: 'game', component: GameComponent, canActivate: [RouteGuardService]},
   { path: 'counters', component: CountersComponent, canActivate: [RouteGuardService]},

@@ -15,7 +15,7 @@ export class PasswordDirective {
     const parent = this.el.nativeElement.parentNode;
     const span = document.createElement('span');
     span.setAttribute('class', 'password-toggle');
-    span.innerHTML = `Show password`;
+    span.innerHTML = `Show password    `;
     span.addEventListener('click', (event) => {
       this.toggle(span);
     });
@@ -27,10 +27,10 @@ export class PasswordDirective {
     this.shown = !this.shown;
     if (this.shown) {
       this.el.nativeElement.setAttribute('type', 'text');
-      span.innerHTML = 'Hide password';
+      span.innerHTML = 'Hide password    ';
     } else {
       this.el.nativeElement.setAttribute('type', 'password');
-      span.innerHTML = 'Show password';
+      span.innerHTML = 'Show password    ';
     }
   }
 

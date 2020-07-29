@@ -42,11 +42,12 @@ button {
 }
 
 .board {
-  margin-top: 20px;
-  width: 100%;
-  height: auto;
-  position: relative;
-  overflow: visible;
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  max-height: 100vh;
+  /* mobile viewport bug fix */
+  max-height: -webkit-fill-available;
 }
 
 .characterImg {
