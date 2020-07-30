@@ -8,6 +8,7 @@ import {ActivatedRoute, Route, Router} from '@angular/router';
 })
 export class RaceWinComponent implements OnInit {
 winner;
+pool;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,6 +20,7 @@ winner;
     this.route.queryParams
       .subscribe(params => {
        this.winner = params.w;
+       this.pool = params.p
       });
 
   }

@@ -387,10 +387,14 @@ ngAfterViewInit() {
     if (squareNumber === 18) {
       this.winningMessage = 'Player ' + this.currentPlayer + ' wins!';
 
+
+
       if (this.currentPlayer === 1) {
-        this.router.navigate(['win'], {queryParams: {w: this.p1Name}});
+        const countersTotal = this.pool + this.p1Pool;
+        this.router.navigate(['win'], {queryParams: {w: this.p1Name, p: countersTotal}});
       } else if (this.currentPlayer === 2) {
-        this.router.navigate(['win'], {queryParams: {w: this.p2Name}});
+        const countersTotal = this.pool + this.p2Pool;
+        this.router.navigate(['win'], {queryParams: {w: this.p2Name, p: countersTotal}});
       }
     }
 
