@@ -28,7 +28,7 @@
     "bootstrap": "^4.4.1",
     "bootstrap-icons": "^1.0.0-alpha5",
     "image-map": "^2.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "moment": "^2.26.0",
     "ng-animate": "^0.3.4",
     "rxjs": "~6.5.4",
