@@ -21,7 +21,7 @@ message;
   ) { }
 
   ngOnInit() {
-    this.correctPassword = 'HE2020';
+    this.correctPassword = 'HE2024';
     this.route.queryParams
       .subscribe(params => {
         if (params.return !== undefined) {
